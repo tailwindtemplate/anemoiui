@@ -1,3 +1,5 @@
+import { HelloWorld } from '../src';
+
 export default function Home() {
-    return <div>Welcome to Next.js!</div>;
+    return <HelloWorld />;
 }
