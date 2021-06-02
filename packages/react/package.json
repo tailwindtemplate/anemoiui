@@ -1,0 +1,22 @@
+{
+  "name": "@anemoiui/react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "dev:build": "next build",
+    "build": "../../scripts/build.sh"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
+    "autoprefixer": "^10.2.6",
+    "next": "^10.2.3",
+    "postcss": "^8.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.1.3",
+    "typescript": "^4.3.2"
+  }
+}
