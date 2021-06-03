@@ -1,4 +1,4 @@
-import Toggle from '../src/elements/inputs/toggle';
+import { Toggle } from '../dist';
 import { useState } from 'react';
 
 export default function Home() {
