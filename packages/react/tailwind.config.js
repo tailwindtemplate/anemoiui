@@ -1,5 +1,4 @@
 module.exports = {
-    mode: 'jit',
     purge: {
         content: ['./pages/**/*.tsx', './src/**/*.tsx'],
         options: {
@@ -45,7 +44,15 @@ module.exports = {
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            opacity: ['active', 'disabled'],
+            textColor: ['active', 'disabled'],
+            backgroundColor: ['active', 'disabled'],
+            borderColor: ['active', 'disabled', 'focus'],
+            borderWidth: ['active', 'disabled', 'focus'],
+            ringColor: ['active', 'disabled', 'focus'],
+            cursor: ['disabled']
+        },
     },
     plugins: [],
 };

@@ -26,7 +26,7 @@ export const Footer = ({ type = 'between', theme, confirm, cancel }: Footer) => 
     return (
         <div className={clsx('flex mt-2', typeClass)}>
             {cancel && (
-                <button onClick={cancel.onClick} className={clsx('mt-2', cancel.className)}>
+                <button onClick={cancel.onClick} className={clsx('mt-2 text-gray-600', cancel.className)}>
                     {cancel.IconLeft && <cancel.IconLeft />}
                     {cancel.label}
                     {cancel.IconRight && <cancel.IconRight />}
