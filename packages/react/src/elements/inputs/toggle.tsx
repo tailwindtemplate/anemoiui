@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import { Switch } from '@headlessui/react';
 
@@ -8,7 +9,7 @@ type Toggle = {
     className?: string
 }
 
-export default function Toggle({ toggle, setToggle, disabled, className }: Toggle) {
+export const Toggle = ({ toggle, setToggle, disabled, className }: Toggle) => {
     return (
         <Switch
             className={clsx(
