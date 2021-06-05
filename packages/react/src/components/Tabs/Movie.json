@@ -1,0 +1,78 @@
+[
+  {
+    "tab": "Phim đề cử",
+    "key": "1",
+    "movie": [
+      {
+        "img": "https://assets.glxplay.io/static/images/co-nang-lap-lanh-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Lấp Lánh, cô gái trẻ đầy tham vọng quyết tâm dùng nhan sắc của mình để chinh phục showbiz Việt nhưng vì cô quá xấu nên không bao giờ đạt được mục đích của mình, cho tới khi cô gặp...một con ma!"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/the-spy-who-dumped-me-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Phải lòng một cô gái hơn tuổi, Hoàng đã nhiều lần tấn công 'chị crush' nhưng liên tiếp bị từ chối. Lúc này, Thanh trở thành cứu tinh tình yêu cho Hoàng khi lập ra một kế hoạch cực kỳ hoàn hảo."
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/em-la-cua-em-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Chị Mười Ba: Ba Ngày Sinh Tử (2020)?"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/bong-hong-lua-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Một chị đại giang hồ đứng giữa 2 tình yêu, một sẽ đưa cô vào đường chết, một giúp cô tái sinh từ tro tàn. Trái tim mách bảo cô đi theo hướng nào?"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/kieu-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Phóng tác từ Truyện Kiều của đại thi hào Nguyễn Du, phim kể mối tình oan trái của Thúy Kiều và Thúc Sinh khi nàng ở lầu xanh. Nhưng, Hoạn Thư - người vợ cả của Thúc Sinh liệu có để yên?"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/lat-mat-2--phim-truong-poster-29112018_poster_2x3_540x810_3x.jpg",
+        "name":"Lật Mặt 2: Phim Trường (2016)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/the-eyes-poster-new-co-ten-dd_poster_2x3_540x810_3x.jpg",
+        "name":"Đôi Mắt Âm Dương (2020)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/phap-su-mu-poster-o2_poster_2x3_540x810_3x.jpg",
+        "name":"Pháp Sư Mù (2019)"
+      }
+    ]
+  },
+  {
+    "tab": "Phim mới nhất",
+    "key": "2",
+    "movie":[
+      {
+        "img": "https://assets.glxplay.io/static/images/twilight-saga--breaking-dawn-part-1-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Hừng Đông 1 (2011)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/monsters-university-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Nắm Đấm Thép (2016)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/howl-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Ma Sói 2016 (2016)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/deception-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Lừa Dối (2008)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/escape-room-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Căn Phòng Tử Thần (2019)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/overdrive-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Siêu Tốc Độ (2018)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/the-spy-who-dumped-me-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Bạn Trai Cũ Tôi Là Điệp Viên (2018)"
+      },
+      {
+        "img": "https://assets.glxplay.io/static/images/horizon-line-poster_poster_2x3_540x810_3x.jpg",
+        "name":"Vùng Trời Tử Thần (2020)"
+      }
+    ]
+  }
+]
