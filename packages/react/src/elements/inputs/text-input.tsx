@@ -1,7 +1,6 @@
 import React from "react";
 import User from "../../../assets/images/user.svg";
 import clsx from "clsx";
-import AutocompleteInput from "elements/inputs/autocomplete-input";
 
 type TextInput = {
   LeftIcon?: any;
@@ -9,7 +8,6 @@ type TextInput = {
   className?: any;
   type?: any;
   disabled?: boolean;
-  autoComplete?: boolean;
 };
 
 const TYPE_MAPS: any = {
@@ -21,25 +19,9 @@ export default function TextInput({
   RightIcon,
   className,
   type,
-  disabled,
-  autoComplete
+  disabled
 }: TextInput) {
-  return autoComplete ? (
-    <AutocompleteInput
-      suggestions={[
-        "Nguyễn Văn Anh",
-        "Lê Thị Kim Cương",
-        "Trần Mai Ngọc Ngà",
-        "Huỳnh Văn Anh Đức",
-        "Châu Ánh Nguyệt",
-        "Võ Nguyễn Mai Thy",
-        "Thái Văn Phong",
-        "Nguyễn Ngọc Minh Thư",
-        "Lê Mai Thanh Tâm",
-        "Trần Trung Kiên"
-      ]}
-    />
-  ) : (
+  return (
     <div
       className={clsx(
         "relative text-gray-600 focus-within:text-gray-400 m-2",
@@ -61,7 +43,6 @@ export default function TextInput({
           )}
           placeholder="Search member..."
           disabled={disabled}
-          autoComplete={autoComplete ? "on" : "off"}
         />
         {RightIcon && (
           <span className="absolute inset-y-0 right-0 flex items-center pr-2">

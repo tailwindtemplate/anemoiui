@@ -46,7 +46,10 @@ module.exports = {
                     100: '#F5F5F5',
                     50: '#FFFFFF',
                 }
-            }
+            },
+          fontSize: {
+            tiny: ".5rem",
+          }
         },
     },
     variants: {

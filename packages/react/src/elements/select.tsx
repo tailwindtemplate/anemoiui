@@ -1,31 +1,29 @@
 import React from "react";
 import ArrowDown from "../../assets/images/arrow_down.svg";
 import ArrowUp from "../../assets/images/arrow_up.svg";
+import User from "../../assets/images/user.svg";
 import clsx from "clsx";
+import Avatar from "elements/avatar";
 
 type Select = {
   placeholder?: string;
   disabled?: boolean;
+  Icon?: any;
+  src?: string;
+  data: any;
+  label?: string;
 };
 
-export default function Select({ placeholder, disabled }: Select) {
+export default function Select({
+  placeholder,
+  disabled,
+  Icon,
+  src,
+  data,
+  label
+}: Select) {
   const [open, setOpen] = React.useState(false);
   const [defaultTitle, setDefaultTitle] = React.useState("");
-
-  const data = [
-    {
-      sportTitle: "Running"
-    },
-    {
-      sportTitle: "Skating"
-    },
-    {
-      sportTitle: "Snow boarding"
-    },
-    {
-      sportTitle: "Swimming"
-    }
-  ];
 
   const handleSelect = (sportTitle: any) => {
     if (!open) {
@@ -41,6 +39,10 @@ export default function Select({ placeholder, disabled }: Select) {
     !disabled && setOpen(!open);
   };
 
+  const disableStyle = disabled
+    ? "cursor-not-allowed opacity-50 select-none"
+    : "";
+
   return (
     <div className="w-80 rounded-xl m-2">
       <div
@@ -50,19 +52,43 @@ export default function Select({ placeholder, disabled }: Select) {
         )}
         onClick={handleOpen}
       >
-        <span
-          className={`${
-            placeholder && defaultTitle === ""
-              ? "text-neutral-800 text-neutral-300"
-              : "text-neutral-800"
-          }`}
-        >
-          {defaultTitle === "" ? placeholder : defaultTitle}
-        </span>
-        {open ? <ArrowUp /> : <ArrowDown />}
+        <div className="flex items-center">
+          {Icon && <Icon className={clsx(disableStyle, "mr-2")} />}
+          {src && <Avatar size="XS" className={clsx("mr-2", disableStyle)} />}
+          <div>
+            <span
+              className={`${
+                defaultTitle
+                  ? "text-sm text-neutral-800"
+                  : "text-sm text-neutral-300"
+              }`}
+            >
+              {defaultTitle ? defaultTitle : placeholder}
+            </span>
+            {label && (
+              <div
+                className={clsx(
+                  "text-neutral-900 text-sm",
+                  disableStyle
+                )}
+              >
+                {label}
+              </div>
+            )}
+          </div>
+        </div>
+        {open ? (
+          <ArrowUp
+            className={disableStyle}
+          />
+        ) : (
+          <ArrowDown
+            className={disableStyle}
+          />
+        )}
       </div>
 
-      {open ? (
+      {open && (
         <div className="border mt-4 rounded-xl shadow-lg">
           {data.map((item, index) => (
             <div
@@ -74,18 +100,101 @@ export default function Select({ placeholder, disabled }: Select) {
             </div>
           ))}
         </div>
-      ) : (
-        ""
       )}
     </div>
   );
 }
 
 export function PreviewSelect() {
+  const data = [
+    {
+      sportTitle: "Running"
+    },
+    {
+      sportTitle: "Skating"
+    },
+    {
+      sportTitle: "Snow boarding"
+    },
+    {
+      sportTitle: "Swimming"
+    }
+  ];
   return (
-    <div>
-      <Select placeholder="Please select the sport" />
-      <Select placeholder="Please select the sport" disabled />
+    <div className="flex">
+      <div>
+        <Select placeholder="Please select the sport" data={data} />
+        <Select placeholder="Please select the sport" disabled data={data} />
+        <Select
+          placeholder="Please select the sport"
+          data={data}
+          label="Label"
+        />
+        <Select
+          placeholder="Please select the sport"
+          disabled
+          data={data}
+          label="Label"
+        />
+      </div>
+      <div>
+        <Select placeholder="Please select the sport" Icon={User} data={data} />
+        <Select
+          placeholder="Please select the sport"
+          disabled
+          Icon={User}
+          data={data}
+        />
+
+        <Select
+          placeholder="Please select the sport"
+          Icon={User}
+          data={data}
+          label="Label"
+        />
+        <Select
+          placeholder="Please select the sport"
+          disabled
+          Icon={User}
+          data={data}
+          label="Label"
+        />
+      </div>
+      <div>
+        <Select
+          placeholder="Please select the sport"
+          src={
+            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
+          }
+          data={data}
+        />
+        <Select
+          placeholder="Please select the sport"
+          disabled
+          src={
+            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
+          }
+          data={data}
+        />
+
+        <Select
+          placeholder="Please select the sport"
+          src={
+            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
+          }
+          data={data}
+          label="Label"
+        />
+        <Select
+          placeholder="Please select the sport"
+          disabled
+          src={
+            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
+          }
+          data={data}
+          label="Label"
+        />
+      </div>
     </div>
   );
 }
