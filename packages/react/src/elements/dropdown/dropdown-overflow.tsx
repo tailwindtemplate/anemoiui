@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import React, { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx';
+import { useOutsideClick } from '../../hooks/use-outside-click';
+
 
 type DropdownOverFlow = {
     label: string
@@ -11,9 +12,10 @@ type DropdownOverFlow = {
 type Items = {
     position: { top: number, left: number }
     items: { name: string, href?: string }[]
+    onClick: (e: any) => void
 }
 
-const Items = ({ position, items }: Items) => {
+const Items = ({ position, items, onClick }: Items) => {
     return (
         <div
             className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
@@ -25,6 +27,7 @@ const Items = ({ position, items }: Items) => {
                         <div>
                             <a
                                 href={item?.href}
+                                onClick={onClick}
                                 className="hover:bg-gray-100 hover:text-gray-900 text-gray-700 block px-4 py-2 text-sm"
                             >
                                 {item?.name}
@@ -47,17 +50,24 @@ export const DropdownOverFlow = ({ label, items, theme = 'light' }: DropdownOver
             setPosition({ top, left })
         }
     }
-    React.useEffect(updatePosition, [open])
+    useEffect(updatePosition, [open])
+    useOutsideClick(ref, () => {
+        console.log('open', open)
+        if (open) setOpen(false)
+    })
+    const onItemClick = () => {
+        setOpen(false)
+    }
     return (
-        <div className="inline-block text-left">
-            <div ref={ref}>
+        <div ref={ref} className="inline-block text-left">
+            <div>
                 <button onClick={() => setOpen(!open)} className={clsx('text-base font-medium hover:text-gray-300 focus:outline-none', theme == 'dark' ? 'text-white' : 'text-dark')}>
                     <span className="sr-only">Open options</span>
                     <span className="mr-1">{ label }</span>
                     ...
                 </button>
             </div>
-            {open && <Items position={position} items={items} />}
+            {open && <Items position={position} items={items} onClick={onItemClick} />}
         </div>
     )
 }
