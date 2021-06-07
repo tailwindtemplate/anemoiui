@@ -1,7 +1,7 @@
-import { Dropdown, DropdownOverFlow, Section } from '../src';
-import { menu } from '../const';
+import { Dropdown, DropdownOverFlow, Section } from '../../src';
+import { menu } from '../../const';
 
-export const DropdownSection = () => {
+export default function DropdownPage() {
     return (
         <Section narrow>
             <DropdownOverFlow label="overflow" items={menu} />

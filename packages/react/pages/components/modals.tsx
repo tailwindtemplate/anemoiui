@@ -1,7 +1,7 @@
-import { Modal, Section } from '../src';
 import { useMemo, useState } from 'react';
+import { Modal, Section } from '../../src';
 
-export const ModalSection = () => {
+export default function ModalsPage() {
     const [toggle, setToggle] = useState(false)
     const confirm = useMemo(() => ({
         label: 'confirm',

@@ -1,7 +1,7 @@
-import { OTPInput, Section } from '../src';
 import { useState } from 'react';
+import { OTPInput, Section } from '../../src';
 
-export const OtpSection = () => {
+export default function OtpInputPage() {
     const [otp, setOtp] = useState('')
     const onChangeOTP = (otp) => {
         if (otp.length == 6) {

@@ -1,3 +1,5 @@
 export const menu = [
-    { name: 'Show case', href: '/show-case' }
+    { name: 'element 1', href: '#' },
+    { name: 'element 2' },
+    { name: 'element 3' }
 ]
