@@ -19,6 +19,6 @@
       "*": ["src/*", "node_modules/*"]
     }
   },
-  "include": ["next-env.d.ts", "src"],
+  "include": ["next-env.d.ts", "src", "custom.d.ts"],
   "exclude": ["node_modules"]
 }

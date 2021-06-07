@@ -1,2 +1,2 @@
-export * from './elements/inputs/toggle'
+export * from './elements/toggle'
 
