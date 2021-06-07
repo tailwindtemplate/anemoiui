@@ -1,36 +1,10 @@
 import { Sidebar } from '../src';
 import { GlobeIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
-import {
-    ChevronDownIcon,
-    ChevronRightIcon,
-    DocumentIcon,
-    HomeIcon,
-    TemplateIcon,
-    ViewGridAddIcon
-} from '@heroicons/react/outline';
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
-
-const menu = [
-    { name: 'home', Icon: HomeIcon, url: '/' },
-    {
-        name: 'components',
-        Icon: TemplateIcon,
-        items: [
-            { name: 'modals', url: '/components/modals' }
-        ],
-    },
-    {
-        name: 'elements',
-        Icon: ViewGridAddIcon,
-        items: [
-            { name: 'dropdown', url: '/elements/dropdown' },
-            { name: 'otp input', url: '/elements/otp-input' }
-        ]
-    },
-    { name: 'document', Icon: DocumentIcon, url: '/documents' },
-]
+import { menu } from '../const';
 
 const ToggleList = ({ name, items, Icon, loop }) => {
     const [show, setShow] = useState(false)

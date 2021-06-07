@@ -1,11 +1,11 @@
 import { Dropdown, DropdownOverFlow, Section } from '../../src';
-import { menu } from '../../const';
+import { dropdown } from '../../const';
 
 export default function DropdownPage() {
     return (
         <Section narrow>
-            <DropdownOverFlow label="overflow" items={menu} />
-            <Dropdown label="dropdown" items={menu} />
+            <DropdownOverFlow label="overflow" items={dropdown} />
+            <Dropdown label="dropdown" items={dropdown} />
         </Section>
     )
 }

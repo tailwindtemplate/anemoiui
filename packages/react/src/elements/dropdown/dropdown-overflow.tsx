@@ -52,7 +52,6 @@ export const DropdownOverFlow = ({ label, items, theme = 'light' }: DropdownOver
     }
     useEffect(updatePosition, [open])
     useOutsideClick(ref, () => {
-        console.log('open', open)
         if (open) setOpen(false)
     })
     const onItemClick = () => {
