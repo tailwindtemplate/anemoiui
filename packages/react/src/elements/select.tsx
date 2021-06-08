@@ -8,7 +8,7 @@ type Select = {
   disabled?: boolean;
   Icon?: any;
   src?: string;
-  data: any;
+  data: { title: string }[];
   label?: string;
 };
 
@@ -23,14 +23,9 @@ export default function Select({
   const [open, setOpen] = React.useState(false);
   const [defaultTitle, setDefaultTitle] = React.useState("");
 
-  const handleSelect = (sportTitle: any) => {
-    if (!open) {
-      document.addEventListener("click", handleSelect, false);
-    } else {
-      document.removeEventListener("click", handleSelect, false);
-    }
+  const handleSelect = (title: any) => {
     setOpen(!open);
-    setDefaultTitle(sportTitle);
+    setDefaultTitle(title);
   };
 
   const handleOpen = () => {
@@ -42,7 +37,7 @@ export default function Select({
     : "";
 
   return (
-    <div className="w-80 rounded-xl m-2">
+    <div className="w-80 rounded-xl m-2 relative">
       <div
         className={clsx(
           "border rounded-xl h-14 flex justify-between items-center p-4 focus:border-primary-600 hover:border-primary-400",
@@ -85,14 +80,14 @@ export default function Select({
       </div>
 
       {open && (
-        <div className="border mt-4 rounded-xl shadow-lg">
+        <div className="transform absolute bottom-0 translate-y-full z-10 bg-white w-full overflow-auto max-h-40 border mt-4 rounded-xl shadow-lg">
           {data.map((item, index) => (
             <div
               key={index}
-              onClick={() => handleSelect(data[index].sportTitle)}
-              className="p-4 hover:bg-primary-600 hover:text-white"
+              onClick={() => handleSelect(item.title)}
+              className="p-4 hover:bg-primary-600 hover:text-white cursor-pointer"
             >
-              <span className="select-title">{item.sportTitle}</span>
+              <span className="select-title">{item.title}</span>
             </div>
           ))}
         </div>
@@ -104,16 +99,16 @@ export default function Select({
 export function PreviewSelect() {
   const data = [
     {
-      sportTitle: "Running"
+      title: "Running"
     },
     {
-      sportTitle: "Skating"
+      title: "Skating"
     },
     {
-      sportTitle: "Snow boarding"
+      title: "Snow boarding"
     },
     {
-      sportTitle: "Swimming"
+      title: "Swimming"
     }
   ];
   return (

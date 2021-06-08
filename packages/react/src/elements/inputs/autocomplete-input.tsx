@@ -3,9 +3,12 @@ import clsx from "clsx";
 
 type AutocompleteInput = {
   suggestions?: any;
+  className?: string
+  inputClassName?: string
+  suggestionClassName?: string
 };
 
-export default function AutocompleteInput({ suggestions }: AutocompleteInput) {
+export default function AutocompleteInput({ suggestions, inputClassName, className, suggestionClassName }: AutocompleteInput) {
   const [activeSuggestion, setActiveSuggestion] = React.useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = React.useState([]);
   const [showSuggestions, setShowSuggestions] = React.useState(false);
@@ -65,9 +68,9 @@ export default function AutocompleteInput({ suggestions }: AutocompleteInput) {
                 <li
                   className={clsx(
                     index === activeSuggestion
-                      ? "bg-primary-500 text-white"
+                      ? "bg-primary-500 text-white hover:bg-primary-400"
                       : "",
-                    "p-2"
+                    "p-2 cursor-pointer hover:bg-primary-100"
                   )}
                   key={suggestion}
                   onClick={onClick}
@@ -89,15 +92,17 @@ export default function AutocompleteInput({ suggestions }: AutocompleteInput) {
   };
 
   return (
-    <div className="m-2">
+    <div className={clsx("relative", className)}>
       <input
         type="text"
         onChange={onChange}
         onKeyDown={onKeyDown}
         value={userInput}
-        className="w-80 py-2 text-sm rounded-xl px-4 focus:border-primary-400 focus:outline-none border w-full h-14 placeholder-neutral-300"
+        className={clsx("w-80 py-2 text-sm rounded-xl px-4 focus:border-primary-400 focus:outline-none border w-full h-14 placeholder-neutral-300", inputClassName)}
       />
-      {suggestionsListComponent()}
+      <div className={clsx("transform absolute bottom-0 translate-y-full z-10 bg-white", suggestionClassName)}>
+        {suggestionsListComponent()}
+      </div>
     </div>
   );
 }

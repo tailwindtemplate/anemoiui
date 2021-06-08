@@ -3,35 +3,39 @@ import clsx from "clsx";
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline'
 
 type NumberInput = {
-  color?: string;
-  custom?: string;
-  type?: string;
+  className?: string;
+  inputClassName?: string;
+  buttonClassName?: string;
+  type?: 'primary' | 'error' | string;
 };
 
 const TYPE_MAPS: any = {
-  PRIMARY: "border-primary-400",
-  ERROR: "border-red-400"
+  primary: "border-primary-400",
+  error: "border-red-400"
 };
 
-export default function NumberInput({ color, custom, type }: NumberInput) {
-  const [value, setValue] = React.useState(0);
+export default function NumberInput({ className, inputClassName, buttonClassName, type }: NumberInput) {
+  const [value, setValue] = React.useState('0');
+  const func = (type: string) => {
+      let v = parseInt(value) || 0
+      if (type == '+') v++
+      else v--
+      setValue(v.toString())
+  }
   return (
     <div
       className={clsx(
         "flex w-40 rounded-2xl justify-center items-center p-2 border h-14 m-2",
-        custom,
+        className,
         type && TYPE_MAPS[type]
       )}
     >
-      <button
-        onClick={() => setValue(value > 0 ? value - 1 : value)}
-        className="mx-2"
-      >
-        <MinusIcon className='w-5 h-5' />
+      <button onClick={() => func('-')} className={clsx('mx-2', buttonClassName)}>
+          <MinusIcon className='w-5 h-5' />
       </button>
-      <div className="mx-2 w-5">{value}</div>
-      <button onClick={() => setValue(value + 1)} className="mx-2">
-        <PlusIcon className='w-5 h-5' />
+      <input type="number" className={clsx("mx-2 w-5", inputClassName)} value={value} onChange={(e) => setValue(e.target.value)}/>
+      <button onClick={() => func('+')} className={clsx('mx-2', buttonClassName)}>
+          <PlusIcon className='w-5 h-5' />
       </button>
     </div>
   );
@@ -41,9 +45,9 @@ export function PreviewNumberInput() {
   return (
     <div>
       <NumberInput />
-      <NumberInput type="PRIMARY" />
-      <NumberInput type="ERROR" />
-      <NumberInput custom="border-green-500" />
+      <NumberInput type="primary" />
+      <NumberInput type="error" />
+      <NumberInput className="border-green-500" />
     </div>
   );
 }
