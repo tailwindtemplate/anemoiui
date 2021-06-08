@@ -84,7 +84,17 @@ export default function Avatar({
   const placeholder = useMemo(() => renderAvatar(type, loading, size, name), [loading, size, name, type])
   const avatar = useMemo(() => {
     if (type == 'add-avatar') return <PlusIcon width={13} height={13} />
-    if (src) return <img className="invisible" src={src} onError={() => setLoading(true)} onLoad={() => setLoading(false)}/>
+    if (src) return (
+        <img
+            ref={(ref) => {
+              if (ref && ref.complete) setLoading(false)
+            }}
+            className="invisible"
+            src={src}
+            onError={() => setLoading(true)}
+            onLoad={() => setLoading(false)}
+        />
+    )
     return null
   }, [src, type])
 
@@ -93,9 +103,9 @@ export default function Avatar({
             hasBorder={hasBorder}
             isRounded={isRounded}
             className={clsx(
-                "relative bg-primary-600 flex items-center justify-center bg-cover bg-no-repeat bg-center",
+                "relative flex items-center justify-center bg-cover bg-no-repeat bg-center",
                 SIZE[size],
-                type === "add-avatar" && "bg-white border border-dashed",
+                type === "add-avatar" ? "bg-white border border-dashed" : 'bg-primary-600',
                 className
             )}
             style={{ backgroundImage: `url('${src}')` }}
