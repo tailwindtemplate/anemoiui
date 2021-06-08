@@ -1,36 +1,27 @@
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react';
 interface PopoverControl {
-  data?: any[],
   transform?: Object
   namePopover?: string,
   iconPath?: string,
   classIcon?: string,
   // class
-  classGroundNameDescription?: string,
-  classHref?: string,
-  classNameHref?: string,
-  classDescription?: string,
   classNamePopover?: string,
   classPopover?: string,
   classPopoverPanel?: string,
   classPopoverButton?: string,
 };
 export const PopoverControl: React.FC<PopoverControl> = ({
-  data,
   transform,
   namePopover,
   iconPath,
   classIcon,
   // class
-  classGroundNameDescription,
-  classHref,
-  classNameHref,
-  classDescription,
   classNamePopover,
   classPopover,
   classPopoverPanel,
   classPopoverButton,
+  children
 }) => {
   return (
     <Popover className={classPopover} >
@@ -55,27 +46,7 @@ export const PopoverControl: React.FC<PopoverControl> = ({
               {...transform}
             >
               <Popover.Panel className={classPopoverPanel}>
-                {
-                  data?.map((item, index) => (
-                    <a
-                      key={index}
-                      href={item.href}
-                      className={classHref}
-                    >
-                      <item.icon aria-hidden="true" />
-                      <div
-                        className={classGroundNameDescription}
-                      >
-                        <p className={classNameHref}>
-                          {item.name}
-                        </p>
-                        <p className={classDescription}>
-                          {item.description}
-                        </p>
-                      </div>
-                    </a>
-                  ))
-                }
+                {children}
               </Popover.Panel>
             </Transition>
           </>
