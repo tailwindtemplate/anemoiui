@@ -34,11 +34,11 @@ export default function Textarea({ custom, type, helperText, ...rest }: Textarea
 export function PreviewTextarea() {
   return (
     <div>
-      <Textarea placeholder="place holder" />
-      <Textarea custom="border-primary-400" />
-      <Textarea type="PRIMARY" />
-      <Textarea type="ERROR" />
-      <Textarea helperText="Helper text" />
+      <Textarea placeholder="Placeholder" />
+      <Textarea placeholder="Placeholder" custom="border-primary-400" />
+      <Textarea placeholder="Placeholder" type="PRIMARY" />
+      <Textarea placeholder="Placeholder" type="ERROR" />
+      <Textarea placeholder="Placeholder" helperText="Helper text" />
     </div>
   );
 }

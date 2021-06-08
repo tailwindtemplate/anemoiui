@@ -92,13 +92,14 @@ export default function AutocompleteInput({ suggestions, inputClassName, classNa
   };
 
   return (
-    <div className={clsx("relative", className)}>
+    <div className={clsx("relative m-2", className)}>
       <input
         type="text"
         onChange={onChange}
         onKeyDown={onKeyDown}
         value={userInput}
-        className={clsx("w-80 py-2 text-sm rounded-xl px-4 focus:border-primary-400 focus:outline-none border w-full h-14 placeholder-neutral-300", inputClassName)}
+        className={clsx("w-80 py-2 text-sm rounded-xl px-4 focus:border-primary-400 focus:outline-none border h-14 placeholder-neutral-300", inputClassName)}
+        placeholder='Type to show suggestions'
         {...rest}
       />
       <div className={clsx("transform absolute bottom-0 translate-y-full z-10 bg-white", suggestionClassName)}>
