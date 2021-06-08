@@ -44,7 +44,7 @@ const renderAvatar = (type: string, load: boolean, size: string, name?: string) 
       );
     }
 
-    return <UserCircleIcon fill="#FFF" className={SIZE_DEFAULT[size]} />;
+    return <UserCircleIcon className={clsx(SIZE_DEFAULT[size], 'text-white')} />;
   }
   return null
 };

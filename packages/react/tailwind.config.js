@@ -1,5 +1,4 @@
 module.exports = {
-    mode: 'jit',
     purge: {
         content: ['./pages/**/*.tsx', './src/**/*.tsx'],
         options: {
@@ -49,7 +48,10 @@ module.exports = {
             },
           fontSize: {
             tiny: ".5rem",
-          }
+          },
+            borderWidth: {
+                6: "6px"
+            }
         },
     },
     variants: {

@@ -16,6 +16,11 @@ const SIZE: any = {
   BASE: "w-8 h-8"
 };
 
+const BORDER: any = {
+  SM: "border-6",
+  BASE: "border-8"
+};
+
 export default function Radio({
   checked = false,
   onClick,
@@ -26,26 +31,21 @@ export default function Radio({
   caption
 }: Radio) {
   return (
-    <label
-      className={clsx(
-        "m-2 flex justify-center items-center",
-        disabled && "opacity-50 cursor-not-allowed select-none"
-      )}
-      onClick={onClick}
-    >
-      <input
-        type="radio"
-        className={clsx("text-gray-600", SIZE[size])}
-        checked={checked}
-        disabled={disabled}
-      />
-      <div className="flex flex-col">
-        {label && <span className="ml-2 text-gray-700 text-sm">{label}</span>}
-        {caption && (
-          <span className="ml-2 text-gray-400 text-xs">{caption}</span>
-        )}
+      <div className={clsx('m-2 flex justify-center items-center', disabled && "opacity-50 cursor-not-allowed select-none")} onClick={onClick}>
+         <input
+            type="radio"
+            className="hidden"
+            checked={checked}
+            disabled={disabled}
+          />
+        <div className={clsx('rounded-full border-primary-700', checked ? BORDER[size] : 'border', SIZE[size])} />
+        <div className="flex flex-col">
+               {label && <span className="ml-2 text-gray-700 text-sm">{label}</span>}
+               {caption && (
+                 <span className="ml-2 text-gray-400 text-xs">{caption}</span>
+               )}
+             </div>
       </div>
-    </label>
   );
 }
 
