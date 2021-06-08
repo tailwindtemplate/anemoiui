@@ -1,109 +1,115 @@
-import React from "react";
+import React, { PropsWithChildren, useMemo, useState } from 'react';
 import clsx from "clsx";
-import { PlusIcon } from '@heroicons/react/outline'
-import { UserCircleIcon } from '@heroicons/react/outline'
+import { PlusIcon, UserCircleIcon } from '@heroicons/react/outline'
 
 type Textarea = {
   className?: string;
   src?: string;
-  size?: string;
+  size?: 'xs' | 'sm' | 'md' | string;
   isRounded?: boolean;
   newMessage?: number;
   status?: string;
   hasExtension?: boolean;
-  user?: any;
-  type?: "default-single" | "default-group" | "src" | "add-avatar";
+  name?: string;
+  type?: "src" | "add-avatar";
   hasBorder?: boolean;
 };
 
 const SIZE: any = {
-  XS: "w-8 h-8",
-  SM: "w-12 h-12",
-  BASE: "w-16 h-16"
+  xs: "w-8 h-8",
+  sm: "w-12 h-12",
+  md: "w-16 h-16"
 };
 
 const SHORT_NAME: any = {
-  XS: "text-sm",
-  SM: "text-lg",
-  BASE: "text-2xl"
+  xs: "text-sm",
+  sm: "text-lg",
+  md: "text-2xl"
 };
 
 const SIZE_DEFAULT: any = {
-  XS: "w-4 h-4",
-  SM: "w-6 h-6",
-  BASE: "w-8 h-8"
+  xs: "w-4 h-4",
+  sm: "w-6 h-6",
+  md: "w-8 h-8"
 };
+
+const renderAvatar = (type: string, load: boolean, size: string, name?: string) => {
+  if (type == 'add-avatar') return null
+  if (load) {
+    if (name) {
+      return (
+          <div className={clsx("text-white", SHORT_NAME[size])}>
+            {name}
+          </div>
+      );
+    }
+
+    return <UserCircleIcon fill="#FFF" className={SIZE_DEFAULT[size]} />;
+  }
+  return null
+};
+
+type AvatarWrapper = {
+  hasBorder?: boolean
+  isRounded?: boolean
+  className: string
+  style: {}
+}
+const AvatarWrapper = ({ hasBorder, isRounded, className, style, children }: PropsWithChildren<AvatarWrapper>) => {
+  const rounded = isRounded ? "rounded-full" : 'rounded-xl'
+  if (hasBorder) {
+    return (
+        <div className={clsx('border-2 border-secondary-600 w-min', rounded)}>
+          <div className={clsx(className, 'border-2 border-white', rounded)} style={style}>
+            {children}
+          </div>
+        </div>
+    )
+  }
+  return <div className={clsx(className, rounded)} style={style}>{children}</div>
+}
 
 export default function Avatar({
   className,
-  size = "BASE",
+  size = 'md',
   src,
   isRounded = false,
-  newMessage,
-  status,
   children,
   hasExtension,
-  user,
+  name,
   hasBorder,
-  type = "default-single"
+  type = "src"
 }: React.PropsWithChildren<Textarea>) {
-  const userName = {
-    firstName: "Nhi",
-    lastName: "Yen"
-  };
-  const shortName =
-    userName.firstName.charAt(0).toUpperCase() +
-    "" +
-    userName.lastName.charAt(0).toUpperCase();
+  const [loading, setLoading] = useState(true)
+  const placeholder = useMemo(() => renderAvatar(type, loading, size, name), [loading, size, name, type])
+  const avatar = useMemo(() => {
+    if (type == 'add-avatar') return <PlusIcon width={13} height={13} />
+    if (src) return <img className="invisible" src={src} onError={() => setLoading(true)} onLoad={() => setLoading(false)}/>
+    return null
+  }, [src, type])
 
-  const renderAvatar = () => {
-    switch (type) {
-      case "src":
-        return <img className="invisible" src={src} />;
-      case "default-single":
-            return <UserCircleIcon className={clsx('text-white', SIZE_DEFAULT[size])} />
-      case "default-group":
-        return (
-          <div className={clsx("text-white", SHORT_NAME[size])}>
-            {shortName}
-          </div>
-        );
-      case "add-avatar":
-        return <PlusIcon width={13} height={13} />;
-    }
-  };
   return (
-    <div
-      className={clsx(
-        "relative rounded-xl bg-primary-600 flex items-center justify-center m-2",
-        SIZE[size],
-        isRounded && "!rounded-full",
-        src && "bg-cover bg-no-repeat bg-center",
-        (newMessage || status) && "relative",
-        type === "add-avatar" && "bg-white border border-dashed",
-        hasBorder && "border-2 border-secondary-600",
-        className
-      )}
-      style={{ backgroundImage: `url('${src}')` }}
-    >
-      <div
-        className={clsx(
-          hasBorder &&
-            "border-2 border-white rounded-xl flex items-center justify-center",
-          hasBorder && SIZE[size],
-          isRounded && "!rounded-full"
-        )}
-      >
-        {renderAvatar()}
-        {children}
-      </div>
-      {hasExtension && (
-        <div className="absolute -bottom-1 -right-0.5 bg-primary-900 rounded-full border-2 border-white w-4 h-4 flex justify-center items-center">
-          <PlusIcon fill="#FFF" width={8} height={8} className='text-white' />
-        </div>
-      )}
-    </div>
-  );
+        <AvatarWrapper
+            hasBorder={hasBorder}
+            isRounded={isRounded}
+            className={clsx(
+                "relative bg-primary-600 flex items-center justify-center bg-cover bg-no-repeat bg-center",
+                SIZE[size],
+                type === "add-avatar" && "bg-white border border-dashed",
+                className
+            )}
+            style={{ backgroundImage: `url('${src}')` }}
+        >
+            {avatar}
+            {placeholder}
+            {children}
+            {hasExtension && (
+                <div className="absolute -bottom-1 -right-0.5 bg-primary-900 rounded-full border-2 border-white w-4 h-4 flex justify-center items-center">
+                  <PlusIcon fill="#FFF" width={8} height={8} className='text-white' />
+                </div>
+            )}
+        </AvatarWrapper>
+    )
 }
 
 type NewMessage = {
@@ -137,249 +143,143 @@ export const Status = ({ className }: any) => {
 
 export function PreviewAvatar() {
   return (
-    <div className="flex">
+    <div className="flex space-x-4">
       {/*Oval - default-single*/}
-      <div className="flex flex-col mr-4">
-        <Avatar size="XS" />
-        <Avatar size="SM" />
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" />
+        <Avatar size="sm" />
         <Avatar />
 
-        <Avatar size="XS">
-          <NewMessage className="!-top-1 !-right-1" newMessage={22} />
+        <Avatar size="xs">
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
         </Avatar>
-        <Avatar size="SM">
-          <NewMessage className="!-top-1 !-right-1" newMessage={22} />
-        </Avatar>
-        <Avatar>
-          <NewMessage className="!-top-1 !-right-1" newMessage={22} />
-        </Avatar>
-
-        <Avatar size="XS">
-          <NewMessage className="!-bottom-1 !-right-1" newMessage={22} />
-        </Avatar>
-        <Avatar size="SM">
-          <NewMessage className="!-bottom-1 !-right-1" newMessage={22} />
+        <Avatar size="sm">
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
         </Avatar>
         <Avatar>
-          <NewMessage className="!-bottom-1 !-right-1" newMessage={22} />
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
         </Avatar>
 
-        <Avatar size="XS" hasExtension />
-        <Avatar size="SM" hasExtension />
+        <Avatar size="xs">
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar size="sm">
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+
+        <Avatar size="xs" hasExtension />
+        <Avatar size="sm" hasExtension />
         <Avatar hasExtension />
       </div>
       {/*End Oval-default-single*/}
 
       {/*Round-default-single*/}
-      <div className="flex flex-col mr-4">
-        <Avatar size="XS" isRounded />
-        <Avatar size="SM" isRounded />
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" isRounded />
+        <Avatar size="sm" isRounded />
         <Avatar isRounded />
 
-        <Avatar size="XS" isRounded>
-          <NewMessage className="!-top-1 !-right-1" newMessage={22} />
+        <Avatar size="xs" isRounded>
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
         </Avatar>
-        <Avatar size="SM" isRounded>
-          <NewMessage className="!-top-1 !-right-1" newMessage={22} />
-        </Avatar>
-        <Avatar isRounded>
-          <NewMessage className="!-top-1 !-right-1" newMessage={22} />
-        </Avatar>
-
-        <Avatar size="XS" isRounded>
-          <NewMessage className="!-bottom-1 !-right-1" newMessage={22} />
-        </Avatar>
-        <Avatar size="SM" isRounded>
-          <NewMessage className="!-bottom-1 !-right-1" newMessage={22} />
+        <Avatar size="sm" isRounded>
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
         </Avatar>
         <Avatar isRounded>
-          <NewMessage className="!-bottom-1 !-right-1" newMessage={22} />
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
         </Avatar>
 
-        <Avatar size="XS" hasExtension isRounded />
-        <Avatar size="SM" hasExtension isRounded />
+        <Avatar size="xs" isRounded>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar size="sm" isRounded>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar isRounded>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+
+        <Avatar size="xs" hasExtension isRounded />
+        <Avatar size="sm" hasExtension isRounded />
         <Avatar hasExtension isRounded />
       </div>
       {/*End Round-default-single*/}
 
       {/*Oval default group*/}
-      <div className="flex flex-col mr-4">
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        />
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        />
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        />
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" name="YN"/>
+        <Avatar size="sm" name="YN"/>
+        <Avatar name="YN" />
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+        <Avatar size="xs" name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+        <Avatar size="sm" name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+        <Avatar name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+        <Avatar size="xs" name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+        <Avatar size="sm" name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+        <Avatar name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasExtension
-        />
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasExtension
-        />
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasExtension
-        />
+        <Avatar size="xs" hasExtension name="YN" />
+        <Avatar size="sm" hasExtension name="YN" />
+        <Avatar hasExtension name="YN" />
       </div>
 
       {/*Round default group*/}
-      <div className="flex flex-col mr-4">
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        />
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        />
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        />
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" isRounded name="YN" />
+        <Avatar size="sm" isRounded name="YN" />
+        <Avatar isRounded name="YN" />
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+        <Avatar size="xs" isRounded name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+        <Avatar size="sm" isRounded name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+        <Avatar isRounded name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+        <Avatar size="xs" isRounded name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+        <Avatar size="sm" isRounded name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+        <Avatar isRounded name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasExtension
-          isRounded
-        />
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasExtension
-          isRounded
-        />
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasExtension
-          isRounded
-        />
+        <Avatar size="xs" hasExtension isRounded name="YN" />
+        <Avatar size="sm" hasExtension isRounded name="YN" />
+        <Avatar hasExtension isRounded name="YN" />
       </div>
 
       {/*Oval - src*/}
-      <div className="flex flex-col mr-4">
+      <div className="flex flex-col space-y-4">
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
         />
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
         />
         <Avatar
@@ -389,58 +289,58 @@ export function PreviewAvatar() {
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
         >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           newMessage={22}
           type="src"
         >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           newMessage={22}
           type="src"
         >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
         >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           newMessage={22}
           type="src"
         >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           newMessage={22}
           type="src"
         >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
 
         <Avatar
-          size="XS"
+          size="xs"
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           hasExtension
           type="src"
         />
         <Avatar
-          size="SM"
+          size="sm"
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           hasExtension
           type="src"
@@ -454,16 +354,16 @@ export function PreviewAvatar() {
       {/*End Oval-src*/}
 
       {/*Rounded-src*/}
-      <div className="flex flex-col mr-4">
+      <div className="flex flex-col space-y-4">
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           isRounded
         />
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
           isRounded
         />
@@ -475,20 +375,20 @@ export function PreviewAvatar() {
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           newMessage={22}
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
@@ -496,25 +396,25 @@ export function PreviewAvatar() {
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="!-top-1 !-right-1" />
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
         </Avatar>
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           newMessage={22}
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
@@ -522,18 +422,18 @@ export function PreviewAvatar() {
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="!-bottom-1 !-right-1" />
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
         </Avatar>
 
         <Avatar
-          size="XS"
+          size="xs"
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           hasExtension
           type="src"
           isRounded
         />
         <Avatar
-          size="SM"
+          size="sm"
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           hasExtension
           type="src"
@@ -549,216 +449,135 @@ export function PreviewAvatar() {
       {/*End Rounded-src*/}
 
       {/*Default-Oval-status*/}
-      <div className="flex flex-col mr-4">
-        <Avatar size="XS" type="add-avatar" />
-        <Avatar size="SM" type="add-avatar" />
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" type="add-avatar" />
+        <Avatar size="sm" type="add-avatar" />
         <Avatar type="add-avatar" />
 
-        <Avatar size="XS">
+        <Avatar size="xs">
           <Status className="-top-1 -right-1" />
         </Avatar>
-        <Avatar size="SM" status="online">
+        <Avatar size="sm" status="online">
           <Status className="-top-1 -right-1" />
         </Avatar>
         <Avatar status="online">
           <Status className="-top-1 -right-1" />
         </Avatar>
 
-        <Avatar size="XS">
+        <Avatar size="xs">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar size="SM" status="online">
+        <Avatar size="sm" status="online">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar status="online">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
 
-        <Avatar size="XS" hasBorder />
-        <Avatar size="SM" hasBorder />
+        <Avatar size="xs" hasBorder />
+        <Avatar size="sm" hasBorder />
         <Avatar hasBorder />
       </div>
 
       {/*Default-Rounded-status*/}
-      <div className="flex flex-col mr-4">
-        <Avatar size="XS" type="add-avatar" isRounded />
-        <Avatar size="SM" type="add-avatar" isRounded />
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" type="add-avatar" isRounded />
+        <Avatar size="sm" type="add-avatar" isRounded />
         <Avatar type="add-avatar" isRounded />
 
-        <Avatar size="XS" isRounded>
+        <Avatar size="xs" isRounded>
           <Status className="-top-1 -right-1" />
         </Avatar>
-        <Avatar size="SM" isRounded>
+        <Avatar size="sm" isRounded>
           <Status className="-top-1 -right-1" />
         </Avatar>
         <Avatar isRounded>
           <Status className="-top-1 -right-1" />
         </Avatar>
 
-        <Avatar size="XS" isRounded>
+        <Avatar size="xs" isRounded>
           <Status className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar size="SM" isRounded>
+        <Avatar size="sm" isRounded>
           <Status className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar isRounded>
           <Status className="-bottom-1 -right-1" />
         </Avatar>
 
-        <Avatar size="XS" hasBorder isRounded />
-        <Avatar size="SM" hasBorder isRounded />
+        <Avatar size="xs" hasBorder isRounded />
+        <Avatar size="sm" hasBorder isRounded />
         <Avatar hasBorder isRounded />
       </div>
 
       {/*Oval-default group-status*/}
-      <div className="flex flex-col mr-4">
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" name="YN">
           <Status className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
+        <Avatar size="sm" name="YN">
           <Status className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
+        <Avatar name="YN">
           <Status className="-top-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
+        <Avatar size="xs" name="YN">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
+        <Avatar size="sm" name="YN">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-        >
+        <Avatar name="YN">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasBorder
-        />
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasBorder
-        />
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          hasBorder
-        />
+        <Avatar size="xs" hasBorder name="YN" />
+        <Avatar size="sm" hasBorder name="YN" />
+        <Avatar hasBorder name="YN" />
       </div>
       {/*Oval-default group-status*/}
 
       {/*Round-default group-status*/}
-      <div className="flex flex-col mr-4">
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" isRounded name="YN">
           <Status className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
+        <Avatar size="sm" isRounded name="YN">
           <Status className="-top-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
+        <Avatar isRounded name="YN">
           <Status className="-top-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
+        <Avatar size="xs" name="YN" isRounded>
           <Status className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
+        <Avatar size="sm" name="YN" isRounded>
           <Status className="-bottom-1 -right-1" />
         </Avatar>
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-        >
+        <Avatar isRounded name="YN">
           <Status className="-bottom-1 -right-1" />
         </Avatar>
 
-        <Avatar
-          size="XS"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-          hasBorder
-        />
-        <Avatar
-          size="SM"
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-          hasBorder
-        />
-        <Avatar
-          user={{ firstName: "Nhi", lastName: "Yen" }}
-          type="default-group"
-          isRounded
-          hasBorder
-        />
+        <Avatar size="xs" isRounded hasBorder name="YN" />
+        <Avatar size="sm" isRounded hasBorder name="YN" />
+        <Avatar isRounded hasBorder name="YN" />
       </div>
       {/*Round-default group-status*/}
 
       {/*Oval-src-status*/}
-      <div className="flex flex-col mr-4">
+      <div className="flex flex-col space-y-4">
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
         >
           <Status className="-top-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
         >
           <Status className="-top-1 -right-1" />
@@ -772,14 +591,14 @@ export function PreviewAvatar() {
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
         >
           <Status className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
         >
           <Status className="-bottom-1 -right-1" />
@@ -793,13 +612,13 @@ export function PreviewAvatar() {
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           hasBorder
         />
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
           hasBorder
         />
@@ -812,20 +631,22 @@ export function PreviewAvatar() {
       {/*End Oval-src-status*/}
 
       {/*Round-src-status*/}
-      <div className="flex flex-col mr-4">
+      <div className="flex flex-col space-y-4">
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           isRounded
+          name="YN"
         >
           <Status className="-top-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
           isRounded
+          name="YN"
         >
           <Status className="-top-1 -right-1" />
         </Avatar>
@@ -833,23 +654,26 @@ export function PreviewAvatar() {
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           type="src"
           isRounded
+          name="YN"
         >
           <Status className="-top-1 -right-1" />
         </Avatar>
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           isRounded
+          name="YN"
         >
           <Status className="-bottom-1 -right-1" />
         </Avatar>
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
           isRounded
+          name="YN"
         >
           <Status className="-bottom-1 -right-1" />
         </Avatar>
@@ -857,29 +681,33 @@ export function PreviewAvatar() {
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           type="src"
           isRounded
+          name="YN"
         >
           <Status className="-bottom-1 -right-1" />
         </Avatar>
 
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="XS"
+          size="xs"
           type="src"
           hasBorder
           isRounded
+          name="YN"
         />
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-          size="SM"
+          size="sm"
           type="src"
           hasBorder
           isRounded
+          name="YN"
         />
         <Avatar
           src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
           type="src"
           hasBorder
           isRounded
+          name="YN"
         />
       </div>
       {/*End Round-src-status*/}

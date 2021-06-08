@@ -47,7 +47,7 @@ export default function Select({
       >
         <div className="flex items-center">
           {Icon && <Icon className={clsx(disableStyle, "mr-2 w-5 h-5")} />}
-          {src && <Avatar size="XS" className={clsx("mr-2", disableStyle)} />}
+          {src && <Avatar size="xs" className={clsx("mr-2", disableStyle)} />}
           <div>
             <span
               className={`${

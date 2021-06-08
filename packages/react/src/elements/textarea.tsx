@@ -1,4 +1,4 @@
-import React from "react";
+import React, { TextareaHTMLAttributes } from 'react';
 import clsx from "clsx";
 
 type Textarea = {
@@ -12,7 +12,7 @@ const TYPE_MAPS: any = {
   ERROR: "border-red-400"
 };
 
-export default function Textarea({ custom, type, helperText }: Textarea) {
+export default function Textarea({ custom, type, helperText, ...rest }: Textarea & TextareaHTMLAttributes<{}>) {
 
   return (
     <div className="m-2">
@@ -22,8 +22,8 @@ export default function Textarea({ custom, type, helperText }: Textarea) {
           custom,
           type && TYPE_MAPS[type]
         )}
-        placeholder="Placeholder"
-      ></textarea>
+        {...rest}
+      />
       {helperText && (
         <div className="text-xs text-neutral-300">{helperText}</div>
       )}
@@ -34,7 +34,7 @@ export default function Textarea({ custom, type, helperText }: Textarea) {
 export function PreviewTextarea() {
   return (
     <div>
-      <Textarea />
+      <Textarea placeholder="place holder" />
       <Textarea custom="border-primary-400" />
       <Textarea type="PRIMARY" />
       <Textarea type="ERROR" />
