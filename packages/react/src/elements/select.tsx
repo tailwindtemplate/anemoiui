@@ -1,7 +1,5 @@
 import React from "react";
-import ArrowDown from "../../assets/images/arrow_down.svg";
-import ArrowUp from "../../assets/images/arrow_up.svg";
-import User from "../../assets/images/user.svg";
+import { UserIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import clsx from "clsx";
 import Avatar from "elements/avatar";
 
@@ -53,7 +51,7 @@ export default function Select({
         onClick={handleOpen}
       >
         <div className="flex items-center">
-          {Icon && <Icon className={clsx(disableStyle, "mr-2")} />}
+          {Icon && <Icon className={clsx(disableStyle, "mr-2 w-5 h-5")} />}
           {src && <Avatar size="XS" className={clsx("mr-2", disableStyle)} />}
           <div>
             <span
@@ -78,13 +76,11 @@ export default function Select({
           </div>
         </div>
         {open ? (
-          <ArrowUp
-            className={disableStyle}
+          <ChevronUpIcon
+            className={clsx(disableStyle, 'w-5 h-5')}
           />
         ) : (
-          <ArrowDown
-            className={disableStyle}
-          />
+          <ChevronDownIcon className={clsx(disableStyle, 'w-5 h-5')} />
         )}
       </div>
 
@@ -138,24 +134,24 @@ export function PreviewSelect() {
         />
       </div>
       <div>
-        <Select placeholder="Please select the sport" Icon={User} data={data} />
+        <Select placeholder="Please select the sport" Icon={UserIcon} data={data} />
         <Select
           placeholder="Please select the sport"
           disabled
-          Icon={User}
+          Icon={UserIcon}
           data={data}
         />
 
         <Select
           placeholder="Please select the sport"
-          Icon={User}
+          Icon={UserIcon}
           data={data}
           label="Label"
         />
         <Select
           placeholder="Please select the sport"
           disabled
-          Icon={User}
+          Icon={UserIcon}
           data={data}
           label="Label"
         />

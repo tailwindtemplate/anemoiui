@@ -1,7 +1,6 @@
 import React from "react";
-import Plus from "../../../assets/images/plus.svg";
-import Minus from "../../../assets/images/minus.svg";
 import clsx from "clsx";
+import { PlusIcon, MinusIcon } from '@heroicons/react/outline'
 
 type NumberInput = {
   color?: string;
@@ -28,11 +27,11 @@ export default function NumberInput({ color, custom, type }: NumberInput) {
         onClick={() => setValue(value > 0 ? value - 1 : value)}
         className="mx-2"
       >
-        <Minus />
+        <MinusIcon className='w-5 h-5' />
       </button>
       <div className="mx-2 w-5">{value}</div>
       <button onClick={() => setValue(value + 1)} className="mx-2">
-        <Plus />
+        <PlusIcon className='w-5 h-5' />
       </button>
     </div>
   );

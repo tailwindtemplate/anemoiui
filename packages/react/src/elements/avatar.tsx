@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import DefaultAvatar from "../../assets/images/default-avatar.svg";
-import PlusOutline from "../../assets/images/plus_outline.svg";
+import { PlusIcon } from '@heroicons/react/outline'
+import { UserCircleIcon } from '@heroicons/react/outline'
 
 type Textarea = {
   className?: string;
@@ -61,7 +61,7 @@ export default function Avatar({
       case "src":
         return <img className="invisible" src={src} />;
       case "default-single":
-        return <DefaultAvatar fill="#FFF" className={SIZE_DEFAULT[size]} />;
+            return <UserCircleIcon className={clsx('text-white', SIZE_DEFAULT[size])} />
       case "default-group":
         return (
           <div className={clsx("text-white", SHORT_NAME[size])}>
@@ -69,7 +69,7 @@ export default function Avatar({
           </div>
         );
       case "add-avatar":
-        return <PlusOutline width={13} height={13} />;
+        return <PlusIcon width={13} height={13} />;
     }
   };
   return (
@@ -99,7 +99,7 @@ export default function Avatar({
       </div>
       {hasExtension && (
         <div className="absolute -bottom-1 -right-0.5 bg-primary-900 rounded-full border-2 border-white w-4 h-4 flex justify-center items-center">
-          <PlusOutline fill="#FFF" width={8} height={8} />
+          <PlusIcon fill="#FFF" width={8} height={8} className='text-white' />
         </div>
       )}
     </div>

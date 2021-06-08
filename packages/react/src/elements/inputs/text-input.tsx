@@ -1,5 +1,5 @@
 import React from "react";
-import User from "../../../assets/images/user.svg";
+import { UserIcon } from '@heroicons/react/outline'
 import clsx from "clsx";
 
 type TextInput = {
@@ -31,7 +31,7 @@ export default function TextInput({
       <div>
         {LeftIcon && (
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-            <LeftIcon />
+            <LeftIcon className='w-5 h-5' />
           </span>
         )}
         <input
@@ -46,7 +46,7 @@ export default function TextInput({
         />
         {RightIcon && (
           <span className="absolute inset-y-0 right-0 flex items-center pr-2">
-            <RightIcon />
+            <RightIcon className='w-5 h-5' />
           </span>
         )}
       </div>
@@ -58,8 +58,8 @@ export function PreviewTextInput() {
   return (
     <div>
       <TextInput className="w-80" />
-      <TextInput LeftIcon={User} className="w-80" />
-      <TextInput LeftIcon={User} RightIcon={User} className="w-80" />
+      <TextInput LeftIcon={UserIcon} className="w-80" />
+      <TextInput LeftIcon={UserIcon} RightIcon={UserIcon} className="w-80" />
       <TextInput className="w-80" type="ERROR" />
       <TextInput className="w-80" disabled />
     </div>
