@@ -11,7 +11,7 @@ export const TabControl = ({ items, active, onClick }: TabControl) => {
     return (
         <div className="border-b flex border-gray-100">
             {items.map(({ name, id }) => (
-                <div onClick={() => onClick(id)} className={clsx('rounded-t-md cursor-pointer p-4', active == id && 'bg-gray-100' )} style={{ marginBottom: -1 }}>
+                <div key={id} onClick={() => onClick(id)} className={clsx('rounded-t-md cursor-pointer p-4', active == id && 'bg-gray-100' )} style={{ marginBottom: -1 }}>
                     {name}
                 </div>
             ))}

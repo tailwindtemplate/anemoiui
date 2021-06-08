@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dropdown } from 'elements/dropdown'
+import { Dropdown } from '../elements'
 
 type Header = {
     mainNavigation: any[]
