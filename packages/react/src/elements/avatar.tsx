@@ -1,0 +1,726 @@
+import React, { PropsWithChildren, useMemo, useState } from 'react';
+import clsx from "clsx";
+import { PlusIcon, UserCircleIcon } from '@heroicons/react/outline'
+
+type Textarea = {
+  className?: string;
+  src?: string;
+  size?: 'xs' | 'sm' | 'md' | string;
+  isRounded?: boolean;
+  newMessage?: number;
+  status?: string;
+  hasExtension?: boolean;
+  name?: string;
+  type?: "src" | "add-avatar";
+  hasBorder?: boolean;
+};
+
+const SIZE: any = {
+  xs: "w-8 h-8",
+  sm: "w-12 h-12",
+  md: "w-16 h-16"
+};
+
+const SHORT_NAME: any = {
+  xs: "text-sm",
+  sm: "text-lg",
+  md: "text-2xl"
+};
+
+const SIZE_DEFAULT: any = {
+  xs: "w-4 h-4",
+  sm: "w-6 h-6",
+  md: "w-8 h-8"
+};
+
+const renderAvatar = (type: string, load: boolean, size: string, name?: string) => {
+  if (type == 'add-avatar') return null
+  if (load) {
+    if (name) {
+      return (
+          <div className={clsx("text-white", SHORT_NAME[size])}>
+            {name}
+          </div>
+      );
+    }
+
+    return <UserCircleIcon className={clsx(SIZE_DEFAULT[size], 'text-white')} />;
+  }
+  return null
+};
+
+type AvatarWrapper = {
+  hasBorder?: boolean
+  isRounded?: boolean
+  className: string
+  style: {}
+}
+const AvatarWrapper = ({ hasBorder, isRounded, className, style, children }: PropsWithChildren<AvatarWrapper>) => {
+  const rounded = isRounded ? "rounded-full" : 'rounded-xl'
+  if (hasBorder) {
+    return (
+        <div className={clsx('border-2 border-secondary-600 w-min', rounded)}>
+          <div className={clsx(className, 'border-2 border-white', rounded)} style={style}>
+            {children}
+          </div>
+        </div>
+    )
+  }
+  return <div className={clsx(className, rounded)} style={style}>{children}</div>
+}
+
+export default function Avatar({
+  className,
+  size = 'md',
+  src,
+  isRounded = false,
+  children,
+  hasExtension,
+  name,
+  hasBorder,
+  type = "src"
+}: React.PropsWithChildren<Textarea>) {
+  const [loading, setLoading] = useState(true)
+  const placeholder = useMemo(() => renderAvatar(type, loading, size, name), [loading, size, name, type])
+  const avatar = useMemo(() => {
+    if (type == 'add-avatar') return <PlusIcon width={13} height={13} />
+    if (src) return (
+        <img
+            ref={(ref) => {
+              if (ref && ref.complete) setLoading(false)
+            }}
+            className="invisible"
+            src={src}
+            onError={() => setLoading(true)}
+            onLoad={() => setLoading(false)}
+        />
+    )
+    return null
+  }, [src, type])
+
+  return (
+        <AvatarWrapper
+            hasBorder={hasBorder}
+            isRounded={isRounded}
+            className={clsx(
+                "relative flex items-center justify-center bg-cover bg-no-repeat bg-center",
+                SIZE[size],
+                type === "add-avatar" ? "bg-white border border-dashed" : 'bg-primary-600',
+                className
+            )}
+            style={{ backgroundImage: `url('${src}')` }}
+        >
+            {avatar}
+            {placeholder}
+            {children}
+            {hasExtension && (
+                <div className="absolute -bottom-1 -right-0.5 bg-primary-900 rounded-full border-2 border-white w-4 h-4 flex justify-center items-center">
+                  <PlusIcon fill="#FFF" width={8} height={8} className='text-white' />
+                </div>
+            )}
+        </AvatarWrapper>
+    )
+}
+
+type NewMessage = {
+  newMessage: number;
+  className?: string;
+};
+
+export const NewMessage = ({ newMessage, className }: NewMessage) => {
+  return (
+    <div
+      className={clsx(
+        "absolute text-tiny bg-red-600 text-white rounded-full w-4 h-4 flex justify-center items-center",
+        className
+      )}
+    >
+      {newMessage}
+    </div>
+  );
+};
+
+export const Status = ({ className }: any) => {
+  return (
+    <div
+      className={clsx(
+        "absolute w-3 h-3 bg-green-500 rounded-full border-2 border-white",
+        className
+      )}
+    />
+  );
+};
+
+export function PreviewAvatar() {
+  return (
+    <div className="flex space-x-4">
+      {/*Oval - default-single*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" />
+        <Avatar size="sm" />
+        <Avatar />
+
+        <Avatar size="xs">
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar size="sm">
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar>
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
+        </Avatar>
+
+        <Avatar size="xs">
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar size="sm">
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+
+        <Avatar size="xs" hasExtension />
+        <Avatar size="sm" hasExtension />
+        <Avatar hasExtension />
+      </div>
+      {/*End Oval-default-single*/}
+
+      {/*Round-default-single*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" isRounded />
+        <Avatar size="sm" isRounded />
+        <Avatar isRounded />
+
+        <Avatar size="xs" isRounded>
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar size="sm" isRounded>
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar isRounded>
+          <NewMessage className="-top-1 -right-1" newMessage={22} />
+        </Avatar>
+
+        <Avatar size="xs" isRounded>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar size="sm" isRounded>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+        <Avatar isRounded>
+          <NewMessage className="-bottom-1 -right-1" newMessage={22} />
+        </Avatar>
+
+        <Avatar size="xs" hasExtension isRounded />
+        <Avatar size="sm" hasExtension isRounded />
+        <Avatar hasExtension isRounded />
+      </div>
+      {/*End Round-default-single*/}
+
+      {/*Oval default group*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" name="YN"/>
+        <Avatar size="sm" name="YN"/>
+        <Avatar name="YN" />
+
+        <Avatar size="xs" name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" hasExtension name="YN" />
+        <Avatar size="sm" hasExtension name="YN" />
+        <Avatar hasExtension name="YN" />
+      </div>
+
+      {/*Round default group*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" isRounded name="YN" />
+        <Avatar size="sm" isRounded name="YN" />
+        <Avatar isRounded name="YN" />
+
+        <Avatar size="xs" isRounded name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" isRounded name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar isRounded name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" isRounded name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" isRounded name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar isRounded name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" hasExtension isRounded name="YN" />
+        <Avatar size="sm" hasExtension isRounded name="YN" />
+        <Avatar hasExtension isRounded name="YN" />
+      </div>
+
+      {/*Oval - src*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+        />
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+        >
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          newMessage={22}
+          type="src"
+        >
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          newMessage={22}
+          type="src"
+        >
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          newMessage={22}
+          type="src"
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          newMessage={22}
+          type="src"
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          size="xs"
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+        />
+        <Avatar
+          size="sm"
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+        />
+      </div>
+      {/*End Oval-src*/}
+
+      {/*Rounded-src*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          isRounded
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+          isRounded
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+          isRounded
+        />
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          newMessage={22}
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          newMessage={22}
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          newMessage={22}
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          newMessage={22}
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          size="xs"
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+          isRounded
+        />
+        <Avatar
+          size="sm"
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+          isRounded
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+          isRounded
+        />
+      </div>
+      {/*End Rounded-src*/}
+
+      {/*Default-Oval-status*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" type="add-avatar" />
+        <Avatar size="sm" type="add-avatar" />
+        <Avatar type="add-avatar" />
+
+        <Avatar size="xs">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" status="online">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar status="online">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" status="online">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar status="online">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" hasBorder />
+        <Avatar size="sm" hasBorder />
+        <Avatar hasBorder />
+      </div>
+
+      {/*Default-Rounded-status*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" type="add-avatar" isRounded />
+        <Avatar size="sm" type="add-avatar" isRounded />
+        <Avatar type="add-avatar" isRounded />
+
+        <Avatar size="xs" isRounded>
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" isRounded>
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar isRounded>
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" isRounded>
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" isRounded>
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar isRounded>
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" hasBorder isRounded />
+        <Avatar size="sm" hasBorder isRounded />
+        <Avatar hasBorder isRounded />
+      </div>
+
+      {/*Oval-default group-status*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" name="YN">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" name="YN">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar name="YN">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" name="YN">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" name="YN">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar name="YN">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" hasBorder name="YN" />
+        <Avatar size="sm" hasBorder name="YN" />
+        <Avatar hasBorder name="YN" />
+      </div>
+      {/*Oval-default group-status*/}
+
+      {/*Round-default group-status*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar size="xs" isRounded name="YN">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" isRounded name="YN">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar isRounded name="YN">
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" name="YN" isRounded>
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar size="sm" name="YN" isRounded>
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar isRounded name="YN">
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar size="xs" isRounded hasBorder name="YN" />
+        <Avatar size="sm" isRounded hasBorder name="YN" />
+        <Avatar isRounded hasBorder name="YN" />
+      </div>
+      {/*Round-default group-status*/}
+
+      {/*Oval-src-status*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+        >
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+        >
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+        >
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          hasBorder
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+          hasBorder
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+          hasBorder
+        />
+      </div>
+      {/*End Oval-src-status*/}
+
+      {/*Round-src-status*/}
+      <div className="flex flex-col space-y-4">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          isRounded
+          name="YN"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+          isRounded
+          name="YN"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+          isRounded
+          name="YN"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          isRounded
+          name="YN"
+        >
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+          isRounded
+          name="YN"
+        >
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+          isRounded
+          name="YN"
+        >
+          <Status className="-bottom-1 -right-1" />
+        </Avatar>
+
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          hasBorder
+          isRounded
+          name="YN"
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="sm"
+          type="src"
+          hasBorder
+          isRounded
+          name="YN"
+        />
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+          hasBorder
+          isRounded
+          name="YN"
+        />
+      </div>
+      {/*End Round-src-status*/}
+    </div>
+  );
+}
