@@ -32,6 +32,18 @@ module.exports = {
                     200: '#CA94EC',
                     100: '#DFBFF3',
                     50: '#F2E5FA',
+                },
+                neutral: {
+                    900: '#000000',
+                    800: '#212121',
+                    700: '#3B3B3B',
+                    600: '#777777',
+                    500: '#B1B1B1',
+                    400: '#C6C6C6',
+                    300: '#D6D6D6',
+                    200: '#EBEBEB',
+                    100: '#F5F5F5',
+                    50: '#FFFFFF',
                 }
             },
             spacing: {
@@ -41,6 +53,12 @@ module.exports = {
                 'lg': '2rem',
                 'xl': '2.5rem',
             },
+            fontSize: {
+                tiny: ".5rem",
+            },
+            borderWidth: {
+                6: "6px"
+            }
         },
     },
     variants: {

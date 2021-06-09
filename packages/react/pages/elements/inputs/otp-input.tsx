@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { OTPInput, Section } from '../../src';
+import { OTPInput, Section } from '../../../src';
 
 export default function OtpInputPage() {
     const [otp, setOtp] = useState('')
