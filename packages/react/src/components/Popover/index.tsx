@@ -1,9 +1,10 @@
-import { Popover, Transition } from '@headlessui/react'
+import { Popover, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 type PopoverControl = {
-  transform?: any[]
+  transform?: any
   namePopover?: string,
-  iconPath?: string,
+  Icon?: any,
   classIcon?: string,
   // class
   classNamePopover?: string,
@@ -11,18 +12,27 @@ type PopoverControl = {
   classPopoverPanel?: string,
   classPopoverButton?: string,
 };
-export const PopoverControl: React.FC<PopoverControl> = ({
-  transform,
-  namePopover,
-  iconPath,
-  classIcon,
+const Transform = {
+  enter: "transition ease-out duration-200",
+  enterFrom: "opacity-0 translate-y-1",
+  enterTo: "opacity-100 translate-y-0",
+  leave: "transition ease-in duration-150",
+  leaveFrom: "opacity-100 translate-y-0",
+  leaveTo: "opacity-0 translate-y-1"
+};
+export const PopoverControl = ({
+  transform = Transform,
+  namePopover = "Popover",
+  Icon = ChevronDownIcon,
+  classIcon = "ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition",
   // class
-  classNamePopover,
-  classPopover,
-  classPopoverPanel,
-  classPopoverButton,
+  classNamePopover = "text-gray-500 font-semibold",
+  classPopover = "relative mt-8",
+  classPopoverPanel = "absolute border z-10 transform  left-0	pt-2 rounded-lg shadow-xl	 mt-2 p-4",
+  classPopoverButton = "text-gray-500 font-semibold inline-flex rounded-lg border group bg-orange-700 px-3 py-2 items-center items-center focus:outline-none rounded-lg border",
   children
 }: PopoverControl) => {
+  console.log('Icon', Icon)
   return (
     <Popover className={classPopover} >
       {
@@ -32,14 +42,9 @@ export const PopoverControl: React.FC<PopoverControl> = ({
               className={classPopoverButton}
             >
               <span className={classNamePopover}>{namePopover}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={classIcon}
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path fillRule="evenodd" d={iconPath} clipRule="evenodd" />
-              </svg>
+              {
+                Icon && <Icon className={classIcon} />
+              }
             </Popover.Button>
             <Transition
               as={Fragment}

@@ -1,5 +1,6 @@
-import { useState, useEffect, PropsWithChildren } from 'react';
+import { useState, useEffect } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 // Component
 import { NextPrev } from './NextPrev';
 import { Dots } from './Dots';
@@ -23,32 +24,35 @@ type Carousel = {
   activeDots?: string,
   classItemDots?: string,
   // icon
-  iconLeft?: Object,
-  iconRight?: Object,
-
+  iconLeft?: any,
+  iconRight?: any,
+  classIconLeft?: string,
+  classIconRight?: string
 }
 export const Carousel = ({
   data,
-  displayNextPrev,
-  defaultCarousel,
-  autoplay,
-  timeAutoplay,
-  loopCarousel,
-  slidesPerView,
-  spacingPerView,
-  snapMode,
-  classCarousel,
-  classItemsCarousel,
+  displayNextPrev = true,
+  defaultCarousel = 0,
+  autoplay = false,
+  timeAutoplay = 1000,
+  loopCarousel = true,
+  slidesPerView = 1,
+  spacingPerView = 15,
+  snapMode = "snap",
+  classCarousel = "carousel relative mt-4",
+  classItemsCarousel = "max-w-sm bg-gray-800 text-white h-60 flex justify-center",
   // Dots
-  activeDots,
-  displayDots,
-  classDots,
-  classItemDots,
+  activeDots = "bg-gray-900",
+  displayDots = true,
+  classDots = "flex pt-2 justify-center",
+  classItemDots = "rounded-none	w-2	h-2 bg-gray-300	p-2 m-2 rounded-2xl",
   // icon
-  iconLeft,
-  iconRight,
+  iconLeft = ChevronLeftIcon,
+  iconRight = ChevronRightIcon,
+  classIconLeft = "absolute text-green-600 cursor-pointer top-2/4 w-8 h-8 left-1",
+  classIconRight = "absolute text-green-600 cursor-pointer top-2/4 w-8 h-8 right-1"
 
-}: PropsWithChildren<Carousel>) => {
+}: Carousel) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: defaultCarousel,
@@ -87,14 +91,16 @@ export const Carousel = ({
       </div>
 
       <NextPrev
-        onClickNextPrev={(e: any) => e.stopPropagation() || slider.next()}
-        icon={iconLeft}
+        onClickNextPrev={(e: any) => e.stopPropagation() || slider.prev()}
+        Icon={iconLeft}
+        Alignment={classIconLeft}
         displayNextPrev={displayNextPrev}
         slider={slider}
       />
       <NextPrev
-        onClickNextPrev={(e: any) => e.stopPropagation() || slider.prev()}
-        icon={iconRight}
+        onClickNextPrev={(e: any) => e.stopPropagation() || slider.next()}
+        Icon={iconRight}
+        Alignment={classIconRight}
         displayNextPrev={displayNextPrev}
         slider={slider}
       />
@@ -105,6 +111,7 @@ export const Carousel = ({
             {
               [...Array(slider.details().size)].map((idx, index) => (
                 <Dots
+                  key={index}
                   classItemDots={classItemDots}
                   activeDots={activeDots}
                   displayDots={displayDots}

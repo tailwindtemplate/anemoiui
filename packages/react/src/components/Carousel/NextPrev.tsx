@@ -1,17 +1,18 @@
-import { PropsWithChildren } from 'react';
+
 type NextPrev = {
   onClickNextPrev: (e: any) => void,
-  icon?: Object,
+  Icon?: any,
+  Alignment?: string,
   displayNextPrev?: boolean,
   slider: Object,
 };
 export const NextPrev = ({
   onClickNextPrev,
-  icon,
+  Icon,
+  Alignment,
   displayNextPrev,
   slider,
-}: PropsWithChildren<NextPrev>) => {
-
+}: NextPrev) => {
   return (
     slider &&
     (
@@ -19,7 +20,9 @@ export const NextPrev = ({
         onClick={onClickNextPrev}
         style={{ visibility: displayNextPrev ? 'visible' : 'hidden' }}
       >
-        {icon}
+        {
+          Icon && <Icon className={Alignment} />
+        }
       </div>
     )
   )
