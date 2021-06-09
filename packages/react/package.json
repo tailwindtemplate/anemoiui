@@ -7,7 +7,8 @@
     "dev": "next dev",
     "dev:build": "next build",
     "start": "next start",
-    "build": "tsdx build --name @anemoiui/react --tsconfig tsconfig.tsdx.json"
+    "build": "tsdx build --name @anemoiui/react --tsconfig tsconfig.tsdx.json",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' 'pages/**/*.{js,ts,tsx}' 'next-src/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "devDependencies": {
     "@headlessui/react": "^1.2.0",
