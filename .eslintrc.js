@@ -4,7 +4,7 @@ module.exports = {
         project: 'tsconfig.json',
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true // Allows for the parsing of JSX
+            tsx: true
         }
     },
     settings: {
