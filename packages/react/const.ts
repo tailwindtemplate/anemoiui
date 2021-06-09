@@ -40,3 +40,14 @@ export const menu = [
     },
     { name: 'document', Icon: DocumentIcon, url: '/documents' },
 ]
+
+export const headerMenu = [
+  { name: "About" },
+  {
+    name: "Products"
+  },
+  {
+    name: "Contact"
+  },
+  { name: "Help" }
+];

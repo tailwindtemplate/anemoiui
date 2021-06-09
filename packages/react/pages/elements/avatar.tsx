@@ -1,4 +1,4 @@
-import {Avatar, NewMessage, Section, Status} from '../../src';
+import { Avatar, NewMessage, Status, Section } from '../../src';
 
 export default function PreviewAvatar() {
     return (
