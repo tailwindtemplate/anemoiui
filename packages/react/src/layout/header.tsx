@@ -16,11 +16,9 @@ export const Header = ({
       <nav className="relative md:max-w-7xl max-w-full" aria-label="Global">
         <div className="flex items-center justify-around">
           <div className="flex items-center justify-between text-primary-next">
-            <a href="/">
-              <GlobeIcon className="w-8 h-8" />
-            </a>
+            <GlobeIcon className="w-8 h-8" onClick={() => setOpen(!open)} />
           </div>
-          <div className="sm:hidden md:block space-x-8 md:ml-10">
+          <div className="hidden md:block space-x-8 md:ml-10">
             {mainNavigation.map(item =>
               !Array.isArray(item?.items) ? (
                 <a
@@ -35,13 +33,7 @@ export const Header = ({
               )
             )}
           </div>
-          <MenuIcon
-            className="md:hidden w-6 h-6"
-            onClick={() => setOpen(!open)}
-          />
-          <div className="flex flex-col md:flex-row justify-center items-center">
-            {children}
-          </div>
+          <div className="flex justify-center items-center">{children}</div>
         </div>
       </nav>
       {open && (

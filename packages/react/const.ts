@@ -42,6 +42,7 @@ export const menu = [
 ]
 
 export const headerMenu = [
+  { name: "Home" },
   { name: "About" },
   {
     name: "Products"
