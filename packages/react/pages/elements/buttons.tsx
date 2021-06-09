@@ -2,7 +2,11 @@ import {Button, Section} from '../../src';
 
 export default function PreviewButton() {
     return (
+        <div className='p-2'>
+            <div className='text-3xl'>Dropdowns</div>
         <Section narrow>
+            <div className='mb-8'>
+                <div className="text-xl">Type: Default</div>
             <div>
                 <Button type="primary" size="xs" />
                 <Button type="primary" size="sm" />
@@ -10,6 +14,9 @@ export default function PreviewButton() {
                 <Button type="primary" size="lg" />
                 <Button type="primary" size="xl" />
             </div>
+            </div>
+            <div className='mb-8'>
+                <div className="text-xl">Type: Secondary</div>
             <div>
                 <Button type="secondary" size="xs" />
                 <Button type="secondary" size="sm" />
@@ -17,6 +24,9 @@ export default function PreviewButton() {
                 <Button type="secondary" size="lg" />
                 <Button type="secondary" size="xl" />
             </div>
+            </div>
+            <div className='mb-8'>
+                <div className="text-xl">Type: Gradient</div>
             <div>
                 <Button type="gradient" size="xs" />
                 <Button type="gradient" size="sm" />
@@ -24,6 +34,9 @@ export default function PreviewButton() {
                 <Button type="gradient" size="lg" />
                 <Button type="gradient" size="xl" />
             </div>
+            </div>
+            <div className='mb-8'>
+                <div className="text-xl">Custom class name</div>
             <div>
                 <Button size="xs" className="bg-neutral-50" />
                 <Button size="xs" className="bg-neutral-100" />
@@ -34,12 +47,17 @@ export default function PreviewButton() {
                 <Button size="xs" className="bg-neutral-600" />
                 <Button size="xs" className="bg-neutral-700" />
             </div>
+            </div>
+            <div className='mb-8'>
+                <div className="text-xl">Disable</div>
             <div>
                 <Button size="xl" disabled />
                 <Button size="xl" type="primary" disabled />
                 <Button size="xl" type="secondary" disabled />
                 <Button size="xl" type="gradient" disabled />
             </div>
+            </div>
         </Section>
+        </div>
     );
 }

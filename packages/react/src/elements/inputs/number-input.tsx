@@ -25,7 +25,7 @@ export function NumberInput({ className, inputClassName, buttonClassName, type }
   return (
     <div
       className={clsx(
-        "flex w-40 rounded-2xl justify-center items-center p-2 border h-14 m-2",
+        "flex w-40 rounded-2xl justify-center items-center border h-14",
         className,
         type && TYPE_MAPS[type]
       )}

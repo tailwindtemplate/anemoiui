@@ -2,6 +2,8 @@ import {AutocompleteInput, Section} from '../../../src';
 
 export default function AutocompleteInputPage() {
     return (
+        <div className='p-2'>
+            <div className='text-3xl'>Autocomplete Input</div>
         <Section narrow>
             <AutocompleteInput
                 suggestions={[
@@ -18,5 +20,6 @@ export default function AutocompleteInputPage() {
                 ]}
             />
         </Section>
+        </div>
     );
 }

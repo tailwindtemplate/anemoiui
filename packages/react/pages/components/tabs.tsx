@@ -10,6 +10,8 @@ const tabItems = [
 export default function Tabs() {
     const [active, setActive] = useState(tabItems[0].id)
     return (
+        <div className='p-2'>
+            <div className='text-3xl'>Tabs</div>
         <Section narrow>
             basic tab
             <TabControl items={tabItems} active={active} onClick={setActive} />
@@ -23,5 +25,6 @@ export default function Tabs() {
                 text 3
             </TabPanel>
         </Section>
+        </div>
     )
 }
