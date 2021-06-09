@@ -1,5 +1,5 @@
 import { UserIcon } from '@heroicons/react/outline';
-import { Select } from '../../src';
+import {Section, Select} from '../../src';
 
 const data = [
     {
@@ -18,7 +18,7 @@ const data = [
 
 export default function PreviewSelect() {
     return (
-        <div className="flex">
+        <Section className="flex" narrow>
             <div>
                 <Select placeholder="Please select the sport" data={data} />
                 <Select placeholder="Please select the sport" disabled data={data} />
@@ -92,6 +92,6 @@ export default function PreviewSelect() {
                     label="Label"
                 />
             </div>
-        </div>
+        </Section>
     );
 }

@@ -1,10 +1,10 @@
-import { Radio } from '../../src';
+import {Radio, Section} from '../../src';
 import { useState } from 'react';
 
 export default function PreviewRadio() {
     const [checked, setChecked] = useState(false);
     return (
-        <div className="flex">
+        <Section className="flex" narrow>
             {/*Default*/}
             <div className="flex flex-col mr-16">
                 <Radio checked={checked} onClick={() => setChecked(true)} />
@@ -259,6 +259,6 @@ export default function PreviewRadio() {
                     size="SM"
                 />
             </div>
-        </div>
+        </Section>
     );
 }

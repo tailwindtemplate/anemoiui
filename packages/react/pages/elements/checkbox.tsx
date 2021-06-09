@@ -1,11 +1,11 @@
 import { MinusIcon } from '@heroicons/react/outline';
-import { Checkbox } from '../../src';
+import {Checkbox, Section} from '../../src';
 import { useState } from 'react';
 
 export default function PreviewCheckbox() {
     const [checked, setChecked] = useState(false);
     return (
-        <div className="flex">
+        <Section className="flex" narrow>
             {/*Default*/}
             <div className="flex flex-col mr-16">
                 <Checkbox checked={checked} onClick={()=>setChecked(!checked)} />
@@ -104,6 +104,6 @@ export default function PreviewCheckbox() {
                     disabled={true} Icon={MinusIcon}
                 />
             </div>
-        </div>
+        </Section>
     );
 }

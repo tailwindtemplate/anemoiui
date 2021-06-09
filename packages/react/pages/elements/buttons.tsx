@@ -1,8 +1,8 @@
-import { Button } from '../../src';
+import {Button, Section} from '../../src';
 
 export default function PreviewButton() {
     return (
-        <div>
+        <Section narrow>
             <div>
                 <Button type="primary" size="xs" />
                 <Button type="primary" size="sm" />
@@ -40,6 +40,6 @@ export default function PreviewButton() {
                 <Button size="xl" type="secondary" disabled />
                 <Button size="xl" type="gradient" disabled />
             </div>
-        </div>
+        </Section>
     );
 }

@@ -1,8 +1,8 @@
-import { Avatar, NewMessage, Status } from '../../src';
+import {Avatar, NewMessage, Section, Status} from '../../src';
 
 export default function PreviewAvatar() {
     return (
-        <div className="flex space-x-4">
+        <Section className="flex space-x-4" narrow>
             {/*Oval - default-single*/}
             <div className="flex flex-col space-y-4">
                 <Avatar size="xs" />
@@ -570,6 +570,6 @@ export default function PreviewAvatar() {
                 />
             </div>
             {/*End Round-src-status*/}
-        </div>
+        </Section>
     );
 }
