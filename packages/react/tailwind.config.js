@@ -46,16 +46,31 @@ module.exports = {
                     50: '#FFFFFF',
                 }
             },
-          fontSize: {
-            tiny: ".5rem",
-          },
+            spacing: {
+                'xs': '0.5rem',
+                'sm': '1rem',
+                'md': '1.5rem',
+                'lg': '2rem',
+                'xl': '2.5rem',
+            },
+            fontSize: {
+                tiny: ".5rem",
+            },
             borderWidth: {
                 6: "6px"
             }
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            opacity: ['active', 'disabled'],
+            textColor: ['active', 'disabled'],
+            backgroundColor: ['active', 'disabled'],
+            borderColor: ['active', 'disabled', 'focus'],
+            borderWidth: ['active', 'disabled', 'focus'],
+            ringColor: ['active', 'disabled', 'focus'],
+            cursor: ['disabled']
+        },
     },
     plugins: [],
 };

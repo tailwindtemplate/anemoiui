@@ -1,7 +1,7 @@
 import React from "react";
-import { UserIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import clsx from "clsx";
-import Avatar from "elements/avatar";
+import { Avatar } from "./avatar";
 
 type Select = {
   placeholder?: string;
@@ -12,7 +12,7 @@ type Select = {
   label?: string;
 };
 
-export default function Select({
+export function Select({
   placeholder,
   disabled,
   Icon,
@@ -92,100 +92,6 @@ export default function Select({
           ))}
         </div>
       )}
-    </div>
-  );
-}
-
-export function PreviewSelect() {
-  const data = [
-    {
-      title: "Running"
-    },
-    {
-      title: "Skating"
-    },
-    {
-      title: "Snow boarding"
-    },
-    {
-      title: "Swimming"
-    }
-  ];
-  return (
-    <div className="flex">
-      <div>
-        <Select placeholder="Please select the sport" data={data} />
-        <Select placeholder="Please select the sport" disabled data={data} />
-        <Select
-          placeholder="Please select the sport"
-          data={data}
-          label="Label"
-        />
-        <Select
-          placeholder="Please select the sport"
-          disabled
-          data={data}
-          label="Label"
-        />
-      </div>
-      <div>
-        <Select placeholder="Please select the sport" Icon={UserIcon} data={data} />
-        <Select
-          placeholder="Please select the sport"
-          disabled
-          Icon={UserIcon}
-          data={data}
-        />
-
-        <Select
-          placeholder="Please select the sport"
-          Icon={UserIcon}
-          data={data}
-          label="Label"
-        />
-        <Select
-          placeholder="Please select the sport"
-          disabled
-          Icon={UserIcon}
-          data={data}
-          label="Label"
-        />
-      </div>
-      <div>
-        <Select
-          placeholder="Please select the sport"
-          src={
-            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
-          }
-          data={data}
-        />
-        <Select
-          placeholder="Please select the sport"
-          disabled
-          src={
-            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
-          }
-          data={data}
-        />
-
-        <Select
-          placeholder="Please select the sport"
-          src={
-            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
-          }
-          data={data}
-          label="Label"
-        />
-        <Select
-          placeholder="Please select the sport"
-          disabled
-          src={
-            "https://vcdn1-ione.vnecdn.net/2021/02/19/ca-si-iu-1613733151-2019-1613733648.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=KIVnpbz0OeM29beG1BF-Gg"
-          }
-          data={data}
-          label="Label"
-        />
-      </div>
     </div>
   );
 }

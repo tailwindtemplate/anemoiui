@@ -55,15 +55,3 @@ export default function TextInput({
     </div>
   );
 }
-
-export function PreviewTextInput() {
-  return (
-    <div>
-      <TextInput className="w-80" />
-      <TextInput LeftIcon={UserIcon} className="w-80" />
-      <TextInput LeftIcon={UserIcon} RightIcon={UserIcon} className="w-80" />
-      <TextInput className="w-80" type="error" />
-      <TextInput className="w-80" disabled />
-    </div>
-  );
-}

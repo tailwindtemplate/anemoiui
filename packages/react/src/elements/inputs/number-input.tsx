@@ -14,7 +14,7 @@ const TYPE_MAPS: any = {
   error: "border-red-400"
 };
 
-export default function NumberInput({ className, inputClassName, buttonClassName, type }: NumberInput) {
+export function NumberInput({ className, inputClassName, buttonClassName, type }: NumberInput) {
   const [value, setValue] = React.useState('0');
   const func = (type: string) => {
       let v = parseInt(value) || 0
@@ -37,17 +37,6 @@ export default function NumberInput({ className, inputClassName, buttonClassName
       <button onClick={() => func('+')} className={clsx('mx-2', buttonClassName)}>
           <PlusIcon className='w-5 h-5' />
       </button>
-    </div>
-  );
-}
-
-export function PreviewNumberInput() {
-  return (
-    <div>
-      <NumberInput />
-      <NumberInput type="primary" />
-      <NumberInput type="error" />
-      <NumberInput className="border-green-500" />
     </div>
   );
 }

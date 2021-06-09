@@ -19,7 +19,7 @@ const COLOR_MAPS: any = {
   BLUE: "bg-blue-100 text-blue-800"
 };
 
-export default function Badge({
+export function Badge({
   count = 1,
   color = "RED",
   size = "MD"

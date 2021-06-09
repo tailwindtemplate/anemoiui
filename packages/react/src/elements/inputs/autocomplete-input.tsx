@@ -8,7 +8,7 @@ type AutocompleteInput = {
   suggestionClassName?: string
 };
 
-export default function AutocompleteInput({ suggestions, inputClassName, className, suggestionClassName, ...rest }: AutocompleteInput & InputHTMLAttributes<{}>) {
+export function AutocompleteInput({ suggestions, inputClassName, className, suggestionClassName, ...rest }: AutocompleteInput & InputHTMLAttributes<{}>) {
   const [activeSuggestion, setActiveSuggestion] = React.useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = React.useState([]);
   const [showSuggestions, setShowSuggestions] = React.useState(false);
@@ -106,24 +106,5 @@ export default function AutocompleteInput({ suggestions, inputClassName, classNa
         {suggestionsListComponent()}
       </div>
     </div>
-  );
-}
-
-export function PreviewAutocompleteInput() {
-  return (
-    <AutocompleteInput
-      suggestions={[
-        "Nguyễn Văn Anh",
-        "Lê Thị Kim Cương",
-        "Trần Mai Ngọc Ngà",
-        "Huỳnh Văn Anh Đức",
-        "Châu Ánh Nguyệt",
-        "Võ Nguyễn Mai Thy",
-        "Thái Văn Phong",
-        "Nguyễn Ngọc Minh Thư",
-        "Lê Mai Thanh Tâm",
-        "Trần Trung Kiên"
-      ]}
-    />
   );
 }
