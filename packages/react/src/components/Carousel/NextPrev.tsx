@@ -1,31 +1,26 @@
-interface NextPrev {
+import { PropsWithChildren } from 'react';
+type NextPrev = {
   onClickNextPrev: (e: any) => void,
-  pathIcon?: string,
+  icon?: Object,
   displayNextPrev?: boolean,
   slider: Object,
-  Alignment?: string,
 };
-export const NextPrev: React.FC<NextPrev> = ({
+export const NextPrev = ({
   onClickNextPrev,
-  pathIcon,
+  icon,
   displayNextPrev,
   slider,
-  Alignment,
-}) => {
+}: PropsWithChildren<NextPrev>) => {
+
   return (
     slider &&
     (
-      <svg
+      <div
         onClick={onClickNextPrev}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={Alignment}
+        style={{ visibility: displayNextPrev ? 'visible' : 'hidden' }}
       >
-        <path
-          d={pathIcon}
-          style={{ display: displayNextPrev ? 'block' : 'none' }}
-        />
-      </svg>
+        {icon}
+      </div>
     )
   )
 };

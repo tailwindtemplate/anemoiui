@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, PropsWithChildren } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 // Component
 import { NextPrev } from './NextPrev';
 import { Dots } from './Dots';
 // Css
 import 'keen-slider/keen-slider.min.css';
-import "./style.css";
-interface Carousel {
+type Carousel = {
   data?: any[],
   classCarousel?: string,
   classItemsCarousel?: string,
@@ -24,12 +23,11 @@ interface Carousel {
   activeDots?: string,
   classItemDots?: string,
   // icon
-  iconPathLeft?: string,
-  classIconLeft?: string,
-  iconPathRight?: string,
-  classIconRight?: string,
+  iconLeft?: Object,
+  iconRight?: Object,
+
 }
-export const Carousel: React.FC<Carousel> = ({
+export const Carousel = ({
   data,
   displayNextPrev,
   defaultCarousel,
@@ -47,11 +45,10 @@ export const Carousel: React.FC<Carousel> = ({
   classDots,
   classItemDots,
   // icon
-  iconPathLeft,
-  classIconLeft,
-  iconPathRight,
-  classIconRight
-}) => {
+  iconLeft,
+  iconRight,
+
+}: PropsWithChildren<Carousel>) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: defaultCarousel,
@@ -81,26 +78,25 @@ export const Carousel: React.FC<Carousel> = ({
           data?.map((carousel, index) => (
             <div
               key={index}
-              className={`keen-slider__slide ${classItemsCarousel}${index} ${classItemsCarousel}`}
+              className={`keen-slider__slide ${classItemsCarousel}`}
             >
               {carousel.item}
             </div>
           ))
         }
       </div>
+
       <NextPrev
         onClickNextPrev={(e: any) => e.stopPropagation() || slider.next()}
-        pathIcon={iconPathRight}
+        icon={iconLeft}
         displayNextPrev={displayNextPrev}
         slider={slider}
-        Alignment={classIconRight}
       />
       <NextPrev
         onClickNextPrev={(e: any) => e.stopPropagation() || slider.prev()}
-        pathIcon={iconPathLeft}
+        icon={iconRight}
         displayNextPrev={displayNextPrev}
         slider={slider}
-        Alignment={classIconLeft}
       />
       {
         slider &&

@@ -1,5 +1,6 @@
+import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-interface Dots {
+type Dots = {
   classItemDots?: string
   activeDots?: string,
   displayDots?: boolean,
@@ -7,14 +8,14 @@ interface Dots {
   currentSlide: number,
   onClick: () => void,
 };
-export const Dots: React.FC<Dots> = ({
+export const Dots = ({
   classItemDots,
   displayDots,
   index,
   onClick,
   currentSlide,
   activeDots
-}) => {
+}: PropsWithChildren<Dots>) => {
   return (
     <button
       key={index}

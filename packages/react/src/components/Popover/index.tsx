@@ -1,7 +1,7 @@
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react';
-interface PopoverControl {
-  transform?: Object
+type PopoverControl = {
+  transform?: any[]
   namePopover?: string,
   iconPath?: string,
   classIcon?: string,
@@ -22,12 +22,12 @@ export const PopoverControl: React.FC<PopoverControl> = ({
   classPopoverPanel,
   classPopoverButton,
   children
-}) => {
+}: PopoverControl) => {
   return (
     <Popover className={classPopover} >
       {
         () => (
-          <>
+          <div>
             <Popover.Button
               className={classPopoverButton}
             >
@@ -49,7 +49,7 @@ export const PopoverControl: React.FC<PopoverControl> = ({
                 {children}
               </Popover.Panel>
             </Transition>
-          </>
+          </div>
         )
       }
     </Popover>
