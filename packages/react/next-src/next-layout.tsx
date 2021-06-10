@@ -14,11 +14,13 @@ export const NextLayout = ({ children }: PropsWithChildren<any>) => {
           className="ml-2 bg-primary-800 text-white border-none !rounded-none"
         />
       </Header>
-      <div className="flex h-full px-40">
-        <NextSidebar />
-        <div className="relative flex-1">
-          <div className="flex-1 h-full overflow-auto">{children}</div>
-        </div>
+      <div className='h-full w-full flex justify-center'>
+          <div className="flex justify-between w-3/4">
+              <NextSidebar />
+              <div className="relative flex-1">
+                  <div className="flex-1 h-full overflow-auto">{children}</div>
+              </div>
+          </div>
       </div>
     </Layout>
   );
