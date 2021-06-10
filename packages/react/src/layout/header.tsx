@@ -13,7 +13,7 @@ export const Header = ({
   const [open, setOpen] = React.useState(false);
   return (
     <div className="bg-header py-3">
-      <nav className="relative md:max-w-7xl max-w-full" aria-label="Global">
+      <nav className="relative max-w-7xl md:max-w-full" aria-label="Global">
         <div className="flex items-center justify-around">
           <div className="flex items-center justify-between text-primary-next">
             <GlobeIcon className="w-8 h-8" onClick={() => setOpen(!open)} />

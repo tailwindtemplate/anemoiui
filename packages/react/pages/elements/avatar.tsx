@@ -4,590 +4,75 @@ export default function PreviewAvatar() {
   return (
     <div className="p-2">
       <div className="text-3xl">Avatars</div>
-      <Section className="flex flex-col space-x-4" narrow>
-        <div className='mb-8'>
-          <div className="text-xl">Default - no src</div>
-          <div className="flex justify-between items-center space-y-4">
-            <Avatar size="xs" />
-            <Avatar size="sm" />
-            <Avatar />
+      Size XS -{">"} BASE
+      <Section className="mb-8 flex items-center justify-around border">
+        <Avatar size="xs" />
+        <Avatar size="sm" />
+        <Avatar />
+      </Section>
 
-            <Avatar size="xs">
-              <NewMessage className="-top-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar size="sm">
-              <NewMessage className="-top-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar>
-              <NewMessage className="-top-1 -right-1" newMessage={22} />
-            </Avatar>
+      Short name
+      <Section className="mb-8 flex items-center justify-center border">
+        <Avatar name="YN" />
+      </Section>
 
-            <Avatar size="xs">
-              <NewMessage className="-bottom-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar size="sm">
-              <NewMessage className="-bottom-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar>
-              <NewMessage className="-bottom-1 -right-1" newMessage={22} />
-            </Avatar>
+      Custom position
+      <Section className="mb-8 flex items-center justify-around border">
+        <Avatar name="YN">
+          <NewMessage newMessage={22} className="-top-1 -right-1" />
+        </Avatar>
 
-            <Avatar size="xs" hasExtension />
-            <Avatar size="sm" hasExtension />
-            <Avatar hasExtension />
-          </div>
-        </div>
+        <Avatar name="YN">
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+      </Section>
 
-        <div className='mb-8'>
-          <div className="text-xl">Round - no src</div>
-          <div className="flex justify-between items-center space-y-4">
-            <Avatar size="xs" isRounded />
-            <Avatar size="sm" isRounded />
-            <Avatar isRounded />
+      Has new message
+      <Section className="mb-8 flex items-center justify-center border">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          newMessage={22}
+          type="src"
+          isRounded
+        >
+          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+        </Avatar>
+      </Section>
 
-            <Avatar size="xs" isRounded>
-              <NewMessage className="-top-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar size="sm" isRounded>
-              <NewMessage className="-top-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar isRounded>
-              <NewMessage className="-top-1 -right-1" newMessage={22} />
-            </Avatar>
+      Has extension
+      <Section className="mb-8 flex items-center justify-center border">
+        <Avatar
+          size="sm"
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          hasExtension
+          type="src"
+          isRounded
+        />
+      </Section>
 
-            <Avatar size="xs" isRounded>
-              <NewMessage className="-bottom-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar size="sm" isRounded>
-              <NewMessage className="-bottom-1 -right-1" newMessage={22} />
-            </Avatar>
-            <Avatar isRounded>
-              <NewMessage className="-bottom-1 -right-1" newMessage={22} />
-            </Avatar>
+      Add avatar
+      <Section className="mb-8 flex items-center justify-center border">
+        <Avatar size="sm" type="add-avatar" isRounded />
+      </Section>
 
-            <Avatar size="xs" hasExtension isRounded />
-            <Avatar size="sm" hasExtension isRounded />
-            <Avatar hasExtension isRounded />
-          </div>
-        </div>
+      Status
+      <Section className="mb-8 flex items-center justify-center border">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          type="src"
+        >
+          <Status className="-top-1 -right-1" />
+        </Avatar>
+      </Section>
 
-        <div className='mb-8'>
-          <div className="text-xl">Default - name</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar size="xs" name="YN" />
-          <Avatar size="sm" name="YN" />
-          <Avatar name="YN" />
-
-          <Avatar size="xs" name="YN">
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" name="YN">
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar name="YN">
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" name="YN">
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" name="YN">
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar name="YN">
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" hasExtension name="YN" />
-          <Avatar size="sm" hasExtension name="YN" />
-          <Avatar hasExtension name="YN" />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Round - name</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar size="xs" isRounded name="YN" />
-          <Avatar size="sm" isRounded name="YN" />
-          <Avatar isRounded name="YN" />
-
-          <Avatar size="xs" isRounded name="YN">
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" isRounded name="YN">
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar isRounded name="YN">
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" isRounded name="YN">
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" isRounded name="YN">
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar isRounded name="YN">
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" hasExtension isRounded name="YN" />
-          <Avatar size="sm" hasExtension isRounded name="YN" />
-          <Avatar hasExtension isRounded name="YN" />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Default - src</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-          />
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-          >
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            newMessage={22}
-            type="src"
-          >
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            newMessage={22}
-            type="src"
-          >
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-          >
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            newMessage={22}
-            type="src"
-          >
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            newMessage={22}
-            type="src"
-          >
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            size="xs"
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            hasExtension
-            type="src"
-          />
-          <Avatar
-            size="sm"
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            hasExtension
-            type="src"
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            hasExtension
-            type="src"
-          />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Round - src</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            isRounded
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-            isRounded
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-            isRounded
-          />
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            isRounded
-          >
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            newMessage={22}
-            type="src"
-            isRounded
-          >
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            newMessage={22}
-            type="src"
-            isRounded
-          >
-            <NewMessage newMessage={22} className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            isRounded
-          >
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            newMessage={22}
-            type="src"
-            isRounded
-          >
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            newMessage={22}
-            type="src"
-            isRounded
-          >
-            <NewMessage newMessage={22} className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            size="xs"
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            hasExtension
-            type="src"
-            isRounded
-          />
-          <Avatar
-            size="sm"
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            hasExtension
-            type="src"
-            isRounded
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            hasExtension
-            type="src"
-            isRounded
-          />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Default - status</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar size="xs" type="add-avatar" />
-          <Avatar size="sm" type="add-avatar" />
-          <Avatar type="add-avatar" />
-
-          <Avatar size="xs">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" status="online">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar status="online">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" status="online">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar status="online">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" hasBorder />
-          <Avatar size="sm" hasBorder />
-          <Avatar hasBorder />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Round - status</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar size="xs" type="add-avatar" isRounded />
-          <Avatar size="sm" type="add-avatar" isRounded />
-          <Avatar type="add-avatar" isRounded />
-
-          <Avatar size="xs" isRounded>
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" isRounded>
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar isRounded>
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" isRounded>
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" isRounded>
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar isRounded>
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" hasBorder isRounded />
-          <Avatar size="sm" hasBorder isRounded />
-          <Avatar hasBorder isRounded />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Default - name - status</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar size="xs" name="YN">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" name="YN">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar name="YN">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" name="YN">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" name="YN">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar name="YN">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" hasBorder name="YN" />
-          <Avatar size="sm" hasBorder name="YN" />
-          <Avatar hasBorder name="YN" />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Round - name - status</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar size="xs" isRounded name="YN">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" isRounded name="YN">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar isRounded name="YN">
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" name="YN" isRounded>
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar size="sm" name="YN" isRounded>
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar isRounded name="YN">
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar size="xs" isRounded hasBorder name="YN" />
-          <Avatar size="sm" isRounded hasBorder name="YN" />
-          <Avatar isRounded hasBorder name="YN" />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Default - src - status</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-          >
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-          >
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-          >
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-          >
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-          >
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-          >
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            hasBorder
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-            hasBorder
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-            hasBorder
-          />
-        </div>
-        </div>
-
-        <div className='mb-8'>
-          <div className="text-xl">Round - src - status</div>
-        <div className="flex justify-between items-center space-y-4">
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            isRounded
-            name="YN"
-          >
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-            isRounded
-            name="YN"
-          >
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-            isRounded
-            name="YN"
-          >
-            <Status className="-top-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            isRounded
-            name="YN"
-          >
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-            isRounded
-            name="YN"
-          >
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-            isRounded
-            name="YN"
-          >
-            <Status className="-bottom-1 -right-1" />
-          </Avatar>
-
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="xs"
-            type="src"
-            hasBorder
-            isRounded
-            name="YN"
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            size="sm"
-            type="src"
-            hasBorder
-            isRounded
-            name="YN"
-          />
-          <Avatar
-            src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-            type="src"
-            hasBorder
-            isRounded
-            name="YN"
-          />
-        </div>
-        </div>
+      Border
+      <Section className="flex items-center justify-center border">
+        <Avatar
+          src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
+          size="xs"
+          type="src"
+          hasBorder
+        />
       </Section>
     </div>
   );

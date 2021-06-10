@@ -20,7 +20,7 @@ export default function PreviewSelect() {
   return (
     <div className="p-2">
       <div className="text-3xl">Select</div>
-      <Section className="flex" narrow>
+      <Section className="flex">
         <div>
           <Select placeholder="Please select the sport" data={data} />
           <Select placeholder="Please select the sport" disabled data={data} />

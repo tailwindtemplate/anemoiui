@@ -2,24 +2,24 @@ import React, { TextareaHTMLAttributes } from 'react';
 import clsx from "clsx";
 
 type Textarea = {
-  custom?: string;
+  className?: string;
   type?: string;
   helperText?: string;
 };
 
 const TYPE_MAPS: any = {
-  PRIMARY: "border-secondary-400",
+  PRIMARY: "border-primary-600",
   ERROR: "border-red-400"
 };
 
-export function Textarea({ custom, type, helperText, ...rest }: Textarea & TextareaHTMLAttributes<{}>) {
+export function Textarea({ className, type, helperText, ...rest }: Textarea & TextareaHTMLAttributes<{}>) {
 
   return (
     <div className="m-2">
       <textarea
         className={clsx(
-          "w-80 h-48 px-3 py-2 text-base placeholder-neutral-300 border rounded-2xl",
-          custom,
+          "w-80 h-24 px-3 py-2 text-base placeholder-neutral-300 border rounded-2xl",
+          className,
           type && TYPE_MAPS[type]
         )}
         {...rest}
