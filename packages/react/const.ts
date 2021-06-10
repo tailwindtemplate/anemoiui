@@ -1,16 +1,13 @@
-import { DocumentIcon, HomeIcon, TemplateIcon, ViewGridAddIcon } from '@heroicons/react/outline';
-
 export const dropdown = [
-    { name: 'element 1', href: '#' },
-    { name: 'element 2' },
-    { name: 'element 3' }
+    { name: 'Edit', href: '#' },
+    { name: 'Delete' },
+    { name: 'Archive' }
 ]
 
 export const menu = [
-    { name: 'home', Icon: HomeIcon, url: '/' },
+    { name: 'home', url: '/' },
     {
         name: 'components',
-        Icon: TemplateIcon,
         items: [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' }
@@ -18,7 +15,6 @@ export const menu = [
     },
     {
         name: 'elements',
-        Icon: ViewGridAddIcon,
         items: [
             { name: 'dropdown', url: '/elements/dropdown' },
             {
@@ -38,5 +34,17 @@ export const menu = [
             { name: 'text area', url: '/elements/text-area' }
         ]
     },
-    { name: 'document', Icon: DocumentIcon, url: '/documents' },
+    { name: 'document', url: '/documents' },
 ]
+
+export const headerMenu = [
+  { name: "Home" },
+  { name: "About" },
+  {
+    name: "Products"
+  },
+  {
+    name: "Contact"
+  },
+  { name: "Help" }
+];
