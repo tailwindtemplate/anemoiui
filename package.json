@@ -14,8 +14,5 @@
   },
   "devDependencies": {
     "tsdx": "^0.14.1"
-  },
-  "dependencies": {
-    "keen-slider": "^5.5.0"
   }
 }
