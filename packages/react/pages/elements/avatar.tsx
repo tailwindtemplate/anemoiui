@@ -2,7 +2,7 @@ import { Avatar, NewMessage, Status, Section } from "../../src";
 
 export default function PreviewAvatar() {
   return (
-    <div className="p-2">
+    <div className="p-2 mb-20">
       <div className="text-3xl">Avatars</div>
       Size XS -{">"} BASE
       <Section className="mb-8 flex items-center justify-around border">

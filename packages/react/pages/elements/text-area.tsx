@@ -2,7 +2,7 @@ import { Section, Textarea } from "../../src";
 
 export default function PreviewTextarea() {
   return (
-    <div className="p-2">
+    <div className="p-2 mb-20">
       <div className="text-3xl my-10">Textarea</div>
 
         Default
