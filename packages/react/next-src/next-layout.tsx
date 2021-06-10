@@ -7,11 +7,11 @@ export const NextLayout = ({ children }: PropsWithChildren<any>) => {
   return (
     <Layout className="h-screen bg-gray-100 flex flex-col overflow-hidden">
       <Header mainNavigation={headerMenu}>
-        <Button title="Sign In" className="bg-transparent text-primary-next" />
+        <Button title="Sign In" className="bg-transparent text-primary-800" />
         <Button
           title="Sign Up"
           type="primary"
-          className="ml-2 bg-primary-next text-white border-none !rounded-none"
+          className="ml-2 bg-primary-800 text-white border-none !rounded-none"
         />
       </Header>
       <div className="flex h-full px-40">

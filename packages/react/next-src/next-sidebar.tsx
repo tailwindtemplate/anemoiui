@@ -25,7 +25,7 @@ const ListItem = ({ name, Icon = null, url = '', items = null, loop }) => {
     const onClick = () => push(url, url, { shallow: true })
     if (items) return <ToggleList items={items} name={name} Icon={Icon} loop={loop} />
     return (
-        <div onClick={onClick} className={clsx('flex p-2 hover:text-primary-900 hover:font-bold cursor-pointer items-center rounded-md capitalize', pathname == url && 'text-primary-next hover:text-primary-900 hover:font-bold', loop == 0 ? 'font-medium' : 'text-sm')}>
+        <div onClick={onClick} className={clsx('flex p-2 hover:text-primary-900 hover:font-bold cursor-pointer items-center rounded-md capitalize', pathname == url && 'text-primary-800 hover:text-primary-900 hover:font-bold', loop == 0 ? 'font-medium' : 'text-sm')}>
             {name}
         </div>
     )

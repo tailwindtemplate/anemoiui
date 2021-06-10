@@ -1,6 +1,6 @@
 import React from "react";
 import { Dropdown } from "../elements";
-import { GlobeIcon, MenuIcon } from "@heroicons/react/outline";
+import { GlobeIcon } from "@heroicons/react/outline";
 
 type Header = {
   mainNavigation: any[];
@@ -15,7 +15,7 @@ export const Header = ({
     <div className="bg-header py-3">
       <nav className="relative max-w-7xl md:max-w-full" aria-label="Global">
         <div className="flex items-center justify-around">
-          <div className="flex items-center justify-between text-primary-next">
+          <div className="flex items-center justify-between text-primary-800">
             <GlobeIcon className="w-8 h-8" onClick={() => setOpen(!open)} />
           </div>
           <div className="hidden md:block space-x-8 md:ml-10">
@@ -24,7 +24,7 @@ export const Header = ({
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-base font-medium hover:text-primary-next"
+                  className="text-base font-medium hover:text-primary-800"
                 >
                   {item.name}
                 </a>
@@ -40,7 +40,7 @@ export const Header = ({
         <div className="absolute w-full bg-white rounded z-10 shadow-lg">
           <ul>
             {mainNavigation.map(item => (
-              <li className="m-2 hover:text-primary-next">{item.name}</li>
+              <li className="m-2 hover:text-primary-800">{item.name}</li>
             ))}
           </ul>
         </div>

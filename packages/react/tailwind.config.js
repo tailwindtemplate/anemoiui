@@ -13,7 +13,6 @@ module.exports = {
         background: "#f4f5f4",
         text: "#373F41",
         primary: {
-          next: "#3C64B1",
           900: "#004A7E",
           800: "#00699E",
           700: "#0079B1",
