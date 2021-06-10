@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
+// Check Type Props
 type Dots = {
   classItemDots?: string
   activeDots?: string,
@@ -8,6 +9,7 @@ type Dots = {
   currentSlide: number,
   onClick: () => void,
 };
+// Render
 export const Dots = ({
   classItemDots,
   displayDots,
