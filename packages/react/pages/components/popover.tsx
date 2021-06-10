@@ -1,37 +1,6 @@
 import { PopoverControl } from '../../src';
-//Icon
-import { ShoppingCartIcon, WifiIcon, GiftIcon, PrinterIcon } from '@heroicons/react/outline';
 // Default Data Popover
-const popover = [
-  {
-    name: 'Wifi',
-    description: 'Wifi description',
-    href: '##',
-    icon: WifiIcon,
-    classIcon: "w-6 h-6"
-  },
-  {
-    name: 'Shopping',
-    description: 'Shopping description',
-    href: '##',
-    icon: ShoppingCartIcon,
-    classIcon: "w-6 h-6"
-  },
-  {
-    name: 'Gift',
-    description: 'Gift description ',
-    href: '##',
-    icon: GiftIcon,
-    classIcon: "w-6 h-6"
-  },
-  {
-    name: 'Printer',
-    description: 'Printer description',
-    href: '##',
-    icon: PrinterIcon,
-    classIcon: "w-6 h-6"
-  }
-];
+import { popover } from '../../const';
 export default function Popover() {
 
   return (
