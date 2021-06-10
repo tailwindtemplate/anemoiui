@@ -19,7 +19,7 @@ export const NextLayout = ({ children }: PropsWithChildren<any>) => {
               <div className="relative flex-1">
                   <div className="flex-1 h-full overflow-auto">{children}</div>
               </div>
-      </Section>
+          </Section>
     </div>
   );
 };

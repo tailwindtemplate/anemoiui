@@ -12,6 +12,7 @@ const ToggleList = ({ name, items, Icon, loop }) => {
     return (
         <div>
             <div className={clsx('flex cursor-pointer p-2 capitalize items-center', loop == 0 ? 'font-medium' : 'text-sm')} onClick={() => setShow(!show)}>
+                {Icon && <Icon className="text-primary-100 mr-3 w-6 h-6" />}
                 {name}
                 <ShowIcon className="w-4 -h4 ml-auto" />
             </div>
@@ -26,6 +27,7 @@ const ListItem = ({ name, Icon = null, url = '', items = null, loop }) => {
     if (items) return <ToggleList items={items} name={name} Icon={Icon} loop={loop} />
     return (
         <div onClick={onClick} className={clsx('flex p-2 hover:text-primary-900 hover:font-bold cursor-pointer items-center rounded-md capitalize', pathname == url && 'text-primary-800 hover:text-primary-900 hover:font-bold', loop == 0 ? 'font-medium' : 'text-sm')}>
+            {Icon && <Icon className="text-primary-100 mr-3 w-6 h-6" />}
             {name}
         </div>
     )
