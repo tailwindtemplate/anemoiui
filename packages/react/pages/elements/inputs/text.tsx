@@ -4,7 +4,7 @@ import { Section } from "../../../src";
 
 export default function TextInputPage() {
   return (
-    <div className="p-2">
+    <div className="p-2 mb-10">
       <div className="text-3xl my-10">Text Input</div>
 
       Default

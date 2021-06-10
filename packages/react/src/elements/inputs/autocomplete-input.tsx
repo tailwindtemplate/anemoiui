@@ -83,7 +83,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
         );
       } else {
         return (
-          <div className="my-2 text-neutral-600">
+          <div className="text-neutral-600 px-6 my-3 w-80">
             <em>No suggestions!</em>
           </div>
         );

@@ -1,9 +1,9 @@
 import { DocumentIcon, HomeIcon, TemplateIcon, ViewGridAddIcon } from '@heroicons/react/outline';
 
 export const dropdown = [
-    { name: 'element 1', href: '#' },
-    { name: 'element 2' },
-    { name: 'element 3' }
+    { name: 'Edit', href: '#' },
+    { name: 'Delete' },
+    { name: 'Archive' }
 ]
 
 export const menu = [
