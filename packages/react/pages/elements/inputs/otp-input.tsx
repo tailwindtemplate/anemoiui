@@ -12,7 +12,7 @@ export default function OtpInputPage() {
   };
   return (
     <div className="p-2">
-      <div className="text-3xl my-10">OTP Inputs</div>
+      <div className="text-3xl my-8">OTP Inputs</div>
       Default
       <Section className="mb-8 flex items-center justify-center border">
         {/*{otp ? `your otp is: ${otp}` : "you have not done"}*/}

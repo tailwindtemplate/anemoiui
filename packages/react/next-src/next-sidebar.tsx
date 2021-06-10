@@ -41,7 +41,7 @@ const SidebarList = ({ items, className = '', loop = 0 }) => {
 
 export const NextSidebar = () => {
     return (
-        <Sidebar className="md:w-64 mr-4 p-2 text-text">
+        <Sidebar className="md:w-64 mr-4 p-2 text-text mt-8">
             <div className="space-y-1">
                 <SidebarList items={menu} />
             </div>

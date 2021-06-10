@@ -3,7 +3,7 @@ import { Button, Section } from "../../src";
 export default function PreviewButton() {
   return (
     <div className="p-2">
-      <div className="text-3xl my-10">Buttons</div>
+      <div className="text-3xl my-8">Buttons</div>
       Size XS -{">"} XL
       <Section className="mb-8 flex items-center justify-center border">
         <Button type="primary" size="xs" />

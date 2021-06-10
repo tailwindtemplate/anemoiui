@@ -3,7 +3,7 @@ import { NumberInput, Section } from "../../../src";
 export default function NumberInputPage() {
   return (
     <div className="p-2">
-      <div className="text-3xl my-10">Number Input</div>
+      <div className="text-3xl my-8">Number Input</div>
       Default
       <Section className="mb-8 flex items-center justify-center border">
         <NumberInput className="mt-2" />

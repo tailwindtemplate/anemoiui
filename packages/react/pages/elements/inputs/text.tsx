@@ -5,7 +5,7 @@ import { Section } from "../../../src";
 export default function TextInputPage() {
   return (
     <div className="p-2 mb-20">
-      <div className="text-3xl my-10">Text Input</div>
+      <div className="text-3xl my-8">Text Input</div>
 
       Default
       <Section className="mb-8 flex items-center justify-center border">

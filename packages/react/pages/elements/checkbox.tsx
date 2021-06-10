@@ -6,7 +6,7 @@ export default function PreviewCheckbox() {
   const [checked, setChecked] = useState(false);
   return (
     <div className="p-2">
-      <div className="text-3xl my-10">Checkbox</div>
+      <div className="text-3xl my-8">Checkbox</div>
 
       Default
       <Section className="mb-8 flex items-center justify-center border">

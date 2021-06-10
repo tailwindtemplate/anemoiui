@@ -5,7 +5,7 @@ export default function PreviewRadio() {
   const [checked, setChecked] = useState(false);
   return (
     <div className="p-2">
-      <div className="text-3xl my-10">Radio</div>
+      <div className="text-3xl my-8">Radio</div>
 
       Default
       <Section className="mb-8 flex items-center justify-center border">

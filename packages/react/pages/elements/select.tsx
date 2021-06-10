@@ -19,7 +19,7 @@ const data = [
 export default function PreviewSelect() {
   return (
     <div className="p-2">
-      <div className="text-3xl my-10">Select</div>
+      <div className="text-3xl my-8">Select</div>
       Default
       <Section className="mb-8 flex items-center justify-center border">
         <Select placeholder="Please select the sport" data={data} />
