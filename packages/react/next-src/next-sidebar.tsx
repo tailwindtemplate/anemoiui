@@ -31,9 +31,9 @@ const ListItem = ({ name, Icon = null, url = '', items = null, loop }) => {
     )
 }
 
-const SidebarList = ({ items, className = '', loop = 0 }) => {
+const SidebarList = ({ items, className = '', loop = 0, style = {} }) => {
     return (
-        <div className={clsx('space-y-1', className)}>
+        <div className={clsx('space-y-1', className)} style={style}>
             {items.map((item, index) => <ListItem {...item} key={`${item.name}-${index}`} loop={loop} />)}
         </div>
     )
@@ -41,10 +41,10 @@ const SidebarList = ({ items, className = '', loop = 0 }) => {
 
 export const NextSidebar = () => {
     return (
-        <Sidebar className="md:w-64 mr-4 p-2 text-text mt-8">
-            <div className="space-y-1">
-                <SidebarList items={menu} />
-            </div>
-        </Sidebar>
+        <div className="hidden fixed z-40 h-full w-full inset-0 bg-white md:block md:static md:h-auto md:w-64 md:z-20">
+            <Sidebar className="block mr-4 p-2 h-auto text-text md:top-24 sticky">
+                <SidebarList items={menu} style={{ height: 'calc(100vh - 9rem)'}} />
+            </Sidebar>
+        </div>
     )
 }

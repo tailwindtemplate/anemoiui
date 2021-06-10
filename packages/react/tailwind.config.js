@@ -72,7 +72,7 @@ module.exports = {
       borderColor: ["active", "disabled", "focus"],
       borderWidth: ["active", "disabled", "focus"],
       ringColor: ["active", "disabled", "focus"],
-      cursor: ["disabled"]
+      cursor: ["disabled"],
     }
   },
   plugins: []
