@@ -1,6 +1,5 @@
 import { UserIcon } from "@heroicons/react/outline";
-import TextInput from "../../../src/elements/inputs/text-input";
-import { Section } from "../../../src";
+import { TextInput, Section } from "../../../src";
 
 export default function TextInputPage() {
   return (

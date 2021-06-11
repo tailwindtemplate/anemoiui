@@ -15,6 +15,12 @@ export const dropdown = [
 export const menu = [
     { name: 'home', url: '/' },
     {
+        name: 'pages',
+        items: [
+            { name: 'chat', url: '/pages/chat' },
+        ]
+    },
+    {
         name: 'components',
         items: [
             { name: 'modals', url: '/components/modals' },
@@ -58,7 +64,7 @@ export const headerMenu = [
   { name: "Help" }
 ];
 
-export const textMessage = "Mình giới thiệu với bạn một số thông tin về thành phố chúng ta sắp đến. Cần Thơ là một thành phố trực thuộc trung ương của Việt Nam, là thành phố hiện đại và phát triển nhất ở Đồng bằng sông Cửu Long, Cần Thơ hiện là đô thị loại I, là trung tâm kinh tế, văn hóa, xã hội, y tế và giáo dục của vùng Đồng bằng sông Cửu Long, là thành phố trung tâm cấp vùng và cấp quốc gia cùng với Đà Nẵng, Hải Phòng. (đã chỉnh sửa)"
+export const textMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc lacus, pellentesque id odio eu, tincidunt fermentum lectus. In tempor commodo libero a eleifend. Nunc tincidunt dignissim nisi, ut ullamcorper dolor malesuada id. In vehicula ante id eros consectetur, eget pellentesque risus scelerisque. In ac placerat mi. Praesent iaculis blandit mattis. Sed scelerisque, ipsum non maximus egestas, nulla lacus facilisis nulla, ac convallis velit ex dignissim metus. Nam imperdiet nisi nunc."
 
 const attachmentDoc = {
   type: 'doc',
@@ -84,6 +90,7 @@ const attachmentLink = {
   hasDownload: false,
   beforeHeader: 'link.com/Sunrise_In_The_Office_by_Karim_Nafatni',
   url: 'link.com',
+  onClick: () => console.log('link click')
 }
 export const attachments = [
     attachmentDoc,

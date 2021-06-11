@@ -22,7 +22,7 @@ const AttachmentCard = ({ hasDownload = true, fileName, content, size, url, Icon
         return <DocumentIcon className="w-10 h-10 flex-shrink-0" />
     }, [Icon, image])
     return (
-        <div className={clsx('rounded-3xl border border-gray-200 hover:border-primary-400 px-5 py-3 flex flex-col md:flex-row md:justify-between items-center', onClick && 'cursor-pointer')} onClick={onClick}>
+        <div className={clsx('rounded-3xl border border-gray-200 hover:border-primary-400 px-5 py-3 flex flex-col md:flex-row md:justify-between items-center bg-white', onClick && 'cursor-pointer')} onClick={onClick}>
             {delegate}
             <div className="md:mr-auto md:ml-3 w-full overflow-hidden">
                 {beforeHeader && <div className="text-xs text-gray-400 whitespace-nowrap overflow-ellipsis overflow-hidden">{beforeHeader}</div>}

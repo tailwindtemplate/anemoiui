@@ -14,14 +14,14 @@ const TYPE_MAPS: any = {
   error: "border-red-500"
 };
 
-export default function TextInput({
+export const TextInput = ({
   LeftIcon,
   RightIcon,
   className,
   inputClassName,
   type,
   ...rest
-}: TextInput & InputHTMLAttributes<{}>) {
+}: TextInput & InputHTMLAttributes<{}>) => {
   return (
     <div
       className={clsx(
