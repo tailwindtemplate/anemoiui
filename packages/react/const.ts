@@ -13,7 +13,8 @@ export const menu = [
         Icon: TemplateIcon,
         items: [
             { name: 'modals', url: '/components/modals' },
-            { name: 'tabs', url: '/components/tabs' }
+            { name: 'tabs', url: '/components/tabs' },
+            { name: 'forms', url: '/components/forms' }
         ],
     },
     {
