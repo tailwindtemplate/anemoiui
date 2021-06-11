@@ -1,4 +1,10 @@
-import { DocumentReportIcon } from '@heroicons/react/outline';
+import {
+    CheckCircleIcon,
+    CheckIcon,
+    ChevronDoubleRightIcon,
+    DocumentReportIcon,
+    ExclamationCircleIcon
+} from '@heroicons/react/outline';
 
 export const dropdown = [
     { name: 'Edit', href: '#' },
@@ -13,7 +19,7 @@ export const menu = [
         items: [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
-            { name: 'cards', url: '/components/cards'}
+            { name: 'messages', url: '/components/messages'}
         ],
     },
     {
@@ -72,14 +78,35 @@ const attachmentCustom = {
 }
 const attachmentLink = {
   type: 'link',
-  fileName: '1 chiếc link',
-  content: 'content of 1 chiếc link',
+  fileName: 'Sunrise In The Office by Karim Nafatni',
+  content: 'Sunrise In The Office by Karim Nafatni',
   image: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
   hasDownload: false,
+  beforeHeader: 'link.com/Sunrise_In_The_Office_by_Karim_Nafatni',
   url: 'link.com',
 }
-export const attachmentsMessage = [
+export const attachments = [
     attachmentDoc,
     attachmentCustom,
     attachmentLink
 ]
+export const user = {
+    name: 'User name',
+    avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+}
+export const textMessageItem = {
+    type: 'text',
+    message: textMessage,
+    time: '21:21 21/01/2021'
+}
+export const attachmentMessageItem = {
+    type: 'attachment',
+    attachments,
+    time: '22:22 22/02/2022'
+}
+export const statusItems = {
+    seen: CheckCircleIcon,
+    sent: CheckIcon,
+    sending: ChevronDoubleRightIcon,
+    error: ExclamationCircleIcon
+}

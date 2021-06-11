@@ -56,6 +56,9 @@ module.exports = {
         lg: "2rem",
         xl: "2.5rem"
       },
+      maxWidth: {
+        '17rem': '17rem'
+      },
       fontSize: {
         tiny: ".5rem"
       },

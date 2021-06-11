@@ -13,19 +13,21 @@ type AttachmentCard = {
     hasDownload?: boolean
     forwardClick?: (e: any) => void
     onClick?: (e: any) => void
+    beforeHeader?: string
 }
-const AttachmentCard = ({ hasDownload = true, fileName, content, size, url, Icon, image, forwardClick, onClick }: AttachmentCard) => {
+const AttachmentCard = ({ hasDownload = true, fileName, content, size, url, Icon, image, forwardClick, onClick, beforeHeader }: AttachmentCard) => {
     const delegate = useMemo(() => {
         if (image) return <img src={image} className="w-auto max-h-40 md:w-10 md:h-10 rounded-md flex-shrink-0"/>
         if (Icon) return <Icon className="w-10 h-10 flex-shrink-0" />
         return <DocumentIcon className="w-10 h-10 flex-shrink-0" />
     }, [Icon, image])
     return (
-        <div className={clsx('rounded-3xl border border-gray-100 hover:border-primary-400 px-5 py-3 flex flex-col md:flex-row md:justify-between items-center', onClick && 'cursor-pointer')} onClick={onClick}>
+        <div className={clsx('rounded-3xl border border-gray-200 hover:border-primary-400 px-5 py-3 flex flex-col md:flex-row md:justify-between items-center', onClick && 'cursor-pointer')} onClick={onClick}>
             {delegate}
             <div className="md:mr-auto md:ml-3 w-full overflow-hidden">
-                <h3 className="text-gray-600 text-lg whitespace-nowrap overflow-ellipsis overflow-hidden">{fileName}</h3>
-                <div className="text-sm flex flex-wrap md:flex-nowrap overflow-hidden overflow-ellipsis">
+                {beforeHeader && <div className="text-xs text-gray-400 whitespace-nowrap overflow-ellipsis overflow-hidden">{beforeHeader}</div>}
+                <h3 className={clsx('whitespace-nowrap overflow-ellipsis overflow-hidden', beforeHeader ? 'text-primary-300 text-xs' : 'text-gray-600 text-lg')}>{fileName}</h3>
+                <div className={clsx('flex flex-wrap md:flex-nowrap overflow-hidden overflow-ellipsis', beforeHeader ? 'text-xs' : 'text-sm')}>
                     <div className="text-gray-600 whitespace-nowrap overflow-hidden overflow-ellipsis">{content}</div>
                     {size && <div className="flex-1 text-gray-400 md:ml-2 whitespace-nowrap">{size}</div>}
                 </div>
