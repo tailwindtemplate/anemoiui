@@ -1,264 +1,48 @@
-import { Radio } from '../../src';
-import { useState } from 'react';
+import { Radio, Section } from "../../src";
+import { useState } from "react";
 
 export default function PreviewRadio() {
-    const [checked, setChecked] = useState(false);
-    return (
-        <div className="flex">
-            {/*Default*/}
-            <div className="flex flex-col mr-16">
-                <Radio checked={checked} onClick={() => setChecked(true)} />
-                <Radio checked={!checked} onClick={() => setChecked(false)} />
-                <Radio checked={true} onClick={() => setChecked(!checked)} />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                />
-            </div>
+  const [checked, setChecked] = useState(false);
+  return (
+    <div className="p-2">
+      <div className="text-3xl my-8">Radio</div>
 
-            {/*Default - label*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    label="Label"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    label="Label"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    label="Label"
-                />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    label="Label"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    label="Label"
-                />
-            </div>
+      Default
+      <Section className="mb-8 flex items-center justify-center border bg-white">
+        <Radio checked={checked} onClick={() => setChecked(true)} />
+        <Radio checked={!checked} onClick={() => setChecked(false)} />
+      </Section>
 
-            {/*Default - caption*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    caption="Caption"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    caption="Caption"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    caption="Caption"
-                />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                />
-            </div>
+      Label - Caption (or every attribute)
+      <Section className="mb-8 flex items-center justify-center border bg-white">
+        <Radio
+          checked={checked}
+          onClick={() => setChecked(true)}
+          caption="Caption"
+          label="Label"
+        />
+        <Radio
+          checked={!checked}
+          onClick={() => setChecked(false)}
+          caption="Caption"
+          label="Label"
+        />
+      </Section>
 
-            {/*Default-caption-label*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    caption="Caption"
-                    label="Label"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    caption="Caption"
-                    label="Label"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    caption="Caption"
-                    label="Label"
-                />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                    label="Label"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                    label="Label"
-                />
-            </div>
+      Disable
+      <Section className="mb-8 flex items-center justify-center border bg-white">
+        <Radio
+          checked={true}
+          onClick={() => setChecked(!checked)}
+          disabled={true}
+        />
+      </Section>
 
-            {/*Sm*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    size="SM"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    size="SM"
-                />
-                <Radio checked={true} onClick={() => setChecked(!checked)} size="SM" />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    size="SM"
-                />
-            </div>
-
-            {/*Sm - label*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    label="Label"
-                    size="SM"
-                />
-            </div>
-
-            {/*Sm - caption*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    caption="Caption"
-                    size="SM"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    caption="Caption"
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    caption="Caption"
-                    size="SM"
-                />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                    size="SM"
-                />
-            </div>
-
-            {/*Sm-caption-label*/}
-            <div className="flex flex-col mr-16">
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(true)}
-                    caption="Caption"
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={!checked}
-                    onClick={() => setChecked(false)}
-                    caption="Caption"
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    caption="Caption"
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={checked}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                    label="Label"
-                    size="SM"
-                />
-                <Radio
-                    checked={true}
-                    onClick={() => setChecked(!checked)}
-                    disabled={true}
-                    caption="Caption"
-                    label="Label"
-                    size="SM"
-                />
-            </div>
-        </div>
-    );
+      Size SM
+      <Section className="flex items-center justify-center border bg-white">
+        <Radio checked={checked} onClick={() => setChecked(true)} size="SM" />
+        <Radio checked={!checked} onClick={() => setChecked(false)} size="SM" />
+      </Section>
+    </div>
+  );
 }
