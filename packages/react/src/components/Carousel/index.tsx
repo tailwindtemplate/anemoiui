@@ -1,20 +1,18 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, PropsWithChildren } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 // Icon
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 // Component
-import { NextPrev } from './NextPrev';
-import { Dots } from './Dots';
+import { NextPrev } from './next-prev';
+import { Dots } from './dots';
 // Css
 import 'keen-slider/keen-slider.min.css';
 import { TOptionsEvents } from 'keen-slider';
 // Check Type Props
 type Carousel = {
-  data?: any[],
   rtlCarousel?: boolean,
   responsiveCarousel?: any,
   classCarousel?: string,
-  classItemsCarousel?: string,
   displayNextPrev?: boolean,
   defaultCarousel?: number,
   autoplay?: boolean,
@@ -36,7 +34,6 @@ type Carousel = {
   classIconRight?: string
 }
 // Default Props
-const Data = [{ "item": "1" }, { "item": "2" }, { "item": "3" }, { "item": "4" }, { "item": "5" }, { "item": "6" }];
 const RtlCarousel = false;
 const ResponsiveCarousel = {};
 const DisplayNextPrev = false;
@@ -49,7 +46,6 @@ const SpacingPerView = 5;
 const SnapMode = "snap";
 const CenterCarousel = false;
 const ClassCarousel = "carousel relative";
-const ClassItemsCarousel = "max-w-sm bg-gray-800 text-white h-72 flex justify-center";
 const ActiveDots = "bg-gray-900";
 const DisplayDots = false;
 const ClassDots = "flex pt-2 justify-center";
@@ -58,7 +54,7 @@ const ClassIconLeft = "absolute text-white font-semibold font-black cursor-point
 const ClassIconRight = "absolute text-white font-semibold font-black cursor-pointer top-2/4 w-8 h-8 right-1";
 // Render
 export const Carousel = ({
-  data = Data,
+  children,
   rtlCarousel = RtlCarousel,
   responsiveCarousel = ResponsiveCarousel,
   displayNextPrev = DisplayNextPrev,
@@ -71,7 +67,6 @@ export const Carousel = ({
   snapMode = SnapMode,
   centerCarousel = CenterCarousel,
   classCarousel = ClassCarousel,
-  classItemsCarousel = ClassItemsCarousel,
   // Dots
   activeDots = ActiveDots,
   displayDots = DisplayDots,
@@ -83,7 +78,7 @@ export const Carousel = ({
   classIconLeft = ClassIconLeft,
   classIconRight = ClassIconRight,
   ...rest
-}: Carousel & TOptionsEvents) => {
+}: PropsWithChildren<Carousel> & TOptionsEvents) => {
   // Create State
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
@@ -116,17 +111,7 @@ export const Carousel = ({
   return (
     <div className={classCarousel}>
       <div ref={sliderRef} className="keen-slider">
-        {/* -------------Show Carousel------------- */}
-        {
-          data?.map((carousel, index) => (
-            <div
-              key={index}
-              className={`keen-slider__slide ${classItemsCarousel}`}
-            >
-              {carousel.item}
-            </div>
-          ))
-        }
+        {children}
         {/* -------------Button Prev------------- */}
         <NextPrev
           onClickNextPrev={(e: any) => e.stopPropagation() || slider.prev()}
@@ -150,7 +135,7 @@ export const Carousel = ({
       {
         slider &&
         (
-          <div className={`${classDots}`}>
+          <div className={classDots}>
             {
               [...Array(slider.details().size)].map((idx, index) => (
                 <Dots

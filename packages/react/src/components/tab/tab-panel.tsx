@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React,{ PropsWithChildren } from 'react';
 
 type TabPanel = {
     id: string

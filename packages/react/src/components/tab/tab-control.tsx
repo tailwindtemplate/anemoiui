@@ -1,32 +1,19 @@
+import React from 'react';
 import clsx from 'clsx';
-// Component
-// import { TabPanel } from './tab-panel';
-
 // Check Type Props
 type TabControl = {
-  items: { name: string, id: string, icon: any, classIcon: string, className: string }[],
+  items: { name: string, id: string }[],
   active: string,
   classTabControl?: string,
   classActive?: string,
   classItemControl?: string,
-  tabPosition?: 'left' | 'right' | 'center' | string,
   // Action
-  onClick: (id: string) => void,
-  onChange?: (id: string, name: string) => void
+  onClick: (id: string) => void
 };
 // Default Props
-const ClassTabControl = "border-b border-gray-100";
+const ClassTabControl = "border-b border-gray-100 flex";
 const ClassActive = "bg-gray-200 text-blue-600 ";
-const ClassItemControl = "rounded-t-md cursor-pointer px-4 py-2 flex items-center	";
-// Function
-const TabPosition = (position: string) => {
-  switch (position) {
-    case "left": return 'flex justify-start';
-    case "center": return 'flex justify-center';
-    case "right": return 'flex justify-end';
-    default: return 'flex justify-start';
-  }
-};
+const ClassItemControl = "rounded-t-md cursor-pointer px-4 py-2 flex items-center";
 // Render
 export const TabControl = ({
   items,
@@ -34,27 +21,23 @@ export const TabControl = ({
   classTabControl = ClassTabControl,
   classActive = ClassActive,
   classItemControl = ClassItemControl,
-  tabPosition = 'left',
   // Action
-  onClick,
-  onChange
+  onClick
 }: TabControl) => {
-
   return (
-    <div className={`${classTabControl} ${TabPosition(tabPosition)}`}>
+    <div className={classTabControl}>
       {
-        items.map((i) => (
+        items.map(({ name, id }) => (
           <div
-            key={i.id}
-            onClick={() => { onClick(i.id); onChange && onChange(i.id, i.name) }}
-            className={clsx(classItemControl, active == i.id && classActive)}
+            key={id}
+            onClick={() => onClick(id)}
+            className={clsx(classItemControl, active == id && classActive)}
             style={{ marginBottom: -1 }}
           >
-            <i.icon className={i.classIcon} /> <span className={i.className}>{i.name}</span>
+            {name}
           </div>
         ))
       }
-
     </div>
   )
 };

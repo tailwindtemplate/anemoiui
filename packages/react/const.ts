@@ -85,28 +85,37 @@ export const popover = [
     name: "Wifi",
     description: "Wifi description",
     href: "##",
-    icon: WifiIcon,
+    Icon: WifiIcon,
     classIcon: "w-6 h-6",
   },
   {
     name: "Shopping",
     description: "Shopping description",
     href: "##",
-    icon: ShoppingCartIcon,
+    Icon: ShoppingCartIcon,
     classIcon: "w-6 h-6",
   },
   {
     name: "Gift",
     description: "Gift description ",
     href: "##",
-    icon: GiftIcon,
+    Icon: GiftIcon,
     classIcon: "w-6 h-6",
   },
   {
     name: "Printer",
     description: "Printer description",
     href: "##",
-    icon: PrinterIcon,
+    Icon: PrinterIcon,
     classIcon: "w-6 h-6",
   },
+];
+// Default Data Carousel
+export const carousel = [
+  { item: "1" },
+  { item: "2" },
+  { item: "3" },
+  { item: "4" },
+  { item: "5" },
+  { item: "6" },
 ];

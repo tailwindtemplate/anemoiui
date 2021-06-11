@@ -1,10 +1,9 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import { Fragment } from 'react';
 // Check Type Props
 type PopoverControl = {
-  transform?: any
+  transform?: Object
   namePopover?: string,
   Icon?: any,
   classIcon?: string,
@@ -14,7 +13,6 @@ type PopoverControl = {
   classPopoverPanel?: string,
   classPopoverButton?: string,
 };
-
 // Default Props
 const Transform = {
   enter: "transition ease-out duration-200",
@@ -28,7 +26,7 @@ const NamePopover = "Popover";
 const ClassIcon = "ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition";
 const ClassNamePopover = "text-gray-500 font-semibold";
 const ClassPopover = "relative mt-8";
-const ClassPopoverPanel = "absolute border z-10 transform  left-0	pt-2 rounded-lg shadow-xl	 mt-2 p-4";
+const ClassPopoverPanel = "absolute border z-10 transform left-0pt-2 rounded-lg shadow-xl	mt-2 p-4";
 const ClassPopoverButton = "text-gray-500 font-semibold inline-flex rounded-lg border group bg-orange-700 px-3 py-2 items-center items-center focus:outline-none rounded-lg border";
 // Render
 export const PopoverControl = ({
@@ -52,7 +50,7 @@ export const PopoverControl = ({
               <span className={classNamePopover}>{namePopover}</span>
               {Icon && <Icon className={classIcon} />}
             </Popover.Button>
-            <Transition as={Fragment} {...transform}>
+            <Transition as="div" {...transform}>
               <Popover.Panel className={classPopoverPanel}>
                 {children}
               </Popover.Panel>

@@ -1,3 +1,5 @@
+import React from 'react';
+import clsx from 'clsx';
 //Check Type Props
 type NextPrev = {
   onClickNextPrev: (e: any) => void,
@@ -20,15 +22,12 @@ export const NextPrev = ({
   const Disabled = disabled && "opacity-25";
   //Return
   return (
-    slider &&
-    (
+    slider && (
       <div
         onClick={onClickNextPrev}
         style={{ visibility: displayNextPrev ? 'visible' : 'hidden' }}
       >
-        {
-          Icon && <Icon className={`${Alignment} ${Disabled}`} />
-        }
+        {Icon && <Icon className={clsx(Alignment, Disabled)} />}
       </div>
     )
   )
