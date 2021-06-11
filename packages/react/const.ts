@@ -35,6 +35,7 @@ export const menu = [
         ]
     },
     { name: 'document', url: '/documents' },
+    { name: 'sections', url: '/sections' },
 ]
 
 export const headerMenu = [
