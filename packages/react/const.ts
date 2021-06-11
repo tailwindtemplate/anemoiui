@@ -7,12 +7,7 @@ import {
 // Icon Data Tab;
 import { ArchiveIcon, ChipIcon, DatabaseIcon } from "@heroicons/react/outline";
 //Icon Popover
-import {
-  ShoppingCartIcon,
-  WifiIcon,
-  GiftIcon,
-  PrinterIcon,
-} from "@heroicons/react/outline";
+import { ShoppingCartIcon, WifiIcon, GiftIcon, PrinterIcon } from "@heroicons/react/outline";
 export const dropdown = [
   { name: "element 1", href: "#" },
   { name: "element 2" },
@@ -29,6 +24,7 @@ export const menu = [
       { name: "tabs", url: "/components/tabs" },
       { name: "carousel", url: "/components/carousel" },
       { name: "popover", url: "/components/popover" },
+      { name: "user profile", url: "/components/user-profile" },
     ],
   },
   {
