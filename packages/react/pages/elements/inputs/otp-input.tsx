@@ -24,7 +24,7 @@ export default function OtpInputPage() {
         />
       </Section>
       Only number
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <OTPInput length={4} className="flex space-x-2" isNumberInput />
       </Section>
     </div>

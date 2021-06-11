@@ -26,11 +26,11 @@ export default function TextInput({
   return (
     <div
       className={clsx(
-        "relative w-full text-gray-600 focus-within:text-gray-400",
+        "relative text-gray-600 focus-within:text-gray-400",
         className
       )}
     >
-      <div className="flex items-center">
+      <div className="flex items-center w-full">
         {src && <Avatar size="xs" src={src} isRounded className="absolute left-0 ml-2" isAbsolute />}
         {LeftIcon && (
           <span className="absolute left-0 flex items-center px-2 h-full">

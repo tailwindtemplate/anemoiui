@@ -6,11 +6,11 @@ export default function PreviewButton() {
       <div className="text-3xl my-8">Buttons</div>
       Size XS -{">"} XL
       <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Button type="primary" size="xs" />
-        <Button type="primary" size="sm" />
-        <Button type="primary" />
-        <Button type="primary" size="lg" />
-        <Button type="primary" size="xl" />
+        <Button type="primary" size="xs" className="m-2" />
+        <Button type="primary" size="sm" className="m-2" />
+        <Button type="primary" className="m-2" />
+        <Button type="primary" size="lg" className="m-2" />
+        <Button type="primary" size="xl" className="m-2" />
       </Section>
 
       Type: secondary
@@ -25,11 +25,11 @@ export default function PreviewButton() {
 
       Custom classname
       <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Button size="xs" className="bg-neutral-50" />
-        <Button size="xs" className="bg-neutral-100" />
-        <Button size="xs" className="bg-neutral-200" />
-        <Button size="xs" className="bg-neutral-300" />
-        <Button size="xs" className="bg-neutral-400" />
+        <Button size="xs" className="bg-neutral-50 m-2" />
+        <Button size="xs" className="bg-neutral-100 m-2" />
+        <Button size="xs" className="bg-neutral-200 m-2" />
+        <Button size="xs" className="bg-neutral-300 m-2" />
+        <Button size="xs" className="bg-neutral-400 m-2" />
       </Section>
 
       Disable

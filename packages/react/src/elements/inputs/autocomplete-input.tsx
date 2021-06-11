@@ -62,7 +62,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         return (
-          <ul className="border my-4 rounded-2xl w-80">
+          <ul className="my-4 rounded-2xl w-80">
             {filteredSuggestions.map((suggestion, index) => {
               return (
                 <li
