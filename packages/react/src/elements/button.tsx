@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 type Button = {
   title?: any;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | string;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | string;
   type?: 'primary' | 'secondary' | 'gradient' | string;
   className?: string;
   disabled?: boolean;
