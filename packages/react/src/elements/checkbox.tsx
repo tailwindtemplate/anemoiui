@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { CheckIcon } from "@heroicons/react/outline";
+import { CheckIcon, MinusIcon } from "@heroicons/react/outline";
 
 type Checkbox = {
   checked?: boolean;
