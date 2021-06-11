@@ -19,9 +19,7 @@ export const menu = [
     items: [
       { name: 'modals', url: '/components/modals' },
       { name: 'tabs', url: '/components/tabs' },
-      { name: "popover", url: "/components/popover" },
       { name: "user profile", url: "/components/user-profile" },
-      { name: "carousel", url: "/components/carousel" }
     ],
   },
   {
