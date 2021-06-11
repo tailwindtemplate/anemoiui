@@ -8,7 +8,6 @@ type TextInput = {
     className?: string;
     inputClassName?: string;
     type?: 'error' | string;
-    cancelOnclick?: () => void;
     src?: string;
 };
 
@@ -22,7 +21,6 @@ export default function TextInput({
     className,
     inputClassName,
     type,
-    cancelOnclick,
     src,
     ...rest
 }: TextInput & InputHTMLAttributes<{}>) {
@@ -48,7 +46,7 @@ export default function TextInput({
                     {...rest}
                 />
                 {RightIcon && (
-                    <span className="absolute right-0 flex items-center pr-2" onClick={cancelOnclick}>
+                    <span className="absolute right-0 flex items-center pr-2">
                         <RightIcon className="w-5 h-5" />
                     </span>
                 )}

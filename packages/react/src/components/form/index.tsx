@@ -15,10 +15,10 @@ export const Form = ({ title, description, children, hasHeader, className }: Rea
         <div className={clsx('bg-white rounded-xl w-560 p-4 border shadow-md p-14', className)}>
             {hasHeader && (
                 <div className='flex justify-between items-center'>
-                    <ChevronLeftIcon className='w-6 h-6' />
+                    <ChevronLeftIcon className='w-6 h-6 hover:text-primary-600 cursor-pointer' />
                     <div className='flex justify-between items-center'>
                         <span className='text-gray-500 text-xs'>Chưa có tài khoản?</span>
-                        <Button title='Đăng ký' className='p-0 text-xs' size='xs' />
+                        <Button title='Đăng ký' className='p-0 text-xs hover:text-primary-600' size='xs' />
                     </div>
                 </div>
             )}

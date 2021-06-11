@@ -9,7 +9,6 @@ type Select = {
   Icon?: any;
   src?: string;
   data: { title: string }[];
-  label?: string;
 };
 
 export function Select({
@@ -18,7 +17,6 @@ export function Select({
   Icon,
   src,
   data,
-  label
 }: Select) {
   const [open, setOpen] = React.useState(false);
   const [defaultTitle, setDefaultTitle] = React.useState("");
@@ -40,14 +38,14 @@ export function Select({
     <div className="w-80 rounded-xl m-2 relative">
       <div
         className={clsx(
-          "border rounded-xl h-14 flex justify-between items-center p-4 focus:border-primary-600 hover:border-primary-400",
+          "border rounded-md flex justify-between items-center p-3 focus:border-primary-600 hover:border-primary-400",
           disabled && "cursor-not-allowed opacity-50 select-none"
         )}
         onClick={handleOpen}
       >
         <div className="flex items-center">
           {Icon && <Icon className={clsx(disableStyle, "mr-2 w-5 h-5")} />}
-          {src && <Avatar size="xs" className={clsx("mr-2", disableStyle)} />}
+          {src && <Avatar size="xs" className={clsx("mr-2", disableStyle)} src={src} />}
           <div>
             <span
               className={`${
@@ -58,16 +56,6 @@ export function Select({
             >
               {defaultTitle ? defaultTitle : placeholder}
             </span>
-            {label && (
-              <div
-                className={clsx(
-                  "text-neutral-900 text-sm",
-                  disableStyle
-                )}
-              >
-                {label}
-              </div>
-            )}
           </div>
         </div>
         {open ? (
