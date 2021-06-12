@@ -25,7 +25,7 @@ export const NextPrev = ({
     slider && (
       <div
         onClick={onClickNextPrev}
-        style={{ visibility: displayNextPrev ? 'visible' : 'hidden' }}
+        className={clsx(displayNextPrev ? 'visible' : 'invisible')}
       >
         {Icon && <Icon className={clsx(Alignment, Disabled)} />}
       </div>

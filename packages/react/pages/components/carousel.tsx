@@ -30,7 +30,7 @@ export default function CarouselControl() {
     <Section>
       <div className={carouselClassName}>
         <h3 className={titleClassName} > Default Carousel</h3>
-        <Carousel>
+        <Carousel >
           {showCarousel(carousel)}
         </Carousel>
       </div>

@@ -11,7 +11,9 @@ import { TOptionsEvents } from 'keen-slider';
 // Check Type Props
 type Carousel = {
   rtlCarousel?: boolean,
-  responsiveCarousel?: any,
+  responsiveCarousel?: {
+    [key: string]: Omit<TOptionsEvents, 'breakpoints'>
+  }
   classCarousel?: string,
   displayNextPrev?: boolean,
   defaultCarousel?: number,

@@ -17,13 +17,4 @@ export const Dots = ({
   onClick,
   currentSlide,
   activeDots
-}: PropsWithChildren<Dots>) => {
-  return (
-    <button
-      key={index}
-      onClick={onClick}
-      className={clsx(classItemDots, currentSlide === index && activeDots)}
-      style={{ display: `${displayDots ? 'block' : 'none'}` }}
-    />
-  )
-};
+}: PropsWithChildren<Dots>) => <button key={index} onClick={onClick} className={clsx(classItemDots, currentSlide === index && activeDots, displayDots ? 'block' : 'hidden')} />

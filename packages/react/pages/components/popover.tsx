@@ -3,7 +3,7 @@ import { PopoverControl } from '../../src';
 import { popover } from '../../const';
 export default function Popover() {
   return (
-    <PopoverControl>
+    <PopoverControl >
       {
         popover.map(({ name, href, Icon, description, classIcon }) => (
           <a

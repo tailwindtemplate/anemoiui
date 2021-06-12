@@ -3,11 +3,8 @@ import {
   HomeIcon,
   TemplateIcon,
   ViewGridAddIcon,
+  ShoppingCartIcon, WifiIcon, GiftIcon, PrinterIcon
 } from "@heroicons/react/outline";
-// Icon Data Tab;
-import { ArchiveIcon, ChipIcon, DatabaseIcon } from "@heroicons/react/outline";
-//Icon Popover
-import { ShoppingCartIcon, WifiIcon, GiftIcon, PrinterIcon } from "@heroicons/react/outline";
 export const dropdown = [
   { name: "element 1", href: "#" },
   { name: "element 2" },
@@ -23,8 +20,7 @@ export const menu = [
       { name: "modals", url: "/components/modals" },
       { name: "tabs", url: "/components/tabs" },
       { name: "carousel", url: "/components/carousel" },
-      { name: "popover", url: "/components/popover" },
-      { name: "user profile", url: "/components/user-profile" },
+      { name: "popover", url: "/components/popover" }
     ],
   },
   {
@@ -55,24 +51,15 @@ export const menu = [
 export const tabItems = [
   {
     id: "tab1",
-    name: "tab 1",
-    icon: ArchiveIcon,
-    classIcon: "w-4 h-4 mr-2",
-    className: "p4 font-medium capitalize",
+    name: "tab 1"
   },
   {
     id: "tab2",
-    name: "tab 2",
-    icon: ChipIcon,
-    classIcon: "w-4 h-4 mr-2",
-    className: "p4 font-medium capitalize",
+    name: "tab 2"
   },
   {
     id: "tab3",
-    name: "tab 3",
-    icon: DatabaseIcon,
-    classIcon: "w-4 h-4 mr-2",
-    className: "p4 font-medium capitalize",
+    name: "tab 3"
   },
 ];
 // Default Data Popover
