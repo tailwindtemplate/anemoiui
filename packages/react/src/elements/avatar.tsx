@@ -13,7 +13,6 @@ type Textarea = {
   name?: string;
   type?: "src" | "add-avatar";
   hasBorder?: boolean;
-  isAbsolute?: boolean;
 };
 
 const SIZE: any = {
@@ -80,7 +79,6 @@ export function Avatar({
   name,
   hasBorder,
   type = "src",
-  isAbsolute
 }: React.PropsWithChildren<Textarea>) {
   const [loading, setLoading] = useState(true)
   const placeholder = useMemo(() => renderAvatar(type, loading, size, name), [loading, size, name, type])
@@ -105,11 +103,10 @@ export function Avatar({
             hasBorder={hasBorder}
             isRounded={isRounded}
             className={clsx(
-                "flex items-center justify-center bg-cover bg-no-repeat bg-center",
+                "relative flex items-center justify-center bg-cover bg-no-repeat bg-center",
                 SIZE[size],
                 type === "add-avatar" ? "bg-white border border-dashed" : 'bg-primary-600',
                 className,
-                isAbsolute ? 'absolute' : 'relative',
             )}
             style={{ backgroundImage: `url('${src}')` }}
         >

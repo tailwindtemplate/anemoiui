@@ -70,7 +70,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
                     index === activeSuggestion
                       ? "bg-primary-500 text-white hover:bg-primary-400"
                       : "",
-                    "p-2 cursor-pointer hover:bg-primary-100"
+                    "p-2 cursor-pointer hover:bg-primary-100 truncate"
                   )}
                   key={suggestion}
                   onClick={onClick}

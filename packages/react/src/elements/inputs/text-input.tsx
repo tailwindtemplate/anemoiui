@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 import clsx from "clsx";
-import { Avatar } from 'elements';
+import { Avatar } from '../avatar';
 
 type TextInput = {
   LeftIcon?: any;
@@ -24,33 +24,31 @@ export default function TextInput({
   ...rest
 }: TextInput & InputHTMLAttributes<{}>) {
   return (
-    <div
-      className={clsx(
-        "relative text-gray-600 focus-within:text-gray-400",
-        className
-      )}
-    >
-      <div className="flex items-center w-full">
-        {src && <Avatar size="xs" src={src} isRounded className="absolute left-0 ml-2" isAbsolute />}
+    <div className='w-full'>
+      <div
+          className={clsx(
+              "text-gray-600 focus-within:text-gray-400 border rounded-xl w-full flex items-center",
+              className
+          )}
+      >
+        {src && <Avatar size="xs" src={src} isRounded />}
         {LeftIcon && (
-          <span className="absolute left-0 flex items-center px-2 h-full">
+            <span className="flex items-center h-full">
             <LeftIcon className='w-5 h-5' />
           </span>
         )}
         <input
-          type="text"
-          className={clsx(
-            "py-2 md:py-3 text-sm rounded-xl focus:border-primary-400 focus:outline-none border w-full placeholder-neutral-300",
-            LeftIcon ? "px-10" : "px-4",
-            src ? 'px-12' : 'px-4',
-            type && TYPE_MAPS[type],
-            inputClassName,
-          )}
-          placeholder="Search member..."
-          {...rest}
+            type="text"
+            className={clsx(
+                "py-2 md:py-3 text-sm focus:border-primary-400 focus:outline-none w-full placeholder-neutral-300 rounded-xl",
+                LeftIcon ? "px-2" : "px-4",
+                type && TYPE_MAPS[type],
+                inputClassName,
+            )}
+            {...rest}
         />
         {RightIcon && (
-          <span className="absolute right-0 flex items-center pr-2">
+            <span className="flex items-center">
             <RightIcon className='w-5 h-5' />
           </span>
         )}

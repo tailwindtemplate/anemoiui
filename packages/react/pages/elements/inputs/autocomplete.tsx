@@ -8,7 +8,7 @@ export default function AutocompleteInputPage() {
       <Section className="mb-8 flex items-center justify-center border bg-white">
         <AutocompleteInput
           suggestions={[
-            "Nguyễn Văn Anh",
+            "Nguyễn Văn Anh Anh Anh Anh Anh Anh Anh Anh Anh Anh Anh",
             "Lê Thị Kim Cương",
             "Trần Mai Ngọc Ngà",
             "Huỳnh Văn Anh Đức",
