@@ -40,7 +40,7 @@ export default function TextInput({
         <input
           type="text"
           className={clsx(
-            "py-3 text-sm rounded-xl focus:border-primary-400 focus:outline-none border w-full placeholder-neutral-300",
+            "py-2 md:py-3 text-sm rounded-xl focus:border-primary-400 focus:outline-none border w-full placeholder-neutral-300",
             LeftIcon ? "px-10" : "px-4",
             src ? 'px-12' : 'px-4',
             type && TYPE_MAPS[type],

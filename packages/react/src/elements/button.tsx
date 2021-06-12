@@ -14,7 +14,7 @@ const SIZE_MAPS: any = {
   xs: "text-xs px-2 py-1",
   sm: "text-sm px-4 py-2",
   md: "text-base px-6 py-2",
-  lg: "text-lg px-8 py-2",
+  lg: "text-sm md:text-lg px-2 md:px-8 py-2",
   xl: "text-xl px-10 py-2",
   full: 'max-w-full px-10 py-2',
 };

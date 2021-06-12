@@ -12,7 +12,7 @@ type Form = {
 
 export const Form = ({ title, description, children, hasHeader, className }: React.PropsWithChildren<Form>) => {
     return (
-        <div className={clsx('bg-white rounded-xl w-560 p-4 border shadow-md p-14', className)}>
+        <div className={clsx('bg-white rounded-xl w-288 md:w-560 border shadow-md p-6 md:p-14', className)}>
             {hasHeader && (
                 <div className='flex justify-between items-center'>
                     <ChevronLeftIcon className='w-6 h-6 hover:text-primary-600 cursor-pointer' />
@@ -23,8 +23,8 @@ export const Form = ({ title, description, children, hasHeader, className }: Rea
                 </div>
             )}
             <form className='flex flex-col'>
-                <h1 className={clsx('text-4xl', hasHeader ? 'my-6' : '')}>{title}</h1>
-                <div className="my-5 text-gray-500">{description}</div>
+                <h1 className={clsx('text-2xl md:text-4xl', hasHeader ? 'my-1 md:my-6' : '')}>{title}</h1>
+                <div className="text-xs md:text-lg my-2 md:my-5 text-gray-500">{description}</div>
                 {children}
             </form>
         </div>

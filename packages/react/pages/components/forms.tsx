@@ -7,8 +7,8 @@ export default function FormsPage() {
     return (
         <Section narrow>
 
-            <div className='ml-4'>Text input - Button</div>
-            <Section>
+            <div className='mb-4'>Text input - Button</div>
+            <Section normal={false}>
                 <Form
                     title="Xin chào!"
                     description="Chào mừng bạn đến với trang đăng nhập Hayov. Vui lòng nhập số điện thoại"
@@ -20,8 +20,8 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='ml-4'>Button - Button</div>
-            <Section>
+            <div className='mb-4'>Button - Button</div>
+            <Section normal={false}>
                 <Form
                     title="Hahalolo"
                     description="Cùng nhau kết nối đến cả thế giới theo cách đơn giản nhất"
@@ -38,8 +38,8 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='ml-4'>Value text input - Value text input - Button</div>
-            <Section>
+            <div className='mb-4'>Value text input - Value text input - Button</div>
+            <Section normal={false}>
                 <Form
                     title="Hahalolo"
                     description="Đăng nhập vào tài khoản Hahalolo để tham gia trải nghiệm Hayov"
@@ -64,8 +64,8 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='ml-4'>Value text input - Text input - Button</div>
-            <Section>
+            <div className='mb-4'>Value text input - Text input - Button</div>
+            <Section normal={false}>
                 <Form
                     title="Hahalolo"
                     description="Đăng nhập vào tài khoản Hahalolo để tham gia trải nghiệm Hayov"
@@ -89,8 +89,8 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='ml-4'>Button</div>
-            <Section>
+            <div className='mb-4'>Button</div>
+            <Section normal={false}>
                 <Form
                     title="Chúc mừng!"
                     description="Bạn đã đăng ký thành công! Bắt đầu kết nối với thế giới nhé!"
@@ -100,8 +100,8 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='ml-4'>Text input - Text input</div>
-            <Section>
+            <div className='mb-4'>Text input - Text input</div>
+            <Section normal={false}>
                 <Form
                     title="Chúc mừng!"
                     description="Bạn đã đăng ký thành công! Bắt đầu kết nối với thế giới nhé!"
