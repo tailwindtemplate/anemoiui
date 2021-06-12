@@ -6,7 +6,7 @@ type Sidebar = {
 }
 export const Sidebar = ({ children, className }: PropsWithChildren<Sidebar>) => {
     return (
-        <div className={clsx('h-full overflow-y-auto', className)}>
+        <div className={clsx('overflow-y-auto', className)}>
             {children}
         </div>
     )
