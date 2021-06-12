@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import clsx from 'clsx';
 // Check Type Props
-type Dots = {
+type Dot = {
   classItemDots?: string
   activeDots?: string,
   displayDots?: boolean,
@@ -10,11 +10,11 @@ type Dots = {
   onClick: () => void,
 };
 // Render
-export const Dots = ({
+export const Dot = ({
   classItemDots,
   displayDots,
   index,
   onClick,
   currentSlide,
   activeDots
-}: PropsWithChildren<Dots>) => <button key={index} onClick={onClick} className={clsx(classItemDots, currentSlide === index && activeDots, displayDots ? 'block' : 'hidden')} />
+}: PropsWithChildren<Dot>) => <button key={index} onClick={onClick} className={clsx(classItemDots, currentSlide === index && activeDots, displayDots ? 'block' : 'hidden')} />

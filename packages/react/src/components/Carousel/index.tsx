@@ -4,12 +4,12 @@ import { useKeenSlider } from 'keen-slider/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 // Component
 import { NextPrev } from './next-prev';
-import { Dots } from './dots';
+import { Dot } from './dot';
 // Css
 import 'keen-slider/keen-slider.min.css';
 import { TOptionsEvents } from 'keen-slider';
 // Check Type Props
-type Carousel = {
+type Carousel1 = {
   rtlCarousel?: boolean,
   responsiveCarousel?: any,
   classCarousel?: string,
@@ -22,7 +22,7 @@ type Carousel = {
   spacingPerView?: number,
   centerCarousel?: boolean
   snapMode?: "free" | "snap" | "free-snap",
-  // Dots
+  // Dot
   displayDots?: boolean
   classDots?: string,
   activeDots?: string,
@@ -53,7 +53,7 @@ const ClassItemDots = "rounded-none	w-2	h-2 bg-gray-300	p-2 m-2 rounded-2xl";
 const ClassIconLeft = "absolute text-white font-semibold font-black cursor-pointer top-2/4 w-8 h-8 left-1";
 const ClassIconRight = "absolute text-white font-semibold font-black cursor-pointer top-2/4 w-8 h-8 right-1";
 // Render
-export const Carousel = ({
+export const Carousel1 = ({
   children,
   rtlCarousel = RtlCarousel,
   responsiveCarousel = ResponsiveCarousel,
@@ -67,7 +67,7 @@ export const Carousel = ({
   snapMode = SnapMode,
   centerCarousel = CenterCarousel,
   classCarousel = ClassCarousel,
-  // Dots
+  // Dot
   activeDots = ActiveDots,
   displayDots = DisplayDots,
   classDots = ClassDots,
@@ -78,7 +78,7 @@ export const Carousel = ({
   classIconLeft = ClassIconLeft,
   classIconRight = ClassIconRight,
   ...rest
-}: PropsWithChildren<Carousel> & TOptionsEvents) => {
+}: PropsWithChildren<Carousel1> & TOptionsEvents) => {
   // Create State
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
@@ -131,14 +131,14 @@ export const Carousel = ({
           disabled={currentSlide === slider?.details().size - 1}
         />
       </div>
-      {/*--------------------------Dots--------------------------*/}
+      {/*--------------------------Dot--------------------------*/}
       {
         slider &&
         (
           <div className={classDots}>
             {
               [...Array(slider.details().size)].map((idx, index) => (
-                <Dots
+                <Dot
                   key={index}
                   classItemDots={classItemDots}
                   activeDots={activeDots}
