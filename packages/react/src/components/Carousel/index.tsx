@@ -112,7 +112,7 @@ export const Carousel = ({
     <div className={classCarousel}>
       <div ref={sliderRef} className="keen-slider">
         {children}
-        {/* -------------Button Prev------------- */}
+        {/* --------------------------Button Prev--------------------------*/}
         <NextPrev
           onClickNextPrev={(e: any) => e.stopPropagation() || slider.prev()}
           Icon={iconLeft}
@@ -121,7 +121,7 @@ export const Carousel = ({
           slider={slider}
           disabled={currentSlide === 0}
         />
-        {/* -------------Button Next------------- */}
+        {/* --------------------------Button Next--------------------------*/}
         <NextPrev
           onClickNextPrev={(e: any) => e.stopPropagation() || slider.next()}
           Icon={iconRight}
@@ -131,7 +131,7 @@ export const Carousel = ({
           disabled={currentSlide === slider?.details().size - 1}
         />
       </div>
-      {/* -------------Dots------------- */}
+      {/*--------------------------Dots--------------------------*/}
       {
         slider &&
         (
