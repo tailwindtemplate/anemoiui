@@ -6,3 +6,16 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+.bd-red{
+    @apply border border-red-500
+}
+
+.bd-blue{
+    @apply border border-blue-500
+}
+
+.items-center{
+    @apply grid justify-items-center
+}
+

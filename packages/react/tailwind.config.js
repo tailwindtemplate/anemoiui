@@ -54,7 +54,15 @@ module.exports = {
         sm: "1rem",
         md: "1.5rem",
         lg: "2rem",
-        xl: "2.5rem"
+        xl: "2.5rem",
+        336: "21rem",
+        260: "16.25rem",
+        140: "8.75rem",
+        116: "7.25",
+        100: "6.25rem",
+        60: "3.75",
+        18: "1.125rem",
+        14: "0.875rem",
       },
       fontSize: {
         tiny: ".5rem"
