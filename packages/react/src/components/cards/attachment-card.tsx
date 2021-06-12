@@ -1,6 +1,7 @@
 import React, { JSXElementConstructor, useMemo } from 'react';
 import { DocumentIcon, DownloadIcon, FastForwardIcon } from '@heroicons/react/outline';
 import clsx from 'clsx';
+import { ImageLoader } from 'elements';
 
 export type AttachmentCard = {
     type: string
@@ -15,15 +16,10 @@ export type AttachmentCard = {
     onClick?: (e: any) => void
     beforeHeader?: string
 }
-export const AttachmentCard = ({ hasDownload = true, fileName, content, size, url, Icon, image, forwardClick, onClick, beforeHeader }: AttachmentCard) => {
-    const delegate = useMemo(() => {
-        if (image) return <img src={image} className="w-auto max-h-40 md:w-10 md:h-10 rounded-md flex-shrink-0"/>
-        if (Icon) return <Icon className="w-10 h-10 flex-shrink-0" />
-        return <DocumentIcon className="w-10 h-10 flex-shrink-0" />
-    }, [Icon, image])
+export const AttachmentCard = ({ hasDownload = true, fileName, content, size, url, Icon = DocumentIcon, image = '', forwardClick, onClick, beforeHeader }: AttachmentCard) => {
     return (
         <div className={clsx('rounded-3xl border border-gray-200 hover:border-primary-400 px-5 py-3 flex flex-col md:flex-row md:justify-between items-center bg-white', onClick && 'cursor-pointer')} onClick={onClick}>
-            {delegate}
+            <ImageLoader src={image} imageStyle="cover" LoadIcon={Icon} LoadIconClassName="w-10 h-10 flex-shrink-0" className="w-auto max-h-40 md:w-10 md:h-10 rounded-md flex-shrink-0 bg-no-repeat"/>
             <div className="md:mr-auto md:ml-3 w-full overflow-hidden">
                 {beforeHeader && <div className="text-xs text-gray-400 whitespace-nowrap overflow-ellipsis overflow-hidden">{beforeHeader}</div>}
                 <h3 className={clsx('whitespace-nowrap overflow-ellipsis overflow-hidden', beforeHeader ? 'text-primary-300 text-xs' : 'text-gray-600 text-lg')}>{fileName}</h3>

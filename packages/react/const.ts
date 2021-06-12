@@ -46,7 +46,8 @@ export const menu = [
             { name: 'checkbox', url: '/elements/checkbox' },
             { name: 'radio', url: '/elements/radio' },
             { name: 'select', url: '/elements/select' },
-            { name: 'text area', url: '/elements/text-area' }
+            { name: 'text area', url: '/elements/text-area' },
+            { name: 'image loader', url: '/elements/image-loader' }
         ]
     },
     { name: 'document', url: '/documents' },
