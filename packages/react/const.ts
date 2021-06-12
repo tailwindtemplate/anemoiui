@@ -35,6 +35,7 @@ export const menu = [
         ]
     },
     { name: 'document', url: '/documents' },
+    { name: 'forms', url: '/forms' },
 ]
 
 export const headerMenu = [

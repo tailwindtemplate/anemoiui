@@ -3,7 +3,7 @@ import { UserCircleIcon, ChevronRightIcon } from "@heroicons/react/outline";
 
 const Crad = () => {
     return (
-        <body className="bg-gray-200 ">
+        <body className="bg-gray-200 flex items-center justify-start">
 
         <div className="grid grid-cols-1 ml-5 block inline-block">
 
