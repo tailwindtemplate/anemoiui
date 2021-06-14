@@ -26,7 +26,8 @@ export const menu = [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
             { name: 'forms', url: '/components/forms' },
-            { name: 'messages', url: '/components/messages'}
+            { name: 'messages', url: '/components/messages'},
+            { name: 'user card', url: '/components/user-card'}
         ],
     },
     {
@@ -102,6 +103,12 @@ export const attachments = [
 export const user = {
     name: 'User name',
     avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+}
+export const userCard = {
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    time: '30/05/2021'
 }
 export const textMessageItem = {
     type: 'text',
