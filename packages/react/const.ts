@@ -52,6 +52,12 @@ export const menu = [
             { name: 'image loader', url: '/elements/image-loader' }
         ]
     },
+    {
+        name: 'sections',
+        items: [
+            { name: 'landing', url: '/sections/landing' },
+        ]
+    },
     { name: 'document', url: '/documents' },
 ]
 
