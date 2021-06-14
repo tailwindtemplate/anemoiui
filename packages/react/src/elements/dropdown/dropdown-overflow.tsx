@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx';
 import { useOutsideClick } from '../../hooks/use-outside-click';
-
+import { ChevronDownIcon } from "@heroicons/react/outline";
 
 type DropdownOverFlow = {
     label: string
@@ -60,10 +60,9 @@ export const DropdownOverFlow = ({ label, items, theme = 'light' }: DropdownOver
     return (
         <div ref={ref} className="inline-block text-left">
             <div>
-                <button onClick={() => setOpen(!open)} className={clsx('text-base font-medium hover:text-gray-300 focus:outline-none', theme == 'dark' ? 'text-white' : 'text-dark')}>
+                <button onClick={() => setOpen(!open)} className={clsx('text-base font-medium hover:text-primary-300 focus:outline-none p-2 border rounded-md', theme == 'dark' ? 'text-white' : 'text-dark')}>
                     <span className="sr-only">Open options</span>
-                    <span className="mr-1">{ label }</span>
-                    ...
+                    <span className="mr-1 flex items-center justify-center">{ label }<ChevronDownIcon className='w-4 h-4 ml-2' /></span>
                 </button>
             </div>
             {open && <Items position={position} items={items} onClick={onItemClick} />}

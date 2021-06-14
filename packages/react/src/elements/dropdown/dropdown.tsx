@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import clsx from 'clsx';
+import {ChevronDownIcon} from "@heroicons/react/outline";
 
 type Dropdown = {
     label: string
@@ -13,10 +14,9 @@ export const Dropdown = ({ label, items, theme = 'light' }: Dropdown) => {
             {({ open }) => (
                 <>
                     <div>
-                        <Menu.Button className={clsx('text-base font-medium hover:text-gray-300 focus:outline-none', theme == 'dark' ? 'text-white' : 'text-dark')}>
+                        <Menu.Button className={clsx('text-base font-medium hover:text-primary-300 focus:outline-none border p-2 rounded-md', theme == 'dark' ? 'text-white' : 'text-dark')}>
                             <span className="sr-only">Open options</span>
-                            <span className="mr-1">{ label }</span>
-                            ...
+                            <span className="mr-1 flex items-center justify-center">{ label }<ChevronDownIcon className='w-4 h-4 ml-2' /></span>
                         </Menu.Button>
                     </div>
                     <Transition

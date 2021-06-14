@@ -5,7 +5,7 @@ type AutocompleteInput = {
   suggestions?: any;
   className?: string
   inputClassName?: string
-  suggestionClassName?: string
+  suggestionClassName?: string;
 };
 
 export function AutocompleteInput({ suggestions, inputClassName, className, suggestionClassName, ...rest }: AutocompleteInput & InputHTMLAttributes<{}>) {
@@ -62,7 +62,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         return (
-          <ul className="border my-4 rounded-2xl w-80">
+          <ul className="my-4 w-80">
             {filteredSuggestions.map((suggestion, index) => {
               return (
                 <li
@@ -83,7 +83,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
         );
       } else {
         return (
-          <div className="my-2 text-neutral-600">
+          <div className="text-neutral-600 px-6 my-3 w-80">
             <em>No suggestions!</em>
           </div>
         );
@@ -98,11 +98,11 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
         onChange={onChange}
         onKeyDown={onKeyDown}
         value={userInput}
-        className={clsx("w-80 py-2 text-sm rounded-xl px-4 focus:border-primary-400 focus:outline-none border h-14 placeholder-neutral-300", inputClassName)}
+        className={clsx("w-80 text-sm focus:border-primary-400 focus:outline-none border placeholder-neutral-300 p-3 rounded-md", inputClassName)}
         placeholder='Type to show suggestions'
         {...rest}
       />
-      <div className={clsx("transform absolute bottom-0 translate-y-full z-10 bg-white", suggestionClassName)}>
+      <div className={clsx("transform absolute bottom-0 translate-y-full z-10 bg-white rounded-2xl border", suggestionClassName)}>
         {suggestionsListComponent()}
       </div>
     </div>

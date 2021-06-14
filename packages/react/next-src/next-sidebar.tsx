@@ -1,5 +1,4 @@
 import { Sidebar } from '../src';
-import { GlobeIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
@@ -27,16 +26,16 @@ const ListItem = ({ name, Icon = null, url = '', items = null, loop }) => {
     const onClick = () => push(url, url, { shallow: true })
     if (items) return <ToggleList items={items} name={name} Icon={Icon} loop={loop} />
     return (
-        <div onClick={onClick} className={clsx('flex p-2 hover:bg-primary-200 cursor-pointer items-center rounded-md capitalize', pathname == url && 'bg-primary-600 hover:bg-primary-500', loop == 0 ? 'font-medium' : 'text-sm')}>
+        <div onClick={onClick} className={clsx('flex p-2 hover:text-primary-900 hover:font-bold cursor-pointer items-center rounded-md capitalize', pathname == url && 'text-primary-800 hover:text-primary-900 hover:font-bold', loop == 0 ? 'font-medium' : 'text-sm')}>
             {Icon && <Icon className="text-primary-100 mr-3 w-6 h-6" />}
             {name}
         </div>
     )
 }
 
-const SidebarList = ({ items, className = '', loop = 0 }) => {
+const SidebarList = ({ items, className = '', loop = 0, style = {} }) => {
     return (
-        <div className={clsx('space-y-1', className)}>
+        <div className={clsx('space-y-1', className)} style={style}>
             {items.map((item, index) => <ListItem {...item} key={`${item.name}-${index}`} loop={loop} />)}
         </div>
     )
@@ -44,14 +43,10 @@ const SidebarList = ({ items, className = '', loop = 0 }) => {
 
 export const NextSidebar = () => {
     return (
-        <Sidebar className="w-64 mr-4 p-2 bg-primary-400 text-white">
-            <div className="flex items-center text-xl mb-4 ml-2">
-                <GlobeIcon className="mr-2 w-8 h-8" />
-                Anemoiui
-            </div>
-            <div className="space-y-1">
-                <SidebarList items={menu} />
-            </div>
-        </Sidebar>
+        <div className="hidden fixed z-40 h-full w-full inset-0 bg-white md:block md:static md:h-auto md:w-64 md:z-20">
+            <Sidebar className="block mr-4 p-2 h-auto text-text md:top-24 sticky">
+                <SidebarList items={menu} style={{ height: 'calc(100vh - 9rem)'}} />
+            </Sidebar>
+        </div>
     )
 }
