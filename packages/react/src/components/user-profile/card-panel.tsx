@@ -1,5 +1,5 @@
 import React from 'react';
-type CartItem = {
+type CardPanel = {
   data: {
     Item: string,
     Icon: any,
@@ -9,14 +9,14 @@ type CartItem = {
   labelClassName?: string
 };
 // Default Props
-export const CartItem = ({
+export const CardPanel = ({
   data,
-}: CartItem) => {
+}: CardPanel) => {
   return (
-    <div className="bg-white w-80 rounded-3xl pt-5 px-5 mt-3 flex justify-center items-center flex-col relative">
+    <div className="bg-white border w-80 rounded-3xl pt-5 px-5 mt-3 flex justify-center items-center flex-col relative">
       {
         data.map(({ Item, Icon, Label }) => (
-          <div className="relative w-full">
+          <div className="relative w-full ">
             <p className="font-medium text-gray-500 w-full mb-5">{Item}</p>
             {
               Label ?
