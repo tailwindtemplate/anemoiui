@@ -9,12 +9,12 @@ export default function PreviewCheckbox() {
       <div className="text-3xl my-8">Checkbox</div>
 
       Default
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Checkbox checked={checked} onClick={() => setChecked(!checked)} />
       </Section>
 
       Label - caption (or every attribute)
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Checkbox
           checked={checked}
           onClick={() => setChecked(!checked)}
@@ -24,7 +24,7 @@ export default function PreviewCheckbox() {
       </Section>
 
       Size SM
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Checkbox
           checked={checked}
           onClick={() => setChecked(!checked)}
@@ -33,12 +33,12 @@ export default function PreviewCheckbox() {
       </Section>
 
       Disable
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Checkbox checked={checked} onClick={() => setChecked(!checked)} disabled />
       </Section>
 
       Custom Icon
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <Checkbox
           checked={checked}
           onClick={() => setChecked(!checked)}

@@ -8,13 +8,13 @@ export default function PreviewRadio() {
       <div className="text-3xl my-8">Radio</div>
 
       Default
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Radio checked={checked} onClick={() => setChecked(true)} />
         <Radio checked={!checked} onClick={() => setChecked(false)} />
       </Section>
 
       Label - Caption (or every attribute)
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Radio
           checked={checked}
           onClick={() => setChecked(true)}
@@ -30,7 +30,7 @@ export default function PreviewRadio() {
       </Section>
 
       Disable
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Radio
           checked={true}
           onClick={() => setChecked(!checked)}
@@ -39,7 +39,7 @@ export default function PreviewRadio() {
       </Section>
 
       Size SM
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <Radio checked={checked} onClick={() => setChecked(true)} size="SM" />
         <Radio checked={!checked} onClick={() => setChecked(false)} size="SM" />
       </Section>

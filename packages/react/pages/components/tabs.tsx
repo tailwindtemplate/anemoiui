@@ -12,7 +12,7 @@ export default function Tabs() {
     return (
         <div className='p-2'>
             <div className='text-3xl'>Tabs</div>
-        <Section narrow>
+        <Section narrow className='bg-white'>
             basic tab
             <TabControl items={tabItems} active={active} onClick={setActive} />
             <TabPanel id={tabItems[0].id} active={active}>

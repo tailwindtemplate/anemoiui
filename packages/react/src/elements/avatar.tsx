@@ -78,7 +78,7 @@ export function Avatar({
   hasExtension,
   name,
   hasBorder,
-  type = "src"
+  type = "src",
 }: React.PropsWithChildren<Textarea>) {
   const [loading, setLoading] = useState(true)
   const placeholder = useMemo(() => renderAvatar(type, loading, size, name), [loading, size, name, type])
@@ -106,7 +106,7 @@ export function Avatar({
                 "relative flex items-center justify-center bg-cover bg-no-repeat bg-center",
                 SIZE[size],
                 type === "add-avatar" ? "bg-white border border-dashed" : 'bg-primary-600',
-                className
+                className,
             )}
             style={{ backgroundImage: `url('${src}')` }}
         >

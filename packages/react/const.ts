@@ -10,7 +10,8 @@ export const menu = [
         name: 'components',
         items: [
             { name: 'modals', url: '/components/modals' },
-            { name: 'tabs', url: '/components/tabs' }
+            { name: 'tabs', url: '/components/tabs' },
+            { name: 'forms', url: '/components/forms' }
         ],
     },
     {
