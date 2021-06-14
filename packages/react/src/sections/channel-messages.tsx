@@ -8,7 +8,7 @@ type ChannelMessages = {
 export const ChannelMessages = ({ messages }: ChannelMessages) => {
     return (
         <div className="mt-4 overflow-y-auto overflow-x-hidden flex-1 pl-4">
-            {messages.map((item) => <Message {...item} isBubble={false} messageClassname={item.messageItem.type == 'attachment' ? 'space-y-2' : ''} />)}
+            {messages.map((item, index) => <Message key={index} {...item} isBubble={false} messageClassname={item.messageItem.type == 'attachment' ? 'space-y-2' : ''} />)}
         </div>
     )
 }
