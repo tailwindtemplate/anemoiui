@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import clsx from 'clsx';
+import React, { useMemo } from 'react'
+import clsx from 'clsx'
 
 type TextMessage = {
     message: string;
@@ -10,12 +10,12 @@ type TextMessage = {
 }
 const positionBorder = (isOwner: boolean, position?: string) => {
     switch (position) {
-        case 'start':
-            return isOwner ? 'rounded-md rounded-br-none' : 'rounded-md rounded-bl-none'
-        case 'end':
-            return isOwner ? 'rounded-md rounded-tr-none' : 'rounded-md rounded-tl-none'
-        default:
-            return isOwner ? 'rounded-l-md' : 'rounded-r-md'
+    case 'start':
+        return isOwner ? 'rounded-md rounded-br-none' : 'rounded-md rounded-bl-none'
+    case 'end':
+        return isOwner ? 'rounded-md rounded-tr-none' : 'rounded-md rounded-tl-none'
+    default:
+        return isOwner ? 'rounded-l-md' : 'rounded-r-md'
     }
 }
 export const TextMessage = ({ message, isBubble = true, isOwner = false, position, className }: TextMessage) => {

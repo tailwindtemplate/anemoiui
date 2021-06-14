@@ -1,6 +1,6 @@
-import React, { JSXElementConstructor, useMemo } from 'react';
-import clsx from 'clsx';
-import { AttachmentsMessage, TextMessage, MessageStatus, MessageHeader } from './';
+import React, { JSXElementConstructor, useMemo } from 'react'
+import clsx from 'clsx'
+import { AttachmentsMessage, TextMessage, MessageStatus, MessageHeader } from './'
 
 type Message = {
     isOwner?: boolean
@@ -16,12 +16,12 @@ type Message = {
 
 const checkType = (type: string) => {
     switch (type) {
-        case 'text':
-            return TextMessage
-        case 'attachment':
-            return AttachmentsMessage
-        default:
-            return null
+    case 'text':
+        return TextMessage
+    case 'attachment':
+        return AttachmentsMessage
+    default:
+        return null
     }
 }
 

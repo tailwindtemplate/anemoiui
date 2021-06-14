@@ -1,7 +1,7 @@
-import React, { JSXElementConstructor, PropsWithChildren } from 'react';
-import { Footer } from './footer';
-import { Header } from './header';
-import { Wrapper } from './wrapper';
+import React, { JSXElementConstructor, PropsWithChildren } from 'react'
+import { Footer } from './footer'
+import { Header } from './header'
+import { Wrapper } from './wrapper'
 
 type Modal = {
     open: boolean

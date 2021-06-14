@@ -1,6 +1,6 @@
-import React from 'react';
-import clsx from 'clsx';
-import { AttachmentCard } from '../cards/attachment-card';
+import React from 'react'
+import clsx from 'clsx'
+import { AttachmentCard } from '../cards/attachment-card'
 
 type AttachmentsMessage = {
     attachments: AttachmentCard[]

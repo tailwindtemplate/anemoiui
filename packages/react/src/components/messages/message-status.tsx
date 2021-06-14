@@ -1,5 +1,5 @@
-import React, { JSXElementConstructor, useMemo } from 'react';
-import clsx from 'clsx';
+import React, { JSXElementConstructor, useMemo } from 'react'
+import clsx from 'clsx'
 
 type MessageStatus = {
     status: string

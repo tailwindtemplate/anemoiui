@@ -1,6 +1,6 @@
-import React from 'react';
-import clsx from 'clsx';
-import { Switch } from '@headlessui/react';
+import React from 'react'
+import clsx from 'clsx'
+import { Switch } from '@headlessui/react'
 
 type Toggle = {
     toggle: boolean

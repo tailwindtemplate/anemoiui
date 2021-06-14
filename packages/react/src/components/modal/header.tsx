@@ -1,5 +1,5 @@
-import React, { JSXElementConstructor } from 'react';
-import clsx from 'clsx';
+import React, { JSXElementConstructor } from 'react'
+import clsx from 'clsx'
 
 type Header = {
     Icon?: JSXElementConstructor<any>

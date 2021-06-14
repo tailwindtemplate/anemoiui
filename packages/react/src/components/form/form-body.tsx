@@ -1,5 +1,5 @@
-import React from 'react';
-import clsx from "clsx";
+import React from 'react'
+import clsx from 'clsx'
 
 type FormBody = {
     title?: string;
@@ -16,5 +16,5 @@ export const FormBody = ({children, title, description, titleClassName, descript
             <div className={clsx('text-xs md:text-lg my-2 md:my-5 text-gray-500', descriptionClassName)}>{description}</div>
             {children}
         </form>
-    );
-};
+    )
+}
