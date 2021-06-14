@@ -103,24 +103,6 @@ export function Avatar({
     )
 }
 
-type NewMessage = {
-  newMessage: number;
-  className?: string;
-};
-
-export const NewMessage = ({ newMessage, className }: NewMessage) => {
-  return (
-    <div
-      className={clsx(
-        "absolute text-tiny bg-red-600 text-white rounded-full w-4 h-4 flex justify-center items-center",
-        className
-      )}
-    >
-      {newMessage}
-    </div>
-  );
-};
-
 export const Status = ({ className }: any) => {
   return (
     <div
