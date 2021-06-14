@@ -48,7 +48,8 @@ export const menu = [
             { name: 'radio', url: '/elements/radio' },
             { name: 'select', url: '/elements/select' },
             { name: 'text area', url: '/elements/text-area' },
-            { name: 'image loader', url: '/elements/image-loader' }
+            { name: 'image loader', url: '/elements/image-loader' },
+            { name: 'badge', url: '/elements/badge' }
         ]
     },
     { name: 'document', url: '/documents' },
