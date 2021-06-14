@@ -44,6 +44,7 @@ export const menu = [
                 ]
             },
             { name: 'avatar', url: '/elements/avatar' },
+            { name: 'avatars', url: '/elements/avatars' },
             { name: 'buttons', url: '/elements/buttons' },
             { name: 'checkbox', url: '/elements/checkbox' },
             { name: 'radio', url: '/elements/radio' },
@@ -127,3 +128,21 @@ export const statusItems = {
     sending: ChevronDoubleRightIcon,
     error: ExclamationCircleIcon
 }
+
+export const members = [
+    {
+        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
+    },
+    {
+        src: 'https://i.ytimg.com/vi/yxhJZrmVKaY/mqdefault.jpg'
+    },
+    {
+        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
+    },
+    {
+        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
+    },
+    {
+        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
+    },
+]

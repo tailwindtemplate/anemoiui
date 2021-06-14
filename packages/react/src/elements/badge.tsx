@@ -15,14 +15,14 @@ const POSITION: any = {
     'bottom-right': '-bottom-1 -right-1',
 };
 
-export function Badge({ count = 1, className, position = 'top-right' }: Badge) {
+export function Badge({ count = 1, className, position }: Badge) {
     return (
         <span
             className={clsx(
                 'flex justify-center items-center rounded-full leading-4 whitespace-no-wrap text-tiny w-4 h-4 border border-white',
                 className,
                 position && 'absolute',
-                POSITION[position],
+                position && POSITION[position],
                 count > 9 && 'px-4'
             )}
         >
