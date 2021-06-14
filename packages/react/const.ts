@@ -106,3 +106,11 @@ export const carousel = [
     { item: "5" },
     { item: "6" },
 ];
+export const carouselUser = [
+    { id: "1",img:"https://tailwindcss.com/_next/static/media/guillermo-rauch.f9555769f9ff1d42057c689278bc0876.jpg" },
+    { id: "2",img:"https://tailwindcss.com/_next/static/media/sara-vieira.53f08a9bc2787e4ee05e4678577a05fe.jpg" },
+    { id: "3",img:"https://tailwindcss.com/_next/static/media/dacey-nolan.7993f9fd2980845e8f8c5f97dceddc49.jpg" },
+    { id: "4",img:"https://tailwindcss.com/_next/static/media/gilbert-rabut-tsurwa.0500413b6d119725cf1a426bdeddb73f.jpg" },
+    { id: "5",img:"https://tailwindcss.com/_next/static/media/madeline-campbell.9611e07a9b970083af13390783617d41.jpg" },
+    { id: "6",img:"https://tailwindcss.com/_next/static/media/graeme-houston.2c9612cba96f5f65e7a0ca86dc64c2fc.jpg" },
+];

@@ -18,13 +18,13 @@ const SIZE: any = {
 };
 
 export function Checkbox({
-  checked = false,
-  onClick,
-  label,
-  size = "BASE",
-  disabled,
-  caption,
-  Icon = CheckIcon
+                                checked = false,
+                                onClick,
+                                label,
+                                size = "BASE",
+                                disabled,
+                                caption,
+                                Icon = CheckIcon
 }: Checkbox) {
   return (
     <div

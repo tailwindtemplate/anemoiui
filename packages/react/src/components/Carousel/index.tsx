@@ -7,11 +7,15 @@ import { NextPrev } from './next-prev';
 import { Dot } from './dot';
 // Css
 import 'keen-slider/keen-slider.min.css';
-import { TOptionsEvents } from 'keen-slider';
+import { TOptionsEvents, TOptions } from 'keen-slider';
 // Check Type Props
-type Carousel1 = {
+
+export type carouselBreakpoint = {
+  [key: string]: Omit<TOptionsEvents, 'breakpoints'>
+}
+type Carousel = {
   rtlCarousel?: boolean,
-  responsiveCarousel?: any,
+  responsiveCarousel?: carouselBreakpoint,
   classCarousel?: string,
   displayNextPrev?: boolean,
   defaultCarousel?: number,
@@ -53,7 +57,7 @@ const ClassItemDots = "rounded-none	w-2	h-2 bg-gray-300	p-2 m-2 rounded-2xl";
 const ClassIconLeft = "absolute text-white font-semibold font-black cursor-pointer top-2/4 w-8 h-8 left-1";
 const ClassIconRight = "absolute text-white font-semibold font-black cursor-pointer top-2/4 w-8 h-8 right-1";
 // Render
-export const Carousel1 = ({
+export const Carousel = ({
   children,
   rtlCarousel = RtlCarousel,
   responsiveCarousel = ResponsiveCarousel,
@@ -78,7 +82,7 @@ export const Carousel1 = ({
   classIconLeft = ClassIconLeft,
   classIconRight = ClassIconRight,
   ...rest
-}: PropsWithChildren<Carousel1> & TOptionsEvents) => {
+}: PropsWithChildren<Carousel> & TOptionsEvents & TOptions) => {
   // Create State
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
