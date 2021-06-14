@@ -14,7 +14,7 @@ const TYPE_MAPS: any = {
   error: "border-red-500"
 };
 
-export default function TextInput({
+export const TextInput = ({
   LeftIcon,
   RightIcon,
   className,
@@ -22,7 +22,7 @@ export default function TextInput({
   type,
   src,
   ...rest
-}: TextInput & InputHTMLAttributes<{}>) {
+}: TextInput & InputHTMLAttributes<{}>) => {
   return (
     <div className='w-full'>
       <div
@@ -31,11 +31,11 @@ export default function TextInput({
               className
           )}
       >
-        {src && <Avatar size="xs" src={src} isRounded />}
+        {src && <Avatar className="flex-shrink-0 ml-2" size="xs" src={src} isRounded />}
         {LeftIcon && (
-            <span className="flex items-center h-full">
-            <LeftIcon className='w-5 h-5' />
-          </span>
+            <span className="flex items-center flex-shrink-0 pl-2">
+                <LeftIcon className='w-5 h-5' />
+            </span>
         )}
         <input
             type="text"
@@ -48,9 +48,9 @@ export default function TextInput({
             {...rest}
         />
         {RightIcon && (
-            <span className="flex items-center">
-            <RightIcon className='w-5 h-5' />
-          </span>
+            <span className="flex items-center flex-shrink-0 pr-2">
+                <RightIcon className='w-5 h-5' />
+            </span>
         )}
       </div>
     </div>

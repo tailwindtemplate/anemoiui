@@ -58,6 +58,9 @@ module.exports = {
         "form-sm": "17.5rem",
         "form-md": "35rem",
       },
+      maxWidth: {
+        '17rem': '17rem'
+      },
       fontSize: {
         tiny: ".5rem"
       },
