@@ -17,25 +17,25 @@ const ResponsiveCarousel: carouselBreakpoint = {
 };
 // Function
 const showCarousel = carousel => (carousel.map(({ item }) => (
-    <div
-      key={item}
-      className={clsx('keen-slider__slide', ClassItemsCarousel)}
-    >
-      {item}
-    </div>
-  ))
+  <div
+    key={item}
+    className={clsx('keen-slider__slide', ClassItemsCarousel)}
+  >
+    {item}
+  </div>
+))
 );
 const showCarouselUser = user => (user.map(({ id, img }) => (
-    <div
-      key={id}
-      className={clsx('keen-slider__slide')}
-    >
-      <div className="relative">
-        <img className="rounded-full w-12 h-12 mx-auto" src={img} alt={img} />
-        <p className="absolute top-0 right-3 bg-green-400 w-3 h-3 rounded-full border-white	border-2"></p>
-      </div>
+  <div
+    key={id}
+    className="keen-slider__slide w-12 h-12 relative"
+  >
+    <div className="h-12 relative w-12 mr-4 ">
+      <p className="absolute top-0 right-0 bg-green-400 w-3 h-3 rounded-full border-white	border-2" />
+      <img className="rounded-full w-12 h-12" src={img} alt={img} />
     </div>
-  ))
+  </div>
+))
 );
 // Render
 export default function CarouselControl() {
@@ -91,7 +91,7 @@ export default function CarouselControl() {
       </div>
       <div className={carouselClassName}>
         <h3 className={titleClassName}>Chat</h3>
-        <Carousel  snapMode="free" classCarousel="w-60 border mx-auto p-4 rounded" slidesPerView={3} spacingPerView={0} rtlCarousel={false}>
+        <Carousel snapMode="free" classCarousel="w-336 rounded" slidesPerView={5} spacingPerView={0} rtlCarousel={false}>
           {showCarouselUser(carouselUser)}
         </Carousel>
       </div>
