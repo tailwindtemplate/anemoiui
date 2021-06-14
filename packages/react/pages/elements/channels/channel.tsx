@@ -1,4 +1,3 @@
-import { UserGroupIcon } from "@heroicons/react/outline";
 import { useContext } from "react";
 import { ChannelContext } from "./props-card";
 
