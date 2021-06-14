@@ -1,31 +1,34 @@
 import React from 'react';
+import clsx from 'clsx';
+import { UserGroupIcon } from "@heroicons/react/outline";
 type CardPanel = {
-  data: {
-    Item: string,
-    Icon: any,
-    Label: string,
-    // labelClassName: string | 'font-medium text-gray-500 w-full mb-5'
-  }[],
+  item?: string,
+  itemClassName?: string
+  Icon?: any,
+  IconClassName?: string,
+  label?: string,
   labelClassName?: string
 };
 // Default Props
+const Items = "Địa chỉ";
+const IconDefault = UserGroupIcon;
 export const CardPanel = ({
-  data,
+  item = Items,
+  itemClassName,
+  Icon = IconDefault,
+  label,
+  labelClassName,
+  IconClassName
 }: CardPanel) => {
   return (
-    <div className="bg-white border w-80 rounded-3xl pt-5 px-5 mt-3 flex justify-center items-center flex-col relative">
-      {
-        data.map(({ Item, Icon, Label }) => (
-          <div className="relative w-full ">
-            <p className="font-medium text-gray-500 w-full mb-5">{Item}</p>
-            {
-              Label ?
-                <p className="font-normal text-gray-900 absolute right-0 top-0 text-base">{Label}</p> :
-                <Icon className="w-6 h-6 text-gray-500 transition absolute right-0 top-0 hover:text-gray-900 cursor-pointer" />
-            }
-          </div>
-        ))
-      }
+    <div className="bg-gray-50 w-336 rounded-3xl px-5 flex justify-center items-center flex-col relative">
+      <div className="relative w-full">
+        <p className={clsx("font-semibold text-black-50 w-full mb-5 font-mulish", itemClassName)}>{item}</p>
+        {
+          label ? <span className={clsx("font-normal text-black-100 absolute right-0 top-0 text-base font-mulish", labelClassName)}>{label}</span> :
+            <Icon className={clsx("w-5 h-5 text-black-50 transition absolute right-0 top-0 hover:text-gray-900 cursor-pointer", IconClassName)} />
+        }
+      </div>
     </div>
   )
 };

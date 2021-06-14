@@ -1,7 +1,12 @@
-export const CardControl = () => {
+import clsx from 'clsx';
+import React, { PropsWithChildren } from 'react';
+type CardControl = {
+  cardControlClassName?: string
+}
+export const CardControl = ({ children,cardControlClassName }: PropsWithChildren<CardControl>) => {
   return (
-    <div className="bg-white w-80 rounded-3xl pt-5 pb-5 px-5 mt-3 flex justify-center	items-center flex-col relative">
-
+    <div className={clsx('bg-gray-50 w-336 rounded-3xl pt-5 mt-3 flex justify-center items-center flex-col relative',cardControlClassName)}>
+      {children}
     </div>
   )
-}
+};

@@ -1,24 +1,39 @@
 import React from 'react';
-import { UserGroupIcon } from "@heroicons/react/outline";
+import clsx from 'clsx';
 // Default Props
 type CartGround = {
-  CountGround?: number
-  NameGround?: string,
-  Avatar?: any,
-  Email?: string
+  cartGroundClassName?: string,
+  countGround?: number
+  nameGround?: string,
+  nameGroundClassName?: string,
+  avatar?: any,
+  avatarClassName?: string,
+  email?: string,
+  emailClassName?: string
 };
+const avatarDefault="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg";
 export const CardGround = ({
-  CountGround,
-  NameGround,
-  Avatar = UserGroupIcon,
-  Email
+  cartGroundClassName,
+  countGround,
+  nameGround,
+  nameGroundClassName,
+  avatar = avatarDefault,
+  avatarClassName,
+  email,
+  emailClassName
+
 }: CartGround) => {
   return (
-    <div className="bg-white w-80 rounded-3xl pt-5 pb-5 px-5 mt-3 flex justify-center	items-center flex-col relative">
-      <Avatar className="bg-gray-200 rounded-full w-28 h-28 stroke-1" />
-      {CountGround && <p className="absolute bg-yellow-300 py-0.5 px-4 rounded-2xl mt-28 left-1/3 box-border -top-0	font-medium text-black">{CountGround}</p>}
-      <h3 className="font-medium text-lg mt-4 text-center">{NameGround}</h3>
-      <p className="font-normal text-lg text-gray-500">{Email}</p>
+    <div className={clsx("bg-gray-50 w-336 rounded-3xl pt-5 pb-5 px-5 mt-6 mr-6 flex justify-center	items-center flex-col relative",cartGroundClassName)}>
+      <img src={avatar} alt={avatar}  className={clsx("bg-gray-200 rounded-full w-116 h-116 stroke-1 object-fill", avatarClassName)}/>
+      {
+        countGround &&
+        <div className="absolute bg-yellow-1000 rounded-2xl h-9	w-61 font-medium text-black py-0.5 px-4 top-100 left-110 box-border border-white border">
+          <span className="font-bold text-2xl">{countGround}</span>
+        </div>
+      }
+      <h3 className={clsx("font-medium text-lg mt-5 text-center font-mulish", nameGroundClassName)}>{nameGround}</h3>
+      <p className={clsx("font-normal text-lg text-gray-500 mt-2 font-mulish", emailClassName)}>{email}</p>
     </div>
   )
 };
