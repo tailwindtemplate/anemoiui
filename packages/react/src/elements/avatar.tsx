@@ -1,7 +1,7 @@
-import React, { JSXElementConstructor, PropsWithChildren, useMemo, useState } from 'react';
+import React, { JSXElementConstructor, PropsWithChildren, useMemo } from 'react';
 import clsx from "clsx";
 import { PlusIcon, UserCircleIcon } from '@heroicons/react/outline'
-import { ImageLoader } from 'elements/image-loader';
+import { ImageLoader } from './image-loader';
 
 type Textarea = {
   className?: string;
