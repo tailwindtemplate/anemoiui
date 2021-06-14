@@ -67,6 +67,10 @@ module.exports = {
       borderWidth: {
         6: "6px"
       }
+    },
+    borderRadius: {
+      full: '9999px',
+      larges: "2rem"
     }
   },
   variants: {

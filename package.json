@@ -13,6 +13,10 @@
     "build": "yarn workspaces run build"
   },
   "devDependencies": {
+    "@afc-org/react-tailwind": "0.1.1",
     "tsdx": "^0.14.1"
+  },
+  "dependencies": {
+    "remove": "0.1.5"
   }
 }
