@@ -1,19 +1,27 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { Avatar } from 'elements';
+import { Avatars } from 'elements/avatars';
 
 type UserCard = {
-    avatar?: string
+    avatar?: string | string[]
     avatarChildren?: ReactNode
     title: string
     content?: string
     time?: string
 }
 export const UserCard = ({ avatar = '', time, title, content, avatarChildren }: UserCard) => {
+    const image = useMemo(() => Array.isArray(avatar) ? (
+        <Avatars avatars={avatar} className="flex-shrink-0">
+            {avatarChildren}
+        </Avatars>
+    ) : (
+        <Avatar size="sm" src={avatar} isRounded className="flex-shrink-0">
+            {avatarChildren}
+        </Avatar>
+    ), [avatar])
     return (
         <div className="flex py-2 px-4 rounded-full bg-white items-center">
-            <Avatar size="sm" src={avatar} isRounded className="flex-shrink-0">
-                {avatarChildren}
-            </Avatar>
+            {image}
             <div className="ml-4 flex justify-center flex-col truncate w-full">
                 <div className="truncate text-lg font-bold">{title}</div>
                 <div className="flex justify-between items-center mt-1">

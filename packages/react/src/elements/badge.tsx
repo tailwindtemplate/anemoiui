@@ -5,7 +5,7 @@ type Badge = {
     count?: any;
     size?: string;
     className?: string;
-    position?: string;
+    position?: 'top-left' | 'top-right' |'bottom-left' | 'bottom-right' | string;
 };
 
 const POSITION: any = {
@@ -15,7 +15,7 @@ const POSITION: any = {
     'bottom-right': '-bottom-1 -right-1',
 };
 
-export function Badge({ count = 1, className, position }: Badge) {
+export function Badge({ count = '', className, position }: Badge) {
     return (
         <span
             className={clsx(

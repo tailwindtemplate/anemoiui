@@ -1,5 +1,5 @@
 import {Badge, Section, UserCard} from '../../src';
-import { userCard } from '../../const';
+import { avatars, userCard } from '../../const';
 
 export default function UserCardPage() {
     return (
@@ -11,6 +11,7 @@ export default function UserCardPage() {
                     <UserCard title={userCard.title} content={userCard.content} />
                     <UserCard {...userCard} />
                     <UserCard {...userCard} avatarChildren={<Badge count={4} className="absolute top-0 right-0 bg-red-600 text-white" />} />
+                    <UserCard avatar={avatars} title={userCard.title} content={userCard.content} time={userCard.time} />
                 </div>
             </Section>
         </div>

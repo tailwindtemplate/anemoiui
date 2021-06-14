@@ -129,20 +129,10 @@ export const statusItems = {
     error: ExclamationCircleIcon
 }
 
-export const members = [
-    {
-        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
-    },
-    {
-        src: 'https://i.ytimg.com/vi/yxhJZrmVKaY/mqdefault.jpg'
-    },
-    {
-        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
-    },
-    {
-        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
-    },
-    {
-        src: 'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg'
-    },
+export const avatars = [
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+    'https://i.ytimg.com/vi/yxhJZrmVKaY/mqdefault.jpg',
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
 ]
