@@ -1,4 +1,4 @@
-import { Section, UserCard, NewMessage } from '../../src';
+import {Badge, Section, UserCard} from '../../src';
 import { userCard } from '../../const';
 
 export default function UserCardPage() {
@@ -10,7 +10,7 @@ export default function UserCardPage() {
                     <UserCard title={userCard.title} />
                     <UserCard title={userCard.title} content={userCard.content} />
                     <UserCard {...userCard} />
-                    <UserCard {...userCard} avatarChildren={<NewMessage newMessage={4} className="absolute top-0 right-0" />} />
+                    <UserCard {...userCard} avatarChildren={<Badge count={4} className="absolute top-0 right-0 bg-red-600 text-white" />} />
                 </div>
             </Section>
         </div>
