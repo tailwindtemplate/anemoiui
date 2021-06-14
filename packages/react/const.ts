@@ -32,7 +32,7 @@ export const menu = [
             { name: 'radio', url: '/elements/radio' },
             { name: 'select', url: '/elements/select' },
             { name: 'text area', url: '/elements/text-area' },
-            { name: 'cards', url: '/elements/cards' },
+            { name: 'Channels', url: '/elements/channels' },
         ]
     },
     { name: 'document', url: '/documents' },
