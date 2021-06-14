@@ -5,10 +5,10 @@ export default function AutocompleteInputPage() {
     <div className="p-2">
       <div className="text-3xl my-8">Autocomplete Input</div>
       Default
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <AutocompleteInput
           suggestions={[
-            "Nguyễn Văn Anh",
+            "Nguyễn Văn Anh Anh Anh Anh Anh Anh Anh Anh Anh Anh Anh",
             "Lê Thị Kim Cương",
             "Trần Mai Ngọc Ngà",
             "Huỳnh Văn Anh Đức",
@@ -22,7 +22,7 @@ export default function AutocompleteInputPage() {
         />
       </Section>
       Disable
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <AutocompleteInput
           suggestions={[
             "Nguyễn Văn Anh",

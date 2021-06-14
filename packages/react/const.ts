@@ -25,6 +25,7 @@ export const menu = [
         items: [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
+            { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'}
         ],
     },

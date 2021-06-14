@@ -5,35 +5,35 @@ export default function PreviewButton() {
     <div className="p-2">
       <div className="text-3xl my-8">Buttons</div>
       Size XS -{">"} XL
-      <Section className="mb-8 flex items-center justify-center border">
-        <Button type="primary" size="xs" />
-        <Button type="primary" size="sm" />
-        <Button type="primary" />
-        <Button type="primary" size="lg" />
-        <Button type="primary" size="xl" />
+      <Section className="mb-8 flex items-center justify-center border bg-white">
+        <Button type="primary" size="xs" className="m-2" />
+        <Button type="primary" size="sm" className="m-2" />
+        <Button type="primary" className="m-2" />
+        <Button type="primary" size="lg" className="m-2" />
+        <Button type="primary" size="xl" className="m-2" />
       </Section>
 
       Type: secondary
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Button type="secondary" />
       </Section>
 
       Type: gradient
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <Button type="gradient" />
       </Section>
 
       Custom classname
-      <Section className="mb-8 flex items-center justify-center border">
-        <Button size="xs" className="bg-neutral-50" />
-        <Button size="xs" className="bg-neutral-100" />
-        <Button size="xs" className="bg-neutral-200" />
-        <Button size="xs" className="bg-neutral-300" />
-        <Button size="xs" className="bg-neutral-400" />
+      <Section className="mb-8 flex items-center justify-center border bg-white">
+        <Button size="xs" className="bg-neutral-50 m-2" />
+        <Button size="xs" className="bg-neutral-100 m-2" />
+        <Button size="xs" className="bg-neutral-200 m-2" />
+        <Button size="xs" className="bg-neutral-300 m-2" />
+        <Button size="xs" className="bg-neutral-400 m-2" />
       </Section>
 
       Disable
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <Button size="xl" type="primary" disabled />
       </Section>
     </div>
