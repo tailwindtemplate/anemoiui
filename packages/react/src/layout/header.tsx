@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown } from "../elements";
 import { GlobeIcon } from "@heroicons/react/outline";
-import { Section } from 'layout/section';
+import { Section } from './section';
 
 type Header = {
   mainNavigation: any[];

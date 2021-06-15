@@ -1,6 +1,9 @@
 import React, { JSXElementConstructor, useMemo } from 'react';
 import clsx from 'clsx';
-import { AttachmentsMessage, TextMessage, MessageStatus, MessageHeader } from './';
+import { TextMessage } from './text-message';
+import { AttachmentsMessage } from './attachments-message';
+import { MessageHeader } from './message-header';
+import { MessageStatus } from './message-status';
 
 type Message = {
     isOwner?: boolean
