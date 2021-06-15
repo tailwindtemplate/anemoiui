@@ -11,9 +11,9 @@ export default function TextInputPage() {
         <TextInput className="w-80" />
       </Section>
 
-      Type: Error
+      Border Type: Error
       <Section className="mb-8 flex items-center justify-center border bg-white">
-        <TextInput className="w-80" type="error" />
+        <TextInput className="w-80" borderType="error" />
       </Section>
 
       Left Icon

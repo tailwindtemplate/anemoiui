@@ -6,7 +6,7 @@ import { ImageLoader } from './image-loader';
 type Textarea = {
   className?: string;
   src?: string;
-  size?: 'xs' | 'sm' | 'md' | string;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | string;
   isRounded?: boolean;
   newMessage?: number;
   status?: string;
@@ -19,7 +19,8 @@ type Textarea = {
 const SIZE: any = {
   xs: "w-8 h-8",
   sm: "w-12 h-12",
-  md: "w-16 h-16"
+  md: "w-16 h-16",
+  lg: 'w-28 h-28',
 };
 
 const SHORT_NAME: any = {
@@ -31,7 +32,8 @@ const SHORT_NAME: any = {
 const SIZE_DEFAULT: any = {
   xs: "w-4 h-4",
   sm: "w-6 h-6",
-  md: "w-8 h-8"
+  md: "w-8 h-8",
+  lg: 'w-28 h-28',
 };
 
 const renderAvatar = (type: string, size: string, name?: string) => {
@@ -102,24 +104,6 @@ export function Avatar({
         </AvatarWrapper>
     )
 }
-
-type NewMessage = {
-  newMessage: number;
-  className?: string;
-};
-
-export const NewMessage = ({ newMessage, className }: NewMessage) => {
-  return (
-    <div
-      className={clsx(
-        "absolute text-tiny bg-red-600 text-white rounded-full w-4 h-4 flex justify-center items-center",
-        className
-      )}
-    >
-      {newMessage}
-    </div>
-  );
-};
 
 export const Status = ({ className }: any) => {
   return (
