@@ -1,6 +1,5 @@
-import React from 'react';
-import { Message } from 'components';
-import { attachmentMessageItem, textMessageItem, user } from '../../const';
+import React from 'react'
+import { Message } from '../components'
 
 type ChannelMessages = {
     messages: any[]

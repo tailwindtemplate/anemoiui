@@ -1,3 +1,5 @@
+import React from 'react'
+
 export function Heading1({children}: React.PropsWithChildren<any>) {
     return (<h1 className="text-4xl font-bold">{children}</h1>)
 }

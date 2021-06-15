@@ -1,6 +1,6 @@
 import React, { Fragment, PropsWithChildren } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 type Wrapper = {
     open: boolean
@@ -36,7 +36,7 @@ export function Wrapper({ children, open, setOpen, theme = 'light' }: PropsWithC
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                        <div className={clsx('relative inline-block align-bottom rounded-sm px-4 pt-5 pb-4 text-left shadow-xl transform transition-all sm:my-8 sm:align-middle max-w-sm sm:w-full sm:p-6 lg:max-w-lg', theme == 'light' ?  'bg-white text-gray-400' : 'bg-black text-white')}>
+                        <div className={clsx('relative inline-block align-bottom rounded-sm px-4 pt-5 pb-4 text-left shadow-xl transform transition-all sm:my-8 sm:align-middle max-w-sm sm:w-full sm:p-6 lg:max-w-lg', theme == 'light' ? 'bg-white text-gray-400' : 'bg-black text-white')}>
                             <div className="absolute top-1 right-1">
                                 <button
                                     type="button"

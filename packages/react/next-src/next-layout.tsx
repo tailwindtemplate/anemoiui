@@ -1,4 +1,4 @@
-import { Layout, Header, Button, Section } from '../src';
+import { Header, Button, Section } from '../src';
 import { PropsWithChildren } from "react";
 import { headerMenu } from "../const";
 import { NextSidebar } from "./next-sidebar";

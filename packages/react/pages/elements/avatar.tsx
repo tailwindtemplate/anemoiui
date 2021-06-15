@@ -1,4 +1,4 @@
-import { Avatar, NewMessage, Status, Section } from "../../src";
+import { Avatar, Status, Section, Badge } from "../../src";
 
 export default function PreviewAvatar() {
   return (
@@ -19,11 +19,11 @@ export default function PreviewAvatar() {
       Custom position
       <Section className="mb-8 flex items-center justify-around border bg-white">
         <Avatar name="YN">
-          <NewMessage newMessage={22} className="-top-1 -right-1" />
+          <Badge count={2} position={'top-right'} className='bg-red-500 text-white' />
         </Avatar>
 
         <Avatar name="YN">
-          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+            <Badge count={22} position={'bottom-right'} className='bg-red-500 text-white' />
         </Avatar>
       </Section>
 
@@ -35,7 +35,7 @@ export default function PreviewAvatar() {
           type="src"
           isRounded
         >
-          <NewMessage newMessage={22} className="-bottom-1 -right-1" />
+          <Badge count={2222} position={'bottom-right'} className='bg-red-500 text-white' />
         </Avatar>
       </Section>
 

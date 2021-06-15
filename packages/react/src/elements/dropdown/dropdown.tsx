@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import clsx from 'clsx';
-import {ChevronDownIcon} from "@heroicons/react/outline";
+import clsx from 'clsx'
+import { ChevronDownIcon } from '@heroicons/react/outline'
 
 type Dropdown = {
     label: string

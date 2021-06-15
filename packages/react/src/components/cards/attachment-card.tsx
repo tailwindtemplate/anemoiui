@@ -1,7 +1,7 @@
-import React, { JSXElementConstructor } from 'react';
-import { DocumentIcon, DownloadIcon, ShareIcon } from '@heroicons/react/outline';
-import clsx from 'clsx';
-import { ImageLoader } from 'elements';
+import React, { JSXElementConstructor } from 'react'
+import { DocumentIcon, DownloadIcon, ShareIcon } from '@heroicons/react/outline'
+import clsx from 'clsx'
+import { ImageLoader } from '../../elements'
 
 export type AttachmentCard = {
     type: string

@@ -1,23 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 export function useOutsideClick(ref: any, handler: (e: WindowEventMap['mousedown'] | WindowEventMap['touchstart']) => void) {
     useEffect(
         () => {
             const listener = (event: WindowEventMap['mousedown'] | WindowEventMap['touchstart']) => {
                 if (!ref.current || ref.current.contains(event.target)) {
-                    return;
+                    return
                 }
-                handler(event);
-            };
+                handler(event)
+            }
 
-            document.addEventListener('mousedown', listener);
-            document.addEventListener('touchstart', listener);
+            document.addEventListener('mousedown', listener)
+            document.addEventListener('touchstart', listener)
 
             return () => {
-                document.removeEventListener('mousedown', listener);
-                document.removeEventListener('touchstart', listener);
-            };
+                document.removeEventListener('mousedown', listener)
+                document.removeEventListener('touchstart', listener)
+            }
         },
         [ref, handler]
-    );
+    )
 }

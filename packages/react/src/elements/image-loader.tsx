@@ -1,6 +1,6 @@
 import React, { JSXElementConstructor, PropsWithChildren, useMemo, useState } from 'react'
-import clsx from 'clsx';
-import { PhotographIcon } from '@heroicons/react/outline';
+import clsx from 'clsx'
+import { PhotographIcon } from '@heroicons/react/outline'
 
 type ImageLoader = {
     src: string
