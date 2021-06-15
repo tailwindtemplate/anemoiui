@@ -1,6 +1,5 @@
 import React, { ReactNode, useMemo } from 'react';
-import { Avatar } from 'elements';
-import { Avatars } from 'elements/avatars';
+import { Avatar, Avatars } from '../../elements';
 
 type UserCard = {
     avatar?: string | string[]
