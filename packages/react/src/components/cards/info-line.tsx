@@ -21,7 +21,7 @@ export const InfoLine = ({
 }: InfoLine) => {
   return (
       <div className={clsx('flex justify-between space-x-4', className)}>
-          <div className={clsx("font-semibold truncate flex-shrink-0", labelClassName)}>{label}</div>
+          <div className={clsx("capital font-semibold truncate flex-shrink-0", labelClassName)}>{label}</div>
           {info && <div className={clsx(infoClassName, "truncate")}>{info}</div>}
           {Icon && <Icon className={clsx("w-5 h-5", iconClassName)} />}
       </div>

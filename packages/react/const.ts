@@ -23,6 +23,12 @@ export const menu = [
         ]
     },
     {
+        name: 'sections',
+        items: [
+            { name: 'user profile', url: '/sections/user-profile' },
+        ]
+    },
+    {
         name: 'components',
         items: [
             { name: 'modals', url: '/components/modals' },
@@ -110,8 +116,10 @@ export const attachments = [
     attachmentLink
 ]
 export const user = {
-    name: 'User name',
+    name: 'Christopher Campbell',
     avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+    email: 'christcampbell@gmail.com',
+    count: 10
 }
 export const textMessageItem = {
     type: 'text',

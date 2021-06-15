@@ -5,7 +5,7 @@ type CardWrapper = {
 }
 export const CardWrapper = ({ children, className }: PropsWithChildren<CardWrapper>) => {
   return (
-    <div className={clsx('bg-gray-50 rounded-3xl p-4', className)}>
+    <div className={clsx('bg-gray-50 rounded-3xl p-5', className)}>
       {children}
     </div>
   )

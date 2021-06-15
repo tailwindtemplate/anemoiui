@@ -19,7 +19,8 @@ type Textarea = {
 const SIZE: any = {
   xs: "w-8 h-8",
   sm: "w-12 h-12",
-  md: "w-16 h-16"
+  md: "w-16 h-16",
+  lg: 'w-28 h-28',
 };
 
 const SHORT_NAME: any = {
