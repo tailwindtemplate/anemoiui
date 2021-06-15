@@ -46,7 +46,7 @@ export default function UserProfile() {
         </CardControl>
         {/**/}
         <CardControl>
-          <CardPanel item="Rời khỏi nhóm" itemClassName="text-red-1000" Icon={LogoutIcon} IconClassName="text-red-1000" />
+          <CardPanel item="Rời khỏi nhóm" itemClassName="text-red-1000" Icon={LogoutIcon} iconClassName="text-red-1000" />
         </CardControl>
         {/**/}
       </div>

@@ -12,6 +12,7 @@ export const menu = [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
             { name: "user profile", url: "/components/user-profile" },
+            { name: "new message", url: "/components/create-new-message" },
         ],
     },
     {

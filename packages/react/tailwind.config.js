@@ -85,10 +85,7 @@ module.exports = {
             1000:"#00BF25"
           }
         }
-    },
-    fontFamily: {
-      mulish: ['Mulish']
-    },
+    }
   },
   variants: {
     extend: {
