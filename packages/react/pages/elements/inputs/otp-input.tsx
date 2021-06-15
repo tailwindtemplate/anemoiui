@@ -14,7 +14,7 @@ export default function OtpInputPage() {
     <div className="p-2">
       <div className="text-3xl my-8">OTP Inputs</div>
       Default
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         {/*{otp ? `your otp is: ${otp}` : "you have not done"}*/}
 
         <OTPInput
@@ -24,7 +24,7 @@ export default function OtpInputPage() {
         />
       </Section>
       Only number
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <OTPInput length={4} className="flex space-x-2" isNumberInput />
       </Section>
     </div>

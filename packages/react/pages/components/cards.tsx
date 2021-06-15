@@ -1,9 +1,8 @@
 import { UserIcon, UserRemoveIcon } from '@heroicons/react/outline';
-import { CardGround, InfoLine, CardWrapper, Section } from '../../src';
-import { CardInfo } from '../../src/components/user-profile/card-info';
+import { CardGround, InfoLine, CardWrapper, Section, CardInfo } from '../../src';
 import { cardInfo } from '../../const';
 
-export default function UserProfile() {
+export default function CardsPage() {
   return (
     <div>
       <div>Card Ground</div>

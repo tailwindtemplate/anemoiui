@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ElementType } from "react";
 import clsx from "clsx";
 
 type Button = {
@@ -7,14 +7,16 @@ type Button = {
   type?: 'primary' | 'secondary' | 'gradient' | string;
   className?: string;
   disabled?: boolean;
+  as?: ElementType;
 };
 
 const SIZE_MAPS: any = {
   xs: "text-xs px-2 py-1",
   sm: "text-sm px-4 py-2",
   md: "text-base px-6 py-2",
-  lg: "text-lg px-8 py-2",
-  xl: "text-xl px-10 py-2"
+  lg: "text-sm md:text-lg px-2 md:px-8 py-2",
+  xl: "text-xl px-10 py-2",
+  full: 'max-w-full px-10 py-2',
 };
 
 const TYPE_MAPS: any = {
@@ -28,12 +30,14 @@ export function Button({
   size = 'md',
   type,
   className,
-  disabled
+  disabled, as = "button"
 }: Button) {
+  const Node = as;
+
   return (
-    <button
+    <Node
       className={clsx(
-          "m-2 rounded cursor-pointer max-w-max focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-40 disabled:opacity-50 disabled:cursor-not-allowed",
+          "flex justify-center items-center rounded cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-40 disabled:opacity-50 disabled:cursor-not-allowed",
         size && SIZE_MAPS[size],
         type && TYPE_MAPS[type],
         className
@@ -41,6 +45,6 @@ export function Button({
       disabled={disabled}
     >
       {title}
-    </button>
+    </Node>
   );
 }

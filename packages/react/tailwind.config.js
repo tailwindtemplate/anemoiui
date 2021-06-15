@@ -47,7 +47,7 @@ module.exports = {
           200: "#EBEBEB",
           100: "#F5F5F5",
           50: "#FFFFFF"
-        },
+        }
       },
       spacing: {
         xs: "0.5rem",
@@ -55,13 +55,18 @@ module.exports = {
         md: "1.5rem",
         lg: "2rem",
         xl: "2.5rem",
+        "form-sm": "17.5rem",
+        "form-md": "35rem",
+      },
+      maxWidth: {
+        '17rem': '17rem'
       },
       fontSize: {
         tiny: ".5rem"
       },
       borderWidth: {
         6: "6px"
-      },
+      }
     }
   },
   variants: {
