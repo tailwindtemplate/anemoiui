@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import clsx from 'clsx'
 
 type Button = {
@@ -26,12 +26,14 @@ const TYPE_MAPS: any = {
 }
 
 export function Button({
-    title = 'Get Started',
+    title = '',
     size = 'md',
     type,
     className,
-    disabled, as = 'button'
-}: Button) {
+    disabled,
+    as = 'button',
+    children,
+}: PropsWithChildren<Button>) {
     const Node = as
 
     return (
@@ -45,6 +47,7 @@ export function Button({
             disabled={disabled}
         >
             {title}
+            {children}
         </Node>
     )
 }

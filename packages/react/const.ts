@@ -31,6 +31,7 @@ export const menu = [
         items: [
             { name: 'user profile', url: '/sections/user-profile' },
             { name: 'landing', url: '/sections/landing' },
+            { name: 'app sidebar', url: '/sections/app-sidebar' }
         ]
     },
     {
