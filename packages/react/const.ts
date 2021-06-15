@@ -18,7 +18,6 @@ export const menu = [
         name: 'pages',
         items: [
             { name: 'chat', url: '/pages/chat' },
-            { name: 'landing', url: '/pages/landing-page' }
         ]
     },
     {
