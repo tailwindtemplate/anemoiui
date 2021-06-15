@@ -1,6 +1,5 @@
-import { Button, Section, TextInput } from '../../src';
+import { Button, Section, TextInput, Form, FormBody, FormHeader } from '../../src';
 import { PhoneIcon, XIcon, LockClosedIcon } from '@heroicons/react/outline';
-import { Form, FormBody, FormHeader } from "../../src/components/form";
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 
 export default function FormsPage() {

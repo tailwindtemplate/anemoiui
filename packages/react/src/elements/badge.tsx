@@ -3,7 +3,6 @@ import clsx from 'clsx';
 
 type Badge = {
     count?: any;
-    size?: string;
     className?: string;
     position?: 'top-left' | 'top-right' |'bottom-left' | 'bottom-right' | string;
 };
@@ -19,7 +18,7 @@ export function Badge({ count = '', className, position }: Badge) {
     return (
         <span
             className={clsx(
-                'flex justify-center items-center rounded-full leading-4 whitespace-no-wrap text-tiny w-4 h-4 border border-white',
+                'flex justify-center items-center rounded-full leading-4 whitespace-no-wrap text-sm w-4 h-4 border border-white',
                 className,
                 position && 'absolute',
                 position && POSITION[position],
