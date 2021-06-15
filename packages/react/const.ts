@@ -12,8 +12,8 @@ export const menu = [
         items: [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
-            { name: "carousel", url: "/components/carousel" },
-            { name: "popover", url: "/components/popover" }
+            { name: 'carousel', url: '/components/carousel' },
+            { name: 'popover', url: '/components/popover' }
         ],
     },
     {
@@ -73,28 +73,24 @@ export const popover = [
         description: "Wifi description",
         href: "##",
         Icon: WifiIcon,
-        classIcon: "w-6 h-6",
     },
     {
         name: "Shopping",
         description: "Shopping description",
         href: "##",
         Icon: ShoppingCartIcon,
-        classIcon: "w-6 h-6",
     },
     {
         name: "Gift",
         description: "Gift description ",
         href: "##",
         Icon: GiftIcon,
-        classIcon: "w-6 h-6",
     },
     {
         name: "Printer",
         description: "Printer description",
         href: "##",
         Icon: PrinterIcon,
-        classIcon: "w-6 h-6",
     },
 ];
 // Default Data Carousel

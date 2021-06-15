@@ -4,7 +4,7 @@ import clsx from 'clsx';
 type NextPrev = {
   onClickNextPrev: (e: any) => void,
   Icon?: any,
-  Alignment?: string,
+  alignment?: string,
   displayNextPrev?: boolean,
   slider: Object,
   disabled: boolean
@@ -13,13 +13,11 @@ type NextPrev = {
 export const NextPrev = ({
   onClickNextPrev,
   Icon,
-  Alignment,
+  alignment,
   displayNextPrev,
   slider,
   disabled
 }: NextPrev) => {
-  // ConstTank
-  const Disabled = disabled && "opacity-25";
   //Return
   return (
     slider && (
@@ -27,7 +25,7 @@ export const NextPrev = ({
         onClick={onClickNextPrev}
         className={clsx(displayNextPrev ? 'visible' : 'invisible')}
       >
-        {Icon && <Icon className={clsx(Alignment, Disabled)} />}
+        {Icon && <Icon className={clsx(alignment, disabled && "opacity-25")} />}
       </div>
     )
   )

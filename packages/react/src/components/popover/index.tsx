@@ -1,7 +1,5 @@
 import React, { PropsWithChildren, JSXElementConstructor } from 'react';
 import { Popover, Transition, TransitionClasses, TransitionEvents } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/outline';
-
 // Check Type Props
 type PopoverControl = {
   transitions?: TransitionClasses & TransitionEvents & { show?: boolean; appear?: boolean; },
@@ -23,7 +21,6 @@ const Transitions = {
   leaveFrom: "opacity-100 translate-y-0",
   leaveTo: "opacity-0 translate-y-1"
 };
-const NamePopover = "Popover";
 const ClassIcon = "ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition";
 const ClassNamePopover = "text-gray-500 font-semibold";
 const ClassPopover = "relative mt-8";
@@ -32,9 +29,9 @@ const ClassPopoverButton = "text-gray-500 font-semibold inline-flex rounded-lg b
 // Render
 export const PopoverControl = ({
   transitions = Transitions,
-  namePopover = NamePopover,
+  namePopover,
   classIcon = ClassIcon,
-  Icon = ChevronDownIcon,
+  Icon,
   // class
   classNamePopover = ClassNamePopover,
   classPopover = ClassPopover,
@@ -52,9 +49,7 @@ export const PopoverControl = ({
               {Icon && <Icon className={classIcon} />}
             </Popover.Button>
             <Transition as="div" show={open} {...transitions}>
-              <Popover.Panel className={classPopoverPanel}>
-                {children}
-              </Popover.Panel>
+              <Popover.Panel className={classPopoverPanel}>{children}</Popover.Panel>
             </Transition>
           </div>
         )

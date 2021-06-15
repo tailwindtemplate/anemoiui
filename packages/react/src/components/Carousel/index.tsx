@@ -9,7 +9,6 @@ import { Dot } from './dot';
 import 'keen-slider/keen-slider.min.css';
 import { TOptionsEvents, TOptions } from 'keen-slider';
 // Check Type Props
-
 export type carouselBreakpoint = {
   [key: string]: Omit<TOptionsEvents, 'breakpoints'>
 }
@@ -120,7 +119,7 @@ export const Carousel = ({
         <NextPrev
           onClickNextPrev={(e: any) => e.stopPropagation() || slider.prev()}
           Icon={iconLeft}
-          Alignment={classIconLeft}
+          alignment={classIconLeft}
           displayNextPrev={displayNextPrev}
           slider={slider}
           disabled={currentSlide === 0}
@@ -129,7 +128,7 @@ export const Carousel = ({
         <NextPrev
           onClickNextPrev={(e: any) => e.stopPropagation() || slider.next()}
           Icon={iconRight}
-          Alignment={classIconRight}
+          alignment={classIconRight}
           displayNextPrev={displayNextPrev}
           slider={slider}
           disabled={currentSlide === slider?.details().size - 1}
