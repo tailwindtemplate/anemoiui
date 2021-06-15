@@ -104,7 +104,7 @@ export const Carousel = ({
     const clear = setInterval(() => {
       if (autoplay && slider) {
         slider.next()
-      };
+      }
     }, 2000)
     return () => {
       clearInterval(clear)
