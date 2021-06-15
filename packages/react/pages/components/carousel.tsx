@@ -91,7 +91,7 @@ export default function CarouselControl() {
       </div>
       <div className={carouselClassName}>
         <h3 className={titleClassName}>Chat</h3>
-        <Carousel snapMode="free" classCarousel="w-336 rounded" slidesPerView={5} spacingPerView={0} rtlCarousel={false}>
+        <Carousel snapMode="free" classCarousel="rounded" slidesPerView={5} spacingPerView={0} rtlCarousel={false}>
           {showCarouselUser(carouselUser)}
         </Carousel>
       </div>

@@ -1,7 +1,6 @@
 import 'tailwindcss/tailwind.css';
 import '../global.css';
 
-
 import type { AppProps } from 'next/app';
 import { NextLayout } from '../next-src/next-layout';
 

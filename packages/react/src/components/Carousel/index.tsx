@@ -140,7 +140,7 @@ export const Carousel = ({
         (
           <div className={classDots}>
             {
-              [...Array(slider.details().size)].map((idx, index) => (
+              Array(slider.details().size).fill(null).map((_, index) => (
                 <Dot
                   key={index}
                   classItemDots={classItemDots}
