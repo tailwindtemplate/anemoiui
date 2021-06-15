@@ -11,7 +11,7 @@ type CardInfo = {
 export const CardInfo = ({ data, className }: CardInfo) => {
     return (
         <CardWrapper className={clsx('space-y-4', className)}>
-            {data.map((item) => <InfoLine labelClassName="text-gray-400" {...item} />)}
+            {data.map((item, index) => <InfoLine key={index} labelClassName="text-gray-400" {...item} />)}
         </CardWrapper>
     )
 }

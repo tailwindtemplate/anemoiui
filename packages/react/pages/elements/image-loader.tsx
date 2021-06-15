@@ -63,10 +63,10 @@ export default function ImageLoaderPage() {
                 <div>With Children</div>
                 <ImageLoader
                     src="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg"
-                    className="w-40 h-40 bg-no-repeat border-2 border-primary-400 rounded-full"
+                    className="w-40 h-40 bg-no-repeat border-2 border-primary-400 rounded-full relative"
                     imageStyle="cover"
                 >
-                    <Badge count={2} color="GREEN" />
+                    <Badge count={22} className="bg-yellow-400 absolute py-3 px-5 bottom-2 right-2" />
                 </ImageLoader>
             </Section>
         </div>

@@ -42,6 +42,7 @@ export const menu = [
             { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'},
             { name: "cards", url: "/components/cards" },
+            { name: 'user card', url: '/components/user-card'}
         ],
     },
     {
@@ -58,12 +59,14 @@ export const menu = [
                 ]
             },
             { name: 'avatar', url: '/elements/avatar' },
+            { name: 'avatars', url: '/elements/avatars' },
             { name: 'buttons', url: '/elements/buttons' },
             { name: 'checkbox', url: '/elements/checkbox' },
             { name: 'radio', url: '/elements/radio' },
             { name: 'select', url: '/elements/select' },
             { name: 'text area', url: '/elements/text-area' },
-            { name: 'image loader', url: '/elements/image-loader' }
+            { name: 'image loader', url: '/elements/image-loader' },
+            { name: 'badge', url: '/elements/badge' }
         ]
     },
     {
@@ -195,6 +198,12 @@ export const user = {
     email: 'christcampbell@gmail.com',
     count: 10
 }
+export const userCard = {
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    time: '30/05/2021'
+}
 export const textMessageItem = {
     type: 'text',
     message: textMessage,
@@ -211,3 +220,11 @@ export const statusItems = {
     sending: ChevronDoubleRightIcon,
     error: ExclamationCircleIcon
 }
+
+export const avatars = [
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+    'https://i.ytimg.com/vi/yxhJZrmVKaY/mqdefault.jpg',
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+    'https://pbs.twimg.com/profile_images/1355071311433883648/g68FvrJ1_400x400.jpg',
+]
