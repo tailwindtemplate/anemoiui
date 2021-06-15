@@ -7,10 +7,10 @@ type TextInput = {
   RightIcon?: any;
   className?: string;
   inputClassName?: string;
-  type?: 'error' | string;
+  borderType?: 'error' | string;
 };
 
-const TYPE_MAPS: any = {
+const border: Record<string, string> = {
   error: "border-red-500"
 };
 
@@ -19,7 +19,7 @@ export const TextInput = ({
   RightIcon,
   className,
   inputClassName,
-  type,
+  borderType,
   src,
   ...rest
 }: TextInput & InputHTMLAttributes<{}>) => {
@@ -42,7 +42,7 @@ export const TextInput = ({
             className={clsx(
                 "py-2 md:py-3 text-sm focus:border-primary-400 focus:outline-none w-full placeholder-neutral-300 rounded-xl",
                 LeftIcon ? "px-2" : "px-4",
-                type && TYPE_MAPS[type],
+                borderType && border[borderType],
                 inputClassName,
             )}
             {...rest}

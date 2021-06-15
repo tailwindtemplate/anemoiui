@@ -20,7 +20,7 @@ export const UserCard = ({ avatar = '', time, title, content, avatarChildren }: 
         </Avatar>
     ), [avatar])
     return (
-        <div className="flex py-2 px-4 rounded-full bg-white items-center">
+        <div className="flex py-2 px-4 rounded-full bg-white items-center shadow-md">
             {image}
             <div className="ml-4 flex justify-center flex-col truncate w-full">
                 <div className="truncate text-lg font-bold">{title}</div>

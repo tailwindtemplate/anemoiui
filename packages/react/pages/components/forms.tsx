@@ -8,43 +8,37 @@ export default function FormsPage() {
         <Section narrow normal={false}>
 
             <div className='mb-4'>Form header - Form body (Text input - Button)</div>
-            <Section normal={false}>
+            <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormHeader className='flex mb-4'>
                         <ChevronLeftIcon className='w-6 h-6 mr-4' />
-                        Quay lại
+                        Return
                     </FormHeader>
-                    <FormBody title="Xin chào!" description="Chào mừng bạn đến với trang đăng nhập Hayov. Vui lòng nhập số điện thoại">
-                        <TextInput LeftIcon={PhoneIcon} inputClassName="rounded-2xl" placeholder="Số điện thoại" />
-                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-2xl mt-6" />
+                    <FormBody title="Hi there!" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                        <TextInput LeftIcon={PhoneIcon} inputClassName="rounded-2xl" placeholder="Your phone" />
+                        <Button type="primary" title="Login" as="a" size="lg" className="rounded-2xl mt-6" />
                     </FormBody>
                 </Form>
             </Section>
 
             <div className='my-4'>Form body (Button - Button)</div>
-            <Section normal={false}>
+            <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
-                    <FormBody title="Hahalolo" description="Cùng nhau kết nối đến cả thế giới theo cách đơn giản nhất">
-                        <Button
-                            type="primary"
-                            title="ĐĂNG NHẬP VỚI HAHALOLO"
-                            as="a"
-                            size="lg"
-                            className="rounded-2xl mt-6"
-                        />
-                        <Button title="Đăng nhập ẩn danh" as="a" size="lg" className="rounded-2xl mt-6 hover:text" />
+                    <FormBody title="WELCOME" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                        <Button type="primary" title="Login" as="a" size="lg" className="rounded-2xl mt-6" />
+                        <Button title="Register" as="a" size="lg" className="rounded-2xl mt-6 hover:text" />
                     </FormBody>
                 </Form>
             </Section>
 
             <div className='my-4'>Form header - Form body (Value text input - Value text input - Button)</div>
-            <Section normal={false}>
+            <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormHeader className='flex mb-4'>
                         <ChevronLeftIcon className='w-6 h-6 mr-4' />
-                        Quay lại
+                        Return
                     </FormHeader>
-                    <FormBody title="Hahalolo" description="Đăng nhập vào tài khoản Hahalolo để tham gia trải nghiệm Hayov">
+                    <FormBody title="Login with" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
                         <TextInput
                             inputClassName="rounded-2xl"
                             className="mb-6"
@@ -60,19 +54,19 @@ export default function FormsPage() {
                             RightIcon={XIcon}
                             readOnly
                         />
-                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-2xl mt-6" />
+                        <Button type="primary" title="Login" as="a" size="lg" className="rounded-2xl mt-6" />
                     </FormBody>
                 </Form>
             </Section>
 
             <div className='my-4'>Form header - Form body (Value text input - Text input - Button)</div>
-            <Section normal={false}>
+            <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormHeader className='flex mb-4'>
                         <ChevronLeftIcon className='w-6 h-6 mr-4' />
-                        Quay lại
+                        Return
                     </FormHeader>
-                    <FormBody title="Hahalolo" description="Đăng nhập vào tài khoản Hahalolo để tham gia trải nghiệm Hayov">
+                    <FormBody title="Login" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
                         <TextInput
                             inputClassName="rounded-2xl"
                             className="mb-6"
@@ -83,42 +77,44 @@ export default function FormsPage() {
                         />
                         <TextInput
                             inputClassName="rounded-2xl"
-                            placeholder="Số điện thoại"
+                            placeholder="Your phone"
                             LeftIcon={LockClosedIcon}
                             RightIcon={XIcon}
                         />
-                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-2xl mt-6" />
+                        <Button type="primary" title="Send OTP" as="a" size="lg" className="rounded-2xl mt-6" />
                     </FormBody>
                 </Form>
             </Section>
 
             <div className='my-4'>Form body (Button)</div>
-            <Section normal={false}>
+            <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
-                    <FormBody title="Chúc mừng!" description="Bạn đã đăng ký thành công! Bắt đầu kết nối với thế giới nhé!">
-                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-2xl mt-6" />
+                    <FormBody title="Congratulation!" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                        <Button type="primary" title="Start!" as="a" size="lg" className="rounded-2xl mt-6" />
                     </FormBody>
                 </Form>
             </Section>
 
             <div className='my-4'>Form body (Text input - Text input - Button)</div>
-            <Section normal={false}>
+            <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
-                    <FormBody title="Chúc mừng!" description="Bạn đã đăng ký thành công! Bắt đầu kết nối với thế giới nhé!">
+                    <FormBody title="Congratulation!" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
                         <TextInput
                             inputClassName="rounded-2xl"
-                            placeholder="Số điện thoại"
+                            placeholder="Password"
+                            type="password"
                             className="mb-6"
                             LeftIcon={LockClosedIcon}
                             RightIcon={XIcon}
                         />
                         <TextInput
                             inputClassName="rounded-2xl"
-                            placeholder="Số điện thoại"
+                            type="password"
+                            placeholder="Retype Password"
                             LeftIcon={LockClosedIcon}
                             RightIcon={XIcon}
                         />
-                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-2xl mt-6" />
+                        <Button type="primary" title="Finish!" as="a" size="lg" className="rounded-2xl mt-6" />
                     </FormBody>
                 </Form>
             </Section>
