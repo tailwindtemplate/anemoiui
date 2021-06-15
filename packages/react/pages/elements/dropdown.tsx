@@ -7,12 +7,12 @@ export default function DropdownPage() {
       <div className="text-3xl my-8">Dropdowns</div>
 
         Overflow Dropdown
-      <Section className="mb-8 flex items-center justify-center border">
+      <Section className="mb-8 flex items-center justify-center border bg-white">
         <DropdownOverFlow label="Options" items={dropdown} />
       </Section>
 
         Default dropdown
-      <Section className="flex items-center justify-center border">
+      <Section className="flex items-center justify-center border bg-white">
         <Dropdown label="Options" items={dropdown} />
       </Section>
     </div>

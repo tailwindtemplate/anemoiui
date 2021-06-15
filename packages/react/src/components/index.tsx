@@ -1,4 +1,5 @@
 export * from './modal'
 export * from './tab'
+export * from './messages'
 export * from './popover'
 export * from './carousel'

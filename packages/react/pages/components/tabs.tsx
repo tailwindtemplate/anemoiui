@@ -11,7 +11,7 @@ export default function Tabs() {
   const [active, setActive] = useState(tabItems[0].id);
   return (
     <div>
-      <Section narrow>
+      <Section narrow className='bg-white'>
         <div className={groundTabClassName}>
           <h3 className={titleClassName}>Basic tab</h3>
           <TabControl items={tabItems} active={active} onClick={setActive} />

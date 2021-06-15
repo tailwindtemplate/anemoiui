@@ -62,7 +62,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         return (
-          <ul className="my-4 w-80">
+          <ul className="my-4 rounded-2xl w-80">
             {filteredSuggestions.map((suggestion, index) => {
               return (
                 <li
@@ -70,7 +70,7 @@ export function AutocompleteInput({ suggestions, inputClassName, className, sugg
                     index === activeSuggestion
                       ? "bg-primary-500 text-white hover:bg-primary-400"
                       : "",
-                    "p-2 cursor-pointer hover:bg-primary-100"
+                    "p-2 cursor-pointer hover:bg-primary-100 truncate"
                   )}
                   key={suggestion}
                   onClick={onClick}

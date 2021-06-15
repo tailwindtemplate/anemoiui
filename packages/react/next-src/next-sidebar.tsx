@@ -43,7 +43,7 @@ const SidebarList = ({ items, className = '', loop = 0, style = {} }) => {
 
 export const NextSidebar = () => {
     return (
-        <div className="hidden fixed z-40 h-full w-full inset-0 bg-white md:block md:static md:h-auto md:w-64 md:z-20">
+        <div className="hidden fixed z-40 h-full w-full inset-0 md:block md:static md:h-auto md:w-64 md:z-20">
             <Sidebar className="block mr-4 p-2 h-auto text-text md:top-24 sticky">
                 <SidebarList items={menu} style={{ height: 'calc(100vh - 9rem)'}} />
             </Sidebar>
