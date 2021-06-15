@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChatIcon } from '@heroicons/react/outline';
+import React from 'react'
+import { ChatIcon } from '@heroicons/react/outline'
 
 export const MessageInput = () => {
     return (

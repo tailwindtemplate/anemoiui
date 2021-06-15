@@ -1,5 +1,5 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from 'react'
+import clsx from 'clsx'
 
 type Badge = {
     count?: any;
@@ -12,7 +12,7 @@ const POSITION: any = {
     'top-right': '-top-1 -right-1',
     'bottom-left': '-bottom-1 -left-1',
     'bottom-right': '-bottom-1 -right-1',
-};
+}
 
 export function Badge({ count = '', className, position }: Badge) {
     return (
@@ -27,5 +27,5 @@ export function Badge({ count = '', className, position }: Badge) {
         >
             {count > 999 ? '999+' : count}
         </span>
-    );
+    )
 }

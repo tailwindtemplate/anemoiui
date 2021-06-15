@@ -1,6 +1,6 @@
-import React from 'react';
-import { Avatar } from '../elements';
-import { InformationCircleIcon } from '@heroicons/react/outline';
+import React from 'react'
+import { Avatar } from '../elements'
+import { InformationCircleIcon } from '@heroicons/react/outline'
 
 type ChannelHeader = {
     avatar: string

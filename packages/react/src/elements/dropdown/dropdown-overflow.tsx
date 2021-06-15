@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import clsx from 'clsx';
-import { useOutsideClick } from '../../hooks/use-outside-click';
-import { ChevronDownIcon } from "@heroicons/react/outline";
+import clsx from 'clsx'
+import { useOutsideClick } from '../../hooks/use-outside-click'
+import { ChevronDownIcon } from '@heroicons/react/outline'
 
 type DropdownOverFlow = {
     label: string

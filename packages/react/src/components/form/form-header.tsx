@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 type FormHeader = {
     className?: string;
@@ -9,5 +9,5 @@ export const FormHeader = ({children, className}:React.PropsWithChildren<FormHea
         <div className={className}>
             {children}
         </div>
-    );
-};
+    )
+}

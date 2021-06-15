@@ -1,7 +1,7 @@
-import React from 'react';
-import { CardWrapper } from './card-wrapper';
-import { InfoLine } from './info-line';
-import clsx from 'clsx';
+import React from 'react'
+import { CardWrapper } from './card-wrapper'
+import { InfoLine } from './info-line'
+import clsx from 'clsx'
 
 type CardInfo = {
     data: InfoLine[]

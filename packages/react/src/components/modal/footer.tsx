@@ -1,5 +1,5 @@
-import React, { JSXElementConstructor, useMemo } from 'react';
-import clsx from 'clsx';
+import React, { JSXElementConstructor, useMemo } from 'react'
+import clsx from 'clsx'
 
 type Footer = {
     type?: 'left' | 'right' | 'center' | 'between' | string
@@ -10,14 +10,14 @@ type Footer = {
 
 const renderType = (type: string) => {
     switch (type) {
-        case 'center':
-            return 'items-center flex-col-reverse'
-        case 'right':
-            return 'justify-end space-x-4'
-        case 'left':
-            return 'justify-start space-x-4'
-        default:
-            return 'justify-between space-x-4'
+    case 'center':
+        return 'items-center flex-col-reverse'
+    case 'right':
+        return 'justify-end space-x-4'
+    case 'left':
+        return 'justify-start space-x-4'
+    default:
+        return 'justify-between space-x-4'
     }
 }
 

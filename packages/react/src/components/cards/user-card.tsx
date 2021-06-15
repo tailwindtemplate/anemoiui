@@ -1,5 +1,5 @@
-import React, { ReactNode, useMemo } from 'react';
-import { Avatar, Avatars } from '../../elements';
+import React, { ReactNode, useMemo } from 'react'
+import { Avatar, Avatars } from '../../elements'
 
 type UserCard = {
     avatar?: string | string[]

@@ -1,7 +1,7 @@
-import React, { PropsWithChildren, useMemo } from 'react';
-import { UserGroupIcon } from "@heroicons/react/outline";
-import clsx from "clsx";
-import { Avatar, Badge } from '../elements';
+import React, { PropsWithChildren, useMemo } from 'react'
+import { UserGroupIcon } from '@heroicons/react/outline'
+import clsx from 'clsx'
+import { Avatar, Badge } from '../elements'
 
 type Avatars = {
     avatars?: string[];
@@ -27,7 +27,7 @@ export function Avatars({ avatars = [], newMessage, children, className, size = 
         return (
             <div className={clsx('relative bg-gray-200 rounded-full flex justify-center items-center text-white', sizeClass.wrapper, className)}>
                 <UserGroupIcon className={sizeClass.item} />
-                {newMessage && <Badge count={newMessage} className='bg-red-600 text-white left-0 bottom-0 absolute z-10'  />}
+                {newMessage && <Badge count={newMessage} className='bg-red-600 text-white left-0 bottom-0 absolute z-10' />}
                 {children}
             </div>
         )
@@ -39,8 +39,8 @@ export function Avatars({ avatars = [], newMessage, children, className, size = 
                 <Avatar size="" src={avatars[0]} isRounded className={clsx('border border-white', sizeClass.item)} />
                 <div className='absolute bottom-0 right-0'><Avatar size="" src={avatars[1]} isRounded className={clsx('border border-white', sizeClass.item)} /></div>
             </div>
-            {newMessage && <Badge count={newMessage} className='bg-red-600 text-white left-0 bottom-0 absolute z-10'  />}
+            {newMessage && <Badge count={newMessage} className='bg-red-600 text-white left-0 bottom-0 absolute z-10' />}
             {children}
         </div>
-    );
+    )
 }

@@ -1,6 +1,6 @@
 import React, { memo, useRef, useEffect } from 'react'
 import { usePrevious } from '../../hooks/use-previous'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 export interface SingleOTPInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     focus?: boolean
