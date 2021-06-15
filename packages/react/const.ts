@@ -3,7 +3,9 @@ import {
     CheckIcon,
     ChevronDoubleRightIcon,
     DocumentReportIcon,
-    ExclamationCircleIcon
+    ExclamationCircleIcon,
+    UserIcon,
+    UserRemoveIcon
 } from '@heroicons/react/outline';
 
 export const dropdown = [
@@ -21,12 +23,19 @@ export const menu = [
         ]
     },
     {
+        name: 'sections',
+        items: [
+            { name: 'user profile', url: '/sections/user-profile' },
+        ]
+    },
+    {
         name: 'components',
         items: [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
             { name: 'forms', url: '/components/forms' },
-            { name: 'messages', url: '/components/messages'}
+            { name: 'messages', url: '/components/messages'},
+            { name: "cards", url: "/components/cards" },
         ],
     },
     {
@@ -66,6 +75,13 @@ export const headerMenu = [
   { name: "Help" }
 ];
 
+export const cardInfo = [
+    { label: "User", Icon: UserIcon },
+    { label: "User Name", info: 'Austin Wade' },
+    { label: "Email", info: 'austinwade@gmail.com' },
+    { label: "Remove", Icon: UserRemoveIcon }
+]
+
 export const textMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc lacus, pellentesque id odio eu, tincidunt fermentum lectus. In tempor commodo libero a eleifend. Nunc tincidunt dignissim nisi, ut ullamcorper dolor malesuada id. In vehicula ante id eros consectetur, eget pellentesque risus scelerisque. In ac placerat mi. Praesent iaculis blandit mattis. Sed scelerisque, ipsum non maximus egestas, nulla lacus facilisis nulla, ac convallis velit ex dignissim metus. Nam imperdiet nisi nunc."
 
 const attachmentDoc = {
@@ -100,8 +116,10 @@ export const attachments = [
     attachmentLink
 ]
 export const user = {
-    name: 'User name',
+    name: 'Christopher Campbell',
     avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+    email: 'christcampbell@gmail.com',
+    count: 10
 }
 export const textMessageItem = {
     type: 'text',
