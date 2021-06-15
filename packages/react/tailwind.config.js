@@ -48,13 +48,6 @@ module.exports = {
           100: "#F5F5F5",
           50: "#FFFFFF"
         },
-        black: {
-          50: "#666666",
-          100: "#000000"
-        },
-        red:{
-          1000:"#FF0000"
-        }
       },
       spacing: {
         xs: "0.5rem",
@@ -62,14 +55,6 @@ module.exports = {
         md: "1.5rem",
         lg: "2rem",
         xl: "2.5rem",
-        336: "21rem",
-        196: "12.25rem",
-        116: "7.25rem",
-        100: "6.25rem",
-        61: "3.813rem",
-        110: "6.875rem",
-        102: "6.375rem",
-        126: "7.875rem"
       },
       fontSize: {
         tiny: ".5rem"
@@ -77,14 +62,6 @@ module.exports = {
       borderWidth: {
         6: "6px"
       },
-        backgroundColor: {
-          yellow:{
-            1000:"#FFEB3B"
-          },
-          green:{
-            1000:"#00BF25"
-          }
-        }
     }
   },
   variants: {

@@ -1,3 +1,5 @@
+import { UserIcon, UserRemoveIcon } from '@heroicons/react/outline';
+
 export const dropdown = [
     { name: 'Edit', href: '#' },
     { name: 'Delete' },
@@ -12,7 +14,6 @@ export const menu = [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
             { name: "user profile", url: "/components/user-profile" },
-            { name: "new message", url: "/components/create-new-message" },
         ],
     },
     {
@@ -50,3 +51,10 @@ export const headerMenu = [
   },
   { name: "Help" }
 ];
+
+export const cardInfo = [
+    { label: "User", Icon: UserIcon },
+    { label: "User Name", info: 'Austin Wade' },
+    { label: "Email", info: 'austinwade@gmail.com' },
+    { label: "Remove", Icon: UserRemoveIcon }
+]

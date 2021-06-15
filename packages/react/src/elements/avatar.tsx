@@ -5,7 +5,7 @@ import { PlusIcon, UserCircleIcon } from '@heroicons/react/outline'
 type Textarea = {
   className?: string;
   src?: string;
-  size?: 'xs' | 'sm' | 'md' | string;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | string;
   isRounded?: boolean;
   newMessage?: number;
   status?: string;
@@ -30,7 +30,8 @@ const SHORT_NAME: any = {
 const SIZE_DEFAULT: any = {
   xs: "w-4 h-4",
   sm: "w-6 h-6",
-  md: "w-8 h-8"
+  md: "w-8 h-8",
+  lg: 'w-28 h-28',
 };
 
 const renderAvatar = (type: string, load: boolean, size: string, name?: string) => {

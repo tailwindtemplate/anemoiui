@@ -1,3 +1,3 @@
 export * from './card-ground';
-export * from './card-control';
-export * from './card-panel';
+export * from './card-wrapper';
+export * from './info-line';
