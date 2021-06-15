@@ -7,6 +7,7 @@ type TextInput = {
   RightIcon?: any;
   className?: string;
   inputClassName?: string;
+  wrapperClassName?: string;
   type?: 'error' | string;
 };
 
@@ -21,10 +22,11 @@ export const TextInput = ({
   inputClassName,
   type,
   src,
+  wrapperClassName,
   ...rest
 }: TextInput & InputHTMLAttributes<{}>) => {
   return (
-    <div className='w-full'>
+    <div className={clsx('w-full', wrapperClassName)}>
       <div
           className={clsx(
               "text-gray-600 focus-within:text-gray-400 border rounded-xl w-full flex items-center",

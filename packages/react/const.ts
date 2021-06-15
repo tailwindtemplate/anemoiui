@@ -27,12 +27,6 @@ export const menu = [
         ]
     },
     {
-        name: 'sections',
-        items: [
-            { name: 'user profile', url: '/sections/user-profile' },
-        ]
-    },
-    {
         name: 'components',
         items: [
             { name: 'modals', url: '/components/modals' },
@@ -66,12 +60,17 @@ export const menu = [
             { name: 'image loader', url: '/elements/image-loader' }
         ]
     },
-    {
-        name: 'sections',
-        items: [
+    { name: 'sections',
+      items: [
+            { name: 'modal members add', url: '/sections/modal-members-add' },
+            { name: 'modal owner leave group', url: '/sections/modal-owner-leave-group' },
+            { name: 'modal image focus', url: '/sections/modal-image-focus' },
+            { name: 'modal rename conversation', url: '/sections/modal-rename-conversation' },
+            { name: 'modal message deletion', url: '/sections/modal-message-deletion' },
+            { name: 'modal profile user', url: '/sections/modal-profile-user' },
             { name: 'landing', url: '/sections/landing' },
-        ]
-    },
+            { name: 'user profile', url: '/sections/user-profile' },
+        ] },
     { name: 'document', url: '/documents' },
 ]
 
@@ -211,3 +210,18 @@ export const statusItems = {
     sending: ChevronDoubleRightIcon,
     error: ExclamationCircleIcon
 }
+
+export const members = [
+    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+]
+
+export const infoProfiles = [
+    { title: 'Full name', value: 'Austin Wade' },
+    { title: 'Gender', value: 'Male' },
+    { title: 'Birthday', value: '01/01/1990' },
+    { title: 'Contact', value: 'austinwade@hahalolo.com' },
+];

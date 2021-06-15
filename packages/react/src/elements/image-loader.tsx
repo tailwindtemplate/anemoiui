@@ -8,6 +8,7 @@ type ImageLoader = {
     LoadIconClassName?: string
     className?: string
     imageStyle?: 'cover' | 'contain' | string
+    onClick?: () => void
 }
 const IconClassName = 'w-8 h-8'
 export const ImageLoader = ({
@@ -16,7 +17,8 @@ export const ImageLoader = ({
     LoadIconClassName = IconClassName,
     className,
     imageStyle = 'contain',
-    children
+    children,
+    onClick
 }: PropsWithChildren<ImageLoader>) => {
     const [loading, setLoading] = useState(true)
     const image = useMemo(() => {
@@ -42,7 +44,7 @@ export const ImageLoader = ({
     return (
         <div
             className={clsx(className, 'flex justify-center items-center bg-center', imageStyle == 'contain' ? 'bg-contain' : 'bg-cover')}
-            style={{ backgroundImage: `url('${src}')` }}
+            style={{ backgroundImage: `url('${src}')` }} onClick={onClick}
         >
             {image}
             {placeholder}
