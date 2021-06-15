@@ -4,10 +4,11 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf dist",
     "dev": "next dev",
     "dev:build": "next build",
     "start": "next start",
-    "build": "tsdx build --name @anemoiui/react --tsconfig tsconfig.tsdx.json",
+    "build": "yarn clean && tsc -p tsconfig.tsc.json",
     "lint:test": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
@@ -25,14 +26,14 @@
     "postcss": "^8.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
     "tailwindcss": "^2.1.3",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.2.0",
     "typescript": "^4.3.2"
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "keen-slider": "^5.5.0"
   }
 }
