@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo } from 'react'
 import { Avatar, Avatars } from '../../elements'
-import clsx from "clsx";
+import clsx from 'clsx'
 
 type UserCard = {
     avatar?: string | string[]

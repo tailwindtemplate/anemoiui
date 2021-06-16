@@ -245,7 +245,7 @@ export const infoProfiles = [
     { title: 'Gender', value: 'Male' },
     { title: 'Birthday', value: '01/01/1990' },
     { title: 'Contact', value: 'austinwade@hahalolo.com' },
-];
+]
 
 export const reactionsSettingTabs = [
     {
