@@ -1,28 +1,22 @@
 import { useState } from 'react';
-//Component
-import { Section, TabControl, TabPanel } from '../../src';
-// Default Data Tab;
+import { Heading2, Section, TabControl, TabPanel } from '../../src';
 import { tabItems } from '../../const';
-const titleClassName = "px-2 pb-4 transition-colors duration-200 text-gray-500 text-base";
-const childrenClassName = "p-4";
-const groundTabClassName = "border p-4 mb-8 rounded";
-// return
 export default function Tabs() {
   const [active, setActive] = useState(tabItems[0].id);
   return (
     <div>
-      <Section narrow className='bg-white'>
-        <div className={groundTabClassName}>
-          <h3 className={titleClassName}>Basic tab</h3>
+      <Heading2>Tabs</Heading2>
+      <Section className='flex justify-center items-center bg-white'>
+        <div className="w-full rounded">
           <TabControl items={tabItems} active={active} onClick={setActive} />
           <TabPanel id={tabItems[0].id} active={active}>
-            <p className={childrenClassName}>text 1</p>
+            <p className="p-4">text 1</p>
           </TabPanel>
           <TabPanel id={tabItems[1].id} active={active}>
-            <p className={childrenClassName}>text 2</p>
+            <p className="p-4">text 2</p>
           </TabPanel>
           <TabPanel id={tabItems[2].id} active={active}>
-            <p className={childrenClassName}>text 3</p>
+            <p className="p-4">text 3</p>
           </TabPanel>
         </div>
       </Section>

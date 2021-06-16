@@ -1,29 +1,28 @@
-import { Badge, Section } from '../../src';
-import { Avatars } from "../../src/elements/avatars";
+import { Badge, Heading2, Section, Avatars, Heading3 } from '../../src';
 import { avatars } from "../../const";
 
 export default function PreviewAvatars() {
     return (
-        <div className="p-2">
-            <div className="text-3xl my-8">Avatars</div>
-            <div>Plain</div>
+        <div className="space-y-4">
+            <Heading2>Avatars</Heading2>
+            <Heading3>Plain</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
                 <Avatars />
             </Section>
-            <div>One Image</div>
+            <Heading3>One Image</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
                 <Avatars avatars={[avatars[0]]} />
             </Section>
-            <div>More Images</div>
+            <Heading3>More Images</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
                 <Avatars avatars={avatars} />
             </Section>
-            <div>Width default badge</div>
+            <Heading3>Width default badge</Heading3>
             <Section className="mb-8 flex items-center justify-center space-x-4 border bg-white">
                 <Avatars newMessage={22} />
                 <Avatars avatars={avatars} newMessage={22} />
             </Section>
-            <div>With custom children</div>
+            <Heading3>With custom children</Heading3>
             <Section className="mb-8 flex items-center justify-center space-x-4 border bg-white">
                 <Avatars avatars={avatars} newMessage={22}>
                     <Badge position="top-right" className="bg-green-400" />

@@ -23,8 +23,8 @@ const Transitions = {
 }
 const ClassIcon = 'ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition'
 const ClassNamePopover = 'text-gray-500 font-semibold'
-const ClassPopover = 'relative mt-8'
-const ClassPopoverPanel = 'absolute border z-10 transform left-0pt-2 rounded-lg shadow-xl	mt-2 p-4'
+const ClassPopover = 'relative'
+const ClassPopoverPanel = 'absolute border z-10 transform left-0pt-2 rounded-lg shadow-xl mt-2 p-4'
 const ClassPopoverButton = 'text-gray-500 font-semibold inline-flex rounded-lg border group bg-orange-700 px-3 py-2 items-center items-center focus:outline-none rounded-lg border'
 // Render
 export const PopoverControl = ({

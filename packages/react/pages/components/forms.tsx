@@ -1,12 +1,12 @@
-import { Button, Section, TextInput, Form, FormBody, FormHeader } from '../../src';
+import { Button, Section, TextInput, Form, FormBody, FormHeader, Heading2, Heading3 } from '../../src';
 import { PhoneIcon, XIcon, LockClosedIcon } from '@heroicons/react/outline';
 import { ChevronLeftIcon } from "@heroicons/react/outline";
 
 export default function FormsPage() {
     return (
-        <Section narrow normal={false}>
-
-            <div className='mb-4'>Form header - Form body (Text input - Button)</div>
+        <div className="space-y-4">
+            <Heading2>Forms</Heading2>
+            <Heading3>Form header - Form body (Text input - Button)</Heading3>
             <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormHeader className='flex mb-4'>
@@ -20,7 +20,7 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='my-4'>Form body (Button - Button)</div>
+            <Heading3>Form body (Button - Button)</Heading3>
             <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormBody title="WELCOME" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
@@ -30,7 +30,7 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='my-4'>Form header - Form body (Value text input - Value text input - Button)</div>
+            <Heading3>Form header - Form body (Value text input - Value text input - Button)</Heading3>
             <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormHeader className='flex mb-4'>
@@ -58,7 +58,7 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='my-4'>Form header - Form body (Value text input - Text input - Button)</div>
+            <Heading3>Form header - Form body (Value text input - Text input - Button)</Heading3>
             <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormHeader className='flex mb-4'>
@@ -85,7 +85,7 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='my-4'>Form body (Button)</div>
+            <Heading3>Form body (Button)</Heading3>
             <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormBody title="Congratulation!" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
@@ -94,7 +94,7 @@ export default function FormsPage() {
                 </Form>
             </Section>
 
-            <div className='my-4'>Form body (Text input - Text input - Button)</div>
+            <Heading3>Form body (Text input - Text input - Button)</Heading3>
             <Section normal={false} className="bg-white flex justify-center p-4">
                 <Form>
                     <FormBody title="Congratulation!" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
@@ -117,6 +117,6 @@ export default function FormsPage() {
                     </FormBody>
                 </Form>
             </Section>
-        </Section>
+        </div>
     );
 }

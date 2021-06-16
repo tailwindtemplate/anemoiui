@@ -1,11 +1,8 @@
 import clsx from 'clsx';
-// Component
-import { Section, Carousel, carouselBreakpoint } from '../../src';
-//Default Data
+import { Section, Carousel, carouselBreakpoint, Heading2, Heading3 } from '../../src';
 import { carousel, carouselUser } from '../../const';
-const titleClassName = "font-semibold p-2 duration-200 text-gray-500 border-b	mb-4";
+
 const ClassItemsCarousel = "max-w-sm bg-gray-800 text-white h-72 flex justify-center";
-const carouselClassName = "border p-4 mb-8 rounded";
 const ResponsiveCarousel: carouselBreakpoint = {
   '(min-width: 768px)': {
     slidesPerView: 2,
@@ -40,61 +37,62 @@ const showCarouselUser = user => (user.map(({ id, img }) => (
 // Render
 export default function CarouselControl() {
   return (
-    <Section>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName} > Default Carousel</h3>
-        <Carousel >
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName} >Loop Autoplay</h3>
-        <Carousel loopCarousel={true} spacingPerView={5} autoplay={true} timeAutoplay={1000}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>Multiple Slider</h3>
-        <Carousel slidesPerView={3} spacingPerView={10}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>Free Mode</h3>
-        <Carousel slidesPerView={3} snapMode="free" spacingPerView={10} loopCarousel={true} displayDots={true}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>Center Slider</h3>
-        <Carousel slidesPerView={2} snapMode="free-snap" spacingPerView={10} centerCarousel={true}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>Responsive Slider</h3>
-        <Carousel slidesPerView={1} snapMode="snap" spacingPerView={10} responsiveCarousel={ResponsiveCarousel}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>RTL</h3>
-        <Carousel slidesPerView={2} spacingPerView={10} rtlCarousel={false} loopCarousel={true}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>Next Prev And Dots</h3>
-        <Carousel slidesPerView={1} spacingPerView={10} displayNextPrev={true} displayDots={true}>
-          {showCarousel(carousel)}
-        </Carousel>
-      </div>
-      <div className={carouselClassName}>
-        <h3 className={titleClassName}>Chat</h3>
-        <Carousel snapMode="free" classCarousel="rounded lg:w-1/3 mx-auto" slidesPerView={5} spacingPerView={0} rtlCarousel={false}>
-          {showCarouselUser(carouselUser)}
-        </Carousel>
-      </div>
-    </Section >
+      <div className="space-y-4">
+          <Heading2>Carousel</Heading2>
+          <Heading3>Default Carousel</Heading3>
+          <Section className='bg-white'>
+              <Carousel>
+                  {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Loop Autoplay</Heading3>
+          <Section className='bg-white'>
+              <Carousel loopCarousel={true} spacingPerView={5} autoplay={true} timeAutoplay={1000}>
+                {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Multiple Slider</Heading3>
+          <Section className='bg-white'>
+              <Carousel slidesPerView={3} spacingPerView={10}>
+                {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Free Mode</Heading3>
+          <Section className='bg-white'>
+              <Carousel slidesPerView={3} snapMode="free" spacingPerView={10} loopCarousel={true} displayDots={true}>
+                {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Center Slider</Heading3>
+          <Section className='bg-white'>
+              <Carousel slidesPerView={2} snapMode="free-snap" spacingPerView={10} centerCarousel={true}>
+                {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Responsive Slider</Heading3>
+          <Section className='bg-white'>
+              <Carousel slidesPerView={1} snapMode="snap" spacingPerView={10} responsiveCarousel={ResponsiveCarousel}>
+              {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>RTL</Heading3>
+          <Section className='bg-white'>
+              <Carousel slidesPerView={2} spacingPerView={10} rtlCarousel={false} loopCarousel={true}>
+                {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Next Prev And Dots</Heading3>
+          <Section className='bg-white'>
+              <Carousel slidesPerView={1} spacingPerView={10} displayNextPrev={true} displayDots={true}>
+                {showCarousel(carousel)}
+              </Carousel>
+          </Section>
+          <Heading3>Chat</Heading3>
+          <Section className='bg-white'>
+              <Carousel snapMode="free" classCarousel="rounded lg:w-1/3 mx-auto" slidesPerView={5} spacingPerView={0} rtlCarousel={false}>
+                {showCarouselUser(carouselUser)}
+              </Carousel>
+          </Section>
+      </div >
   )
 };

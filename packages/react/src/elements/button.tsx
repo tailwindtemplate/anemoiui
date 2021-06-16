@@ -8,6 +8,7 @@ type Button = {
   className?: string;
   disabled?: boolean;
   as?: ElementType;
+  onClick?: () => void
 };
 
 const SIZE_MAPS: any = {
@@ -33,6 +34,7 @@ export function Button({
     disabled,
     as = 'button',
     children,
+    onClick,
 }: PropsWithChildren<Button>) {
     const Node = as
 
@@ -45,6 +47,7 @@ export function Button({
                 className
             )}
             disabled={disabled}
+            onClick={onClick}
         >
             {title}
             {children}
