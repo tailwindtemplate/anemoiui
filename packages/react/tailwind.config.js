@@ -69,7 +69,6 @@ module.exports = {
       }
     },
     borderRadius: {
-      full: '9999px',
       larges: "2rem"
     }
   },

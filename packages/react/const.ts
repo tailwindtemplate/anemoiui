@@ -27,7 +27,7 @@ export const menu = [
             { name: 'tabs', url: '/components/tabs' },
             { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'},
-            { name: 'cards', url: '/components/cards'}
+            { name: 'cards', url: '/components/cards'},
         ],
     },
     {
@@ -119,4 +119,13 @@ export const statusItems = {
     sent: CheckIcon,
     sending: ChevronDoubleRightIcon,
     error: ExclamationCircleIcon
+}
+
+export const CardUserProps= {
+    title: 'Charlie Rhiel Madsen',
+    content: 'Thong tin chinh...',
+    status: '',
+    time: '31/15/1999',
+    quantity: 13,
+    avatar: 'https://www.paratime.vn/wp-content/uploads/2019/09/timestudio.vn-headshot-eye-glasses-02.jpg',
 }
