@@ -1,25 +1,26 @@
-import { Badge, ImageLoader, Section } from '../../src';
+import { Badge, Heading2, Heading3, ImageLoader, Section } from '../../src';
 import { UserGroupIcon, UserIcon } from '@heroicons/react/outline';
 
 export default function ImageLoaderPage() {
     return (
-        <div>
-            <Section>
-                <div>Default - without src</div>
+        <div className="space-y-4">
+            <Heading2>Image Loader</Heading2>
+            <Heading3>Default - without src</Heading3>
+            <Section className="bg-white">
                 <ImageLoader src="" />
             </Section>
-            <Section>
-                <div>Default - with src</div>
+            <Heading3>Default - with src</Heading3>
+            <Section className="bg-white">
                 <ImageLoader src="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg" />
             </Section>
-            <Section className="space-y-2">
-                <div>Custom loading component</div>
+            <Heading3>Custom loading component</Heading3>
+            <Section className="space-y-2 bg-white">
                 <ImageLoader src="" LoadIcon={UserIcon} />
                 <ImageLoader src="" LoadIcon={UserGroupIcon} LoadIconClassName="w-12 h-12 text-gray-400" />
                 <ImageLoader src="" LoadIcon={() => <div className="m-4 text-lg">Image</div>} LoadIconClassName="w-12 h-12 text-gray-400" />
             </Section>
-            <Section className="space-y-2">
-                <div>Custom Image Size</div>
+            <Heading3>Custom Image Size</Heading3>
+            <Section className="space-y-2 bg-white">
                 <ImageLoader
                     src="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg"
                     className="w-40 bg-gray-100"
@@ -33,8 +34,8 @@ export default function ImageLoaderPage() {
                     className="w-56 h-56 bg-no-repeat bg-gray-100"
                 />
             </Section>
-            <Section className="space-y-2">
-                <div>Image style Cover</div>
+            <Heading3>Image style Cover</Heading3>
+            <Section className="space-y-2 bg-white">
                 <ImageLoader
                     src="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg"
                     className="h-40 bg-no-repeat"
@@ -46,8 +47,8 @@ export default function ImageLoaderPage() {
                     imageStyle="cover"
                 />
             </Section>
-            <Section className="space-y-2">
-                <div>Custom Class</div>
+            <Heading3>Custom Class</Heading3>
+            <Section className="space-y-2 bg-white">
                 <ImageLoader
                     src="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg"
                     className="w-40 h-40 bg-no-repeat border-2 border-primary-400 rounded-full"
@@ -59,8 +60,8 @@ export default function ImageLoaderPage() {
                     imageStyle="cover"
                 />
             </Section>
-            <Section className="space-y-2">
-                <div>With Children</div>
+            <Heading3>With Children</Heading3>
+            <Section className="space-y-2 bg-white">
                 <ImageLoader
                     src="https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg"
                     className="w-40 h-40 bg-no-repeat border-2 border-primary-400 rounded-full relative"

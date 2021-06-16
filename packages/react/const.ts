@@ -24,6 +24,7 @@ export const menu = [
         name: 'pages',
         items: [
             { name: 'chat', url: '/pages/chat' },
+            { name: 'welcome', url: '/pages/welcome' }
         ]
     },
     {
@@ -31,6 +32,7 @@ export const menu = [
         items: [
             { name: 'user profile', url: '/sections/user-profile' },
             { name: 'landing', url: '/sections/landing' },
+            { name: 'app sidebar', url: '/sections/app-sidebar' }
         ]
     },
     {
@@ -43,7 +45,6 @@ export const menu = [
             { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'},
             { name: 'cards', url: '/components/cards' },
-            { name: 'user card', url: '/components/user-card'}
         ],
     },
     {

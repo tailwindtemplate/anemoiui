@@ -1,41 +1,60 @@
-import { Button, Section } from "../../src";
+import { Button, Heading2, Heading3, Section } from '../../src';
+import { BellIcon } from '@heroicons/react/outline'
 
 export default function PreviewButton() {
-  return (
-    <div className="p-2">
-      <div className="text-3xl my-8">Buttons</div>
-      Size XS -{">"} XL
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Button type="primary" size="xs" className="m-2" />
-        <Button type="primary" size="sm" className="m-2" />
-        <Button type="primary" className="m-2" />
-        <Button type="primary" size="lg" className="m-2" />
-        <Button type="primary" size="xl" className="m-2" />
-      </Section>
+    return (
+        <div className="space-y-4">
+            <Heading2>Buttons</Heading2>
+            <Heading3>Size XS -{">"} XL</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white space-x-4">
+                <Button title="Button" type="primary" size="xs" />
+                <Button title="Button" type="primary" size="sm" />
+                <Button title="Button" type="primary" />
+                <Button title="Button" type="primary" size="lg" />
+                <Button title="Button" type="primary" size="xl" />
+                <Button type="primary">
+                    <BellIcon className="w-7 h-7" />
+                </Button>
+            </Section>
 
-      Type: secondary
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Button type="secondary" />
-      </Section>
+            <Heading3>Type: secondary</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white space-x-4">
+                <Button title="Button" type="secondary" />
+                <Button type="secondary">
+                    <BellIcon className="w-6 h-6" />
+                </Button>
+            </Section>
 
-      Type: gradient
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Button type="gradient" />
-      </Section>
+            <Heading3>Type: gradient</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white space-x-4">
+                <Button title="Button" type="gradient" />
+                <Button type="gradient">
+                    <BellIcon className="w-6 h-6" />
+                </Button>
+            </Section>
 
-      Custom classname
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Button size="xs" className="bg-neutral-50 m-2" />
-        <Button size="xs" className="bg-neutral-100 m-2" />
-        <Button size="xs" className="bg-neutral-200 m-2" />
-        <Button size="xs" className="bg-neutral-300 m-2" />
-        <Button size="xs" className="bg-neutral-400 m-2" />
-      </Section>
+            <Heading3>Custom classname</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white space-x-4">
+                <Button title="Button" size="xs" className="bg-neutral-50" />
+                <Button title="Button" size="xs" className="bg-neutral-100" />
+                <Button title="Button" size="xs" className="bg-neutral-200" />
+                <Button title="Button" size="xs" className="bg-neutral-300" />
+                <Button title="Button" size="xs" className="bg-neutral-400" />
+                <Button size="" className="bg-neutral-400 hover:bg-neutral-100 rounded-full p-2">
+                    <BellIcon className="w-4 h-4" />
+                </Button>
+            </Section>
 
-      Disable
-      <Section className="flex items-center justify-center border bg-white">
-        <Button size="xl" type="primary" disabled />
-      </Section>
-    </div>
-  );
+            <Heading3>Disable</Heading3>
+            <Section className="flex items-center justify-center border bg-white space-x-4">
+                <Button title="Button" size="xl" type="primary" disabled />
+                <Button type="secondary" disabled>
+                    <BellIcon className="w-7 h-7" />
+                </Button>
+                <Button type="gradient" disabled>
+                    <BellIcon className="w-7 h-7" />
+                </Button>
+            </Section>
+        </div>
+    );
 }

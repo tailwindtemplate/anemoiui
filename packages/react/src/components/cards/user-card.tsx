@@ -1,5 +1,6 @@
 import React, { ReactNode, useMemo } from 'react'
-import { Avatar, Avatars } from '../../elements'
+import { Avatar, Avatars, AvatarLoader } from '../../elements'
+import clsx from 'clsx'
 
 type UserCard = {
     avatar?: string | string[]
@@ -7,20 +8,15 @@ type UserCard = {
     title: string
     content?: string
     time?: string
+    className?: string
+    onClick?: (e: any) => void
 }
-export const UserCard = ({ avatar = '', time, title, content, avatarChildren }: UserCard) => {
-    const image = useMemo(() => Array.isArray(avatar) ? (
-        <Avatars avatars={avatar} className="flex-shrink-0">
-            {avatarChildren}
-        </Avatars>
-    ) : (
-        <Avatar size="sm" src={avatar} isRounded className="flex-shrink-0">
-            {avatarChildren}
-        </Avatar>
-    ), [avatar])
+export const UserCard = ({ avatar = '', time, title, content, avatarChildren, className, onClick }: UserCard) => {
     return (
-        <div className="flex py-2 px-4 rounded-full bg-white items-center shadow-md">
-            {image}
+        <div onClick={onClick} className={clsx('flex py-2 px-4 rounded-2xl bg-white items-center shadow-md', onClick && 'cursor-pointer', className)}>
+            <AvatarLoader size="sm" avatar={avatar} className="flex-shrink-0">
+                {avatarChildren}
+            </AvatarLoader>
             <div className="ml-4 flex justify-center flex-col truncate w-full">
                 <div className="truncate text-lg font-bold">{title}</div>
                 <div className="flex justify-between items-center mt-1">
