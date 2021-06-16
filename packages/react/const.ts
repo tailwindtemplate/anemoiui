@@ -24,6 +24,7 @@ export const menu = [
         name: 'pages',
         items: [
             { name: 'chat', url: '/pages/chat' },
+            { name: 'welcome', url: '/pages/welcome' }
         ]
     },
     {

@@ -12,21 +12,21 @@ export const UserProfile = () => {
                 count={10}
             />
             <CardInfo data={[
-                { label: 'QR code', Icon: QrcodeIcon },
+                { label: 'QR code', Icon: QrcodeIcon, iconOnClick: () => console.log('click') },
                 { label: 'User name', info: 'Christopher Campbell' },
                 { label: 'Gender', info: 'Female' },
                 { label: 'Birthday', info: '30/01/1990' },
             ]} />
             <CardInfo data={[
-                { label: 'Status', Icon: StarIcon },
-                { label: 'Change Profile', Icon: UserCircleIcon },
+                { label: 'Status', Icon: StarIcon, iconOnClick: () => console.log('click'), iconClassName: 'text-yellow-400 hover:text-yellow-600' },
+                { label: 'Change Profile', Icon: UserCircleIcon, onClick: () => console.log('click'), className: 'text-primary-400 hover:text-primary-600', labelClassName: 'text-primary-400 hover:text-primary-600' },
             ]} />
             <CardInfo data={[
-                { label: 'Setting', Icon: CogIcon },
-                { label: 'Display', Icon: MoonIcon },
-                { label: 'Notification', Icon: BellIcon },
+                { label: 'Setting', Icon: CogIcon, iconOnClick: () => console.log('click') },
+                { label: 'Display', Icon: MoonIcon, iconOnClick: () => console.log('click') },
+                { label: 'Notification', Icon: BellIcon, iconOnClick: () => console.log('click') },
             ]} />
-            <CardInfo data={[{ label: 'Storage', Icon: MailIcon }]} />
+            <CardInfo data={[{ label: 'Storage', Icon: MailIcon, iconOnClick: () => console.log('click') }]} />
         </div>
     )
 }
