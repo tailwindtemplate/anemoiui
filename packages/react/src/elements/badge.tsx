@@ -18,11 +18,11 @@ export function Badge({ count = '', className, position }: Badge) {
     return (
         <span
             className={clsx(
-                'flex justify-center items-center rounded-full leading-4 whitespace-no-wrap text-sm w-4 h-4 border border-white',
+                'flex justify-center items-center rounded-full leading-4 whitespace-no-wrap text-sm w-4 min-w-max h-4 border border-white',
                 className,
                 position && 'absolute',
                 position && POSITION[position],
-                count > 9 && 'px-4'
+                count > 9 && 'px-1'
             )}
         >
             {count > 999 ? '999+' : count}

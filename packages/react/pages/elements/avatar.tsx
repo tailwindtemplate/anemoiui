@@ -1,4 +1,4 @@
-import { Avatar, Status, Section, Badge, Heading2, Heading3 } from '../../src';
+import { Avatar, Section, Badge, Heading2, Heading3 } from '../../src';
 
 export default function PreviewAvatar() {
     return (
@@ -52,7 +52,7 @@ export default function PreviewAvatar() {
 
             <Heading3>Add avatar</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Avatar size="sm" type="add-avatar" isRounded />
+                <Avatar size="sm" type="add-avatar" isRounded onClick={() => console.log('upload')} />
             </Section>
 
             <Heading3>Status</Heading3>
@@ -61,7 +61,7 @@ export default function PreviewAvatar() {
                     src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
                     type="src"
                 >
-                    <Status className="-top-1 -right-1" />
+                    <Badge className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white" />
                 </Avatar>
             </Section>
 

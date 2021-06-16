@@ -26,13 +26,13 @@ export const ChatSidebar = () => {
                 <div>Current Messages</div>
             </div>
             <div className="space-y-2 overflow-y-scroll flex-1 py-2 pr-2">
-                <UserCard {...userCard} />
-                <UserCard {...userCard} />
-                <UserCard {...userCard} />
-                <UserCard {...userCard} />
-                <UserCard {...userCard} />
-                <UserCard {...userCard} />
-                <UserCard {...userCard} />
+                <UserCard {...userCard} className="bg-primary-200 hover:bg-primary-100 cursor-pointer" />
+                <UserCard {...userCard} className="hover:bg-primary-100 cursor-pointer" />
+                <UserCard {...userCard} className="hover:bg-primary-100 cursor-pointer" />
+                <UserCard {...userCard} className="hover:bg-primary-100 cursor-pointer" />
+                <UserCard {...userCard} className="hover:bg-primary-100 cursor-pointer" />
+                <UserCard {...userCard} className="hover:bg-primary-100 cursor-pointer" />
+                <UserCard {...userCard} className="hover:bg-primary-100 cursor-pointer" />
             </div>
         </div>
     )

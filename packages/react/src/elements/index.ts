@@ -1,6 +1,5 @@
 export * from './dropdown'
 export * from './inputs'
-export * from './avatar'
 export * from './avatars'
 export * from './badge'
 export * from './button'

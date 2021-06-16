@@ -11,23 +11,23 @@ export default function PreviewAvatars() {
             </Section>
             <Heading3>One Image</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Avatars avatars={[avatars[0]]} />
+                <Avatars src={[avatars[0]]} />
             </Section>
             <Heading3>More Images</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Avatars avatars={avatars} />
+                <Avatars src={avatars} />
             </Section>
-            <Heading3>Width default badge</Heading3>
+            <Heading3>With default badge</Heading3>
             <Section className="mb-8 flex items-center justify-center space-x-4 border bg-white">
-                <Avatars newMessage={22} />
-                <Avatars avatars={avatars} newMessage={22} />
+                <Avatars onClick={() => console.log('click')} newMessage={22} />
+                <Avatars src={avatars} newMessage={22} />
             </Section>
             <Heading3>With custom children</Heading3>
             <Section className="mb-8 flex items-center justify-center space-x-4 border bg-white">
-                <Avatars avatars={avatars} newMessage={22}>
+                <Avatars src={avatars} newMessage={22}>
                     <Badge position="top-right" className="bg-green-400" />
                 </Avatars>
-                <Avatars avatars={avatars}>
+                <Avatars src={avatars}>
                     <Badge position="bottom-left" className="bg-yellow-400" count={11} />
                 </Avatars>
             </Section>
