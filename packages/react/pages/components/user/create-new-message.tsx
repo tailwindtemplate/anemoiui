@@ -1,28 +1,37 @@
 import React from "react";
+import { useRouter } from 'next/router';
 // data default
-import { avatarDefault } from "../../const";
+import { avatarDefault } from "../../../const";
 //Icon
 import { ChatIcon, SearchIcon, XIcon, CheckIcon } from "@heroicons/react/outline";
 // Component
-import { Footer } from "../../src/components/modal/footer";
-import { Section, Avatar } from '../../src';
-import { Header } from '../../src/components/modal/header';
-import { Wrapper } from '../../src/components/modal/wrapper';
-import TextInput from '../../src/elements/inputs/text-input';
+import { Footer } from "../../../src/components/modal/footer";
+import { Section, Avatar } from '../../../src';
+import { Header } from '../../../src/components/modal/header';
+import { Wrapper } from '../../../src/components/modal/wrapper';
+import TextInput from '../../../src/elements/inputs/text-input';
 import clsx from "clsx";
 // Render
 const CreateNewMessage = () => {
+  const router = useRouter();
   // create state
   const [search, setSearch] = React.useState('');
   const [open, setOpen] = React.useState(false);
   const [iconRight, setIconRight] = React.useState(false);
   const [userId, setUserId] = React.useState(null);
   // function
+  const activeUserClick = React.useCallback((id) => setUserId(id), [userId]);
+  const activeConFirm = (userId) => {
+    if (!userId) return;
+    router.push(`/components/user/${userId}`);
+    setOpen(false);
+  };
   const confirm = React.useMemo(() => ({
     label: 'Create new',
-    onClick: () => setOpen(false),
-    className: 'w-full rounded border py-1 px-4 font-semibold'
-  }), []);
+    onClick: () => activeConFirm(userId),
+    className: "w-full rounded border py-1 px-4 font-semibold",
+  }), [userId]);
+
   const cancel = React.useMemo(() => ({
     label: 'Cancel',
     onClick: () => setOpen(false),
@@ -33,7 +42,6 @@ const CreateNewMessage = () => {
     if (e.target.value.length > 0) setIconRight(true);
     else setIconRight(false);
   };
-  const activeUserClick = React.useCallback((id) => { setUserId(id) }, [userId]);
   const actionCloseSearch = () => {
     setSearch('')
     setIconRight(false);
@@ -80,7 +88,6 @@ const CreateNewMessage = () => {
                     type="src"
                     isRounded
                     size="sm"
-                    name="Master Master"
                   />
                   <p className="px-2">{name}</p>
                   {id === userId && <CheckIcon className="w-7 h-7 text-green-400 absolute right-10" />}

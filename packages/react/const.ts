@@ -11,7 +11,7 @@ export const menu = [
         items: [
             { name: 'modals', url: '/components/modals' },
             { name: 'tabs', url: '/components/tabs' },
-            { name: 'new message', url: '/components/create-new-message' },
+            { name: 'new message', url: '/components/user/create-new-message' },
         ],
     },
     {
