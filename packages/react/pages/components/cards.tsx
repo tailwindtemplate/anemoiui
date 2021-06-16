@@ -1,28 +1,18 @@
-import { useContext } from "react";
-import { CardContext } from "../../src/components/card-users/card-users"
+import { Section } from '../../src';
+import { Avatar, Status } from "../../src";
+import { Channel } from '../../src/components/card';
+import { CardUserItems } from '../../const';
 
-const Channel = () => {
-    const {title, content, status, time, avatar } = useContext(CardContext)
+export default function Card () {
     return (
-        <body className="bg-gray-200 h-screen flex justify-center items-start">
-            <div className="bg-white my-4 mx-4 rounded-larges flex items-center">
-
-                <div className="relative my-2.5 mx-4">
-                    <img src={avatar} className="bg-gray-200 h-12 w-12 rounded-full "/>
-                    <div className="bg-yellow-300 w-3 h-3 rounded-full absolute top-0 right-0 border border-white">{status}</div>
+        <div>Card Channels:
+            <Section className="bg-gray-100 h-screen flex flex-row justify-center items-start">
+                <Avatar isRounded size="sm" type="src" rounded-full src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg" />
+                <div className="flex flex-col">
+                    <Channel title={CardUserItems.title} />
+                    <Channel content={CardUserItems.content} time={CardUserItems.time} />
                 </div>
-                <div className="my-2.5 mr-4">
-                    <div className="text-lg ">{title}</div>
-                    <div className="text-gray-500 flex justify-between">
-                        <p className="text-base text-left pt-2">{content}</p>
-                        <p className="text-sm text-right pt-2.5 ">{time}</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </body>
+            </Section>
+        </div>
     )
 }
-
-export default Channel;

@@ -121,7 +121,7 @@ export const statusItems = {
     error: ExclamationCircleIcon
 }
 
-export const CardUserProps= {
+export const CardUserItems = {
     title: 'Charlie Rhiel Madsen',
     content: 'Thong tin chinh...',
     status: '',
