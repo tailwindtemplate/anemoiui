@@ -1,14 +1,16 @@
 import React, { ReactNode, useMemo } from 'react'
 import { Avatar, Avatars } from '../../elements'
+import clsx from "clsx";
 
 type UserCard = {
     avatar?: string | string[]
     avatarChildren?: ReactNode
     title: string
-    content?: string
+    content?: string | Element
     time?: string
+    className?: string
 }
-export const UserCard = ({ avatar = '', time, title, content, avatarChildren }: UserCard) => {
+export const UserCard = ({ avatar = '', time, title, content, avatarChildren, className }: UserCard) => {
     const image = useMemo(() => Array.isArray(avatar) ? (
         <Avatars avatars={avatar} className="flex-shrink-0">
             {avatarChildren}
@@ -19,7 +21,7 @@ export const UserCard = ({ avatar = '', time, title, content, avatarChildren }: 
         </Avatar>
     ), [avatar])
     return (
-        <div className="flex py-2 px-4 rounded-full bg-white items-center shadow-md">
+        <div className={clsx('flex py-2 px-4 items-center', className)}>
             {image}
             <div className="ml-4 flex justify-center flex-col truncate w-full">
                 <div className="truncate text-lg font-bold">{title}</div>

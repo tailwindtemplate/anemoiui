@@ -72,6 +72,8 @@ export const menu = [
             { name: 'modal rename conversation', url: '/sections/modal-rename-conversation' },
             { name: 'modal message deletion', url: '/sections/modal-message-deletion' },
             { name: 'modal profile user', url: '/sections/modal-profile-user' },
+            { name: 'modal reactions message', url: '/sections/modal-reactions-message' },
+            { name: 'modal reactions setting', url: '/sections/modal-reactions-setting' },
             { name: 'landing', url: '/sections/landing' },
             { name: 'user profile', url: '/sections/user-profile' },
         ]
@@ -244,3 +246,34 @@ export const infoProfiles = [
     { title: 'Birthday', value: '01/01/1990' },
     { title: 'Contact', value: 'austinwade@hahalolo.com' },
 ];
+
+export const reactionsSettingTabs = [
+    {
+        id: 'tab1',
+        name: 'Tab 1'
+    },
+    {
+        id: 'tab2',
+        name: 'Tab 2'
+    },
+    {
+        id: 'tab3',
+        name: 'Tab 3'
+    },
+    {
+        id: 'tab4',
+        name: 'Tab 4'
+    },
+    {
+        id: 'tab5',
+        name: 'Tab 5'
+    },
+    {
+        id: 'tab6',
+        name: 'Tab 6'
+    },
+    {
+        id: 'tab7',
+        name: 'Tab 7'
+    },
+]

@@ -33,7 +33,7 @@ export function Radio({
     className
 }: Radio) {
     return (
-        <div className={clsx('m-2 flex justify-center items-center', disabled && 'opacity-50 cursor-not-allowed select-none', className)} onClick={onClick}>
+        <div className={clsx('m-2 flex items-center', disabled && 'opacity-50 cursor-not-allowed select-none', className)} onClick={onClick}>
             <input
                 type="radio"
                 className="hidden"
