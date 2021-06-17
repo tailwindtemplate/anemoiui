@@ -10,19 +10,19 @@ import { PencilIcon } from "@heroicons/react/outline";
 // data default
 import { avatarDefault } from "../../../const";
 // Check type
-type EditNickName = {
+type Choosemember = {
   open?: boolean,
   setOpen?: (e: boolean) => void
 };
 // Render
-export default function EditNickName({ open, setOpen }: EditNickName) {
+export default function Choosemember({ open, setOpen }: Choosemember) {
   // create state
-  const [userId, setUserId] = React.useState(null);
+  const [userId, setUserId] = React.useState<number>(0);
   // function
   const canceListUser = React.useMemo(() => ({
     label: 'Cancel',
     onClick: () => setOpen(false),
-    className: 'w-full rounded border py-1 px-4 font-semibold	'
+    className: 'w-full rounded border py-1 px-4 font-semibold'
   }), []);
   const confirm = React.useMemo(() => ({
     label: 'Confirm',
@@ -31,12 +31,12 @@ export default function EditNickName({ open, setOpen }: EditNickName) {
   }), [userId]);
   const cancelEditName = React.useMemo(() => ({
     label: 'Cancel',
-    onClick: () => setUserId(null),
-    className: 'w-full rounded border py-1 px-4 font-semibold	'
+    onClick: () => setUserId(0),
+    className: 'w-full rounded border py-1 px-4 font-semibold'
   }), []);
   return (
     open && (
-      <Wrapper setOpen={() => { setOpen(false); setUserId(null) }} open={open}>
+      <Wrapper setOpen={() => { setOpen(false); setUserId(0) }} open={open}>
         <Header
           label="Đổi biệt danh"
           labelClassName="font-semibold	text-xl text-black"
@@ -71,7 +71,8 @@ export default function EditNickName({ open, setOpen }: EditNickName) {
               inputClassName="focus:border-red-500 bg-gray-100 text-gray-500 h-9"
               placeholder="Đổi biệt danh"
             />
-          </div>}
+          </div>
+        }
         {!userId
           // hiện nút hủy chưa
           ? <Footer cancel={canceListUser} />
@@ -79,7 +80,8 @@ export default function EditNickName({ open, setOpen }: EditNickName) {
           : <Footer
             confirm={confirm}
             cancel={cancelEditName}
-          />}
+          />
+        }
       </Wrapper>
     )
   )

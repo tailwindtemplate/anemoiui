@@ -20,9 +20,9 @@ type CreateNewMessage = {
 const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
   const router = useRouter();
   // create state
-  const [search, setSearch] = React.useState('');
-  const [iconRight, setIconRight] = React.useState(false);
-  const [userId, setUserId] = React.useState(null);
+  const [search, setSearch] = React.useState<string>('');
+  const [iconRight, setIconRight] = React.useState<boolean>(false);
+  const [userId, setUserId] = React.useState<number>(0);
   // function
   const activeUserClick = React.useCallback((id) => setUserId(id), [userId]);
   const activeConFirm = (userId) => {
@@ -33,13 +33,13 @@ const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
   const confirm = React.useMemo(() => ({
     label: 'Create new',
     onClick: () => activeConFirm(userId),
-    className: "w-full rounded border py-1 px-4 font-semibold",
+    className: clsx("w-full rounded border py-1 px-4 font-semibold", userId ? "opacity-100" : "opacity-50"),
   }), [userId]);
 
   const cancel = React.useMemo(() => ({
     label: 'Cancel',
     onClick: () => setOpen(false),
-    className: 'w-full rounded border py-1 px-4 font-semibold	'
+    className: 'w-full rounded border py-1 px-4 font-semibold'
   }), []);
   const onChangeInput = (e) => {
     setSearch(e.target.value);
@@ -56,7 +56,7 @@ const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
       className={clsx(className, 'cursor-pointer')}
       onClick={actionCloseSearch} />
   );
-  const avatarFilter = avatarDefault.filter(user => { if (user.name.toLowerCase().indexOf(search.trim().toLowerCase()) !== -1) return user });
+  const avatarFilter = avatarDefault.filter(user => (user.name.toLowerCase().indexOf(search.trim().toLowerCase()) !== -1) && user);
   React.useEffect(() => {
     if (!open) setUserId(null);
   }, [open]);
@@ -76,24 +76,22 @@ const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
         RightIcon={iconRight && ClearIcon}
         inputClassName="focus:border-red-500 bg-gray-100 text-gray-500"
       />
-      {
-        avatarFilter.length > 0 ? (
-          avatarFilter.map(({ img, name, id }) => (
-            <div
-              onClick={() => activeUserClick(id)}
-              className={clsx("flex mb-2 h-16 items-center border-b cursor-pointer font-semibold text-gray-400 hover:text-gray-500 capitalize", id === userId && 'active')}
-              key={id}
-            >
-              <Avatar src={img} type="src" isRounded size="sm"/>
-              <p className="px-2">{name}</p>
-              {id === userId && <CheckIcon className="w-7 h-7 text-green-400 absolute right-10" />}
-            </div>
-          ))) : (
-          <div className="text-center">
-            <h3 className="font-bold text-2xl	text-black mt-2">Kết quả không tìm thấy</h3>
-            <p className="text-sm	font-semibold	text-current">Không tìm thấy kết quả: {search}</p>
+      {avatarFilter.length > 0
+        ? avatarFilter.map(({ img, name, id }) => (
+          <div
+            onClick={() => activeUserClick(id)}
+            className={clsx("flex mb-2 h-16 items-center border-b cursor-pointer font-semibold text-gray-400 hover:text-gray-500 capitalize", id === userId && 'active')}
+            key={id}
+          >
+            <Avatar src={img} type="src" isRounded size="sm" />
+            <p className="px-2">{name}</p>
+            {id === userId && <CheckIcon className="w-7 h-7 text-green-400 absolute right-10" />}
           </div>
-        )
+        ))
+        : <div className="text-center">
+          <h3 className="font-bold text-2xl	text-black mt-2">Kết quả không tìm thấy</h3>
+          <p className="text-sm	font-semibold	text-current">Không tìm thấy kết quả: {search}</p>
+        </div>
       }
       <Footer
         confirm={confirm}

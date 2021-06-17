@@ -14,8 +14,8 @@ const UserId = () => {
   const id = Number(router.query.id);
   const userId = avatarDefault.find(user => user.id === id);
   // create state
-  const [iconRight, setIconRight] = React.useState(false);
-  const [message, setMessage] = React.useState('');
+  const [iconRight, setIconRight] = React.useState<boolean>(false);
+  const [message, setMessage] = React.useState<number>(null);
   const [localStoragemMessage, setLocalStoragemMessage] = React.useState([]);
   const [localStoragemMessageAll, setLocalStoragemMessageAll] = React.useState([]);
   // function
@@ -36,7 +36,7 @@ const UserId = () => {
     const newMessage = [...localStoragemMessageAll];
     newMessage.push(data);
     localStorage.setItem("message", JSON.stringify(newMessage));
-    setMessage('');
+    setMessage(0);
     setIconRight(false);
   }
   const onSubmit = e => {
