@@ -48,8 +48,8 @@ const UserId = () => {
     <div className="bg-gray-100 ">
       {
         userId ?
-          <div className="relative ">
-            <div className="py-6 px-8 bg-gray-200 flex sticky top-0">
+          <div className="relative">
+            <div className="py-6 px-8 bg-gray-200 flex relative">
               <Avatar
                 src={userId.img}
                 type="src"
