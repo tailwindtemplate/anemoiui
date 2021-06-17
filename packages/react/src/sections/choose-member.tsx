@@ -1,21 +1,19 @@
-import React from "react";
-// Component
-import { Footer } from "../../../src/components/modal/footer";
-import { Wrapper } from '../../../src/components/modal/wrapper';
-import { Header } from '../../../src/components/modal/header';
-import { Avatar } from '../../../src';
-import TextInput from '../../../src/elements/inputs/text-input';
+import React from 'react';
 //Icon
 import { PencilIcon } from "@heroicons/react/outline";
-// data default
-import { avatarDefault } from "../../../const";
-// Check type
-type Choosemember = {
-  open?: boolean,
-  setOpen?: (e: boolean) => void
+// Component
+import { Avatar } from '../../src';
+import { Footer } from '../../src/components/modal/footer';
+import { Wrapper } from '../../src/components/modal/wrapper';
+import { Header } from '../../src/components/modal/header';
+import { avatarDefault } from '../../const';
+import { EditNickname } from './edit-nickname';
+// Check Type
+type ChooseMember = {
+  open: boolean,
+  setOpen: (e: boolean) => void
 };
-// Render
-export default function Choosemember({ open, setOpen }: Choosemember) {
+export const ChooseMember = ({ open, setOpen }: ChooseMember) => {
   // create state
   const [userId, setUserId] = React.useState<number>(0);
   // function
@@ -56,22 +54,7 @@ export default function Choosemember({ open, setOpen }: Choosemember) {
             </div>
           ))
           // hiện user khi click và form edit
-          : <div className="mt-6 mb-2">
-            <div className="text-center mb-2">
-              <Avatar
-                type="src"
-                isRounded
-                size="md"
-                className="m-auto"
-              />
-              <h2 className="py-3 font-semibold text-xl text-gray-900">user 1</h2>
-              <p className="pb-2">Mọi người trong cuộc trò chuyện sẽ nhìn thấy biệt danh này</p>
-            </div>
-            <TextInput
-              inputClassName="focus:border-red-500 bg-gray-100 text-gray-500 h-9"
-              placeholder="Đổi biệt danh"
-            />
-          </div>
+          : <EditNickname userId={userId} />
         }
         {!userId
           // hiện nút hủy chưa

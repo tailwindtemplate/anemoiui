@@ -32,7 +32,9 @@ export const menu = [
         items: [
             { name: 'user profile', url: '/sections/user-profile' },
             { name: 'landing', url: '/sections/landing' },
-            { name: 'app sidebar', url: '/sections/app-sidebar' }
+            { name: 'app sidebar', url: '/sections/app-sidebar' },
+            { name: 'create new message', url: '/sections/create-new-message' },
+            { name: 'members edit nickname', url: '/sections/choose-member' },
         ]
     },
     {
@@ -44,9 +46,7 @@ export const menu = [
             { name: 'popover', url: '/components/popover' },
             { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'},
-            { name: 'cards', url: '/components/cards' },
-            { name: 'new message', url: '/components/user' },
-            { name: 'members', url: '/components/members' },
+            { name: 'cards', url: '/components/cards' }
         ],
     },
     {

@@ -6,16 +6,15 @@ import { avatarDefault } from "../../../const";
 // Component
 import { PaperAirplaneIcon } from "@heroicons/react/outline";
 import { Avatar } from '../../../src';
-import TextInput from '../../../src/elements/inputs/text-input';
+import { TextInput } from '../../../src/elements/inputs/text-input';
 // Render
-
 const UserId = () => {
   const router = useRouter();
   const id = Number(router.query.id);
   const userId = avatarDefault.find(user => user.id === id);
   // create state
   const [iconRight, setIconRight] = React.useState<boolean>(false);
-  const [message, setMessage] = React.useState<number>(null);
+  const [message, setMessage] = React.useState<string>(null);
   const [localStoragemMessage, setLocalStoragemMessage] = React.useState([]);
   const [localStoragemMessageAll, setLocalStoragemMessageAll] = React.useState([]);
   // function
@@ -36,7 +35,7 @@ const UserId = () => {
     const newMessage = [...localStoragemMessageAll];
     newMessage.push(data);
     localStorage.setItem("message", JSON.stringify(newMessage));
-    setMessage(0);
+    setMessage('');
     setIconRight(false);
   }
   const onSubmit = e => {
@@ -45,7 +44,7 @@ const UserId = () => {
   };
   const SenMessage = ({ className }) => (<PaperAirplaneIcon onClick={sendMessage} className={clsx(className, "right-9 absolute cursor-pointer	text-green-400")} />);
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-300">
       {
         userId ?
           <div className="relative">
