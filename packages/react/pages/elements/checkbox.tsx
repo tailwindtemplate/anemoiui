@@ -1,50 +1,50 @@
 import { MinusIcon } from "@heroicons/react/outline";
-import { Checkbox, Section } from "../../src";
+import { Checkbox, Heading2, Heading3, Section } from '../../src';
 import { useState } from "react";
 
 export default function PreviewCheckbox() {
-  const [checked, setChecked] = useState(false);
-  return (
-    <div className="p-2">
-      <div className="text-3xl my-8">Checkbox</div>
+    const [checked, setChecked] = useState(false);
+    return (
+        <div className="space-y-4">
+            <Heading2>Checkbox</Heading2>
 
-      Default
-      <Section className="mb-8 flex items-center justify-center border">
-        <Checkbox checked={checked} onClick={() => setChecked(!checked)} />
-      </Section>
+            <Heading3>Default</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Checkbox checked={checked} onClick={() => setChecked(!checked)} />
+            </Section>
 
-      Label - caption (or every attribute)
-      <Section className="mb-8 flex items-center justify-center border">
-        <Checkbox
-          checked={checked}
-          onClick={() => setChecked(!checked)}
-          label="Label"
-          caption="Caption"
-        />
-      </Section>
+            <Heading3>Label - caption (or every attribute)</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Checkbox
+                    checked={checked}
+                    onClick={() => setChecked(!checked)}
+                    label="Label"
+                    caption="Caption"
+                />
+            </Section>
 
-      Size SM
-      <Section className="mb-8 flex items-center justify-center border">
-        <Checkbox
-          checked={checked}
-          onClick={() => setChecked(!checked)}
-          size="SM"
-        />
-      </Section>
+            <Heading3>Size SM</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Checkbox
+                    checked={checked}
+                    onClick={() => setChecked(!checked)}
+                    size="SM"
+                />
+            </Section>
 
-      Disable
-      <Section className="mb-8 flex items-center justify-center border">
-        <Checkbox checked={checked} onClick={() => setChecked(!checked)} disabled />
-      </Section>
+            <Heading3>Disable</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Checkbox checked={checked} onClick={() => setChecked(!checked)} disabled />
+            </Section>
 
-      Custom Icon
-      <Section className="flex items-center justify-center border">
-        <Checkbox
-          checked={checked}
-          onClick={() => setChecked(!checked)}
-          Icon={MinusIcon}
-        />
-      </Section>
-    </div>
-  );
+            <Heading3>Custom Icon</Heading3>
+            <Section className="flex items-center justify-center border bg-white">
+                <Checkbox
+                    checked={checked}
+                    onClick={() => setChecked(!checked)}
+                    Icon={MinusIcon}
+                />
+            </Section>
+        </div>
+    );
 }

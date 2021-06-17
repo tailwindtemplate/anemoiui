@@ -1,4 +1,4 @@
-import React, { useState, useCallback, CSSProperties, InputHTMLAttributes } from 'react'
+import React, { useState, useCallback, CSSProperties } from 'react'
 import SingleInput from './single-otp-input'
 
 type OTPInput = {
@@ -43,7 +43,7 @@ export function OTPInput(props: OTPInput) {
     // Helper to return value with the right type: 'text' or 'number'
     const getRightValue = useCallback(
         (str: string) => {
-            let changedValue = str
+            const changedValue = str
             if (!isNumberInput) {
                 return changedValue
             }
@@ -111,32 +111,32 @@ export function OTPInput(props: OTPInput) {
     const handleOnKeyDown = useCallback(
         (e: React.KeyboardEvent<HTMLInputElement>) => {
             switch (e.key) {
-                case 'Backspace':
-                case 'Delete': {
-                    e.preventDefault()
-                    if (otpValues[activeInput]) {
-                        changeCodeAtFocus('')
-                    } else {
-                        focusPrevInput()
-                    }
-                    break
-                }
-                case 'ArrowLeft': {
-                    e.preventDefault()
+            case 'Backspace':
+            case 'Delete': {
+                e.preventDefault()
+                if (otpValues[activeInput]) {
+                    changeCodeAtFocus('')
+                } else {
                     focusPrevInput()
-                    break
                 }
-                case 'ArrowRight': {
-                    e.preventDefault()
-                    focusNextInput()
-                    break
-                }
-                case ' ': {
-                    e.preventDefault()
-                    break
-                }
-                default:
-                    break
+                break
+            }
+            case 'ArrowLeft': {
+                e.preventDefault()
+                focusPrevInput()
+                break
+            }
+            case 'ArrowRight': {
+                e.preventDefault()
+                focusNextInput()
+                break
+            }
+            case ' ': {
+                e.preventDefault()
+                break
+            }
+            default:
+                break
             }
         },
         [activeInput, changeCodeAtFocus, focusNextInput, focusPrevInput, otpValues],
