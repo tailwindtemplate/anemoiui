@@ -1,47 +1,46 @@
-import { FileUploader, Modal, Section, TextInput, UserCard } from '../../src';
-import { useMemo, useState } from 'react';
-import { members } from '../../const';
-import { CheckIcon, SearchIcon, XIcon } from '@heroicons/react/outline';
-import { Heading4 } from '../../src/elements/typography';
+import { FileUploader, Modal, Section, TextInput, UserCard } from '@anemoiui/react'
+import React, { useMemo, useState } from 'react'
+import { members } from '../../const'
+import { CheckIcon, SearchIcon, XIcon } from '@heroicons/react/outline'
+import { Heading4 } from '../elements/typography'
 
-export default function ModalGroupAdd() {
-    const [toggle, setToggle] = useState(false);
-    const [selectedUsers, setSelectedUsers] = useState([]);
+export default function ModalGroupAdd({open, setOpen}: any) {
+    const [selectedUsers, setSelectedUsers] = useState<string[]>([])
 
     const confirm = useMemo(
         () => ({
             label: 'Create',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
 
     const selectContact = (contact: any) => {
         selectedUsers.find(item => item === contact)
             ? setSelectedUsers(selectedUsers.filter(item => item !== contact))
             : setSelectedUsers(prev => [...prev, contact])
-    };
+    }
 
-    const restContacts = members.filter(item => !selectedUsers.includes(item))
+    const restContacts = members?.filter((item: any) => !selectedUsers.includes(item))
     const renderList = selectedUsers.length > 0 ? restContacts : members
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
+            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
                 Open modal
             </button>
             <Modal
-                open={toggle}
-                setOpen={setToggle}
+                open={open}
+                setOpen={setOpen}
                 title="Create new group"
                 confirm={confirm}
                 cancel={cancel}
@@ -58,7 +57,7 @@ export default function ModalGroupAdd() {
                             <div>
                                 <Heading4>Selected</Heading4>
                                 <div className='overflow-auto max-h-64'>
-                                    {selectedUsers.map((item, index) => {
+                                    {selectedUsers.map((item: any, index) => {
                                         return (
                                             <div className='flex items-center justify-between' key={index}>
                                                 <UserCard
@@ -69,7 +68,7 @@ export default function ModalGroupAdd() {
                                                 />
                                                 <CheckIcon className='w-6 h-6 text-green-500' />
                                             </div>
-                                        );
+                                        )
                                     })}
                                 </div>
                             </div>
@@ -89,7 +88,7 @@ export default function ModalGroupAdd() {
                                                 onClick={() => selectContact(item)}
                                                 className="cursor-pointer max-w-xs"
                                             />
-                                        );
+                                        )
                                     })}
                                 </div>
                             </div>
@@ -98,5 +97,5 @@ export default function ModalGroupAdd() {
                 </div>
             </Modal>
         </Section>
-    );
+    )
 }

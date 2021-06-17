@@ -1,35 +1,34 @@
-import { Avatar, Modal, Section } from '../../src';
-import { useMemo, useState } from 'react';
-import { infoProfiles } from '../../const';
+import { Avatar, Modal, Section } from '@anemoiui/react'
+import React, { useMemo } from 'react'
+import { infoProfiles } from '../../const'
 
-export default function ModalProfileUser() {
-    const [toggle, setToggle] = useState(false);
+export default function ModalProfileUser({open, setOpen}: any) {
 
     const confirm = useMemo(
         () => ({
             label: 'View profile',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
+            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
                 Open modal
             </button>
             <Modal
-                open={toggle}
-                setOpen={setToggle}
+                open={open}
+                setOpen={setOpen}
                 title="Profile user"
                 confirm={confirm}
                 cancel={cancel}
@@ -54,5 +53,5 @@ export default function ModalProfileUser() {
                 </div>
             </Modal>
         </Section>
-    );
+    )
 }

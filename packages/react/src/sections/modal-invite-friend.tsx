@@ -1,11 +1,11 @@
-import { Button, Modal, Section, TextInput, UserCard } from '../../src';
-import { useMemo, useState } from 'react';
-import { QrcodeIcon, SearchIcon, XIcon, DocumentDuplicateIcon } from '@heroicons/react/outline';
-import { members } from '../../const';
-import { Heading4 } from "../../src/elements/typography";
+import { Button, Modal, Section, TextInput, UserCard } from '@anemoiui/react'
+import React, { useMemo, useState } from 'react'
+import { QrcodeIcon, SearchIcon, XIcon, DocumentDuplicateIcon } from '@heroicons/react/outline'
+import { members } from '../../const'
+import { Heading4 } from '../elements/typography'
 
 export type CardUserItem = {
-    title?: string;
+    title?: any;
     avatar?: string;
 }
 
@@ -22,38 +22,37 @@ export const CardUserItem = ({title, avatar}: CardUserItem) => {
     )
 }
 
-export default function ModalInviteFriend() {
-    const [toggle, setToggle] = useState(false);
-    const [link, setLink] = useState('https://www.youtube.com/');
+export default function ModalInviteFriend({open, setOpen}: any) {
+    const [link, setLink] = useState('https://www.youtube.com/')
 
     const confirm = useMemo(
         () => ({
             label: 'Add',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
 
     const copyCodeToClipboard = () => {
         navigator.clipboard.writeText(link)
     }
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
+            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
                 Open modal
             </button>
             <Modal
-                open={toggle}
-                setOpen={setToggle}
+                open={open}
+                setOpen={setOpen}
                 title="Invite friend"
                 confirm={confirm}
                 cancel={cancel}
@@ -63,10 +62,10 @@ export default function ModalInviteFriend() {
                     <QrcodeIcon className='text-neutral-700 w-24 h-24' />
                     <TextInput placeholder="Search" LeftIcon={SearchIcon} RightIcon={XIcon} wrapperClassName='my-4' />
                     <div className='flex flex-col w-full my-4'>
-                        {members.map(item => {
+                        {members?.map((item, index) => {
                             return (
-                                <CardUserItem title={item.name} avatar={item.avatar} />
-                            );
+                                <CardUserItem title={item.name} avatar={item.avatar} key={index} />
+                            )
                         })}
                     </div>
                     <div className='flex flex-col justify-start items-start w-full border-t-2 my-2 py-4'>
@@ -79,5 +78,5 @@ export default function ModalInviteFriend() {
                 </div>
             </Modal>
         </Section>
-    );
+    )
 }

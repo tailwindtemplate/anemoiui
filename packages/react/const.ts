@@ -66,18 +66,9 @@ export const menu = [
     {
         name: 'sections',
         items: [
-            { name: 'modal members add', url: '/sections/modal-members-add' },
-            { name: 'modal owner leave group', url: '/sections/modal-owner-leave-group' },
-            { name: 'modal image focus', url: '/sections/modal-image-focus' },
-            { name: 'modal rename conversation', url: '/sections/modal-rename-conversation' },
-            { name: 'modal message deletion', url: '/sections/modal-message-deletion' },
-            { name: 'modal profile user', url: '/sections/modal-profile-user' },
-            { name: 'modal reactions message', url: '/sections/modal-reactions-message' },
-            { name: 'modal reactions setting', url: '/sections/modal-reactions-setting' },
-            { name: 'modal group add', url: '/sections/modal-group-add' },
-            { name: 'modal invite friend', url: '/sections/modal-invite-friend' },
             { name: 'landing', url: '/sections/landing' },
             { name: 'user profile', url: '/sections/user-profile' },
+            { name: 'modals', url: '/sections/modals' },
         ]
     },
     { name: 'document', url: '/documents' },

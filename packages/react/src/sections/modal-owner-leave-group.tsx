@@ -1,36 +1,35 @@
-import { Avatar, Modal, Radio, Section } from '../../src';
-import { useMemo, useState } from 'react';
-import { members } from '../../const';
+import { Avatar, Modal, Radio, Section } from '@anemoiui/react'
+import React, { useMemo, useState } from 'react'
+import { members } from '../../const'
 
-export default function ModalOwnerLeaveGroup() {
-    const [toggle, setToggle] = useState(false);
-    const [visibility, setVisibility] = useState(false);
+export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
+    const [visibility, setVisibility] = useState(false)
 
     const confirm = useMemo(
         () => ({
             label: 'Confirm',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
+            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
                 Open modal
             </button>
             <Modal
-                open={toggle}
-                setOpen={setToggle}
+                open={open}
+                setOpen={setOpen}
                 title="Options when leaving group"
                 confirm={confirm}
                 cancel={cancel}
@@ -59,12 +58,12 @@ export default function ModalOwnerLeaveGroup() {
                                         <Avatar src={item.avatar} isRounded size="sm" className="mr-4" />
                                         <div className='text-neutral-800 truncate w-3/4'>{item.name}</div>
                                     </div>
-                                );
+                                )
                             })}
                         </div>
                     )}
                 </div>
             </Modal>
         </Section>
-    );
+    )
 }

@@ -43,7 +43,7 @@ export function Button({
     return (
         <Node
             className={clsx(
-                'flex justify-center items-center rounded cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-40 disabled:opacity-50 disabled:cursor-not-allowed',
+                'flex justify-center items-center rounded cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-40 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap',
                 size && SIZE_MAPS[size],
                 type && TYPE_MAPS[type],
                 className

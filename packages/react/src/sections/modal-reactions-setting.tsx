@@ -1,39 +1,38 @@
-import { Modal, Section, TabControl, TabPanel } from '../../src';
-import { useMemo, useState } from 'react';
-import { reactionsSettingTabs } from "../../const";
-import { Heading4 } from "../../src/elements/typography";
+import { Modal, Section, TabControl, TabPanel } from '@anemoiui/react'
+import React, { useMemo, useState } from 'react'
+import { reactionsSettingTabs } from '../../const'
+import { Heading4 } from '../elements/typography'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
 
-export default function ModalReactionsSetting() {
-    const [toggle, setToggle] = useState(false);
-    const [active, setActive] = useState(reactionsSettingTabs[0].id);
+export default function ModalReactionsSetting({open, setOpen}: any) {
+    const [active, setActive] = useState(reactionsSettingTabs[0].id)
 
     const confirm = useMemo(
         () => ({
             label: 'Save',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
 
-    const mockReactions = [...Array(40)].map((index)=><EmojiHappyIcon className='w-9 h-9 mr-2 my-2' key={index} />);
+    const mockReactions = [...Array(40)].map((index)=><EmojiHappyIcon className='w-9 h-9 mr-2 my-2' key={index} />)
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
+            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
                 Open modal
             </button>
             <Modal
-                open={toggle}
-                setOpen={setToggle}
+                open={open}
+                setOpen={setOpen}
                 title="Reactions setting"
                 confirm={confirm}
                 cancel={cancel}
@@ -58,5 +57,5 @@ export default function ModalReactionsSetting() {
                 </div>
             </Modal>
         </Section>
-    );
+    )
 }

@@ -1,36 +1,35 @@
-import { Avatar, Modal, Section, TextInput } from '../../src';
-import { useMemo, useState } from 'react';
-import { members } from '../../const';
-import { SearchIcon } from '@heroicons/react/outline';
+import { Avatar, Modal, Section, TextInput } from '@anemoiui/react'
+import React, { useMemo } from 'react'
+import { members } from '../../const'
+import { SearchIcon } from '@heroicons/react/outline'
 
-export default function ModalMembersAdd() {
-    const [toggle, setToggle] = useState(false);
+export default function ModalMembersAdd({open, setOpen}: any) {
 
     const confirm = useMemo(
         () => ({
             label: 'Add',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
-            onClick: () => setToggle(false),
+            onClick: () => setOpen(false),
             className: 'w-full',
         }),
         [],
-    );
+    )
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
+            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
                 Open modal
             </button>
             <Modal
-                open={toggle}
-                setOpen={setToggle}
+                open={open}
+                setOpen={setOpen}
                 title="Members add"
                 confirm={confirm}
                 cancel={cancel}
@@ -44,10 +43,10 @@ export default function ModalMembersAdd() {
                                 <Avatar src={item.avatar} isRounded size="sm" className="mr-4" />
                                 <div className='text-neutral-800 truncate w-3/4'>{item.name}</div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
             </Modal>
         </Section>
-    );
+    )
 }
