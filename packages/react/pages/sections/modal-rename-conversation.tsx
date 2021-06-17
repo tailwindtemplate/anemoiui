@@ -1,7 +1,7 @@
 import { Modal, Section, TextInput } from '../../src';
-import { useMemo, useState } from 'react';
+import {useMemo, useState} from 'react';
 
-export default function ModalImageFocus() {
+export default function ModalRenameConversation() {
     const [toggle, setToggle] = useState(false);
 
     const confirm = useMemo(

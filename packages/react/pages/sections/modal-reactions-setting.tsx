@@ -10,7 +10,7 @@ export default function ModalReactionsSetting() {
 
     const confirm = useMemo(
         () => ({
-            label: 'View profile',
+            label: 'Save',
             onClick: () => setToggle(false),
             className: 'w-full',
         }),
@@ -25,7 +25,7 @@ export default function ModalReactionsSetting() {
         [],
     );
 
-    const mockReactions = [...Array(40)].map((item)=><EmojiHappyIcon className='w-9 h-9 mr-2 my-2' key={item} />);
+    const mockReactions = [...Array(40)].map((index)=><EmojiHappyIcon className='w-9 h-9 mr-2 my-2' key={index} />);
     return (
         <Section narrow className="flex justify-center items-center bg-white">
             <button className="border p-2 rounded-md" onClick={() => setToggle(!toggle)}>
@@ -41,14 +41,14 @@ export default function ModalReactionsSetting() {
             >
                 <div>
                     <div>
-                        <Heading4>Selected reactions(6/25)</Heading4>
+                        <Heading4>Selected reactions(25/25)</Heading4>
                         <div className='flex flex-wrap'>{[...Array(25)].map((index)=><EmojiHappyIcon className='w-9 h-9 mr-2 my-2' key={index} />)}</div>
                     </div>
                     <div className='mt-4'>
                         <Heading4>Reactions list</Heading4>
                         {reactionsSettingTabs.map((item, index)=>{
                             return (
-                                <TabPanel id={reactionsSettingTabs[index].id} active={active} className='flex flex-wrap'>
+                                <TabPanel id={reactionsSettingTabs[index].id} active={active} className='flex flex-wrap' key={index}>
                                     {mockReactions}
                                 </TabPanel>
                             )

@@ -9,6 +9,7 @@ type TextInput = {
   inputClassName?: string;
   borderType?: 'error' | string;
   wrapperClassName?: string;
+  inputRef?: React.Ref<HTMLInputElement>;
 };
 
 const border: Record<string, string> = {
@@ -23,6 +24,7 @@ export const TextInput = ({
     borderType,
     src,
     wrapperClassName,
+    inputRef,
     ...rest
 }: TextInput & InputHTMLAttributes<unknown>) => {
     return (
@@ -47,6 +49,7 @@ export const TextInput = ({
                         borderType && border[borderType],
                         inputClassName,
                     )}
+                    ref={inputRef}
                     {...rest}
                 />
                 {RightIcon && (

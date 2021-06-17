@@ -47,7 +47,7 @@ export default function ModalProfileUser() {
                     </div>
                     {infoProfiles.map(({ title, value }) => (
                         <div key={title} className="flex justify-between my-2">
-                            <div className="subtitle2">{title}</div>
+                            <div className="subtitle2 text-neutral-800">{title}</div>
                             <div>{value}</div>
                         </div>
                     ))}

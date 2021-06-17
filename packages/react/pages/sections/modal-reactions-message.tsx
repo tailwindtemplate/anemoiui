@@ -8,7 +8,7 @@ export default function ModalReactionsMessage() {
 
     const confirm = useMemo(
         () => ({
-            label: 'View profile',
+            label: 'Save',
             onClick: () => setToggle(false),
             className: 'w-full',
         }),
@@ -40,7 +40,13 @@ export default function ModalReactionsMessage() {
             >
                 <div className="p-4 mb-8 rounded">
                     <TabControl items={tabItems} active={active} onClick={setActive} />
-                    <TabPanel id={tabItems[0].id} active={active}>
+                    <TabPanel id={tabItems[0].id} active={active} className='overflow-auto max-h-96'>
+                        {reactionReact}
+                        {reactionReact}
+                        {reactionReact}
+                        {reactionReact}
+                        {reactionReact}
+                        {reactionReact}
                         {reactionReact}
                         {reactionReact}
                         {reactionReact}

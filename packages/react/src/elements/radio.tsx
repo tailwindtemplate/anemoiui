@@ -39,6 +39,7 @@ export function Radio({
                 className="hidden"
                 checked={checked}
                 disabled={disabled}
+                readOnly
             />
             <div className={clsx('rounded-full border-primary-700', checked ? BORDER[size] : 'border', SIZE[size])} />
             <div className="flex flex-col">

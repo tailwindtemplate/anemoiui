@@ -74,6 +74,8 @@ export const menu = [
             { name: 'modal profile user', url: '/sections/modal-profile-user' },
             { name: 'modal reactions message', url: '/sections/modal-reactions-message' },
             { name: 'modal reactions setting', url: '/sections/modal-reactions-setting' },
+            { name: 'modal group add', url: '/sections/modal-group-add' },
+            { name: 'modal invite friend', url: '/sections/modal-invite-friend' },
             { name: 'landing', url: '/sections/landing' },
             { name: 'user profile', url: '/sections/user-profile' },
         ]
@@ -233,11 +235,11 @@ export const avatars = [
 ]
 
 export const members = [
-    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
-    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
-    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
-    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
-    {name: 'Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 1, name: 'Charlie Rhiel Madsen Charlie Rhiel Madsen Charlie Rhiel Madsen Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 2, name: 'Julie Nguyen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 3, name: 'Thai Tran Nguyen Van', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 4, name: 'Hannah Tran', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 5, name: 'Nana Lee', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
 ]
 
 export const infoProfiles = [

@@ -1,5 +1,6 @@
 import React, { JSXElementConstructor, useMemo } from 'react'
 import clsx from 'clsx'
+import { Button } from 'elements'
 
 type Footer = {
     type?: 'left' | 'right' | 'center' | 'between' | string
@@ -26,18 +27,10 @@ export const Footer = ({ type = 'between', theme, confirm, cancel }: Footer) => 
     return (
         <div className={clsx('flex mt-2', typeClass)}>
             {cancel && (
-                <button onClick={cancel.onClick} className={clsx('mt-2 text-gray-600 py-2', cancel.className)}>
-                    {cancel.IconLeft && <cancel.IconLeft />}
-                    {cancel.label}
-                    {cancel.IconRight && <cancel.IconRight />}
-                </button>
+                <Button title={cancel.label} onClick={cancel.onClick} className={cancel.className} IconLeft={cancel.IconLeft} IconRight={cancel.IconRight} />
             )}
             {confirm && (
-                <button onClick={confirm.onClick} className={clsx('bg-primary-400 text-white mt-2 py-2', confirm.className)}>
-                    {confirm.IconLeft && <confirm.IconLeft />}
-                    {confirm.label}
-                    {confirm.IconRight && <confirm.IconRight />}
-                </button>
+                <Button title={confirm.label} onClick={confirm.onClick} type='primary' className={clsx('w-full', confirm.className)} IconLeft={confirm.IconLeft} IconRight={confirm.IconRight} />
             )}
         </div>
     )

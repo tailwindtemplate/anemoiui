@@ -55,9 +55,9 @@ export default function ModalOwnerLeaveGroup() {
                             <div className="text-neutral-700 font-medium mt-4">Members</div>
                             {members.map((item, index) => {
                                 return (
-                                    <div key={index} className="flex items-center my-4">
+                                    <div key={index} className="flex items-center my-4 overflow-hidden w-full">
                                         <Avatar src={item.avatar} isRounded size="sm" className="mr-4" />
-                                        <div>{item.name}</div>
+                                        <div className='text-neutral-800 truncate w-3/4'>{item.name}</div>
                                     </div>
                                 );
                             })}

@@ -8,6 +8,9 @@ type Button = {
   className?: string;
   disabled?: boolean;
   as?: ElementType;
+  onClick?: () => void;
+  IconLeft?: any;
+  IconRight?: any;
 };
 
 const SIZE_MAPS: any = {
@@ -30,7 +33,10 @@ export function Button({
     size = 'md',
     type,
     className,
-    disabled, as = 'button'
+    disabled, as = 'button',
+    onClick,
+    IconLeft,
+    IconRight
 }: Button) {
     const Node = as
 
@@ -43,8 +49,11 @@ export function Button({
                 className
             )}
             disabled={disabled}
+            onClick={onClick}
         >
+            {IconLeft && <IconLeft />}
             {title}
+            {IconRight && <IconRight />}
         </Node>
     )
 }
