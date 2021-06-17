@@ -1,5 +1,5 @@
 import React from "react";
-import { CreateNewMessage } from '../../../src/sections/create-new-message';
+import { CreateNewMessage } from '../../../src/sections';
 import { Section } from '../../../src';
 export default function AppCreateNewMessage() {
   const [open, setOpen] = React.useState<boolean>(false);

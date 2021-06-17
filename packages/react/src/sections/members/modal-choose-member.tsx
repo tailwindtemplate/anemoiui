@@ -2,12 +2,12 @@ import React from 'react';
 //Icon
 import { PencilIcon } from "@heroicons/react/outline";
 // Component
-import { Avatar } from '../../src';
-import { Footer } from '../../src/components/modal/footer';
-import { Wrapper } from '../../src/components/modal/wrapper';
-import { Header } from '../../src/components/modal/header';
-import { avatarDefault } from '../../const';
-import { EditNickname } from './edit-nickname';
+import { Avatar } from '../..';
+import { Footer } from '../../components/modal/footer';
+import { Wrapper } from '../../components/modal/wrapper';
+import { Header } from '../../components/modal/header';
+import { avatarDefault } from '../../../const';
+import { EditNickname } from './modal-edit-nickname';
 // Check Type
 type ChooseMember = {
   open: boolean,
@@ -24,7 +24,7 @@ export const ChooseMember = ({ open, setOpen }: ChooseMember) => {
   }), []);
   const confirm = React.useMemo(() => ({
     label: 'Confirm',
-    onClick: () => setOpen(false),
+    onClick: () => { setOpen(false); setUserId(0) },
     className: "w-full rounded border py-1 px-4 font-semibold",
   }), [userId]);
   const cancelEditName = React.useMemo(() => ({

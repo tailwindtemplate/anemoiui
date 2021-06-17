@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChooseMember } from "../../src/sections/choose-member";
+import { ChooseMember } from "../../src/sections/members";
 export default function Choosemember() {
   const [open, setOpen] = React.useState<boolean>(false);
   return (

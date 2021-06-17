@@ -1,6 +1,6 @@
-import { Avatar } from '../../src';
-import { TextInput } from '../../src/elements/inputs/text-input';
-import { avatarDefault } from "../../const";
+import { Avatar } from '../..';
+import { TextInput } from '../../elements/inputs/text-input';
+import { avatarDefault } from "../../../const";
 type EditNickname = {
   userId?: number,
 };

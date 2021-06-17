@@ -2,15 +2,15 @@ import clsx from 'clsx';
 import React from 'react';
 import { useRouter } from 'next/router';
 // data default
-import { avatarDefault } from '../../const';
+import { avatarDefault } from '../../../const';
 //Icon
 import { ChatIcon, SearchIcon, XIcon, CheckIcon } from '@heroicons/react/outline';
 // Component
-import { Footer } from '../../src/components/modal/footer';
-import { Avatar } from '../../src';
-import { Header } from '../../src/components/modal/header';
-import { Wrapper } from '../../src/components/modal/wrapper';
-import { TextInput } from '../../src/elements/inputs/text-input';
+import { Footer } from '../../components/modal/footer';
+import { Avatar } from '../..';
+import { Header } from '../../components/modal/header';
+import { Wrapper } from '../../components/modal/wrapper';
+import { TextInput } from '../../elements/inputs/text-input';
 // Check type
 type CreateNewMessage = {
   setOpen: (e: boolean) => void,
