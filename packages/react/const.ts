@@ -56,6 +56,7 @@ export const menu = [
                 items: [
                     { name: 'autocomplete input', url: '/elements/inputs/autocomplete' },
                     { name: 'otp input', url: '/elements/inputs/otp-input' },
+                    { name: 'phone input', url: '/elements/inputs/phone-input' },
                     { name: 'number input', url: '/elements/inputs/number' },
                     { name: 'text input', url: '/elements/inputs/text' }
                 ]
