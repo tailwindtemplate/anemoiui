@@ -54,7 +54,7 @@ export const TextInput = ({
                 />
                 {RightIcon && (
                     <span className="flex items-center flex-shrink-0 pr-2">
-                        <RightIcon className='w-5 h-5' />
+                        <RightIcon className='w-5 h-5 cursor-pointer' />
                     </span>
                 )}
             </div>

@@ -1,4 +1,4 @@
-import { Avatar, Modal, Section, TextInput } from '@anemoiui/react'
+import { Modal, Section, TextInput, UserCard } from '@anemoiui/react'
 import React, { useMemo } from 'react'
 import { members } from '../../const'
 import { SearchIcon } from '@heroicons/react/outline'
@@ -39,10 +39,12 @@ export default function ModalMembersAdd({open, setOpen}: any) {
                     <TextInput LeftIcon={SearchIcon} />
                     {members.map((item, index) => {
                         return (
-                            <div key={index} className="flex items-center my-4 w-full">
-                                <Avatar src={item.avatar} isRounded size="sm" className="mr-4" />
-                                <div className='text-neutral-800 truncate w-3/4'>{item.name}</div>
-                            </div>
+                            <UserCard
+                                key={index}
+                                title={item.name}
+                                avatar={item.avatar}
+                                className="cursor-pointer"
+                            />
                         )
                     })}
                 </div>

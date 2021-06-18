@@ -7,11 +7,6 @@ export default function ModalImageFocus({open, setOpen}: any) {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <ImageLoader
-                src="https://znews-photo.zadn.vn/w660/Uploaded/qfssu/2021_06_01/iu_dep_het_phan_thien_ha_1.jpg"
-                onClick={() => setOpen(!open)}
-                className="w-40 h-40 bg-no-repeat"
-            />
             <Wrapper open={open} setOpen={setOpen}>
                 <div className="relative">
                     <ImageLoader src="https://znews-photo.zadn.vn/w660/Uploaded/qfssu/2021_06_01/iu_dep_het_phan_thien_ha_1.jpg" />

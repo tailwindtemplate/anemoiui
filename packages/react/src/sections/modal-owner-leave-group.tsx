@@ -1,4 +1,4 @@
-import { Avatar, Modal, Radio, Section } from '@anemoiui/react'
+import {Modal, Radio, Section, UserCard} from '@anemoiui/react'
 import React, { useMemo, useState } from 'react'
 import { members } from '../../const'
 
@@ -54,10 +54,12 @@ export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
                             <div className="text-neutral-700 font-medium mt-4">Members</div>
                             {members.map((item, index) => {
                                 return (
-                                    <div key={index} className="flex items-center my-4 overflow-hidden w-full">
-                                        <Avatar src={item.avatar} isRounded size="sm" className="mr-4" />
-                                        <div className='text-neutral-800 truncate w-3/4'>{item.name}</div>
-                                    </div>
+                                    <UserCard
+                                        key={index}
+                                        title={item.name}
+                                        avatar={item.avatar}
+                                        className="cursor-pointer max-w-xs"
+                                    />
                                 )
                             })}
                         </div>
