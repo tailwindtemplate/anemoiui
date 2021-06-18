@@ -1,8 +1,10 @@
 import { UserIcon, UserRemoveIcon } from '@heroicons/react/outline';
 import { CardGround, InfoLine, CardWrapper, Section, CardInfo, Heading3, UserCard, Badge, Heading2 } from '../../src';
 import { avatars, cardInfo, userCard } from '../../const';
+import clsx from "clsx";
 
 export default function CardsPage() {
+    const userCardClassName = 'rounded-2xl shadow-md px-4'
     return (
         <div className="space-y-4">
             <Heading2>Cards</Heading2>
@@ -34,13 +36,13 @@ export default function CardsPage() {
             </Section>
             <Heading3>User Card</Heading3>
             <Section className="space-y-2 bg-white">
-                <UserCard {...userCard} />
-                <UserCard title={userCard.title} />
-                <UserCard title={userCard.title} content={userCard.content} />
+                <UserCard {...userCard} className={userCardClassName} />
+                <UserCard title={userCard.title} className={userCardClassName} />
+                <UserCard title={userCard.title} content={userCard.content} className={userCardClassName} />
                 <div className="w-1/3 space-y-2">
-                    <UserCard {...userCard} />
-                    <UserCard {...userCard} avatarChildren={<Badge count={4} className="absolute top-0 right-0 bg-red-600 text-white" />} />
-                    <UserCard avatar={avatars} title={userCard.title} content={userCard.content} time={userCard.time} />
+                    <UserCard {...userCard} className={userCardClassName} />
+                    <UserCard {...userCard} avatarChildren={<Badge count={4} className={clsx('absolute top-0 right-0 bg-red-600 text-white', userCardClassName)} />} />
+                    <UserCard avatar={avatars} title={userCard.title} content={userCard.content} time={userCard.time} className={userCardClassName} />
                 </div>
             </Section>
         </div>

@@ -32,7 +32,9 @@ export const menu = [
         items: [
             { name: 'user profile', url: '/sections/user-profile' },
             { name: 'landing', url: '/sections/landing' },
-            { name: 'app sidebar', url: '/sections/app-sidebar' }
+            { name: 'app sidebar', url: '/sections/app-sidebar' },
+            { name: 'empty chat', url: '/sections/empty-chat' },
+            { name: 'chat boxes', url: '/sections/chat-boxes' }
         ]
     },
     {

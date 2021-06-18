@@ -7,7 +7,9 @@ type TextInput = {
   RightIcon?: any;
   className?: string;
   inputClassName?: string;
+  wrapperClassName?: string
   borderType?: 'error' | string;
+  closeOnClick?:() => void
 };
 
 const border: Record<string, string> = {
@@ -21,10 +23,12 @@ export const TextInput = ({
     inputClassName,
     borderType,
     src,
+    closeOnClick,
+    wrapperClassName,
     ...rest
 }: TextInput & InputHTMLAttributes<unknown>) => {
     return (
-        <div className='w-full'>
+        <div className={clsx('w-full', wrapperClassName)}>
             <div
                 className={clsx(
                     'text-gray-600 focus-within:text-gray-400 border rounded-xl w-full flex items-center',
@@ -48,7 +52,7 @@ export const TextInput = ({
                     {...rest}
                 />
                 {RightIcon && (
-                    <span className="flex items-center flex-shrink-0 pr-2">
+                    <span className="flex items-center flex-shrink-0 pr-2" onClick={closeOnClick}>
                         <RightIcon className='w-5 h-5' />
                     </span>
                 )}
