@@ -51,19 +51,19 @@ export default function PreviewSelect() {
             <Heading2>Select</Heading2>
             <Heading3>Default</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Select className="w-60" data={data} value={value} onSelect={onSelect} />
+                <Select data={data} value={value} onSelect={onSelect} />
             </Section>
             <Heading3>Disable</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Select className="w-60" disabled data={data} value={value} onSelect={onSelect} />
+                <Select disabled data={data} value={value} onSelect={onSelect} />
             </Section>
             <Heading3>Has icon</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Select className="w-60" LeftIcon={UserIcon} data={data} value={value} onSelect={onSelect} />
+                <Select LeftIcon={UserIcon} data={data} value={value} onSelect={onSelect} />
             </Section>
             <Heading3>Has image</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Select className="w-60" data={dataImage} value={value1} onSelect={onSelect1} />
+                <Select data={dataImage} value={value1} onSelect={onSelect1} />
             </Section>
         </div>
     );

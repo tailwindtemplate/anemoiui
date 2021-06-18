@@ -10,11 +10,10 @@ type ImageLoader = {
     imageStyle?: 'cover' | 'contain' | string
     onClick?: (e: any) => void
 }
-const IconClassName = 'w-8 h-8'
 export const ImageLoader = ({
     src,
     LoadIcon = PhotographIcon,
-    LoadIconClassName = IconClassName,
+    LoadIconClassName = 'w-8 h-8',
     className,
     imageStyle = 'contain',
     children,

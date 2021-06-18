@@ -6,7 +6,7 @@ export default function PreviewAvatar() {
             <Heading2>Avatars</Heading2>
             <Heading3>Size XS -{">"} BASE</Heading3>
             <Section className="mb-8 flex items-center justify-around border bg-white">
-                <Avatar size="xs" />
+                <Avatar className="bg-gray-100" size="xs" />
                 <Avatar size="sm" />
                 <Avatar />
             </Section>
@@ -31,7 +31,6 @@ export default function PreviewAvatar() {
             <Section className="mb-8 flex items-center justify-center border bg-white">
                 <Avatar
                     src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-                    newMessage={22}
                     type="src"
                     isRounded
                 >
@@ -39,20 +38,11 @@ export default function PreviewAvatar() {
                 </Avatar>
             </Section>
 
-            <Heading3>Has extension</Heading3>
-            <Section className="mb-8 flex items-center justify-center border bg-white">
-                <Avatar
-                    size="sm"
-                    src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg"
-                    hasExtension
-                    type="src"
-                    isRounded
-                />
-            </Section>
-
             <Heading3>Add avatar</Heading3>
-            <Section className="mb-8 flex items-center justify-center border bg-white">
+            <Section className="mb-8 flex items-center justify-evenly border bg-white">
                 <Avatar size="sm" type="add-avatar" isRounded onClick={() => console.log('upload')} />
+                <Avatar type="add-avatar" onClick={() => console.log('upload')} />
+                <Avatar size="lg" type="add-avatar" isRounded onClick={() => console.log('upload')} />
             </Section>
 
             <Heading3>Status</Heading3>

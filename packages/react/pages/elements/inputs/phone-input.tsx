@@ -21,15 +21,15 @@ export default function PhoneInputPage() {
             <Heading2>Phone Number Input</Heading2>
             <Heading3>Default</Heading3>
             <Section className="bg-white flex justify-center">
-                <PhoneInput className="w-60" onZoneSelect={setZoneIcon} phoneZone={zoneIcon} phoneData={phoneZoneIcon} onChange={setPhone} phone={phone} />
+                <PhoneInput zone={{ onSelect: setZoneIcon, data: phoneZoneIcon, value: zoneIcon }} onChange={setPhone} phone={phone} />
             </Section>
             <Heading3>No Icon</Heading3>
             <Section className="bg-white flex justify-center">
-                <PhoneInput className="w-60" onZoneSelect={setZone} phoneZone={zone} phoneData={phoneZone} onChange={setPhone} phone={phone} />
+                <PhoneInput zone={{ onSelect: setZone, data: phoneZone, value: zone }} onChange={setPhone} phone={phone} />
             </Section>
             <Heading3>Disabled</Heading3>
             <Section className="bg-white flex justify-center">
-                <PhoneInput disabled className="w-60" onZoneSelect={setZone} phoneZone={zone} phoneData={phoneZone} onChange={setPhone} phone={phone} />
+                <PhoneInput disabled zone={{ onSelect: setZone, data: phoneZone, value: zone }} onChange={setPhone} phone={phone} />
             </Section>
         </div>
     )

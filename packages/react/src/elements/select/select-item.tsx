@@ -2,7 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { Avatar } from '../avatars'
 
-type SelectItem = {
+export type SelectItem = {
     title: string
     onClick?: (e: any) => void
     className?: string

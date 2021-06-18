@@ -6,8 +6,12 @@ export interface SingleOTPInputProps extends React.InputHTMLAttributes<HTMLInput
     focus?: boolean
 }
 
-export function SingleOTPInputComponent(props: SingleOTPInputProps) {
-    const { focus, autoFocus, className, ...rest } = props
+export function SingleOTPInputComponent({
+    focus,
+    autoFocus,
+    className = 'border-b-2 w-8 text-center p-2 focus:bg-gray-100',
+    ...rest
+}: SingleOTPInputProps) {
     const inputRef = useRef<HTMLInputElement>(null)
     const prevFocus = usePrevious(!!focus)
     useEffect(() => {
@@ -26,7 +30,7 @@ export function SingleOTPInputComponent(props: SingleOTPInputProps) {
         <input
             ref={inputRef}
             {...rest}
-            className={clsx('block border-b-2 border-gray-300 w-8 text-center text-lg font-semibold p-2 focus:bg-gray-100 focus:outline-none', className)}
+            className={clsx('focus:outline-none', className)}
         />
     )
 }

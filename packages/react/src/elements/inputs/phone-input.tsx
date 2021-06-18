@@ -9,44 +9,37 @@ export type PhoneZone = {
     title: string,
 }
 
-type PhoneInput = {
-    onZoneSelect: (v: PhoneZone) => void
-    phoneZone: PhoneZone
-    zoneClassname?: string
+export type PhoneInput = {
+    zone: Select
     phone: string
     onChange: (phone: string) => void
     className?: string
     inputClassName?: string
-    phoneData: PhoneZone[]
     placeholder?: string
     disabled?: boolean
 }
 export const PhoneInput = ({
-    className,
-    zoneClassname = 'border-none',
-    onZoneSelect,
+    className = 'p-2 border rounded-md focus-within:border-gray-400',
     onChange,
     phone,
-    phoneZone,
-    inputClassName,
-    phoneData,
+    zone,
+    inputClassName = 'ml-2',
     placeholder,
     disabled,
-    ...rest
-}: PhoneInput & Partial<Select>) => {
+}: PhoneInput) => {
     return (
         <div
             className={clsx(
-                'border-gray-200 p-2 focus-within:border-gray-400 border rounded-xl flex items-center',
+                'flex items-center',
                 className,
-                disabled && 'bg-gray-100 pointer-events-none text-gray-400'
+                disabled && 'disable',
             )}
         >
-            <Select disabled={disabled} className={zoneClassname} data={phoneData} onSelect={onZoneSelect} value={phoneZone} {...rest} />
+            <Select className='border-none w-24' {...zone} disabled={disabled} />
             <input
                 type="number"
                 className={clsx(
-                    'text-sm focus:outline-none w-full placeholder-neutral-300 rounded-xl p-1',
+                    'focus:outline-none w-full',
                     inputClassName,
                 )}
                 value={phone}
