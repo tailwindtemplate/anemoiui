@@ -15,8 +15,8 @@ const UserId = () => {
   // create state
   const [iconRight, setIconRight] = React.useState<boolean>(false);
   const [message, setMessage] = React.useState<string>(null);
-  const [localStoragemMessage, setLocalStoragemMessage] = React.useState([]);
-  const [localStoragemMessageAll, setLocalStoragemMessageAll] = React.useState([]);
+  const [localStorageMessage, setLocalStoragemMessage] = React.useState([]);
+  const [localStorageMessageAll, setLocalStoragemMessageAll] = React.useState([]);
   // function
   React.useEffect(() => {
     const newMessage = [];
@@ -32,7 +32,7 @@ const UserId = () => {
   };
   const sendMessage = () => {
     const data = { id, message };
-    const newMessage = [...localStoragemMessageAll];
+    const newMessage = [...localStorageMessageAll];
     newMessage.push(data);
     localStorage.setItem("message", JSON.stringify(newMessage));
     setMessage('');
@@ -49,23 +49,18 @@ const UserId = () => {
         userId ?
           <div className="relative">
             <div className="py-6 px-8 bg-gray-200 flex relative">
-              <Avatar
-                src={userId.img}
-                type="src"
-                isRounded
-                size="sm"
-              />
+              <Avatar src={userId.img} type="src" isRounded size="sm" />
               <div>
                 <p className="px-2 text-black	font-semibold text-base">{userId.name}</p>
                 <p className="px-2 text-gray-400 text-xs">Đang hoạt động</p>
               </div>
             </div>
             {
-              localStoragemMessage.length > 0
+              localStorageMessage.length > 0
                 // if have data message localStorage
                 ? <div className="">
                   <ul className="px-2 py-2 overflow-auto" style={{ height: '40rem' }}>
-                    {localStoragemMessage.map((ms, index) => (
+                    {localStorageMessage.map((ms, index) => (
                       <li key={index} className="text-right p-2 mb-2">
                         <div className="ml-auto" style={{ width: '500px' }}>
                           <div className="relative text-right">
@@ -86,14 +81,7 @@ const UserId = () => {
             }
             <div className="pb-2 px-2">
               <form onSubmit={onSubmit}>
-                <TextInput
-                  value={message}
-                  onChange={onChangeInput}
-                  RightIcon={iconRight && SenMessage}
-                  className="mb-2 shadow-lg px-6 py-4 bg-white rounded-xl"
-                  inputClassName="bg-white border-0 border-white"
-                  placeholder="Nhập tin nhắn..."
-                />
+                <TextInput value={message} onChange={onChangeInput} RightIcon={iconRight && SenMessage} className="mb-2 shadow-lg px-6 py-4 bg-white rounded-xl" inputClassName="bg-white border-0 border-white" placeholder="Nhập tin nhắn..." />
               </form>
             </div>
           </div>

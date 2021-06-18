@@ -33,8 +33,7 @@ export const menu = [
             { name: 'user profile', url: '/sections/user-profile' },
             { name: 'landing', url: '/sections/landing' },
             { name: 'app sidebar', url: '/sections/app-sidebar' },
-            { name: 'create new message', url: '/sections/create-new-message' },
-            { name: 'members edit nickname', url: '/sections/choose-member' },
+            {name: 'modals',url: '/sections/modals'},
         ]
     },
     {

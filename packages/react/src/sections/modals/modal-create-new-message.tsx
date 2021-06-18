@@ -27,7 +27,7 @@ export const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
   const activeUserClick = React.useCallback((id) => setUserId(id), [userId])
   const activeConFirm = (userId: number) => {
     if (!userId) return;
-    router.push(`/sections/create-new-message/${userId}`);
+    router.push(`/sections/modals/${userId}`);
     setOpen(false);
   };
   const confirm = React.useMemo(() => ({
@@ -51,9 +51,7 @@ export const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
     setSearch('')
   };
   const ClearIcon = ({ className }: any) => (
-    <XIcon
-      className={clsx(className, 'cursor-pointer')}
-      onClick={actionCloseSearch} />
+    <XIcon className={clsx(className, 'cursor-pointer')} onClick={actionCloseSearch} />
   );
   const avatarFilter = avatarDefault.filter(user => (user.name.toLowerCase().indexOf(search.trim().toLowerCase()) !== -1) && user);
   React.useEffect(() => {
@@ -62,40 +60,22 @@ export const CreateNewMessage = ({ setOpen, open }: CreateNewMessage) => {
   // render
   return (
     <Wrapper setOpen={setOpen} open={open}>
-      <Header
-        label='Create new message'
-        labelClassName='' font-semibold text-xl text-black
-        Icon={ChatIcon}
-        iconClassName='w-9 h-9 mb-4 text-green-400'
-      />
-      <TextInput
-        value={search}
-        onChange={onChangeInput}
-        LeftIcon={SearchIcon}
-        RightIcon={iconRight && ClearIcon}
-        className='mb-4'
-      />
+      <Header label="Create new message" labelClassName="font-semibold text-xl text-black" Icon={ChatIcon} iconClassName="w-9 h-9 mb-4 text-green-400" />
+      <TextInput value={search} onChange={onChangeInput} LeftIcon={SearchIcon} RightIcon={iconRight && ClearIcon} className="mb-4" />
       {avatarFilter.length > 0
         ? avatarFilter.map(({ img, name, id }) => (
-          <div
-            onClick={() => activeUserClick(id)}
-            className={clsx('flex mb-2 h-16 items-center border-b cursor-pointer font-semibold text-gray-400 hover:text-gray-500 capitalize', id === userId && 'active')}
-            key={id}
-          >
-            <Avatar src={img} type='src' isRounded size='sm' />
-            <p className='px-2'>{name}</p>
-            {id === userId && <CheckIcon className='w-7 h-7 text-green-400 absolute right-10' />}
+          <div onClick={() => activeUserClick(id)} className={clsx("flex mb-2 h-16 items-center border-b cursor-pointer font-semibold text-gray-400 hover:text-gray-500 capitalize", id === userId && "active")} key={id}>
+            <Avatar src={img} type="src" isRounded size="sm" />
+            <p className="px-2">{name}</p>
+            {id === userId && <CheckIcon className="w-7 h-7 text-green-400 absolute right-10" />}
           </div>
         ))
-        : <div className='text-center py-4'>
-          <h3 className='font-bold text-2xl	text-black mt-2'>Kết quả không tìm thấy</h3>
-          <p className='text-sm	font-semibold	text-current'>Không tìm thấy kết quả: {search}</p>
+        : <div className="text-center py-4">
+          <h3 className="font-bold text-2xl	text-black mt-2">Kết quả không tìm thấy</h3>
+          <p className="text-sm	font-semibold	text-current">Không tìm thấy kết quả: {search}</p>
         </div>
       }
-      <Footer
-        confirm={confirm}
-        cancel={cancel}
-      />
+      <Footer confirm={confirm} cancel={cancel} />
     </Wrapper>
   )
 };
