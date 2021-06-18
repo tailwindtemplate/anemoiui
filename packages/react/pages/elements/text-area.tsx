@@ -1,34 +1,34 @@
-import { Section, Textarea } from "../../src";
+import { Heading2, Heading3, Section, Textarea } from '../../src';
 
 export default function PreviewTextarea() {
-  return (
-    <div className="p-2 mb-20">
-      <div className="text-3xl my-8">Textarea</div>
+    return (
+        <div className="space-y-4">
+            <Heading2>Textarea</Heading2>
 
-        Default
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Textarea placeholder="Placeholder" />
-      </Section>
+            <Heading3>Default</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Textarea placeholder="Placeholder" />
+            </Section>
 
-        Type: Primary
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Textarea placeholder="Placeholder" type="PRIMARY" />
-      </Section>
+            <Heading3>Type: Primary</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Textarea placeholder="Placeholder" type="PRIMARY" />
+            </Section>
 
-        Type: error
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Textarea placeholder="Placeholder" type="ERROR" />
-      </Section>
+            <Heading3>Type: error</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Textarea placeholder="Placeholder" type="ERROR" />
+            </Section>
 
-        With Helper text
-      <Section className="mb-8 flex items-center justify-center border bg-white">
-        <Textarea placeholder="Placeholder" helperText="Helper text" />
-      </Section>
+            <Heading3>With Helper text</Heading3>
+            <Section className="mb-8 flex items-center justify-center border bg-white">
+                <Textarea placeholder="Placeholder" helperText="Helper text" />
+            </Section>
 
-        Custom classname
-      <Section className="flex items-center justify-center border bg-white">
-        <Textarea placeholder="Placeholder" className="border-yellow-400" />
-      </Section>
-    </div>
-  );
+            <Heading3>Custom classname</Heading3>
+            <Section className="flex items-center justify-center border bg-white">
+                <Textarea placeholder="Placeholder" className="border-yellow-400" />
+            </Section>
+        </div>
+    );
 }

@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react'
 import clsx from 'clsx'
-import { Avatar } from '../avatar'
+import { Avatar } from '../avatars'
 
 type TextInput = {
   LeftIcon?: any;

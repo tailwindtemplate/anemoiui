@@ -24,6 +24,16 @@ export const menu = [
         name: 'pages',
         items: [
             { name: 'chat', url: '/pages/chat' },
+            { name: 'welcome', url: '/pages/welcome' }
+        ]
+    },
+    {
+        name: 'sections',
+        items: [
+            { name: 'user profile', url: '/sections/user-profile' },
+            { name: 'landing', url: '/sections/landing' },
+            { name: 'app sidebar', url: '/sections/app-sidebar' },
+            { name: 'modals', url: '/sections/modals' },
         ]
     },
     {
@@ -36,7 +46,6 @@ export const menu = [
             { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'},
             { name: 'cards', url: '/components/cards' },
-            { name: 'user card', url: '/components/user-card'}
         ],
     },
     {
@@ -61,14 +70,6 @@ export const menu = [
             { name: 'text area', url: '/elements/text-area' },
             { name: 'image loader', url: '/elements/image-loader' },
             { name: 'badge', url: '/elements/badge' }
-        ]
-    },
-    {
-        name: 'sections',
-        items: [
-            { name: 'landing', url: '/sections/landing' },
-            { name: 'user profile', url: '/sections/user-profile' },
-            { name: 'modals', url: '/sections/modals' },
         ]
     },
     { name: 'document', url: '/documents' },

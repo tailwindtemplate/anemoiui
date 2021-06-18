@@ -1,7 +1,7 @@
 import React from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
 import clsx from 'clsx'
-import { Avatar } from './avatar'
+import { Avatar } from './avatars'
 
 type Select = {
   placeholder?: string;
