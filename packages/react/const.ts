@@ -45,6 +45,7 @@ export const menu = [
             { name: 'forms', url: '/components/forms' },
             { name: 'messages', url: '/components/messages'},
             { name: 'cards', url: '/components/cards' },
+            { name: 'notification', url: '/components/notification' },
         ],
     },
     {
