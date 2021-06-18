@@ -1,8 +1,10 @@
-import { Button, Modal, Section, TextInput, UserCard } from '@anemoiui/react'
 import React, { useMemo, useState } from 'react'
 import { QrcodeIcon, SearchIcon, XIcon, DocumentDuplicateIcon } from '@heroicons/react/outline'
 import { members } from '../../const'
 import { Heading4 } from '../elements/typography'
+import {Modal, UserCard} from '../components'
+import {Button, TextInput} from '../elements'
+import {Section} from '../layout'
 
 export type CardUserItem = {
     title?: any;
@@ -16,6 +18,8 @@ export const CardUserItem = ({title, avatar}: CardUserItem) => {
             <UserCard
                 title={title}
                 avatar={avatar}
+                isModal
+                className='w-96'
             />
             <Button title={isInvited ? 'Invited' : 'Invite'} type={isInvited ? 'secondary' : 'primary'} size='sm' onClick={()=>setInvited(!isInvited)} />
         </div>
@@ -25,14 +29,6 @@ export const CardUserItem = ({title, avatar}: CardUserItem) => {
 export default function ModalInviteFriend({open, setOpen}: any) {
     const [link, setLink] = useState('https://www.youtube.com/')
 
-    const confirm = useMemo(
-        () => ({
-            label: 'Add',
-            onClick: () => setOpen(false),
-            className: 'w-full',
-        }),
-        [],
-    )
     const cancel = useMemo(
         () => ({
             label: 'Cancel',
@@ -47,14 +43,10 @@ export default function ModalInviteFriend({open, setOpen}: any) {
     }
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}
                 title="Invite friend"
-                confirm={confirm}
                 cancel={cancel}
                 footerType="center"
             >

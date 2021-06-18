@@ -1,8 +1,10 @@
-import { FileUploader, Modal, Section, TextInput, UserCard } from '@anemoiui/react'
 import React, { useMemo, useState } from 'react'
 import { members } from '../../const'
 import { CheckIcon, SearchIcon, XIcon } from '@heroicons/react/outline'
 import { Heading4 } from '../elements/typography'
+import {Section} from '../layout'
+import {Modal, UserCard} from '../components'
+import {FileUploader, TextInput} from '../elements'
 
 export default function ModalGroupAdd({open, setOpen}: any) {
     const [selectedUsers, setSelectedUsers] = useState<string[]>([])
@@ -35,9 +37,6 @@ export default function ModalGroupAdd({open, setOpen}: any) {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}
@@ -59,12 +58,13 @@ export default function ModalGroupAdd({open, setOpen}: any) {
                                 <div className='overflow-auto max-h-64'>
                                     {selectedUsers.map((item: any, index) => {
                                         return (
-                                            <div className='flex items-center justify-between' key={index}>
+                                            <div className='flex items-center justify-between overflow-hidden w-full' key={index}>
                                                 <UserCard
                                                     title={item.name}
                                                     avatar={item.avatar}
                                                     onClick={() => selectContact(item)}
-                                                    className="cursor-pointer"
+                                                    className="cursor-pointer w-96"
+                                                    isModal
                                                 />
                                                 <CheckIcon className='w-6 h-6 text-green-500' />
                                             </div>
@@ -87,6 +87,7 @@ export default function ModalGroupAdd({open, setOpen}: any) {
                                                 avatar={item.avatar}
                                                 onClick={() => selectContact(item)}
                                                 className="cursor-pointer max-w-xs"
+                                                isModal
                                             />
                                         )
                                     })}

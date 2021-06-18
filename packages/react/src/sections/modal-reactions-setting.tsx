@@ -1,8 +1,9 @@
-import { Modal, Section, TabControl, TabPanel } from '@anemoiui/react'
 import React, { useMemo, useState } from 'react'
 import { reactionsSettingTabs } from '../../const'
 import { Heading4 } from '../elements/typography'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
+import {Section} from '../layout'
+import {Modal, TabControl, TabPanel} from '../components'
 
 export default function ModalReactionsSetting({open, setOpen}: any) {
     const [active, setActive] = useState(reactionsSettingTabs[0].id)
@@ -27,9 +28,6 @@ export default function ModalReactionsSetting({open, setOpen}: any) {
     const mockReactions = [...Array(40)].map((index)=><EmojiHappyIcon className='w-9 h-9 mr-2 my-2' key={index} />)
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}

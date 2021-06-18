@@ -1,7 +1,9 @@
-import { Modal, Section, TextInput, UserCard } from '@anemoiui/react'
 import React, { useMemo } from 'react'
 import { members } from '../../const'
 import { SearchIcon } from '@heroicons/react/outline'
+import {Section} from '../layout'
+import {Modal, UserCard} from '../components'
+import {TextInput} from '../elements'
 
 export default function ModalMembersAdd({open, setOpen}: any) {
 
@@ -24,9 +26,6 @@ export default function ModalMembersAdd({open, setOpen}: any) {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}
@@ -44,6 +43,7 @@ export default function ModalMembersAdd({open, setOpen}: any) {
                                 title={item.name}
                                 avatar={item.avatar}
                                 className="cursor-pointer"
+                                isModal
                             />
                         )
                     })}

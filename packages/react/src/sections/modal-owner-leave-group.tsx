@@ -1,6 +1,8 @@
-import {Modal, Radio, Section, UserCard} from '@anemoiui/react'
 import React, { useMemo, useState } from 'react'
 import { members } from '../../const'
+import {Section} from '../layout'
+import {Modal, UserCard} from '../components'
+import {Radio} from '../elements'
 
 export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
     const [visibility, setVisibility] = useState(false)
@@ -24,9 +26,6 @@ export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}
@@ -58,7 +57,8 @@ export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
                                         key={index}
                                         title={item.name}
                                         avatar={item.avatar}
-                                        className="cursor-pointer max-w-xs"
+                                        className="cursor-pointer w-full"
+                                        isModal
                                     />
                                 )
                             })}

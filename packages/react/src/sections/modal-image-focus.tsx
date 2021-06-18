@@ -1,7 +1,8 @@
-import { ImageLoader, Section } from '@anemoiui/react'
 import React from 'react'
 import { Wrapper } from '../components/modal/wrapper'
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from '@heroicons/react/outline'
+import {Section} from '../layout'
+import {ImageLoader} from '../elements'
 
 export default function ModalImageFocus({open, setOpen}: any) {
 

@@ -1,5 +1,7 @@
-import { Modal, Radio, Section } from '@anemoiui/react'
 import React, { useMemo, useState } from 'react'
+import {Radio} from '../elements'
+import {Section} from '../layout'
+import {Modal} from '../components'
 
 export default function ModalMessageDeletion({open, setOpen}: any) {
     const [visibility, setVisibility] = useState(false)
@@ -43,9 +45,6 @@ export default function ModalMessageDeletion({open, setOpen}: any) {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}

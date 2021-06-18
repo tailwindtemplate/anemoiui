@@ -1,5 +1,7 @@
-import { Modal, Section, TextInput } from '@anemoiui/react'
 import React, {useMemo} from 'react'
+import {Section} from '../layout'
+import {Modal} from '../components'
+import {TextInput} from '../elements'
 
 export default function ModalRenameConversation({open, setOpen}: any) {
 
@@ -22,9 +24,6 @@ export default function ModalRenameConversation({open, setOpen}: any) {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
-            <button className="border p-2 rounded-md" onClick={() => setOpen(!open)}>
-                Open modal
-            </button>
             <Modal
                 open={open}
                 setOpen={setOpen}
