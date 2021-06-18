@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react'
 type HeaderNotification = {
-  title?: string,
-  titleClassName?: string,
-  childrenClassName?: string
+    title?: string,
+    titleClassName?: string,
+    childrenClassName?: string
 }
 
 const TitleClassName = 'py-3 px-2 bg-white text-lg	font-semibold border-t border-r	border-l rounded-t-lg'
