@@ -1,11 +1,11 @@
 import { Section} from '../../src';
-import {ChatBoxes} from "../../src/sections/chat-boxes";
+import {GeneralTab} from "../../src/sections/general-tab";
 
-export default function PreviewChatBoxes() {
+export default function PreviewGeneralTab() {
     return (
         <div className="space-y-4">
             <Section>
-                <ChatBoxes />
+                <GeneralTab />
             </Section>
         </div>
     );

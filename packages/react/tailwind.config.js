@@ -62,7 +62,7 @@ module.exports = {
         '17rem': '17rem'
       },
       maxHeight: {
-        "chat-box": "42rem",
+        "chat-box": "39rem",
       },
       width: {
         "chat-box": "22rem",
