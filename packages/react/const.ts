@@ -34,7 +34,9 @@ export const menu = [
             { name: 'landing', url: '/sections/landing' },
             { name: 'app sidebar', url: '/sections/app-sidebar' },
             { name: 'empty chat', url: '/sections/empty-chat' },
-            { name: 'general tab', url: '/sections/general-tab' }
+            { name: 'general tab', url: '/sections/general-tab' },
+            { name: 'channel tab', url: '/sections/channel-tab' },
+            { name: 'waiting list', url: '/sections/waiting-list' },
         ]
     },
     {
@@ -230,27 +232,38 @@ export const avatars = [
 export const waitingList = [
     {
         name: 'Channel 1',
-        avatar: 'https://media-cdn.laodong.vn/storage/newsportal/2020/10/2/841202/20200617123919-E0c6.jpg?w=414&h=276&crop=auto&scale=both'
+        avatar: 'https://media-cdn.laodong.vn/storage/newsportal/2020/10/2/841202/20200617123919-E0c6.jpg?w=414&h=276&crop=auto&scale=both',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
     },
     {
         name: 'Channel 2',
-        avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/2/25/e19844439b3ed3fa3f9576bd0cf07c6d-16142287241965009923.jpg'
+        avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/2/25/e19844439b3ed3fa3f9576bd0cf07c6d-16142287241965009923.jpg',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
     },
     {
         name: 'Channel 3',
-        avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/1/16/e55583ef7c6259e3ec6e5da87fb45af2-1610806858271508975269.jpg'
+        avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/1/16/e55583ef7c6259e3ec6e5da87fb45af2-1610806858271508975269.jpg',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
     },
     {
         name: 'Channel 4',
-        avatar: 'https://media.ex-cdn.com/EXP/media.giadinhmoi.vn/files/content/2020/04/27/jennie-5-1523.jpg'
+        avatar: 'https://media.ex-cdn.com/EXP/media.giadinhmoi.vn/files/content/2020/04/27/jennie-5-1523.jpg',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
     },
     {
         name: 'Channel 5555555555555555555555',
-        avatar: 'http://images6.fanpop.com/image/photos/42900000/Jennie-jennie-blackpink-42990319-720-720.jpg'
+        avatar: 'http://images6.fanpop.com/image/photos/42900000/Jennie-jennie-blackpink-42990319-720-720.jpg',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
     },
     {
         name: 'Channel 6666666666666666666666',
-        avatar: 'https://i2.wp.com/blackpinkupdate.com/wp-content/uploads/2020/02/4-BLACKPINK-Jennie-HERA-Glow-Lasting-Foundation.png?resize=730%2C800&ssl=1'
+        avatar: 'https://i2.wp.com/blackpinkupdate.com/wp-content/uploads/2020/02/4-BLACKPINK-Jennie-HERA-Glow-Lasting-Foundation.png?resize=730%2C800&ssl=1',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
+    },
+    {
+        name: 'Channel 7777777777777777777777',
+        avatar: 'https://static-znews.zadn.vn/static/topic/person/jennie.jpg',
+        lastMessage: 'Random Tea Room là điểm đến thu hút rất nhiều tín đồ yêu thích những tiệm trà có không gian yên tĩnh'
     },
 
 ]

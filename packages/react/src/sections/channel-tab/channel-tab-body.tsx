@@ -1,8 +1,8 @@
 import React from 'react'
-import {ChannelMessages} from "../channel-messages";
-import {attachmentMessageItem, textMessageItem, user} from "../../../const";
+import {ChannelMessages} from '../channel-messages'
+import {attachmentMessageItem, textMessageItem, user} from '../../../const'
 
-export const ChatboxBody = () => {
+export const ChannelTabBody = () => {
     const messages = [
         {
             messageItem: textMessageItem,

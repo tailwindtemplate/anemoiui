@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
-import { CheckCircleIcon, UsersIcon, SearchIcon, ChatIcon, DotsVerticalIcon, XIcon } from '@heroicons/react/outline';
-import { Heading4, TextInput } from '../elements';
-import { userCard } from '../../const';
-import { UserCard } from '../components';
-import clsx from 'clsx';
-import {WaitingList} from "./general-tab/waiting-list";
-import {ChatboxBody} from "./general-tab/chatbox-body";
-import {ChatBoxFooter} from "./general-tab/chatbox-footer";
+import React, { useState } from 'react'
+import { CheckCircleIcon, UsersIcon, SearchIcon, ChatIcon, XIcon } from '@heroicons/react/outline'
+import { Heading4, TextInput } from '../../elements'
+import { userCard } from '../../../const'
+import { UserCard } from '../../components'
+import clsx from 'clsx'
 
 export const GeneralTab = () => {
-    const [openListBox, setOpenListBox] = useState(false);
-    const [openItemBox, setOpenItemBox] = useState(false);
-    const [showSearch, setShowSearch] = useState(false);
+    const [openListBox, setOpenListBox] = useState(false)
+    const [openItemBox, setOpenItemBox] = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
 
-    const iconClassName = 'w-6 h-6 text-white cursor-pointer';
-    const chats = [...Array(15).keys()];
+    const iconClassName = 'w-6 h-6 text-white cursor-pointer'
+    const chats = [...Array(15).keys()]
 
     return (
         <div style={{ height: 'calc(100vh - 11rem)' }}>
@@ -22,7 +19,7 @@ export const GeneralTab = () => {
                 <div
                     className="absolute bottom-4 right-0 w-10 h-10 bg-primary-400 rounded-l-3xl flex items-center justify-center cursor-pointer"
                     onClick={() => {
-                        setOpenListBox(!openListBox);
+                        setOpenListBox(!openListBox)
                     }}
                 >
                     <CheckCircleIcon className={iconClassName} />
@@ -64,41 +61,18 @@ export const GeneralTab = () => {
                                             {...userCard}
                                             className="cursor-pointer"
                                             onClick={() => {
-                                                setOpenListBox(!openListBox);
-                                                setOpenItemBox(!openItemBox);
+                                                setOpenListBox(!openListBox)
+                                                setOpenItemBox(!openItemBox)
                                             }}
                                             key={index}
                                         />
-                                    );
+                                    )
                                 })}
                             </div>
                         </div>
                     </div>
                 )}
-
-                {openItemBox && (
-                    <div className="absolute bottom-0 right-16 w-chat-box z-10 shadow-xl">
-                        {/*Header*/}
-                        <div className="flex justify-between bg-primary-600 rounded-t-2xl px-2">
-                            <UserCard title="Hahalolo Can Tho" titleClassName="text-white" />
-                            <div className="flex items-center">
-                                <DotsVerticalIcon className={iconClassName} />
-                                <XIcon className={iconClassName} onClick={() => setOpenItemBox(false)} />
-                            </div>
-                        </div>
-
-                        {/*Body*/}
-                        <ChatboxBody />
-
-                        {/*Footer*/}
-                        <ChatBoxFooter />
-                    </div>
-                )}
-
-
-                <WaitingList />
-
             </div>
         </div>
-    );
-};
+    )
+}

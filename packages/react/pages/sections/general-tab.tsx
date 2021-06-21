@@ -1,5 +1,5 @@
 import { Section} from '../../src';
-import {GeneralTab} from "../../src/sections/general-tab";
+import {GeneralTab} from "../../src/sections/general-tab/general-tab";
 
 export default function PreviewGeneralTab() {
     return (
