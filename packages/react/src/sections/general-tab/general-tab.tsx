@@ -7,7 +7,6 @@ import clsx from 'clsx'
 
 export const GeneralTab = () => {
     const [openListBox, setOpenListBox] = useState(false)
-    const [openItemBox, setOpenItemBox] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
 
     const iconClassName = 'w-6 h-6 text-white cursor-pointer'
@@ -61,7 +60,6 @@ export const GeneralTab = () => {
                                             className="cursor-pointer"
                                             onClick={() => {
                                                 setOpenListBox(!openListBox)
-                                                setOpenItemBox(!openItemBox)
                                             }}
                                             key={index}
                                             avatarChildren={<Badge position="top-right" className="bg-green-400" />}
