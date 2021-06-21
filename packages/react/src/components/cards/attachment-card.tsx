@@ -19,7 +19,7 @@ export type AttachmentCard = {
 export const AttachmentCard = ({ hasDownload = true, fileName, content, size, url, Icon = DocumentIcon, image = '', forwardClick, onClick, beforeHeader }: AttachmentCard) => {
     return (
         <div className={clsx('rounded-3xl border border-gray-200 hover:border-primary-400 px-5 py-3 flex flex-col md:flex-row md:justify-between items-center bg-white', onClick && 'cursor-pointer')} onClick={onClick}>
-            <ImageLoader src={image} imageStyle="cover" LoadIcon={Icon} LoadIconClassName="w-10 h-10 flex-shrink-0" className="w-auto max-h-40 md:w-10 md:h-10 rounded-md flex-shrink-0 bg-no-repeat"/>
+            <ImageLoader src={image} imageStyle="cover" LoadIcon={Icon} loadIconClassName="w-10 h-10 flex-shrink-0" className="w-auto max-h-40 md:w-10 md:h-10 rounded-md flex-shrink-0 bg-no-repeat"/>
             <div className="md:mr-auto md:ml-3 w-full overflow-hidden">
                 {beforeHeader && <div className="text-xs text-gray-400 truncate">{beforeHeader}</div>}
                 <h3 className={clsx('truncate', beforeHeader ? 'text-primary-300 text-xs' : 'text-gray-600 text-lg')}>{fileName}</h3>

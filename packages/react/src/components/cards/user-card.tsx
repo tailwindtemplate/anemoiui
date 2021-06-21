@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react'
-import {AvatarLoader, Badge} from '../../elements'
+import { AvatarLoader, Badge } from '../../elements'
 import clsx from 'clsx'
 
 type UserCard = {
-    avatar?: string | string[]
+    avatar?: AvatarLoader,
     avatarChildren?: ReactNode
     title: string
     content?: string
@@ -13,10 +13,10 @@ type UserCard = {
     titleClassName?: string
     newMessage?: any
 }
-export const UserCard = ({ avatar = '', time, title, content, avatarChildren, className, onClick, titleClassName, newMessage }: UserCard) => {
+export const UserCard = ({ avatar, time, title, content, avatarChildren, className, onClick, titleClassName, newMessage }: UserCard) => {
     return (
-        <div onClick={onClick} className={clsx('flex py-2 items-center', onClick && 'cursor-pointer', className)}>
-            <AvatarLoader size="sm" avatar={avatar} className="flex-shrink-0">
+        <div onClick={onClick} className={clsx('flex py-2 px-4 rounded-2xl bg-white items-center shadow-md', onClick && 'cursor-pointer', className)}>
+            <AvatarLoader size="sm" className="flex-shrink-0" {...avatar}>
                 {avatarChildren}
             </AvatarLoader>
             <div className="ml-4 flex justify-center flex-col truncate w-full">

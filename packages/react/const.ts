@@ -61,6 +61,7 @@ export const menu = [
                 items: [
                     { name: 'autocomplete input', url: '/elements/inputs/autocomplete' },
                     { name: 'otp input', url: '/elements/inputs/otp-input' },
+                    { name: 'phone input', url: '/elements/inputs/phone-input' },
                     { name: 'number input', url: '/elements/inputs/number' },
                     { name: 'text input', url: '/elements/inputs/text' }
                 ]
@@ -201,7 +202,9 @@ export const user = {
 }
 export const userCard = {
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+    avatar: {
+        avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg'
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     time: '30/05/2021'
 }

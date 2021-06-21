@@ -5,16 +5,15 @@ import { PhotographIcon } from '@heroicons/react/outline'
 type ImageLoader = {
     src: string
     LoadIcon?: JSXElementConstructor<any>
-    LoadIconClassName?: string
+    loadIconClassName?: string
     className?: string
     imageStyle?: 'cover' | 'contain' | string
     onClick?: (e: any) => void
 }
-const IconClassName = 'w-8 h-8'
 export const ImageLoader = ({
     src,
     LoadIcon = PhotographIcon,
-    LoadIconClassName = IconClassName,
+    loadIconClassName = 'w-8 h-8',
     className,
     imageStyle = 'contain',
     children,
@@ -38,13 +37,13 @@ export const ImageLoader = ({
         return null
     }, [src])
     const placeholder = useMemo(() => {
-        if (LoadIcon && loading) return <LoadIcon className={LoadIconClassName} />
+        if (LoadIcon && loading) return <LoadIcon className={clsx(loadIconClassName, 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2')} />
         return null
-    }, [loading, LoadIcon, LoadIconClassName])
+    }, [loading, LoadIcon, loadIconClassName])
     return (
         <div
             onClick={onClick}
-            className={clsx(className, 'flex justify-center items-center bg-center', imageStyle == 'contain' ? 'bg-contain' : 'bg-cover', onClick && 'cursor-pointer')}
+            className={clsx(className, 'relative flex justify-center items-center bg-center', imageStyle == 'contain' ? 'bg-contain' : 'bg-cover', onClick && 'cursor-pointer')}
             style={{ backgroundImage: `url('${src}')` }}
         >
             {image}

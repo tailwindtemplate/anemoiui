@@ -41,8 +41,8 @@ export default function CardsPage() {
                 <UserCard title={userCard.title} content={userCard.content} className={userCardClassName} />
                 <div className="w-1/3 space-y-2">
                     <UserCard {...userCard} className={userCardClassName} />
-                    <UserCard {...userCard} avatarChildren={<Badge count={4} className={clsx('absolute top-0 right-0 bg-red-600 text-white', userCardClassName)} />} />
-                    <UserCard avatar={avatars} title={userCard.title} content={userCard.content} time={userCard.time} className={userCardClassName} />
+                    <UserCard {...userCard} avatarChildren={<Badge size='sm' count={4} className={clsx("absolute -top-1 -right-1 bg-red-600 text-white", userCardClassName)} />} />
+                    <UserCard avatar={{ avatar: avatars }} title={userCard.title} content={userCard.content} time={userCard.time} className={userCardClassName} />
                 </div>
             </Section>
         </div>
