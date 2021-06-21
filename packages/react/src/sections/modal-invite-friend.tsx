@@ -17,7 +17,7 @@ export const CardUserItem = ({title, avatar}: CardUserItem) => {
         <div className='flex justify-between items-center overflow-hidden'>
             <UserCard
                 title={title}
-                avatar={avatar}
+                avatar={{avatar: avatar}}
                 isModal
                 className='w-96'
             />
@@ -52,7 +52,7 @@ export default function ModalInviteFriend({open, setOpen}: any) {
             >
                 <div className='flex flex-col justify-center items-center'>
                     <QrcodeIcon className='text-neutral-700 w-24 h-24' />
-                    <TextInput placeholder="Search" LeftIcon={SearchIcon} RightIcon={XIcon} wrapperClassName='my-4' />
+                    <TextInput placeholder="Search" LeftIcon={SearchIcon} RightIcon={XIcon} className="my-4" />
                     <div className='flex flex-col w-full my-4'>
                         {members?.map((item, index) => {
                             return (

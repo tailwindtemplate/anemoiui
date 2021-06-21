@@ -61,7 +61,7 @@ export default function ModalGroupAdd({open, setOpen}: any) {
                                             <div className='flex items-center justify-between overflow-hidden w-full' key={index}>
                                                 <UserCard
                                                     title={item.name}
-                                                    avatar={item.avatar}
+                                                    avatar={{avatar: item.avatar}}
                                                     onClick={() => selectContact(item)}
                                                     className="cursor-pointer w-96"
                                                     isModal
@@ -84,7 +84,7 @@ export default function ModalGroupAdd({open, setOpen}: any) {
                                             <UserCard
                                                 key={index}
                                                 title={item.name}
-                                                avatar={item.avatar}
+                                                avatar={{avatar: item.avatar}}
                                                 onClick={() => selectContact(item)}
                                                 className="cursor-pointer max-w-xs"
                                                 isModal

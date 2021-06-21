@@ -56,7 +56,7 @@ export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
                                     <UserCard
                                         key={index}
                                         title={item.name}
-                                        avatar={item.avatar}
+                                        avatar={{avatar: item.avatar}}
                                         className="cursor-pointer w-full"
                                         isModal
                                     />

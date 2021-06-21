@@ -34,7 +34,7 @@ export default function ModalRenameConversation({open, setOpen}: any) {
             >
                 <div>
                     <div className="mb-4 text-center">Change conversation name</div>
-                    <TextInput placeholder="Change conversation name..." wrapperClassName="my-4" />
+                    <TextInput placeholder="Change conversation name..." className="my-4" />
                 </div>
             </Modal>
         </Section>
