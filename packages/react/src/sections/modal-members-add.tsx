@@ -5,7 +5,7 @@ import {Section} from '../layout'
 import {Modal, UserCard} from '../components'
 import {TextInput} from '../elements'
 
-export default function ModalMembersAdd({open, setOpen}: any) {
+export const ModalMembersAdd = ({open, setOpen}: any) => {
 
     const confirm = useMemo(
         () => ({

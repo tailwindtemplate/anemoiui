@@ -26,7 +26,7 @@ export const CardUserItem = ({title, avatar}: CardUserItem) => {
     )
 }
 
-export default function ModalInviteFriend({open, setOpen}: any) {
+export const ModalInviteFriend = ({open, setOpen}: any) => {
     const [link, setLink] = useState('https://www.youtube.com/')
 
     const cancel = useMemo(

@@ -4,7 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon, XIcon } from '@heroicons/react/outli
 import {Section} from '../layout'
 import {ImageLoader} from '../elements'
 
-export default function ModalImageFocus({open, setOpen}: any) {
+export const ModalImageFocus = ({open, setOpen}: any) => {
 
     return (
         <Section narrow className="flex justify-center items-center bg-white">

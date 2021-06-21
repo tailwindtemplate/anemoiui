@@ -4,7 +4,7 @@ import {Section} from '../layout'
 import {Modal} from '../components'
 import {Avatar} from '../elements'
 
-export default function ModalProfileUser({open, setOpen}: any) {
+export const ModalProfileUser = ({open, setOpen}: any) => {
 
     const confirm = useMemo(
         () => ({

@@ -6,7 +6,7 @@ import {Section} from '../layout'
 import {Modal, UserCard} from '../components'
 import {FileUploader, TextInput} from '../elements'
 
-export default function ModalGroupAdd({open, setOpen}: any) {
+export const ModalGroupAdd = ({open, setOpen}: any) => {
     const [selectedUsers, setSelectedUsers] = useState<string[]>([])
 
     const confirm = useMemo(

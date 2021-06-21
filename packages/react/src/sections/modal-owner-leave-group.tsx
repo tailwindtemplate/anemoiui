@@ -4,7 +4,7 @@ import {Section} from '../layout'
 import {Modal, UserCard} from '../components'
 import {Radio} from '../elements'
 
-export default function ModalOwnerLeaveGroup({open, setOpen}: any) {
+export const ModalOwnerLeaveGroup = ({open, setOpen}: any) => {
     const [visibility, setVisibility] = useState(false)
 
     const confirm = useMemo(

@@ -3,7 +3,7 @@ import {Section} from '../layout'
 import {Modal} from '../components'
 import {TextInput} from '../elements'
 
-export default function ModalRenameConversation({open, setOpen}: any) {
+export const ModalRenameConversation = ({open, setOpen}: any) => {
 
     const confirm = useMemo(
         () => ({

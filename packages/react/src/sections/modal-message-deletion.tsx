@@ -3,7 +3,7 @@ import {Radio} from '../elements'
 import {Section} from '../layout'
 import {Modal} from '../components'
 
-export default function ModalMessageDeletion({open, setOpen}: any) {
+export const ModalMessageDeletion = ({open, setOpen}: any) => {
     const [visibility, setVisibility] = useState(false)
     const isOwner = true
 

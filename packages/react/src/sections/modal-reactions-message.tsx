@@ -3,7 +3,7 @@ import { tabItems } from '../../const'
 import {Modal, TabControl, TabPanel, UserCard} from '../components'
 import {Section} from '../layout'
 
-export default function ModalReactionsMessage({open, setOpen}: any) {
+export const ModalReactionsMessage = ({open, setOpen}: any) => {
     const [active, setActive] = useState(tabItems[0].id)
 
     const confirm = useMemo(

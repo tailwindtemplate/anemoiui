@@ -5,7 +5,7 @@ import { EmojiHappyIcon } from '@heroicons/react/outline'
 import {Section} from '../layout'
 import {Modal, TabControl, TabPanel} from '../components'
 
-export default function ModalReactionsSetting({open, setOpen}: any) {
+export const ModalReactionsSetting = ({open, setOpen}: any) => {
     const [active, setActive] = useState(reactionsSettingTabs[0].id)
 
     const confirm = useMemo(

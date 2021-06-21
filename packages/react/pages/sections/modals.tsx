@@ -1,15 +1,6 @@
 import {Button, Section} from '../../src';
 import {useState} from 'react';
-import ModalGroupAdd from "../../src/sections/modal-group-add";
-import ModalImageFocus from "../../src/sections/modal-image-focus";
-import ModalInviteFriend from "../../src/sections/modal-invite-friend";
-import ModalMembersAdd from "../../src/sections/modal-members-add";
-import ModalMessageDeletion from "../../src/sections/modal-message-deletion";
-import ModalOwnerLeaveGroup from "../../src/sections/modal-owner-leave-group";
-import ModalProfileUser from "../../src/sections/modal-profile-user";
-import ModalReactionsMessage from "../../src/sections/modal-reactions-message";
-import ModalReactionsSetting from "../../src/sections/modal-reactions-setting";
-import ModalRenameConversation from "../../src/sections/modal-rename-conversation";
+import {ModalGroupAdd, ModalImageFocus, ModalInviteFriend, ModalMembersAdd, ModalMessageDeletion, ModalOwnerLeaveGroup, ModalProfileUser, ModalReactionsMessage, ModalReactionsSetting, ModalRenameConversation} from "../../src/";
 
 export default function Modals() {
     const [groupAdd, setGroupAdd] = useState(false);
