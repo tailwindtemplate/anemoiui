@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CheckCircleIcon, UsersIcon, SearchIcon, ChatIcon, XIcon } from '@heroicons/react/outline'
-import { Heading4, TextInput } from '../../elements'
-import { userCard } from '../../../const'
+import {Badge, Heading4, TextInput} from '../../elements'
+import {channels} from '../../../const'
 import { UserCard } from '../../components'
 import clsx from 'clsx'
 
@@ -11,7 +11,6 @@ export const GeneralTab = () => {
     const [showSearch, setShowSearch] = useState(false)
 
     const iconClassName = 'w-6 h-6 text-white cursor-pointer'
-    const chats = [...Array(15).keys()]
 
     return (
         <div style={{ height: 'calc(100vh - 11rem)' }}>
@@ -55,16 +54,17 @@ export const GeneralTab = () => {
                         <div className="shadow-lg p-3 overflow-auto max-h-chat-box bg-white">
                             <Heading4 className="text-neutral-800">Chat</Heading4>
                             <div>
-                                {chats.map((item, index) => {
+                                {channels.map((item, index) => {
                                     return (
                                         <UserCard
-                                            {...userCard}
+                                            {...item}
                                             className="cursor-pointer"
                                             onClick={() => {
                                                 setOpenListBox(!openListBox)
                                                 setOpenItemBox(!openItemBox)
                                             }}
                                             key={index}
+                                            avatarChildren={<Badge position="top-right" className="bg-green-400" />}
                                         />
                                     )
                                 })}
