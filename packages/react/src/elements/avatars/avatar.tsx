@@ -47,16 +47,16 @@ const SIZE: avatarSizeData = {
     },
 }
 
-const renderPlaceholder = (Icon: JSXElementConstructor<any>, type: string, size: string, sizeData: avatarSizeData, name?: string) => {
-    if (type == 'add-avatar') return <PlusIcon className={sizeData[size]?.icon} />
-    if (name) {
-        return (
-            <div className={clsx(sizeData[size]?.text)}>
+const renderPlaceholder = (Icon: JSXElementConstructor<any>, type: string, name?: string) => {
+    return function Placeholder({ className }: any) {
+        if (type == 'add-avatar') return <PlusIcon className={clsx(className)} />
+        if (name) return (
+            <div className={clsx(className)}>
                 {name}
             </div>
         )
+        return <Icon className={clsx(className)} />
     }
-    return <Icon className={clsx(sizeData[size]?.text)} />
 }
 
 export function Avatar({
@@ -73,8 +73,9 @@ export function Avatar({
     sizeData = SIZE,
     IconLoader = UserCircleIcon,
 }: React.PropsWithChildren<Avatar>) {
-    const placeholder = useMemo(() => renderPlaceholder(IconLoader, type, size, sizeData, name), [sizeData, size, name, type])
-    const rounded = useMemo(() => isRounded ? 'rounded-full' : 'rounded-lg', [isRounded])
+    const placeholder = useMemo(() => renderPlaceholder(IconLoader, type, name), [IconLoader, name, type])
+    const rounded = useMemo(() => isRounded ? 'rounded-full' : '', [isRounded])
+    const sizeConfig = useMemo(() => sizeData[size], [])
 
     return (
         <AvatarWrapper
@@ -85,14 +86,15 @@ export function Avatar({
                 imageStyle="cover"
                 className={clsx(
                     'relative flex items-center justify-center bg-cover bg-no-repeat bg-center',
-                    sizeData[size]?.image,
+                    sizeConfig?.image,
                     type === 'add-avatar' && 'bg-white border border-dashed',
                     className,
                     rounded
                 )}
                 onClick={onClick}
                 src={src}
-                LoadIcon={() => placeholder}
+                LoadIcon={placeholder}
+                loadIconClassName={sizeConfig?.text}
             >
                 {children}
             </ImageLoader>

@@ -1,9 +1,9 @@
-import React, { ReactNode, useMemo } from 'react'
-import { Avatar, Avatars, AvatarLoader } from '../../elements'
+import React, { ReactNode } from 'react'
+import { AvatarLoader } from '../../elements'
 import clsx from 'clsx'
 
 type UserCard = {
-    avatar?: string | string[]
+    avatar?: AvatarLoader,
     avatarChildren?: ReactNode
     title: string
     content?: string
@@ -11,10 +11,10 @@ type UserCard = {
     className?: string
     onClick?: (e: any) => void
 }
-export const UserCard = ({ avatar = '', time, title, content, avatarChildren, className, onClick }: UserCard) => {
+export const UserCard = ({ avatar, time, title, content, avatarChildren, className, onClick }: UserCard) => {
     return (
         <div onClick={onClick} className={clsx('flex py-2 px-4 rounded-2xl bg-white items-center shadow-md', onClick && 'cursor-pointer', className)}>
-            <AvatarLoader size="sm" avatar={avatar} className="flex-shrink-0">
+            <AvatarLoader size="sm" className="flex-shrink-0" {...avatar}>
                 {avatarChildren}
             </AvatarLoader>
             <div className="ml-4 flex justify-center flex-col truncate w-full">

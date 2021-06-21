@@ -6,7 +6,7 @@ export default function PreviewAvatar() {
             <Heading2>Avatars</Heading2>
             <Heading3>Size XS -{">"} BASE</Heading3>
             <Section className="mb-8 flex items-center justify-around border bg-white">
-                <Avatar className="bg-gray-100" size="xs" />
+                <Avatar src="aaa" className="bg-gray-100" size="xs" />
                 <Avatar size="sm" />
                 <Avatar />
             </Section>

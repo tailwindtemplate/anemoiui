@@ -197,7 +197,9 @@ export const user = {
 }
 export const userCard = {
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg',
+    avatar: {
+        avatar: 'https://image.shutterstock.com/z/stock-photo-scene-of-the-wizard-reaching-hand-out-to-his-dragon-standing-on-the-rock-digital-art-style-1570031575.jpg'
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     time: '30/05/2021'
 }
