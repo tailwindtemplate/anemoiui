@@ -3,7 +3,7 @@ import { AvatarLoader } from '../../elements'
 import clsx from 'clsx'
 
 type UserCard = {
-    avatar?: string | string[]
+    avatar?: AvatarLoader,
     avatarChildren?: ReactNode
     title: string
     content?: ReactNode
@@ -12,10 +12,10 @@ type UserCard = {
     onClick?: (e: any) => void
     isModal?: boolean;
 }
-export const UserCard = ({ avatar = '', time, title, content, avatarChildren, className, onClick, isModal = false }: UserCard) => {
+export const UserCard = ({ avatar, time, title, content, avatarChildren, className, onClick, isModal = false }: UserCard) => {
     return (
-        <div onClick={onClick} className={clsx('flex py-2 px-4 rounded-2xl items-center', !isModal && 'bg-white shadow-md',onClick && 'cursor-pointer', className)}>
-            <AvatarLoader size="sm" avatar={avatar} className="flex-shrink-0">
+        <div onClick={onClick} className={clsx('flex py-2 px-4 rounded-2xl items-center', !isModal && 'bg-white shadow-md', onClick && 'cursor-pointer', className)}>
+            <AvatarLoader size="sm" className="flex-shrink-0" {...avatar}>
                 {avatarChildren}
             </AvatarLoader>
             <div className="ml-4 flex justify-center flex-col truncate w-full">
