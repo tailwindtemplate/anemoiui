@@ -30,8 +30,7 @@ export const GeneralTab = () => {
                                 <TextInput
                                     LeftIcon={SearchIcon}
                                     RightIcon={XIcon}
-                                    className="bg-white"
-                                    wrapperClassName="mx-1"
+                                    className="bg-white mx-1"
                                     closeOnClick={() => setShowSearch(false)}
                                 />
                             ) : (

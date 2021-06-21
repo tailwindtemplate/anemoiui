@@ -237,47 +237,60 @@ export const avatars = [
 export const channels = [
     {
         title: 'Nana Lee',
-        avatar: 'https://media-cdn.laodong.vn/storage/newsportal/2020/10/2/841202/20200617123919-E0c6.jpg?w=414&h=276&crop=auto&scale=both',
+        avatar: {
+            avatar: 'https://media-cdn.laodong.vn/storage/newsportal/2020/10/2/841202/20200617123919-E0c6.jpg?w=414&h=276&crop=auto&scale=both'
+        },
         content: 'Mình update tài liệu trên drive rồi nha.',
         time: '06/06',
         newMessage: 22,
     },
     {
         title: 'Quang Tran',
-        avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/2/25/e19844439b3ed3fa3f9576bd0cf07c6d-16142287241965009923.jpg',
+        avatar: {
+            avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/2/25/e19844439b3ed3fa3f9576bd0cf07c6d-16142287241965009923.jpg',
+        },
         content: 'Sắp tết rồi có gặp nhau không?',
         time: '05/06',
         newMessage: 2,
     },
     {
         title: 'Doremi Phan',
-        avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/1/16/e55583ef7c6259e3ec6e5da87fb45af2-1610806858271508975269.jpg',
+        avatar: {
+            avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/1/16/e55583ef7c6259e3ec6e5da87fb45af2-1610806858271508975269.jpg',
+        },
         content: 'Bạn: được nha.',
         time: '04/06',
     },
     {
         title: 'Huyen Le Ngoc Huyen 12 …',
-        avatar: 'https://media.ex-cdn.com/EXP/media.giadinhmoi.vn/files/content/2020/04/27/jennie-5-1523.jpg',
+        avatar: {
+            avatar: 'https://media.ex-cdn.com/EXP/media.giadinhmoi.vn/files/content/2020/04/27/jennie-5-1523.jpg',
+        },
         content: 'Bạn: Cảm ơn bạn nhiều nhé',
         time: '03/06',
     },
     {
         title: 'Charlie Madsen',
-        avatar: 'http://images6.fanpop.com/image/photos/42900000/Jennie-jennie-blackpink-42990319-720-720.jpg',
+        avatar : {
+            avatar: 'http://images6.fanpop.com/image/photos/42900000/Jennie-jennie-blackpink-42990319-720-720.jpg',
+        },
         content: 'Bạn: Đã kiểm tra kế hoạch nhé, tất cả…',
         time: '02/06'
     },
     {
         title: 'Thai Tran Nguyen Van',
-        avatar: 'https://i2.wp.com/blackpinkupdate.com/wp-content/uploads/2020/02/4-BLACKPINK-Jennie-HERA-Glow-Lasting-Foundation.png?resize=730%2C800&ssl=1',
+        avatar: {
+            avatar: 'https://i2.wp.com/blackpinkupdate.com/wp-content/uploads/2020/02/4-BLACKPINK-Jennie-HERA-Glow-Lasting-Foundation.png?resize=730%2C800&ssl=1',
+        },
         content: 'Hello, Phuong. Rất vui được trò chuyện',
         time: '01/06'
     },
     {
         title: 'Kinh doanh mua bán o…',
-        avatar: 'https://static-znews.zadn.vn/static/topic/person/jennie.jpg',
+        avatar: {
+            avatar: 'https://static-znews.zadn.vn/static/topic/person/jennie.jpg',
+        },
         content: 'Giáng Sinh vui vẻ!',
         time: '30/05'
     },
-
 ]

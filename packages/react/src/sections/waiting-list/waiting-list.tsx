@@ -24,7 +24,7 @@ export const WaitingList = ({className}: WaitingList) => {
                         avatarChildren={
                             <Avatar
                                 size="sm"
-                                src={item.avatar}
+                                src={item.avatar.avatar}
                                 key={index}
                             >
                                 <div className="absolute w-full h-full left-0 right-0 bg-neutral-200 rounded-md z-10 flex items-center justify-center bg-opacity-20 text-white font-bold">
