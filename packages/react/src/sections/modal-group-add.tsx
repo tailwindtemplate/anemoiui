@@ -46,12 +46,12 @@ export const ModalGroupAdd = ({open, setOpen}: any) => {
                 footerType="center"
             >
                 <div>
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-between w-full">
                         <FileUploader id="groupAvatar" className="mx-2" />
-                        <TextInput placeholder="Name your group" />
+                        <TextInput placeholder="Name your group" wrapperClassName="w-full" />
                     </div>
                     <div>
-                        <TextInput placeholder="Search" className="my-4" LeftIcon={SearchIcon} RightIcon={XIcon} />
+                        <TextInput placeholder="Search" wrapperClassName="my-4" LeftIcon={SearchIcon} RightIcon={XIcon} />
                         {selectedUsers.length > 0 && (
                             <div>
                                 <Heading4>Selected</Heading4>

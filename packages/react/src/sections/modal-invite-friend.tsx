@@ -52,7 +52,7 @@ export const ModalInviteFriend = ({open, setOpen}: any) => {
             >
                 <div className='flex flex-col justify-center items-center'>
                     <QrcodeIcon className='text-neutral-700 w-24 h-24' />
-                    <TextInput placeholder="Search" LeftIcon={SearchIcon} RightIcon={XIcon} className="my-4" />
+                    <TextInput placeholder="Search" LeftIcon={SearchIcon} RightIcon={XIcon} wrapperClassName="my-4 w-full" />
                     <div className='flex flex-col w-full my-4'>
                         {members?.map((item, index) => {
                             return (
@@ -62,8 +62,8 @@ export const ModalInviteFriend = ({open, setOpen}: any) => {
                     </div>
                     <div className='flex flex-col justify-start items-start w-full border-t-2 my-2 py-4'>
                         <Heading4>Send invitation link to friends</Heading4>
-                        <div className='flex items-center w-full mt-2'>
-                            <TextInput value={link} />
+                        <div className='flex justify-between items-center w-full mt-2'>
+                            <TextInput value={link} wrapperClassName="w-full" />
                             <DocumentDuplicateIcon className='w-8 h-8 ml-4 cursor-pointer hover:text-primary-600' onClick={copyCodeToClipboard} />
                         </div>
                     </div>

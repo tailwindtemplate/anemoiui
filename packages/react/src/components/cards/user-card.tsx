@@ -21,8 +21,8 @@ export const UserCard = ({ avatar, time, title, content, avatarChildren, classNa
             <div className="ml-4 flex justify-center flex-col truncate w-full">
                 <div className="truncate text-lg font-medium text-neutral-800">{title}</div>
                 <div className="flex justify-between items-center mt-1">
-                    <div className="truncate">{content}</div>
-                    <div className="flex-shrink-0 ml-4 text-sm text-gray-400">{time}</div>
+                    {content && <div className="truncate">{content}</div>}
+                    {time && <div className="flex-shrink-0 ml-4 text-sm text-gray-400">{time}</div>}
                 </div>
             </div>
         </div>
