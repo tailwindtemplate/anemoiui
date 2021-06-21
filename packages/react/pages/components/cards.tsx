@@ -39,8 +39,8 @@ export default function CardsPage() {
                 <UserCard title={userCard.title} content={userCard.content} />
                 <div className="w-1/3 space-y-2">
                     <UserCard {...userCard} />
-                    <UserCard {...userCard} avatarChildren={<Badge count={4} className="absolute top-0 right-0 bg-red-600 text-white" />} />
-                    <UserCard avatar={avatars} title={userCard.title} content={userCard.content} time={userCard.time} />
+                    <UserCard {...userCard} avatarChildren={<Badge size='sm' count={4} className="absolute -top-1 -right-1 bg-red-600 text-white" />} />
+                    <UserCard avatar={{ avatar: avatars }} title={userCard.title} content={userCard.content} time={userCard.time} />
                 </div>
             </Section>
         </div>

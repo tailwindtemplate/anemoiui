@@ -9,7 +9,7 @@ type ChannelHeader = {
 export const ChannelHeader = ({ avatar, name }: ChannelHeader) => {
     return (
         <div className="flex items-center px-4 py-2.5 mt-4 bg-white rounded-full flex-shrink-0">
-            <Avatar hasExtension isRounded size="sm" src={avatar} />
+            <Avatar isRounded size="sm" src={avatar} />
             <h2 className="text-lg font-medium ml-4">{name}</h2>
             <InformationCircleIcon className="ml-auto w-8 h-8"/>
         </div>
