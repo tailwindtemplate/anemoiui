@@ -9,6 +9,7 @@ type Radio = {
   id?: string;
   disabled?: boolean;
   caption?: string;
+  className?: string;
 };
 
 const SIZE: any = {
@@ -28,15 +29,17 @@ export function Radio({
     size = 'BASE',
     id,
     disabled,
-    caption
+    caption,
+    className
 }: Radio) {
     return (
-        <div className={clsx('m-2 flex justify-center items-center', disabled && 'opacity-50 cursor-not-allowed select-none')} onClick={onClick}>
+        <div className={clsx('m-2 flex items-center', disabled && 'opacity-50 cursor-not-allowed select-none', className)} onClick={onClick}>
             <input
                 type="radio"
                 className="hidden"
                 checked={checked}
                 disabled={disabled}
+                readOnly
             />
             <div className={clsx('rounded-full border-primary-700', checked ? BORDER[size] : 'border', SIZE[size])} />
             <div className="flex flex-col">

@@ -1,8 +1,17 @@
 import React from 'react'
+import { CameraIcon } from '@heroicons/react/outline'
 
-export function FileUploader() {
+type FileUploader = {
+    id?: string;
+    className?: string;
+}
+
+export function FileUploader({id, className}: FileUploader) {
 
     return (
-        <input type="file" name="file" />
+        <label htmlFor={id} className={className}>
+            <input type="file" name="file" hidden id={id} />
+            <CameraIcon className='w-8 h-8 cursor-pointer' />
+        </label>
     )
 }
