@@ -17,7 +17,7 @@ export const ChannelTab = ({className}: ChannelTab) => {
         <div className={clsx('w-chat-box z-10 shadow-xl', className)}>
             {/*Header*/}
             <div className="flex justify-between bg-primary-600 rounded-t-2xl px-2">
-                <UserCard title="Hahalolo Can Tho" titleClassName="text-white" avatar={{avatar: "https://media.thongtindulich.hahalolo.com/files/thutrang/2020/10/03/mang-xa-hoi-hahalolo-3-1522.jpg"}} />
+                <UserCard title="Hahalolo Can Tho" titleClassName="text-white" avatar={{avatar: 'https://media.thongtindulich.hahalolo.com/files/thutrang/2020/10/03/mang-xa-hoi-hahalolo-3-1522.jpg'}} isModal />
                 <div className="flex items-center">
                     <DotsVerticalIcon className={iconClassName} />
                     <XIcon className={iconClassName} onClick={() => setOpenItemBox(false)} />

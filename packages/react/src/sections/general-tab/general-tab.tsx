@@ -25,7 +25,7 @@ export const GeneralTab = () => {
                 {openListBox && (
                     <div className="absolute bottom-0 right-16 w-chat-box z-20">
                         {/*Header*/}
-                        <div className="flex justify-between items-center rounded-t-2xl bg-primary-500 h-16">
+                        <div className="flex justify-between items-center rounded-t-3xl bg-primary-500 h-16">
                             {showSearch ? (
                                 <TextInput
                                     LeftIcon={SearchIcon}
@@ -37,6 +37,7 @@ export const GeneralTab = () => {
                                 <div className="flex justify-between items-center w-full h-full mx-3">
                                     <Heading4 className="text-white">HaloMe</Heading4>
                                     <div className="flex">
+                                        <XIcon className={clsx('mx-1.5', iconClassName)} />
                                         <UsersIcon className={clsx('mx-1.5', iconClassName)} />
                                         <ChatIcon className={clsx('mx-1.5', iconClassName)} />
                                         <SearchIcon
@@ -61,7 +62,8 @@ export const GeneralTab = () => {
                                                 setOpenListBox(!openListBox)
                                             }}
                                             key={index}
-                                            avatarChildren={<Badge position="top-right" className="bg-green-400" />}
+                                            avatarChildren={<Badge position="top-right" className="bg-green-400" size='xs' />}
+                                            isModal
                                         />
                                     )
                                 })}
