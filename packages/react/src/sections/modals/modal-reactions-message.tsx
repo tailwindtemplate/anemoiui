@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import { tabItems } from '../../const'
-import {Modal, TabControl, TabPanel, UserCard} from '../components'
-import {Section} from '../layout'
+import { tabItems } from '../../../const'
+import {Modal, TabControl, TabPanel, UserCard} from '../../components'
+import {Section} from '../../layout'
 
 export const ModalReactionsMessage = ({open, setOpen}: any) => {
     const [active, setActive] = useState(tabItems[0].id)

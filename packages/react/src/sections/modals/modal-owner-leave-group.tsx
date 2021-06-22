@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react'
-import { members } from '../../const'
-import {Section} from '../layout'
-import {Modal, UserCard} from '../components'
-import {Radio} from '../elements'
+import { members } from '../../../const'
+import {Section} from '../../layout'
+import {Modal, UserCard} from '../../components'
+import {Radio} from '../../elements'
 
 export const ModalOwnerLeaveGroup = ({open, setOpen}: any) => {
     const [visibility, setVisibility] = useState(false)

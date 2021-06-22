@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react'
-import { members } from '../../const'
+import { members } from '../../../const'
 import { CheckIcon, SearchIcon, XIcon } from '@heroicons/react/outline'
-import { Heading4 } from '../elements/typography'
-import {Section} from '../layout'
-import {Modal, UserCard} from '../components'
-import {FileUploader, TextInput} from '../elements'
+import { Heading4 } from '../../elements/typography'
+import {Section} from '../../layout'
+import {Modal, UserCard} from '../../components'
+import {FileUploader, TextInput} from '../../elements'
 
 export const ModalGroupAdd = ({open, setOpen}: any) => {
     const [selectedUsers, setSelectedUsers] = useState<string[]>([])

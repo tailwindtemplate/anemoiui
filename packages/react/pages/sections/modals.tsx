@@ -1,6 +1,7 @@
 import {Button, Section} from '../../src';
 import {useState} from 'react';
 import {ModalGroupAdd, ModalImageFocus, ModalInviteFriend, ModalMembersAdd, ModalMessageDeletion, ModalOwnerLeaveGroup, ModalProfileUser, ModalReactionsMessage, ModalReactionsSetting, ModalRenameConversation} from "../../src/";
+import {ModalConfirm} from "../../src/sections/modals/modal-confirm";
 
 export default function Modals() {
     const [groupAdd, setGroupAdd] = useState(false);
@@ -13,6 +14,7 @@ export default function Modals() {
     const [reactionsMessage, setReactionsMessage] = useState(false);
     const [reactionsSetting, setReactionsSetting] = useState(false);
     const [renameConversation, setRenameConversation] = useState(false);
+    const [confirm, setConfirm] = useState(false);
 
     const className = "border p-2 rounded-md m-2"
 
@@ -66,6 +68,11 @@ export default function Modals() {
             <div>
                 <Button title='Open modal rename conversation' className={className} onClick={() => setRenameConversation(!renameConversation)} />
                 {renameConversation && <ModalRenameConversation open={renameConversation} setOpen={setRenameConversation} />}
+            </div>
+
+            <div>
+                <Button title='Open modal confirm' className={className} onClick={() => setConfirm(!confirm)} />
+                {confirm && <ModalConfirm open={confirm} setOpen={setConfirm} content="Bạn chắc chắn muốn xoá cuộc trò chuyện này? Nếu xoá bạn sẽ không khôi phục được cuộc trò chuyện này!" />}
             </div>
         </Section>
     );

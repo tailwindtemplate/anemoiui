@@ -1,9 +1,9 @@
 import React from 'react'
-import { Wrapper } from '../components/modal/wrapper'
+import { Wrapper } from '../../components/modal/wrapper'
 import { ChevronLeftIcon, ChevronRightIcon, XIcon, ZoomInIcon, ZoomOutIcon, DotsVerticalIcon, ArrowNarrowLeftIcon, ArrowNarrowRightIcon, RefreshIcon } from '@heroicons/react/outline'
-import {Section} from '../layout'
+import {Section} from '../../layout'
 import clsx from 'clsx'
-import {useImageFocus} from '../hooks/use-image-focus'
+import {useImageFocus} from '../../hooks/use-image-focus'
 
 type ModalImageFocus = {
     urls?: any

@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react'
-import { reactionsSettingTabs } from '../../const'
-import { Heading4 } from '../elements/typography'
+import { reactionsSettingTabs } from '../../../const'
+import { Heading4 } from '../../elements/typography'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
-import {Section} from '../layout'
-import {Modal, TabControl, TabPanel} from '../components'
+import {Section} from '../../layout'
+import {Modal, TabControl, TabPanel} from '../../components'
 
 export const ModalReactionsSetting = ({open, setOpen}: any) => {
     const [active, setActive] = useState(reactionsSettingTabs[0].id)

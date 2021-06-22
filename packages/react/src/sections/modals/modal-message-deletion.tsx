@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import {Radio} from '../elements'
-import {Section} from '../layout'
-import {Modal} from '../components'
+import {Radio} from '../../elements'
+import {Section} from '../../layout'
+import {Modal} from '../../components'
 
 export const ModalMessageDeletion = ({open, setOpen}: any) => {
     const [visibility, setVisibility] = useState(false)
