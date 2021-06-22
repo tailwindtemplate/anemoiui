@@ -11,6 +11,8 @@ export type TextInput = {
     inputClassName?: string
     borderType?: 'error' | string
     avatar?: Avatar
+    inputRef?: React.Ref<HTMLInputElement>
+    wrapperClassName?: string
     closeOnClick?:() => void
 };
 
@@ -28,6 +30,8 @@ export const TextInput = ({
     borderType,
     avatar,
     disabled,
+    inputRef,
+    wrapperClassName,
     closeOnClick,
     ...rest
 }: TextInput & InputHTMLAttributes<unknown>) => {
@@ -37,7 +41,8 @@ export const TextInput = ({
                 'flex items-center',
                 borderType && border[borderType],
                 disabled && 'disable',
-                className
+                className,
+                wrapperClassName
             )}
         >
             {avatar && <Avatar wrapperClassName='flex-shrink-0 mr-2' size="xs" {...avatar} />}
@@ -51,6 +56,7 @@ export const TextInput = ({
                     inputClassName,
                 )}
                 disabled={disabled}
+                ref={inputRef}
                 {...rest}
             />
             {RightIcon && (

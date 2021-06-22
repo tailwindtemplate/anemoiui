@@ -33,6 +33,7 @@ export const menu = [
             { name: 'user profile', url: '/sections/user-profile' },
             { name: 'landing', url: '/sections/landing' },
             { name: 'app sidebar', url: '/sections/app-sidebar' },
+            { name: 'modals', url: '/sections/modals' },
             { name: 'empty chat', url: '/sections/empty-chat' },
             { name: 'general tab', url: '/sections/general-tab' },
             { name: 'channel tab', url: '/sections/channel-tab' },
@@ -232,6 +233,52 @@ export const avatars = [
     'https://m.media-amazon.com/images/M/MV5BMGVjYTU2NjUtMmE3OS00YTlhLWFjYjEtZTA1ZTEwZDkyZTMyXkEyXkFqcGdeQXVyMTI0MDI3NzEw._V1_UY1200_CR752,0,630,1200_AL_.jpg',
     'https://otakukart.com/wp-content/uploads/2021/03/Jennie-BLACKPINK-1.jpg',
     'https://kenh14cdn.com/thumb_w/660/2020/8/18/main-qimg-223f8d2a5b6dc50a797c38494641067e-15977119524331043825659.jpg',
+]
+
+export const members = [
+    {id: 1, name: 'Charlie Rhiel Madsen Charlie Rhiel Madsen Charlie Rhiel Madsen Charlie Rhiel Madsen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 2, name: 'Julie Nguyen', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 3, name: 'Thai Tran Nguyen Van', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 4, name: 'Hannah Tran', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+    {id: 5, name: 'Nana Lee', avatar: 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/5/30/photo-1-16223635833441143758314.jpg'},
+]
+
+export const infoProfiles = [
+    { title: 'Full name', value: 'Austin Wade' },
+    { title: 'Gender', value: 'Male' },
+    { title: 'Birthday', value: '01/01/1990' },
+    { title: 'Contact', value: 'austinwade@hahalolo.com' },
+]
+
+export const reactionsSettingTabs = [
+    {
+        id: 'tab1',
+        name: 'Tab 1'
+    },
+    {
+        id: 'tab2',
+        name: 'Tab 2'
+    },
+    {
+        id: 'tab3',
+        name: 'Tab 3'
+    },
+    {
+        id: 'tab4',
+        name: 'Tab 4'
+    },
+    {
+        id: 'tab5',
+        name: 'Tab 5'
+    },
+    {
+        id: 'tab6',
+        name: 'Tab 6'
+    },
+    {
+        id: 'tab7',
+        name: 'Tab 7'
+    },
 ]
 
 export const channels = [

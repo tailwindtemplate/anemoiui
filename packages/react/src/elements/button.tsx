@@ -11,6 +11,8 @@ type Button = {
   disabled?: boolean;
   as?: ElementType;
   onClick?: () => void
+  IconLeft?: any;
+  IconRight?: any;
 };
 
 const SIZE_MAPS: Record<string, string> = {
@@ -39,6 +41,8 @@ export function Button({
     as = 'button',
     children,
     onClick,
+    IconLeft,
+    IconRight
 }: PropsWithChildren<Button>) {
     const Node = as
 
@@ -53,7 +57,9 @@ export function Button({
             disabled={disabled}
             onClick={onClick}
         >
+            {IconLeft && <IconLeft />}
             {title}
+            {IconRight && <IconRight />}
             {children}
         </Node>
     )
