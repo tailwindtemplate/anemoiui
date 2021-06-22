@@ -19,7 +19,7 @@ export const CardUserItem = ({title, avatar}: CardUserItem) => {
                 title={title}
                 avatar={{avatar: avatar}}
                 isModal
-                className='w-96'
+                className='w-96 my-3'
             />
             <Button title={isInvited ? 'Invited' : 'Invite'} type={isInvited ? 'secondary' : 'primary'} size='sm' onClick={()=>setInvited(!isInvited)} />
         </div>

@@ -56,8 +56,8 @@ export const ModalOwnerLeaveGroup = ({open, setOpen}: any) => {
                                     <UserCard
                                         key={index}
                                         title={item.name}
-                                        avatar={{avatar: item.avatar}}
-                                        className="cursor-pointer w-full"
+                                        avatar={{ avatar: item.avatar }}
+                                        className="cursor-pointer w-full my-3"
                                         isModal
                                     />
                                 )

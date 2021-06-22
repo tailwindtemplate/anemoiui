@@ -41,8 +41,8 @@ export const ModalMembersAdd = ({open, setOpen}: any) => {
                             <UserCard
                                 key={index}
                                 title={item.name}
-                                avatar={{avatar: item.avatar}}
-                                className="cursor-pointer"
+                                avatar={{ avatar: item.avatar }}
+                                className="cursor-pointer my-3"
                                 isModal
                             />
                         )

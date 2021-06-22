@@ -50,8 +50,8 @@ export const GeneralTab = () => {
                         </div>
 
                         {/*Body*/}
-                        <div className="shadow-lg p-3 overflow-auto max-h-chat-box bg-white">
-                            <Heading4 className="text-neutral-800">Chat</Heading4>
+                        <div className="shadow-lg overflow-auto max-h-chat-box bg-white">
+                            <Heading4 className="text-neutral-800 px-3 py-2">Chat</Heading4>
                             <div>
                                 {channels.map((item, index) => {
                                     return (
@@ -64,6 +64,8 @@ export const GeneralTab = () => {
                                             key={index}
                                             avatarChildren={<Badge position="top-right" className="bg-green-400" size='xs' />}
                                             isModal
+                                            infoClassName="border-b border-neutral-100 py-3 pr-3"
+                                            avatarClassName="m-3"
                                         />
                                     )
                                 })}
