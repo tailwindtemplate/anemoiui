@@ -10,5 +10,6 @@
     "esModuleInterop": true,
     "jsx": "react",
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["elements.d.ts", "components.d.ts", "hooks.d.ts"]
 }
