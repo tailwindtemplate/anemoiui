@@ -5,8 +5,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 // Component
 import { NextPrev } from './next-prev'
 import { Dot } from './dot'
-// Css
-import 'keen-slider/keen-slider.min.css'
 import { TOptionsEvents, TOptions } from 'keen-slider'
 // Check Type Props
 export type carouselBreakpoint = {
