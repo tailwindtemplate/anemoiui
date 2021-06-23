@@ -39,7 +39,7 @@ export const ModalImageFocus = ({open = false, setOpen, urls}: ModalImageFocus) 
     return (
         <Section narrow className="flex justify-center items-center bg-white">
             <Wrapper open={open} setOpen={setOpen} size='full'>
-                <div style={{backgroundImage: `url("${src}")`}} className="relative w-screen h-screen bg-no-repeat bg-cover bg-center blur flex justify-center items-center">
+                <div style={{backgroundImage: `url("${src}")`}} className="relative w-screen h-screen bg-no-repeat bg-cover bg-center blur flex justify-center items-center overflow-hidden">
                     <div className="z-20 absolute w-full h-full bg-neutral-800 opacity-80 top-0" />
                     <img src={src} className={clsx('z-20 max-w-3xl max-h-full p-4 select-none', scale >= 1.5 && 'cursor-pointer')} draggable={false} style={customStyle} />
                     {urls?.length > 1 && <ChevronLeftIcon onClick={() => updateMoveByKey(-1)} className={clsx('z-20 absolute left-4 bottom-1/2 cursor-pointer hover:text-neutral-800', iconClassName)} />}

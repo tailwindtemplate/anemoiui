@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react'
-import {Modal} from "../../components";
+import {Modal} from '../../components'
 
 type ModalConfirm = {
     content?: string;

@@ -6,23 +6,23 @@ type EditNickname = {
     open: boolean,
     setOpen: (e: boolean) => void
 };
-export const EditNickname = ({ open, setOpen }: EditNickname) => {
+export const ModalEditNickname = ({ open, setOpen }: EditNickname) => {
     // function
     const confirm = React.useMemo(() => ({
         label: 'Confirm',
         onClick: () => setOpen(false),
-        className: 'w-full rounded border py-1 px-4 font-semibold',
+        className: 'w-full',
     }), [])
     const cancel = React.useMemo(() => ({
         label: 'Cancel',
         onClick: () => setOpen(false),
-        className: 'w-full rounded border py-1 px-4 font-semibold'
+        className: 'w-full'
     }), [])
     return (
-        <Modal setOpen={() => setOpen(false)} open={open} title="Đổi biệt danh" confirm={confirm} cancel={cancel}>
+        <Modal setOpen={() => setOpen(false)} open={open} title="Đổi biệt danh" confirm={confirm} cancel={cancel} footerType="center">
             <CardGround className="bg-white" name="What a lovely name" avatar="https:tailwindcss.com/_next/static/media/ryan-florence.34fb7796afb30db4ae598b06a00cbee3.jpg" />
             <p className="my-2">Mọi người trong cuộc trò chuyện sẽ nhìn thấy biệt danh này</p>
-            <TextInput inputClassName="focus:border-red-500 bg-gray-100 text-gray-500 h-9" placeholder="Đổi biệt danh" />
+            <TextInput placeholder="Đổi biệt danh" />
         </Modal>
     )
 }
