@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react'
-import {Section} from '../layout'
-import {Modal} from '../components'
-import {TextInput} from '../elements'
+import {Section} from '../../layout'
+import {Modal} from '../../components'
+import {TextInput} from '../../elements'
 
 export const ModalRenameConversation = ({open, setOpen}: any) => {
 

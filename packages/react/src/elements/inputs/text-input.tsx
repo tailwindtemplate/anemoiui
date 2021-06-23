@@ -13,6 +13,7 @@ export type TextInput = {
     avatar?: Avatar
     inputRef?: React.Ref<HTMLInputElement>
     wrapperClassName?: string
+    closeOnClick?:() => void
 };
 
 const border: Record<string, string> = {
@@ -31,6 +32,7 @@ export const TextInput = ({
     disabled,
     inputRef,
     wrapperClassName,
+    closeOnClick,
     ...rest
 }: TextInput & InputHTMLAttributes<unknown>) => {
     return (
@@ -58,7 +60,7 @@ export const TextInput = ({
                 {...rest}
             />
             {RightIcon && (
-                <RightIcon className={clsx(rightIconClassName, 'flex-shrink-0')} />
+                <RightIcon className={clsx(rightIconClassName, 'flex-shrink-0')} onClick={closeOnClick} />
             )}
         </div>
     )

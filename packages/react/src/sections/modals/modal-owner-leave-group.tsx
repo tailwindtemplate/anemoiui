@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react'
-import { members } from '../../const'
-import {Section} from '../layout'
-import {Modal, UserCard} from '../components'
-import {Radio} from '../elements'
+import { members } from '../../../const'
+import {Section} from '../../layout'
+import {Modal, UserCard} from '../../components'
+import {Radio} from '../../elements'
 
 export const ModalOwnerLeaveGroup = ({open, setOpen}: any) => {
     const [visibility, setVisibility] = useState(false)
@@ -56,8 +56,8 @@ export const ModalOwnerLeaveGroup = ({open, setOpen}: any) => {
                                     <UserCard
                                         key={index}
                                         title={item.name}
-                                        avatar={{avatar: item.avatar}}
-                                        className="cursor-pointer w-full"
+                                        avatar={{ avatar: item.avatar }}
+                                        className="cursor-pointer w-full my-3"
                                         isModal
                                     />
                                 )

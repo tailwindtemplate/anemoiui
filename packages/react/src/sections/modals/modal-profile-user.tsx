@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import { infoProfiles } from '../../const'
-import {Section} from '../layout'
-import {Modal} from '../components'
-import {Avatar} from '../elements'
+import { infoProfiles } from '../../../const'
+import {Section} from '../../layout'
+import {Modal} from '../../components'
+import {Avatar} from '../../elements'
 
 export const ModalProfileUser = ({open, setOpen}: any) => {
 

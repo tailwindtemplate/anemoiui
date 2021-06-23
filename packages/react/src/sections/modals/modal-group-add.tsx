@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react'
-import { members } from '../../const'
+import { members } from '../../../const'
 import { CheckIcon, SearchIcon, XIcon } from '@heroicons/react/outline'
-import { Heading4 } from '../elements/typography'
-import {Section} from '../layout'
-import {Modal, UserCard} from '../components'
-import {FileUploader, TextInput} from '../elements'
+import { Heading4 } from '../../elements/typography'
+import {Section} from '../../layout'
+import {Modal, UserCard} from '../../components'
+import {FileUploader, TextInput} from '../../elements'
 
 export const ModalGroupAdd = ({open, setOpen}: any) => {
     const [selectedUsers, setSelectedUsers] = useState<string[]>([])
@@ -63,7 +63,7 @@ export const ModalGroupAdd = ({open, setOpen}: any) => {
                                                     title={item.name}
                                                     avatar={{avatar: item.avatar}}
                                                     onClick={() => selectContact(item)}
-                                                    className="cursor-pointer w-96"
+                                                    className="w-96 my-3"
                                                     isModal
                                                 />
                                                 <CheckIcon className='w-6 h-6 text-green-500' />
@@ -86,7 +86,7 @@ export const ModalGroupAdd = ({open, setOpen}: any) => {
                                                 title={item.name}
                                                 avatar={{avatar: item.avatar}}
                                                 onClick={() => selectContact(item)}
-                                                className="cursor-pointer max-w-xs"
+                                                className="cursor-pointer max-w-xs my-3"
                                                 isModal
                                             />
                                         )

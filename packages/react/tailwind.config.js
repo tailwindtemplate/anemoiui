@@ -61,6 +61,15 @@ module.exports = {
       maxWidth: {
         '17rem': '17rem'
       },
+      maxHeight: {
+        "chat-box": "39rem",
+      },
+      width: {
+        "chat-box": "22rem",
+      },
+      height: {
+        "chat-box": "20rem",
+      },
       fontSize: {
         tiny: ".5rem"
       },
