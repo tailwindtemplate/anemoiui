@@ -1,6 +1,6 @@
 import { ChatLayout } from '../../next-src/chat-layout';
 import { ChannelHeader, MessageInput, ChannelMessages } from '../../src';
-import { attachmentMessageItem, textMessageItem, user } from '../../const';
+import { attachmentMessageItem, textMessageItem, user } from '../../src/const';
 
 const messages = [
     {

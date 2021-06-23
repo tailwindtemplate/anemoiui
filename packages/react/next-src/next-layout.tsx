@@ -1,6 +1,6 @@
 import { Header, Button, Section } from '../src';
 import { PropsWithChildren } from "react";
-import { headerMenu } from "../const";
+import { headerMenu } from "../src/const";
 import { NextSidebar } from "./next-sidebar";
 
 export const NextLayout = ({ children }: PropsWithChildren<any>) => {

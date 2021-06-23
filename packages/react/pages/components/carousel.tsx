@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { Section, Carousel, carouselBreakpoint, Heading2, Heading3 } from '../../src';
-import { carousel, carouselUser } from '../../const';
+import { carousel, carouselUser } from '../../src/const';
 
 const ClassItemsCarousel = "max-w-sm bg-gray-800 text-white h-72 flex justify-center";
 const ResponsiveCarousel: carouselBreakpoint = {

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { reactionsSettingTabs } from '../../../const'
+import { reactionsSettingTabs } from '../../const'
 import { Heading4 } from '../../elements/typography'
 import { EmojiHappyIcon } from '@heroicons/react/outline'
 import {Section} from '../../layout'

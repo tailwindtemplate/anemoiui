@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextInput } from '../elements'
 import { Carousel, UserCard } from '../components'
-import { carouselUser, userCard } from '../../const'
+import { carouselUser, userCard } from '../const'
 import { SearchIcon } from '@heroicons/react/outline'
 
 export const ChatSidebar = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { WaitingItem } from './waiting-item'
-import { channels } from '../../../const'
+import { channels } from '../../const'
 import {Avatar, Subtitle1} from '../../elements'
 import { PopoverControl } from '../../components'
 import {XIcon} from '@heroicons/react/outline'

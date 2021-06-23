@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/outline';
 import { Heading2, PopoverControl, Section } from '../../src';
-import { popover } from '../../const';
+import { popover } from '../../src/const';
 export default function Popover() {
   return (
       <div>

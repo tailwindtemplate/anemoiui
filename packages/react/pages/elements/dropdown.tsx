@@ -1,5 +1,5 @@
 import { Dropdown, DropdownOverFlow, Heading2, Heading3, Section } from '../../src';
-import { dropdown } from "../../const";
+import { dropdown } from "../../src/const";
 
 export default function DropdownPage() {
   return (

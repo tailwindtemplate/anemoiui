@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Heading2, Section, TabControl, TabPanel } from '../../src';
-import { tabItems } from '../../const';
+import { tabItems } from '../../src/const';
 export default function Tabs() {
   const [active, setActive] = useState(tabItems[0].id);
   return (
