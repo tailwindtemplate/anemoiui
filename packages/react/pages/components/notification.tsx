@@ -2,7 +2,6 @@ import React from 'react'
 import clsx from 'clsx'
 
 import { carouselUser } from '../../const'
-import { NotificationModal } from '../../src/components/notification-modal'
 import { UserCard } from '../../src'
 import { PopoverControl } from '../../src/'
 import { ChevronDownIcon } from '@heroicons/react/outline'
@@ -19,20 +18,19 @@ export default function NotifiCation() {
         <PopoverControl
             namePopover='Messenger'
             Icon={ChevronDownIcon}
-            classPopoverPanel='mt-1'
+            classPopoverPanel='flex flex-col border z-10 transform left-0pt-2 rounded-lg shadow-xl mt-2 w-96 h-96 overflow-hidden'
         >
-            <div className='border rounded-lg shadow-md bg-white w-96'>
                 <HeaderNotification title='Messenger' className='border-b' titleClassName='text-lg font-semibold p-2'>
                     <CogIcon className={iconClassName} />
                     <ChatAlt2Icon className={iconClassName} />
                 </HeaderNotification>
-                <NotificationModal className='h-96 w-96'>
-                    {carouselUser.map(({ id, img }) => (
+                <div className='bg-white overflow-y-auto flex-1'>
+                {carouselUser.map(({ id, img }) => (
                         <UserCard
                             content='utilities for controlling the radius of an element'
                             time='09:07'
                             className={clsx(
-                                'rounded m-2 rounded-sm transform hover:bg-gray-100 cursor-pointer',
+                                'rounded m-2 rounded-sm transform hover:bg-gray-100 cursor-pointer flex-1',
                                 id === userId && 'bg-gray-200',
                                 tick && 'bg-gray-200'
                             )}
@@ -43,7 +41,7 @@ export default function NotifiCation() {
                             avatarClassName='rounded-full'
                         />
                     ))}
-                </NotificationModal>
+                </div>
                 <FooterNotification className='border-t'>
                     <p className={footerClassName}>Mở bằng messenger</p>
                     <p
@@ -56,7 +54,6 @@ export default function NotifiCation() {
                     Đánh dấu tất cả chưa đọc
                     </p>
                 </FooterNotification>
-            </div>
         </PopoverControl>
     )
 }
