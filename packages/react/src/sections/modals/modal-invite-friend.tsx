@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { QrcodeIcon, SearchIcon, XIcon, DocumentDuplicateIcon } from '@heroicons/react/outline'
-import { members } from '../../../const'
+import { members } from '../../const'
 import { Heading4 } from '../../elements/typography'
 import {Modal, UserCard} from '../../components'
 import {Button, TextInput} from '../../elements'

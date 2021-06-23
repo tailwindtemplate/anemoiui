@@ -1,5 +1,5 @@
 import { Badge, Heading2, Section, Avatars, Heading3 } from '../../src';
-import { avatars } from "../../const";
+import { avatars } from "../../src/const";
 
 export default function PreviewAvatars() {
     return (

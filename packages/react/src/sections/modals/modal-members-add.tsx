@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { members } from '../../../const'
+import { members } from '../../const'
 import { SearchIcon } from '@heroicons/react/outline'
 import {Section} from '../../layout'
 import {Modal, UserCard} from '../../components'

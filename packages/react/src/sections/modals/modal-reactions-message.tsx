@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { tabItems } from '../../../const'
+import { tabItems } from '../../const'
 import {Modal, TabControl, TabPanel, UserCard} from '../../components'
 import {Section} from '../../layout'
 

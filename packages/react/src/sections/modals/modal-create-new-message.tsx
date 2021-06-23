@@ -1,5 +1,5 @@
 import React from 'react'
-import { avatarDefault } from '../../../const'
+import { avatarDefault } from '../../const'
 import { SearchIcon, XIcon } from '@heroicons/react/outline'
 import { UserCard } from '../../'
 import { TextInput } from '../../elements/inputs/text-input'

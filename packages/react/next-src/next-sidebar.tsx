@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
-import { menu } from '../const';
+import { menu } from '../src/const';
 
 const ToggleList = ({ name, items, Icon, loop }) => {
     const [show, setShow] = useState(false)

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { members } from '../../../const'
+import { members } from '../../const'
 import {Section} from '../../layout'
 import {Modal, UserCard} from '../../components'
 import {Radio} from '../../elements'

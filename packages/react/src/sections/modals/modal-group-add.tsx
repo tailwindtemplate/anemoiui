@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { members } from '../../../const'
+import { members } from '../../const'
 import { CheckIcon, SearchIcon, XIcon } from '@heroicons/react/outline'
 import { Heading4 } from '../../elements/typography'
 import {Section} from '../../layout'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { avatars } from '../../../const'
+import { avatars } from '../../const'
 import { ImageItem } from './image-item'
 import { Avatar, ImageLoader } from '../../elements'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { avatarDefault } from '../../../const'
+import { avatarDefault } from '../../const'
 import { Modal } from '../../components/modal/'
 import { UserCard } from '../../'
 type ChooseMember = {

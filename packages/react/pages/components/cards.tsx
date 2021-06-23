@@ -1,6 +1,6 @@
 import { UserIcon, UserRemoveIcon } from '@heroicons/react/outline';
 import { CardGround, InfoLine, CardWrapper, Section, CardInfo, Heading3, UserCard, Badge, Heading2 } from '../../src';
-import { avatars, cardInfo, userCard } from '../../const';
+import { avatars, cardInfo, userCard } from '../../src/const';
 import clsx from "clsx";
 
 export default function CardsPage() {

@@ -1,5 +1,5 @@
 import { Section, Message, Heading3, Heading2 } from '../../src';
-import { attachmentMessageItem, statusItems, textMessageItem, user } from '../../const';
+import { attachmentMessageItem, statusItems, textMessageItem, user } from '../../src/const';
 
 export default function MessagesPage() {
     return (

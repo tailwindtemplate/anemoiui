@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { carouselUser } from '../../const'
+import { carouselUser } from '../../src/const'
 import { UserCard } from '../../src'
 import { PopoverControl } from '../../src/'
 import { ChevronDownIcon } from '@heroicons/react/outline'

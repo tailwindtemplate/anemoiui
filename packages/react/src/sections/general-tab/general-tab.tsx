@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CheckCircleIcon, UsersIcon, SearchIcon, ChatIcon, XIcon } from '@heroicons/react/outline'
 import {Badge, Heading4, TextInput} from '../../elements'
-import {channels} from '../../../const'
+import {channels} from '../../const'
 import { UserCard } from '../../components'
 import clsx from 'clsx'
 
