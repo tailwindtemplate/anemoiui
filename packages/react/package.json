@@ -1,7 +1,10 @@
 {
   "name": "@anemoiui/react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
