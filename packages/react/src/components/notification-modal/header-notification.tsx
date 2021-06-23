@@ -1,18 +1,21 @@
 import React, { PropsWithChildren } from 'react'
+import clsx from 'clsx'
+
 type HeaderNotification = {
     title?: string;
     titleClassName?: string;
     childrenClassName?: string;
+    className?: string;
 };
-const TitleClassName = 'text-lg font-semibold'
 export const HeaderNotification = ({
     title,
-    titleClassName = TitleClassName,
+    titleClassName,
     children,
     childrenClassName,
+    className,
 }: PropsWithChildren<HeaderNotification>) => {
     return (
-        <div className="flex py-3 px-2 bg-white border-t border-r border-l rounded-t-lg justify-between	items-center">
+        <div className={clsx('flex justify-between items-center',className)}>
             <h3 className={titleClassName}>{title}</h3>
             <div className={childrenClassName}>
                 <div className="flex"> {children}</div>
