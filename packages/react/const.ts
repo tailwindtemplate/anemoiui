@@ -51,6 +51,7 @@ export const menu = [
             { name: 'messages', url: '/components/messages'},
             { name: 'cards', url: '/components/cards' },
             { name: 'image list', url: '/components/image-list' },
+            { name: 'notification', url: '/components/notification' },
         ],
     },
     {
