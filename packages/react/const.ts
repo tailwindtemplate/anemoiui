@@ -24,7 +24,9 @@ export const menu = [
         name: 'pages',
         items: [
             { name: 'chat', url: '/pages/chat' },
-            { name: 'welcome', url: '/pages/welcome' }
+            { name: 'welcome', url: '/pages/welcome' },
+            { name: 'form', url: '/form-input' }
+
         ]
     },
     {
@@ -75,7 +77,7 @@ export const menu = [
             { name: 'select', url: '/elements/select' },
             { name: 'text area', url: '/elements/text-area' },
             { name: 'image loader', url: '/elements/image-loader' },
-            { name: 'badge', url: '/elements/badge' }
+            { name: 'badge', url: '/elements/badge' },
         ]
     },
     { name: 'document', url: '/documents' },
