@@ -13,7 +13,7 @@ type TabControl = {
 // Default Props
 const ClassTabControl = 'border-b border-gray-100 flex'
 const ClassActive = 'bg-gray-200 text-blue-600 '
-const ClassItemControl = 'rounded-t-md cursor-pointer px-4 py-2 flex items-center'
+const ClassItemControl = 'rounded-t-md cursor-pointer px-3 py-2 flex items-center'
 // Render
 export const TabControl = ({
     items,
@@ -31,7 +31,7 @@ export const TabControl = ({
                     <div
                         key={id}
                         onClick={() => onClick(id)}
-                        className={clsx(classItemControl, active == id && classActive)}
+                        className={clsx(classItemControl, active == id && classActive, 'whitespace-nowrap')}
                         style={{ marginBottom: -1 }}
                     >
                         {name}

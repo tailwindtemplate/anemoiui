@@ -11,6 +11,7 @@ type PopoverControl = {
   classPopover?: string,
   classPopoverPanel?: string,
   classPopoverButton?: string,
+  avatarChildren?: any;
 };
 // Default Props
 const Transitions = {
@@ -37,6 +38,7 @@ export const PopoverControl = ({
     classPopover = ClassPopover,
     classPopoverPanel = ClassPopoverPanel,
     classPopoverButton = ClassPopoverButton,
+    avatarChildren,
     children
 }: PropsWithChildren<PopoverControl>) => {
     return (
@@ -44,9 +46,11 @@ export const PopoverControl = ({
             {
                 ({ open }) => (
                     <div>
-                        <Popover.Button className={classPopoverButton} >
-                            <span className={classNamePopover}>{namePopover}</span>
-                            {Icon && <Icon className={classIcon} />}
+                        <Popover.Button className={avatarChildren ? '' : classPopoverButton}>
+                            {avatarChildren ? <div>
+                                {avatarChildren}
+                            </div> : <div className='flex items-center'><span className={classNamePopover}>{namePopover}</span>
+                                {Icon && <Icon className={classIcon} />}</div>}
                         </Popover.Button>
                         <Transition as="div" show={open} {...transitions}>
                             <Popover.Panel className={classPopoverPanel}>{children}</Popover.Panel>

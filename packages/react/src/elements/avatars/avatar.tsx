@@ -1,57 +1,62 @@
-import React, { useMemo } from 'react'
+import React, { JSXElementConstructor, useMemo } from 'react'
 import clsx from 'clsx'
 import { PlusIcon, UserCircleIcon } from '@heroicons/react/outline'
 import { AvatarWrapper } from './avatar-wrapper'
 import { ImageLoader } from '..//image-loader'
 
-type Textarea = {
-    className?: string;
-    src?: string;
-    size?: 'xs' | 'sm' | 'md' | 'lg' | string;
-    isRounded?: boolean;
-    newMessage?: number;
-    status?: string;
-    hasExtension?: boolean;
-    name?: string;
-    type?: 'src' | 'add-avatar';
-    hasBorder?: boolean;
+type avatarSizeData = Record<string, { image: string, text: string, icon: string }>
+export type Avatar = {
+    className?: string
+    src?: string
+    size?: 'xs' | 'sm' | 'md' | 'lg' | string
+    sizeData?: avatarSizeData
+    isRounded?: boolean
+    name?: string
+    type?: 'src' | 'add-avatar'
+    hasBorder?: boolean
+    IconLoader?: JSXElementConstructor<any>
     wrapperClassName?: string
     onClick?: (e: any) => void
 };
 
-const SIZE: Record<string, { image: string, text: string }> = {
+const SIZE: avatarSizeData = {
     xs: {
         image: 'w-8 h-8',
+        icon: 'w-6 h-6',
         text: 'text-sm'
     },
     sm: {
         image: 'w-12 h-12',
+        icon: 'w-10 h-10',
         text: 'text-lg'
     },
     md: {
         image: 'w-16 h-16',
+        icon: 'w-12 h-12',
         text: 'text-2xl'
     },
     lg: {
         image: 'w-20 h-20',
+        icon: 'w-16 h-16',
         text: 'text-3xl'
     },
     xl: {
         image: 'w-28 h-28',
+        icon: 'w-20 h-20',
         text: 'text-4xl'
     },
 }
 
-const renderPlaceholder = (type: string, size: string, name?: string) => {
-    if (type == 'add-avatar') return <PlusIcon width={13} height={13} />
-    if (name) {
-        return (
-            <div className={clsx('text-white', SIZE[size]?.text)}>
+const renderPlaceholder = (Icon: JSXElementConstructor<any>, type: string, name?: string) => {
+    return function Placeholder({ className }: any) {
+        if (type == 'add-avatar') return <PlusIcon className={clsx(className)} />
+        if (name) return (
+            <div className={clsx(className)}>
                 {name}
             </div>
         )
+        return <Icon className={clsx(className)} />
     }
-    return <UserCircleIcon className={clsx(SIZE[size]?.text, 'text-white')} />
 }
 
 export function Avatar({
@@ -60,15 +65,17 @@ export function Avatar({
     src = '',
     isRounded,
     children,
-    hasExtension,
     name,
     hasBorder,
     type = 'src',
     wrapperClassName,
     onClick,
-}: React.PropsWithChildren<Textarea>) {
-    const placeholder = useMemo(() => renderPlaceholder(type, size, name), [size, name, type])
-    const rounded = useMemo(() => isRounded ? 'rounded-full' : 'rounded-lg', [isRounded])
+    sizeData = SIZE,
+    IconLoader = UserCircleIcon,
+}: React.PropsWithChildren<Avatar>) {
+    const placeholder = useMemo(() => renderPlaceholder(IconLoader, type, name), [IconLoader, name, type])
+    const rounded = useMemo(() => isRounded ? 'rounded-full' : '', [isRounded])
+    const sizeConfig = useMemo(() => sizeData[size], [])
 
     return (
         <AvatarWrapper
@@ -79,21 +86,17 @@ export function Avatar({
                 imageStyle="cover"
                 className={clsx(
                     'relative flex items-center justify-center bg-cover bg-no-repeat bg-center',
-                    SIZE[size]?.image,
-                    type === 'add-avatar' ? 'bg-white border border-dashed' : 'bg-primary-600',
+                    sizeConfig?.image,
+                    type === 'add-avatar' && 'bg-white border border-dashed',
                     className,
                     rounded
                 )}
                 onClick={onClick}
                 src={src}
-                LoadIcon={() => placeholder}
+                LoadIcon={placeholder}
+                loadIconClassName={sizeConfig?.text}
             >
                 {children}
-                {hasExtension && (
-                    <div className="absolute -bottom-1 -right-0.5 bg-primary-900 rounded-full border-2 border-white w-4 h-4 flex justify-center items-center">
-                        <PlusIcon fill="#FFF" width={8} height={8} className='text-white' />
-                    </div>
-                )}
             </ImageLoader>
         </AvatarWrapper>
     )

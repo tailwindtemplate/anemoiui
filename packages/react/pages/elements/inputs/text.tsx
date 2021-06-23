@@ -8,32 +8,32 @@ export default function TextInputPage() {
 
             <Heading3>Default</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <TextInput className="w-80" />
+                <TextInput />
             </Section>
 
             <Heading3>Border Type: Error</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <TextInput className="w-80" borderType="error" />
+                <TextInput borderType="error" />
             </Section>
 
             <Heading3>Left Icon</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <TextInput LeftIcon={UserIcon} className="w-80" />
+                <TextInput LeftIcon={UserIcon} />
             </Section>
 
             <Heading3>Left - Right icon</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <TextInput LeftIcon={UserIcon} RightIcon={UserIcon} className="w-80" />
+                <TextInput LeftIcon={UserIcon} RightIcon={UserIcon} />
             </Section>
 
             <Heading3>Avatar</Heading3>
             <Section className="mb-8 flex items-center justify-center border bg-white">
-                <TextInput src="https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg" className="w-80" />
+                <TextInput avatar={{ src: 'https://2sao.vietnamnetjsc.vn/images/2021/04/03/17/55/b7e16d30f9e6c365ad0ff0bd2feb5c2d.jpg' }} />
             </Section>
 
             <Heading3>Disable</Heading3>
             <Section className="flex items-center justify-center border bg-white">
-                <TextInput className="w-80" disabled />
+                <TextInput disabled />
             </Section>
         </div>
     );

@@ -4,29 +4,25 @@ import SingleInput from './single-otp-input'
 type OTPInput = {
     length: number
     onChangeOTP?: (otp: string) => any
-
     autoFocus?: boolean
     isNumberInput?: boolean
     disabled?: boolean
-
     style?: CSSProperties
     className?: string
-
     inputStyle?: CSSProperties
     inputClassName?: string
 }
 
-export function OTPInput(props: OTPInput) {
-    const {
-        length,
-        isNumberInput,
-        autoFocus = true,
-        disabled,
-        onChangeOTP,
-        inputClassName,
-        inputStyle,
-        ...rest
-    } = props
+export function OTPInput({
+    length,
+    isNumberInput,
+    autoFocus = true,
+    disabled,
+    onChangeOTP,
+    inputClassName,
+    inputStyle,
+    ...rest
+}: OTPInput) {
 
     const [activeInput, setActiveInput] = useState(0)
     const [otpValues, setOTPValues] = useState(Array<string>(length).fill(''))
