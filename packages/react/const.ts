@@ -25,7 +25,7 @@ export const menu = [
         items: [
             { name: 'chat', url: '/pages/chat' },
             { name: 'welcome', url: '/pages/welcome' },
-            { name: 'form', url: '/form-input' }
+            { name: 'form', url: '/form-inputs' }
 
         ]
     },
@@ -352,3 +352,7 @@ export const avatarDefault = [
     { id: 5, name: 'user 5', img: 'https://tailwindcss.com/_next/static/media/gilbert-rabut-tsurwa.0500413b6d119725cf1a426bdeddb73f.jpg' },
     { id: 6, name: 'user 6', img: 'https://tailwindcss.com/_next/static/media/madeline-campbell.9611e07a9b970083af13390783617d41.jpg' }
 ]
+
+export const background = {
+    img: 'https://huongdanaz.net/uploads/huongdanaz_hahalolo_1597482761.png'
+}
