@@ -7,7 +7,7 @@ type LayoutForms = {
 
 export const LayoutForms = ({ children, className}:React.PropsWithChildren<LayoutForms>) => {
     return (
-        <div className={clsx('flex justify-center items-center space-x-8 p-20', className)}>
+        <div className={clsx('flex justify-center items-center p-20', className)}>
             {children}
         </div>
     )

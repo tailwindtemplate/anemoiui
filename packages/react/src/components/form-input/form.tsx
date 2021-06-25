@@ -1,7 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import {Header} from './header'
-import {ChevronLeftIcon} from '@heroicons/react/outline'
+import { Header } from './header'
 
 type Form = {
     title?:string;
@@ -9,15 +8,23 @@ type Form = {
     className?: string;
     titleName?: string;
     contentName?: string;
-    header?:string;
-    headerName?:string;
 }
 
-export const Form = ({children, className, titleName, title, contentName, content, headerName, header}:React.PropsWithChildren<Form>) => {
+export const Form = ({children, className, titleName, title, contentName, content}:React.PropsWithChildren<Form>) => {
     return (
-        <div className={clsx('bg-white shadow-3xl rounded-3xl p-12 space-y-8', className)}>
-            <Header className={headerName}><ChevronLeftIcon className="w-4 h-4 text-gray-600"/>{header}</Header>
-            <div className={clsx('text-primary-20 text-5xl font-bold', titleName)}>{title}</div>
+        <div className={clsx('bg-white shadow-2xl rounded-3xl p-12 space-y-8', className)}>
+            <div className={clsx('text-primary-500 text-5xl font-bold', titleName)}>{title}</div>
+            <div className={clsx('text-xl text-justify', contentName)}>{content}</div>
+            {children}
+        </div>
+    )
+}
+
+export const FormHeader = ({children, className, titleName, title, contentName, content}:React.PropsWithChildren<Form>) => {
+    return (
+        <div className={clsx('bg-white shadow-2xl rounded-3xl p-12 space-y-8', className)}>
+            <Header text="Quay lại" />
+            <div className={clsx('text-primary-500 text-5xl font-bold', titleName)}>{title}</div>
             <div className={clsx('text-xl text-justify', contentName)}>{content}</div>
             {children}
         </div>
