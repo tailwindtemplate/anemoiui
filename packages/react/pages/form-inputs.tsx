@@ -1,16 +1,17 @@
-import {LayoutForms, Form, FormInput } from '../src/components/form-input'
-import {background} from '../const'
+import {LayoutForms, Form, FormInput, Images } from '../src/components/form-input'
 import {ButtonInput, InputPhone} from '../src/elements/select'
 
 export default function FormInputs () {
     return (
-        <LayoutForms className="bg-gray-200">
-            <img className="ml-20 h-52" src={background.img} />
-            <Form className="mr-20" title="Xin chào!" content="Chào mừng bạn đến với trang đăng nhập Hayov. Nhập số điện thoại để bắt đầu sử dụng">
-                <FormInput>
+        <LayoutForms className="bg-white">
+            <Images />
+            <Form header="Quay lại" title="Xin chào!" content="Chào mừng bạn đến với trang đăng nhập Hayov. Nhập số điện thoại để bắt đầu sử dụng">
+                <FormInput firstNumber="+84">
                     <InputPhone/>
                 </FormInput>
-                <ButtonInput text="BẮT ĐẦU"/>
+                <ButtonInput>
+                    BẮT ĐẦU
+                </ButtonInput>
             </Form>
         </LayoutForms>
     )

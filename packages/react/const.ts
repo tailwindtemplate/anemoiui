@@ -354,5 +354,5 @@ export const avatarDefault = [
 ]
 
 export const background = {
-    img: 'https://huongdanaz.net/uploads/huongdanaz_hahalolo_1597482761.png'
+    img: 'https://image.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg',
 }
