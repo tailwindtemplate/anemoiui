@@ -75,6 +75,9 @@ module.exports = {
       },
       borderWidth: {
         6: "6px"
+      },
+      fontFamily: {
+        body: ['Nunito']
       }
     }
   },
