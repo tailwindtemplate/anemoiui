@@ -354,5 +354,5 @@ export const avatarDefault = [
 ]
 
 export const background = {
-    img: 'https://image.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg',
+    img: 'https://png.pngtree.com/png-clipart/20190515/original/pngtree-vector-blue-squares.-abstract-background.-sky-blank-png-image_3558615.jpg',
 }
