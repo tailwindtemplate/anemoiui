@@ -354,5 +354,5 @@ export const avatarDefault = [
 ]
 
 export const background = {
-    img: 'https://png.pngtree.com/png-clipart/20190515/original/pngtree-vector-blue-squares.-abstract-background.-sky-blank-png-image_3558615.jpg',
+    img: 'https://lh3.googleusercontent.com/proxy/lCixzSBtmlX_LnS9fvwOOjh0QBcyuz6H3CBANw6F1jHFQnSgfPM4hehyEkzpklQKq5O6QzDj4D38ImkzLvry5i9bEnkSU4NMZSeHdUI97TXQfdSQTmDrkRBaReHKO8g',
 }

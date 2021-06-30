@@ -1,2 +1,2 @@
-export * from './formUser'
+export * from './formuser'
 export * from './images'

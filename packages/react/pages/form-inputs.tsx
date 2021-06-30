@@ -1,6 +1,16 @@
 // @ts-ignore
 import React, {useState} from 'react'
-import { Form, Button, FormBody, FormHeader, OTPInput, PhoneInput, PhoneZone, Section, TextInput } from '../src'
+import {
+    Form,
+    Button,
+    FormBody,
+    FormHeader,
+    OTPInput,
+    PhoneInput,
+    PhoneZone,
+    Section,
+    TextInput
+} from '../src'
 import { Images, UserName } from '../src/components/form-login'
 import { ChevronLeftIcon, EyeIcon, LockClosedIcon, PhoneIcon } from '@heroicons/react/outline'
 
@@ -21,15 +31,15 @@ export default function FormInputs () {
         setOtp("");
     };
     return (
-        <div className="space-y-6">
-            <Section className="bg-white flex items-center space-x-4">
+        <div className="space-y-10">
+            <Section className="bg-white flex items-center">
                 <Images />
-                <Form>
+                <Form className="absolute right-4">
                     <FormBody
                         className="
-                        text-primary-500
-                        text-5xl font-bold font-body
-                        space-y-6
+                            text-primary-500
+                            text-5xl font-bold font-body
+                            space-y-6
                         "
                         title="Hayov" description="Cùng nhau kết nối đến cả thế giới theo cách đơn giản nhất">
                         <Button className="rounded-3xl text-center"  type="primary" title="ĐĂNG NHẬP VỚI HAHALOLO" as="a" size="sm"/>
@@ -40,21 +50,18 @@ export default function FormInputs () {
 
             <Section className="bg-white flex items-center space-x-4">
                 <Images />
-                <Form>
+                <Form className="absolute right-4">
                     <FormHeader
                             className="text-gray-500 flex">
-                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-6" />
+                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-2" />
                         Quay lại
                     </FormHeader>
                     <FormBody
-                        className="
-                            text-primary-500
-                            text-5xl font-bold font-body
-                        "
+                        className="text-primary-500 text-5xl font-bold font-body"
                         title="Xin chào!" description="Chào mừng bạn đến với trang đăng nhập Hayov. Nhập số điện thoại để bắt đầu sử dụng"
                     />
                     <PhoneInput
-                        className="border border-gray-2 rounded-3xl p-4"
+                        className="border border-gray-2 rounded-3xl p-2"
                         placeholder="Số điện thoại" zone={{ onSelect: setZone, data: phoneZone, value: zone }} onChange={setPhone} phone={phone}
                     />
                     <Button className="rounded-3xl mt-6 text-center" type="primary" title="BẮT ĐẦU" as="a" size="lg" />
@@ -63,10 +70,10 @@ export default function FormInputs () {
 
             <Section className="bg-white flex items-center space-x-4">
                 <Images />
-                <Form className="">
+                <Form className="absolute right-4">
                     <FormHeader
                         className="text-gray-500 flex">
-                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-6" />
+                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-2" />
                         Quay lại
                     </FormHeader>
                     <FormBody
@@ -79,7 +86,7 @@ export default function FormInputs () {
                         description="Mã xác thực sẽ được gửi đến số điện thoại (+84) 123 456 thông qua tin nhắn SMS">
                         <OTPInput
                             length={6}
-                            className="flex items-center justify-center space-x-2 text-xl font-bold text-gray-900"
+                            className="flex items-center justify-center space-x-4 text-xl font-bold text-gray-900"
                             onChangeOTP={onChangeOTP}
                             isNumberInput
                         />
@@ -88,12 +95,12 @@ export default function FormInputs () {
                 </Form>
             </Section>
 
-            <Section className="bg-white flex items-center space-x-4">
+            <Section className="bg-white flex items-center py-20 space-x-4">
                 <Images />
-                <Form className="">
+                <Form className="absolute right-4">
                     <FormHeader
                         className="text-gray-500 flex">
-                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-4" />
+                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-2" />
                         Quay lại
                     </FormHeader>
                     <FormBody
@@ -106,7 +113,7 @@ export default function FormInputs () {
                         description="Mã xác thực sẽ được gửi đến ứng dụng Hayov trên thiết bị khác của bạn, thông quan tài khoản messenger Hayov">
                         <OTPInput
                             length={6}
-                            className="flex  items-center justify-center space-x-2 text-xl font-bold text-gray-900"
+                            className="flex  items-center justify-center space-x-4 text-xl font-bold text-gray-900"
                             onChangeOTP={onChangeOTP}
                             isNumberInput
                         />
@@ -117,12 +124,12 @@ export default function FormInputs () {
             </Section>
 
 
-            <Section className="bg-white flex items-center space-x-4">
+            <Section className="bg-white flex items-center py-20 space-x-4">
                 <Images />
-                <Form className="">
+                <Form className="absolute right-4">
                     <FormHeader
                         className="text-gray-500 flex">
-                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-4" />
+                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-2" />
                         Quay lại
                     </FormHeader>
                     <FormBody
@@ -149,12 +156,12 @@ export default function FormInputs () {
                 </Form>
             </Section>
 
-            <Section className="bg-white flex items-center space-x-4">
+            <Section className="bg-white flex items-center py-20 space-x-4">
                 <Images />
-                <Form className="">
+                <Form className="absolute right-4">
                     <FormHeader
                         className="text-gray-500 flex">
-                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-4" />
+                        <ChevronLeftIcon className="w-6 h-6 mr-1 mb-2" />
                         Quay lại
                     </FormHeader>
                     <FormBody
@@ -179,13 +186,10 @@ export default function FormInputs () {
                 </Form>
             </Section>
 
-            <Section className="bg-white flex justify-center space-x-4">
+            <Section className="bg-white flex justify-center py-20 space-x-4">
                 <Form>
                     <FormBody
-                        className="
-                        text-primary-500
-                        text-5xl font-bold font-body
-                        "
+                        className="text-primary-500 text-5xl font-bold font-body"
                         title="Chúc mừng!" description="Bạn đã đăng ký thành công! Bắt đầu kết nối với thế giới nhé!">
                         <Button type="primary" title="ĐỒNG Ý" as="a" size="lg" className="rounded-3xl mt-6" />
                     </FormBody>
@@ -196,3 +200,5 @@ export default function FormInputs () {
         </div>
     )
 }
+
+
