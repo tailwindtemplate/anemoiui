@@ -8,8 +8,6 @@ type Images = {
 
 export const Images = ({className}:PropsWithChildren<Images>) => {
     return (
-        <div>
-            <img className={clsx('rounded-xl', className)} src={background.img} />
-        </div>
+        <img className={clsx('rounded-xl', className)} src={background.img} />
     )
 }

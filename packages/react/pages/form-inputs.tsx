@@ -168,11 +168,10 @@ export default function FormInputs () {
                         className="
                             text-primary-500
                             text-5xl font-bold font-body
-                            space-y-6
                         "
                         title="Chào bạn!"
                         description="Đăng nhập vào tài khoản Hahalolo để tham gia trải nghiệm Hayov">
-                        <UserName name="Charlie Rhiel Madsen"></UserName>
+                        <UserName className="mb-6" name="Charlie Rhiel Madsen"></UserName>
                         <TextInput
                             inputClassName="text-gray-600"
                             placeholder="Mật khẩu"
@@ -181,7 +180,13 @@ export default function FormInputs () {
                             LeftIcon={LockClosedIcon}
                             RightIcon={EyeIcon}
                         />
-                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-3xl" />
+                        <FormHeader
+                            className="flex justify-end text-sm text-gray-500 mt-2 mr-4">
+                            Quên mật khẩu
+                        </FormHeader>
+                        <Button type="primary" title="ĐĂNG NHẬP" as="a" size="lg" className="rounded-3xl my-6
+" />
+                        <Button type="primary" title="Đăng nhập tài khoản khác" as="a" size="lg" className="rounded-3xl" />
                     </FormBody>
                 </Form>
             </Section>
