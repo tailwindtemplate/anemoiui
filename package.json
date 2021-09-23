@@ -1,10 +1,7 @@
 {
-  "name": "anemoiui",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@anemoiui/core",
+  "version": "0.0.1",
   "repository": "https://github.com/tailwindtemplate/anemoiui.git",
-  "author": "tien.hn",
-  "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -12,7 +9,6 @@
   "scripts": {
     "build": "yarn workspaces run build"
   },
-  "devDependencies": {
-    "tsdx": "^0.14.1"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
