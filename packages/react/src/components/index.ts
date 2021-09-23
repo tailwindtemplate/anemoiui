@@ -1,1 +1,1 @@
-export * from './hero/hero'
+export * from './card/card'
