@@ -1,7 +1,0 @@
-export * from './channel-header'
-export * from './message-input'
-export * from './channel-messages'
-export * from './app-sidebar'
-export * from './user-profile'
-export * from './chat-sidebar'
-export * from './modals'

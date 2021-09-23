@@ -1,9 +1,0 @@
-node_modules
-dist
-.next
-next-src
-pages
-postcss.config.js
-tailwind.config.js
-tsconfig.js
-tsconfig.tsc.js
