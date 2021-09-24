@@ -1,1 +1,2 @@
-export * from './inputs/text-input'
+export * from './inputs'
+export * from './buttons'
