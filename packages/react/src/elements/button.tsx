@@ -42,7 +42,8 @@ export function Button({
     children,
     onClick,
     IconLeft,
-    IconRight
+    IconRight,
+    ...props
 }: PropsWithChildren<Button>) {
     const Node = as
 
@@ -56,6 +57,7 @@ export function Button({
             )}
             disabled={disabled}
             onClick={onClick}
+            {...props}
         >
             {IconLeft && <IconLeft />}
             {title}
